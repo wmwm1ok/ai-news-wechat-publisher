@@ -12,16 +12,21 @@ export const AI_KEYWORDS = [
   'Agent', '智能体', 'GPU', 'NVIDIA', '英伟达'
 ];
 
-// 国内 RSS 源
+// 国内 RSS 源（专注于AI/科技）
 export const DOMESTIC_RSS_SOURCES = [
-  {
-    name: '36氪',
-    url: 'https://36kr.com/feed',
-    limit: 5
-  },
   {
     name: '机器之心',
     url: 'https://www.jiqizhixin.com/rss',
+    limit: 5
+  },
+  {
+    name: '量子位',
+    url: 'https://www.qbitai.com/feed',
+    limit: 5
+  },
+  {
+    name: '36氪',
+    url: 'https://36kr.com/feed',
     limit: 4
   },
   {
@@ -30,29 +35,14 @@ export const DOMESTIC_RSS_SOURCES = [
     limit: 3
   },
   {
-    name: '量子位',
-    url: 'https://www.qbitai.com/feed',
-    limit: 4
-  },
-  {
     name: '雷锋网',
     url: 'https://www.leiphone.com/feed',
     limit: 3
   },
   {
-    name: '钛媒体',
-    url: 'https://www.tmtpost.com/rss.xml',
+    name: 'AI科技评论',
+    url: 'https://www.leiphone.com/category/ai/feed',
     limit: 3
-  },
-  {
-    name: '极客公园',
-    url: 'https://www.geekpark.net/rss',
-    limit: 2
-  },
-  {
-    name: '少数派',
-    url: 'https://sspai.com/feed',
-    limit: 2
   }
 ];
 

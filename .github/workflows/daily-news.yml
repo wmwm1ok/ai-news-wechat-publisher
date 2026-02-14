@@ -1,0 +1,77 @@
+name: AI Daily News Publisher
+
+on:
+  schedule:
+    # 每天早上 8:00 UTC+8 (对应 UTC 0:00)
+    - cron: '0 0 * * *'
+  
+  # 允许手动触发
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '试运行模式（不实际发布）'
+        type: boolean
+        default: false
+      skip_publish:
+        description: '跳过发布'
+        type: boolean
+        default: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run news publisher
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_URL: ${{ secrets.DEEPSEEK_API_URL }}
+          DEEPSEEK_MODEL: ${{ secrets.DEEPSEEK_MODEL }}
+          WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
+          WECHAT_SECRET: ${{ secrets.WECHAT_SECRET }}
+          GNEWS_API_KEY: ${{ secrets.GNEWS_API_KEY }}
+          DEBUG: ${{ vars.DEBUG }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+            npm run dry-run
+          elif [ "${{ github.event.inputs.skip_publish }}" == "true" ]; then
+            npm run fetch
+          else
+            npm start
+          fi
+      
+      - name: Upload output artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: news-output-${{ github.run_id }}
+          path: output/
+          retention-days: 30
+      
+      - name: Commit and push news data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # 添加生成的文件
+          git add output/
+          
+          # 如果有变更则提交
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update daily AI news: $(date +'%Y-%m-%d')"
+            git push
+          fi
+        continue-on-error: true

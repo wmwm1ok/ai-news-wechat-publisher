@@ -1,0 +1,31 @@
+{
+  "name": "ai-news-wechat-publisher",
+  "version": "1.0.0",
+  "description": "AI 行业资讯自动抓取并发布到微信公众号",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "fetch": "node src/index.js --fetch-only",
+    "publish": "node src/index.js --publish-only",
+    "dry-run": "node src/index.js --dry-run"
+  },
+  "keywords": [
+    "AI",
+    "news",
+    "wechat",
+    "rss",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "rss-parser": "^3.13.0",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "fast-xml-parser": "^4.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

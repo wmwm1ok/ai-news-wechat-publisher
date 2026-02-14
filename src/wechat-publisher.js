@@ -4,6 +4,18 @@ import { CONFIG } from './config.js';
 const WECHAT_API_BASE = 'https://api.weixin.qq.com/cgi-bin';
 
 /**
+ * 获取当前出口 IP
+ */
+async function getCurrentIP() {
+  try {
+    const response = await axios.get('https://api.ipify.org?format=json', { timeout: 5000 });
+    return response.data.ip;
+  } catch {
+    return '未知';
+  }
+}
+
+/**
  * 获取微信 access_token
  */
 async function getAccessToken() {
@@ -30,10 +42,15 @@ async function getAccessToken() {
       
       // 检查是否是 IP 白名单问题
       if (error.response.data?.errmsg?.includes('not in whitelist')) {
-        console.error('\n⚠️  重要提示: 当前 IP 不在微信公众号白名单中！');
-        console.error('   请将以下 IP 添加到公众号后台的白名单：');
-        console.error('   （查看本次运行的 GitHub Actions 日志获取具体 IP）');
-        console.error('   操作路径: 微信公众平台 → 开发 → 基本配置 → IP 白名单\n');
+        const currentIP = await getCurrentIP();
+        console.error('\n⚠️  ============================================');
+        console.error('⚠️   重要提示: 当前 IP 不在微信公众号白名单中！');
+        console.error('⚠️  ============================================');
+        console.error(`\n📍 当前出口 IP: ${currentIP}`);
+        console.error('\n👉 请将此 IP 添加到微信公众号后台的白名单：');
+        console.error('   操作路径: 微信公众平台 → 开发 → 基本配置 → IP 白名单');
+        console.error('\n💡 提示: 如果添加后仍然失败，可能是 IP 变化了，需要重新获取。');
+        console.error('   考虑使用固定的代理服务器来避免此问题。\n');
       }
     }
     

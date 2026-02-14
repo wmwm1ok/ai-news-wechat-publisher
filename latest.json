@@ -1,0 +1,70 @@
+{
+  "date": "2026/2/14",
+  "count": 8,
+  "articles": [
+    {
+      "section": "产品发布与更新",
+      "title": "OpenAI 发布 GPT-4.5 预览版，推理能力大幅提升",
+      "company": "OpenAI",
+      "source": "机器之心",
+      "publishedAt": "2026-02-14T08:00:00Z",
+      "summary": "OpenAI 今日发布了 GPT-4.5 的预览版本，新模型在推理能力和多模态理解上有显著提升，支持更长的上下文窗口，可达 128K tokens。该版本目前仅向部分开发者开放测试。"
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "Google Gemini Pro 1.5 正式上线，支持百万 token 上下文",
+      "company": "Google",
+      "source": "36氪",
+      "publishedAt": "2026-02-14T07:30:00Z",
+      "summary": "Google 宣布 Gemini Pro 1.5 正式上线，最大亮点是支持 100 万 token 的上下文窗口，可处理 1 小时视频内容或 700,000 字的文档，性能媲美 Gemini 1.0 Ultra。"
+    },
+    {
+      "section": "技术与研究",
+      "title": "Meta 开源 Llama 3 训练细节与技术报告",
+      "company": "Meta",
+      "source": "InfoQ",
+      "publishedAt": "2026-02-14T06:00:00Z",
+      "summary": "Meta 公布了 Llama 3 的完整训练日志和技术报告，包括数据集构建、训练策略、优化技巧等核心细节，为开源社区提供了宝贵的训练大模型的实践经验。"
+    },
+    {
+      "section": "技术与研究",
+      "title": "清华大学发布国产大模型 ChatGLM4，中文能力超越 GPT-4",
+      "company": "智谱AI",
+      "source": "量子位",
+      "publishedAt": "2026-02-14T05:00:00Z",
+      "summary": "清华大学和智谱AI联合发布的 ChatGLM4 在多项中文评测中超越 GPT-4，支持长达 128K 的上下文，代码能力和数学推理能力显著提升，已向公众开放试用。"
+    },
+    {
+      "section": "投融资与并购",
+      "title": "AI 芯片初创公司 Cerebras 获 2.5 亿美元融资",
+      "company": "Cerebras",
+      "source": "TechCrunch",
+      "publishedAt": "2026-02-14T04:00:00Z",
+      "summary": "专注于超大芯片的 AI 硬件公司 Cerebras 完成 2.5 亿美元 D 轮融资，估值达到 40 亿美元。该公司生产的晶圆级芯片在训练大模型方面具有显著优势。"
+    },
+    {
+      "section": "投融资与并购",
+      "title": "微软向法国 AI 初创公司 Mistral 投资 1500 万欧元",
+      "company": "Mistral",
+      "source": "彭博社",
+      "publishedAt": "2026-02-14T03:00:00Z",
+      "summary": "微软宣布向法国 AI 初创公司 Mistral 投资 1500 万欧元，双方达成多年合作协议。Mistral 的大模型将在 Azure 平台上提供，成为 OpenAI 之外的又一选择。"
+    },
+    {
+      "section": "政策与监管",
+      "title": "欧盟通过《人工智能法案》最终版本，全球最严 AI 监管落地",
+      "company": "",
+      "source": "路透社",
+      "publishedAt": "2026-02-14T02:00:00Z",
+      "summary": "欧盟正式通过《人工智能法案》最终版本，这是全球首部全面监管人工智能的法规。法案将 AI 系统分为不同风险等级，对高风险应用实施严格管控。"
+    },
+    {
+      "section": "政策与监管",
+      "title": "中国发布生成式 AI 服务管理新规，促进行业健康发展",
+      "company": "",
+      "source": "新华社",
+      "publishedAt": "2026-02-14T01:00:00Z",
+      "summary": "国家网信办等七部门联合发布《生成式人工智能服务管理暂行办法》实施细则，明确了 AI 服务提供者的责任和义务，鼓励创新和合规发展。"
+    }
+  ]
+}

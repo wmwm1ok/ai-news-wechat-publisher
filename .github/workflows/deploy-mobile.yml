@@ -1,51 +1,47 @@
 name: Deploy Mobile Preview
 
 on:
-  push:
-    branches: [ main ]
   workflow_run:
     workflows: ["AI Daily News Publisher"]
     types:
       - completed
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    branches: [main]
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    # 只在主工作流成功时运行
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      
-      - name: Generate mobile preview
-        run: |
-          # 复制最新的 HTML 到 docs
-          mkdir -p docs
-          cp mobile-preview.html docs/index.html
-          
-          # 如果有生成的内容，更新到页面
-          if [ -f output/wechat-ready-*.html ]; then
-            cp output/wechat-ready-*.html docs/latest.html
-          fi
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Download artifacts from main workflow
+        uses: actions/download-artifact@v4
         with:
-          path: './docs'
+          name: news-output-${{ github.event.workflow_run.id }}
+          path: output/
+        continue-on-error: true
+      
+      - name: Generate mobile preview pages
+        run: |
+          mkdir -p docs
+          
+          # 复制基础预览页
+          cp mobile-preview.html docs/index.html 2>/dev/null || true
+          
+          # 复制秀米预览页
+          if [ -f docs/xiumi.html ]; then
+            echo "✅ 秀米页面已存在"
+          fi
+          
+          # 列出生成的文件
+          ls -la output/ 2>/dev/null || echo "No output files yet"
       
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          force_orphan: true

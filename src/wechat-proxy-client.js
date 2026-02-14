@@ -91,8 +91,10 @@ export async function getAccessTokenViaProxy() {
  */
 export async function uploadNewsMaterialViaProxy(articles, accessToken) {
   console.log('🔌 使用 Cloudflare Worker 代理添加草稿...');
+  console.log(`   文章数量: ${articles.length}`);
+  console.log(`   第一篇文章标题: ${articles[0]?.title?.substring(0, 30)}...`);
   
-  const data = await httpPost('/wechat/draft/add', {
+  const payload = {
     access_token: accessToken,
     articles: articles.map(article => ({
       title: article.title,
@@ -104,12 +106,22 @@ export async function uploadNewsMaterialViaProxy(articles, accessToken) {
       need_open_comment: article.needOpenComment ?? 1,
       only_fans_can_comment: article.onlyFansCanComment ?? 0
     }))
-  }, 60000);
+  };
+  
+  console.log('   发送请求到 /wechat/draft/add...');
+  const data = await httpPost('/wechat/draft/add', payload, 60000);
+  
+  console.log(`   响应: ${JSON.stringify(data)}`);
   
   // 草稿 API 返回 media_id
   if (data.media_id) {
-    console.log('✅ 通过代理添加草稿成功');
+    console.log(`✅ 通过代理添加草稿成功, media_id: ${data.media_id}`);
     return data.media_id;
+  }
+  
+  // 如果有错误，显示详细信息
+  if (data.errcode) {
+    throw new Error(`微信 API 错误 [${data.errcode}]: ${data.errmsg}`);
   }
   
   throw new Error(`代理返回错误: ${JSON.stringify(data)}`);
@@ -120,6 +132,8 @@ export async function uploadNewsMaterialViaProxy(articles, accessToken) {
  */
 export async function publishViaProxy(mediaId, accessToken, publishOnly = true) {
   console.log('🔌 使用 Cloudflare Worker 代理发布草稿...');
+  console.log(`   media_id: ${mediaId}`);
+  console.log(`   发布类型: ${publishOnly ? '发布到公众号(不推送)' : '群发推送'}`);
   
   const data = await httpPost('/wechat/publish', {
     access_token: accessToken,
@@ -127,9 +141,15 @@ export async function publishViaProxy(mediaId, accessToken, publishOnly = true) 
     type: publishOnly ? 'publish' : 'mass'
   }, 15000);
   
+  console.log(`   响应: ${JSON.stringify(data)}`);
+  
   if (data.errcode === 0) {
     console.log('✅ 通过代理发布成功');
     return data;
+  }
+  
+  if (data.errcode) {
+    throw new Error(`微信 API 错误 [${data.errcode}]: ${data.errmsg}`);
   }
   
   throw new Error(`代理返回错误: ${JSON.stringify(data)}`);

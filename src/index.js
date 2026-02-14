@@ -84,6 +84,21 @@ async function main() {
     await saveOutput(`newsletter-${new Date().toISOString().split('T')[0]}.html`, html);
     await saveOutput(`wechat-${new Date().toISOString().split('T')[0]}.html`, wechatHtml);
     
+    // 生成 JSON 数据供在线编辑器使用（确保总是被生成）
+    const jsonData = {
+      date: new Date().toLocaleDateString('zh-CN'),
+      count: totalNews,
+      articles: Object.values(groupedNews).flat().map(item => ({
+        section: item.category || item.section || '其他',
+        title: item.title,
+        company: item.company || '',
+        source: item.source,
+        publishedAt: item.publishedAt,
+        summary: item.summary
+      }))
+    };
+    await saveOutput('latest.json', JSON.stringify(jsonData, null, 2));
+    
     console.log(`\n📊 共生成 ${totalNews} 条新闻摘要`);
     console.log('分类统计:');
     for (const [section, items] of Object.entries(groupedNews)) {

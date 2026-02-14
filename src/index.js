@@ -6,6 +6,7 @@ import { summarizeNews } from './ai-summarizer.js';
 import { generateHTML, generateWechatHTML } from './html-formatter.js';
 import { publishToWechat } from './wechat-publisher.js';
 import { generateWechatEditorFormat } from './manual-publish-helper.js';
+import { generateXiumiFormat } from './xiumi-formatter.js';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -149,13 +150,17 @@ async function main() {
       console.error('\n⚠️  微信 API 发布失败:', error.message);
       console.log('\n🔄 切换到手动发布模式（适用于未认证公众号）...\n');
       
-      // 生成手动发布文件
+      // 生成多种格式的发布文件
       const manualResult = await generateWechatEditorFormat(groupedNews);
+      const xiumiResult = await generateXiumiFormat(groupedNews);
+      
+      console.log('\n✅ 已生成所有格式的发布文件！');
+      console.log('');
       
       // 保存错误信息
       await saveOutput(
         `publish-error-${new Date().toISOString().split('T')[0]}.txt`,
-        `错误: ${error.message}\n\n已生成手动发布文件:\n- ${manualResult.htmlPath}\n- ${manualResult.textPath}`
+        `错误: ${error.message}\n\n已生成发布文件:\n- 微信格式: ${manualResult.htmlPath}\n- 秀米格式: ${xiumiResult.xiumiPath}\n- 纯文本: ${manualResult.textPath}`
       );
     }
   } else if (DRY_RUN) {

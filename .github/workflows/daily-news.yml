@@ -76,8 +76,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # 添加生成的文件
-          git add output/
+          # 强制添加生成的文件（即使被 .gitignore 忽略）
+          git add -f output/
           
           # 如果有变更则提交
           if git diff --cached --quiet; then

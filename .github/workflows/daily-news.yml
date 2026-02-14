@@ -38,6 +38,14 @@ jobs:
           WECHAT_PROXY_URL: ${{ secrets.WECHAT_PROXY_URL }}
         run: node test-proxy.js || echo "测试失败，继续尝试主程序"
       
+      - name: Test WeChat Draft API
+        env:
+          WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
+          WECHAT_SECRET: ${{ secrets.WECHAT_SECRET }}
+          WECHAT_PROXY_URL: ${{ secrets.WECHAT_PROXY_URL }}
+        run: node test-draft-api.js || echo "草稿API测试失败"
+        continue-on-error: true
+      
       - name: Run news publisher
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}

@@ -43,6 +43,7 @@ jobs:
           WECHAT_PROXY_URL: ${{ secrets.WECHAT_PROXY_URL }}
           SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
           DEBUG: ${{ vars.DEBUG }}
+          NODE_OPTIONS: "--tls-min-v1.2"
         run: |
           if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
             npm run dry-run

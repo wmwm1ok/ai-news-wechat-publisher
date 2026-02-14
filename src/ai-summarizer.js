@@ -56,6 +56,11 @@ async function callDeepSeek(prompt) {
 async function summarizeSingle(item) {
   const prompt = `你是一名AI行业新闻编辑。请基于提供的新闻信息进行总结和分类。
 
+【绝对禁止】
+- 禁止编造任何新闻事实
+- 禁止将旧闻改写成"今日发布"
+- 必须严格基于输入的新闻内容总结
+
 【必须遵守】
 1) 分类只能从以下四类中选择一个：
 - 产品发布与更新
@@ -65,8 +70,8 @@ async function summarizeSingle(item) {
 
 2) 输出必须是严格 JSON（不要 Markdown，不要代码块，不要解释）：
 {
-  "title": "新闻标题",
-  "summary": "160-260字中文摘要，通顺完整，不包含无信息口水话",
+  "title": "新闻标题（基于原标题，可适当优化但不得改变原意）",
+  "summary": "160-260字中文摘要，基于输入的摘要内容总结，不得编造",
   "category": "分类名称",
   "source": "来源",
   "publishedAt": "发布时间",
@@ -79,11 +84,27 @@ async function summarizeSingle(item) {
 时间：${item.publishedAt}
 摘要：${item.snippet}
 
-请输出 JSON：`;
+请基于以上输入数据输出 JSON：`,;
 
   try {
     const response = await callDeepSeek(prompt);
     const parsed = JSON.parse(response);
+    
+    // 验证标题是否与原始标题相关（防止 AI 编造完全不同的新闻）
+    const originalTitle = item.title.toLowerCase();
+    const returnedTitle = (parsed.title || '').toLowerCase();
+    
+    // 检查标题相似度（简单检查：是否有共同的关键词）
+    const hasSimilarity = returnedTitle.includes(originalTitle.substring(0, 15)) ||
+                         originalTitle.includes(returnedTitle.substring(0, 15));
+    
+    if (!hasSimilarity && originalTitle.length > 10) {
+      console.warn(`⚠️ 国内新闻标题不匹配，可能为编造:`);
+      console.warn(`   原始: ${item.title.substring(0, 50)}...`);
+      console.warn(`   返回: ${parsed.title?.substring(0, 50)}...`);
+      // 使用原始标题作为备选
+      parsed.title = item.title;
+    }
     
     return {
       ...parsed,
@@ -112,8 +133,14 @@ async function summarizeOverseasBatch(items) {
 
   const prompt = `你是 AI 行业日报编辑，内容将发布到微信公众号。读者位于中国大陆。
 
+【绝对禁止 - 违反会导致严重后果】
+- 严禁编造任何新闻内容、公司名、产品名或发布时间
+- 严禁将历史旧闻改写成"今日发布"或"刚刚发布"
+- 严禁根据常识"补充"输入数据中没有的信息
+- 只能基于提供的 articles 数组中的内容进行总结
+
 任务：
-1) 从以下 articles 数组中筛选并整理 AI 相关新闻（最多筛选 8-10 条，不得编造事实）
+1) 从以下 articles 数组中筛选并整理 AI 相关新闻（最多筛选 8-10 条）
 2) 按以下 4 个模块分类（固定，不得新增/改名）：
    - 产品发布与更新
    - 技术与研究
@@ -129,8 +156,10 @@ ${articlesJson}
 - 必须是严格 JSON（不要 Markdown，不要 \`\`\`，不要解释性文字）
 - 简体中文；可保留常见英文术语
 - 禁止在任何字段输出 URL
-- summary：160~260 字
+- title_cn：必须基于原标题翻译/优化，不得编造新的标题
+- summary：160~260 字，必须基于输入的新闻内容总结，不得编造
 - tags：2~4 个
+- 保持原始发布时间（published_at），不得修改
 
 JSON 结构：
 {
@@ -138,32 +167,64 @@ JSON 结构：
   "items": [
     {
       "section": "产品发布与更新",
-      "company": "公司名称",
-      "title_cn": "中文标题",
-      "summary": "中文摘要",
+      "company": "公司名称（输入数据中有就写，没有就不写）",
+      "title_cn": "中文标题（基于原标题翻译）",
+      "summary": "中文摘要（基于输入内容总结）",
       "source": "来源名称",
-      "published_at": "发布时间",
+      "published_at": "发布时间（保持原始时间）",
       "tags": ["标签1", "标签2"]
     }
   ]
 }
 
-请输出 JSON：`;
+请基于输入数据严格输出 JSON，严禁编造：`;
 
   try {
     const response = await callDeepSeek(prompt);
     const parsed = JSON.parse(response);
     
-    return (parsed.items || []).map(item => ({
-      title: item.title_cn || item.title,
-      summary: item.summary,
-      category: item.section || item.category,
-      source: item.source,
-      publishedAt: item.published_at || item.publishedAt,
-      tags: item.tags || [],
-      company: item.company,
-      region: '海外'
-    }));
+    // 验证并保留原始 URL
+    const validated = [];
+    const originalTitles = new Set(items.map(i => i.title.toLowerCase()));
+    
+    for (const item of parsed.items || []) {
+      const title = item.title_cn || item.title;
+      // 检查标题是否与原始数据有较高相似度
+      const titleLower = title.toLowerCase();
+      let matched = false;
+      let originalItem = null;
+      
+      for (const orig of items) {
+        const origTitleLower = orig.title.toLowerCase();
+        // 简单相似度检查：包含关系或编辑距离
+        if (titleLower.includes(origTitleLower.substring(0, 20)) || 
+            origTitleLower.includes(titleLower.substring(0, 20))) {
+          matched = true;
+          originalItem = orig;
+          break;
+        }
+      }
+      
+      if (!matched) {
+        console.warn(`⚠️ 海外新闻标题不匹配，可能为编造: "${title.substring(0, 40)}..."`);
+        continue;
+      }
+      
+      validated.push({
+        title: title,
+        summary: item.summary,
+        category: item.section || item.category,
+        source: item.source,
+        publishedAt: item.published_at || item.publishedAt,
+        tags: item.tags || [],
+        company: item.company,
+        region: '海外',
+        url: originalItem?.url || ''
+      });
+    }
+    
+    console.log(`   验证通过 ${validated.length}/${parsed.items?.length || 0} 条海外新闻`);
+    return validated;
   } catch (error) {
     console.error('海外新闻批量总结失败:', error.message);
     return [];

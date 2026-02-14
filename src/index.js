@@ -36,6 +36,15 @@ async function main() {
   console.log('🚀 AI 新闻自动抓取与发布系统');
   console.log('='.repeat(50) + '\n');
   
+  // 调试：显示环境变量状态（隐藏敏感信息）
+  console.log('🔧 环境变量检查:');
+  console.log(`   DEEPSEEK_API_KEY: ${process.env.DEEPSEEK_API_KEY ? '✅ 已设置' : '❌ 未设置'}`);
+  console.log(`   WECHAT_APPID: ${process.env.WECHAT_APPID ? '✅ 已设置' : '❌ 未设置'}`);
+  console.log(`   WECHAT_SECRET: ${process.env.WECHAT_SECRET ? '✅ 已设置' : '❌ 未设置'}`);
+  console.log(`   WECHAT_PROXY_URL: ${process.env.WECHAT_PROXY_URL || '❌ 未设置'}`);
+  console.log(`   SERPER_API_KEY: ${process.env.SERPER_API_KEY ? '✅ 已设置' : '❌ 未设置'}`);
+  console.log('');
+  
   // 验证配置
   validateConfig();
   

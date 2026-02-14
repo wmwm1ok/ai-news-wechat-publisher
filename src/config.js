@@ -17,16 +17,41 @@ export const DOMESTIC_RSS_SOURCES = [
   {
     name: '36氪',
     url: 'https://36kr.com/feed',
-    limit: 3
+    limit: 5
   },
   {
     name: '机器之心',
     url: 'https://www.jiqizhixin.com/rss',
-    limit: 2
+    limit: 4
   },
   {
     name: 'InfoQ',
     url: 'https://www.infoq.cn/feed',
+    limit: 3
+  },
+  {
+    name: '量子位',
+    url: 'https://www.qbitai.com/feed',
+    limit: 4
+  },
+  {
+    name: '雷锋网',
+    url: 'https://www.leiphone.com/feed',
+    limit: 3
+  },
+  {
+    name: '钛媒体',
+    url: 'https://www.tmtpost.com/rss.xml',
+    limit: 3
+  },
+  {
+    name: '极客公园',
+    url: 'https://www.geekpark.net/rss',
+    limit: 2
+  },
+  {
+    name: '少数派',
+    url: 'https://sspai.com/feed',
     limit: 2
   }
 ];
@@ -36,7 +61,47 @@ export const OVERSEAS_RSS_SOURCES = [
   {
     name: 'TechCrunch AI',
     url: 'https://techcrunch.com/category/artificial-intelligence/feed/',
+    limit: 5
+  },
+  {
+    name: 'The Verge AI',
+    url: 'https://www.theverge.com/ai-artificial-intelligence/rss/index.xml',
+    limit: 4
+  },
+  {
+    name: 'MIT Technology Review',
+    url: 'https://www.technologyreview.com/feed/',
+    limit: 4
+  },
+  {
+    name: 'Wired AI',
+    url: 'https://www.wired.com/tag/artificial-intelligence/feed/',
     limit: 3
+  },
+  {
+    name: 'Ars Technica AI',
+    url: 'https://arstechnica.com/tag/artificial-intelligence/feed/',
+    limit: 3
+  },
+  {
+    name: 'VentureBeat AI',
+    url: 'https://venturebeat.com/category/ai/feed/',
+    limit: 3
+  },
+  {
+    name: 'OpenAI Blog',
+    url: 'https://openai.com/blog/rss.xml',
+    limit: 2
+  },
+  {
+    name: 'Google AI Blog',
+    url: 'https://ai.googleblog.com/feeds/posts/default',
+    limit: 2
+  },
+  {
+    name: 'Anthropic News',
+    url: 'https://www.anthropic.com/rss.xml',
+    limit: 2
   }
 ];
 

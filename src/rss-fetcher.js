@@ -65,9 +65,16 @@ async function fetchSerperNews() {
     console.log('📡 正在通过 Serper 搜索海外新闻...');
     
     const searchQueries = [
-      'AI artificial intelligence news',
-      'OpenAI GPT news',
-      'Google Gemini AI news'
+      'AI artificial intelligence news today',
+      'OpenAI GPT ChatGPT news',
+      'Google Gemini AI news',
+      'Anthropic Claude AI news',
+      'Meta AI Llama news',
+      'Microsoft Copilot AI news',
+      'NVIDIA AI chip news',
+      'AI startup funding investment',
+      'AI regulation policy news',
+      'generative AI news'
     ];
     
     const allNews = [];
@@ -78,7 +85,7 @@ async function fetchSerperNews() {
         gl: 'us',
         hl: 'en',
         tbs: 'qdr:d',  // 过去 24 小时
-        num: 10
+        num: 15
       }, {
         headers: {
           'X-API-KEY': CONFIG.serper.apiKey,

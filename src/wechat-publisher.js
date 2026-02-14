@@ -22,7 +22,21 @@ async function getAccessToken() {
     
     throw new Error(`获取 access_token 失败: ${JSON.stringify(response.data)}`);
   } catch (error) {
-    console.error('获取微信 access_token 失败:', error.message);
+    console.error('❌ 获取微信 access_token 失败');
+    console.error('   错误信息:', error.message);
+    
+    if (error.response) {
+      console.error('   微信 API 响应:', JSON.stringify(error.response.data));
+      
+      // 检查是否是 IP 白名单问题
+      if (error.response.data?.errmsg?.includes('not in whitelist')) {
+        console.error('\n⚠️  重要提示: 当前 IP 不在微信公众号白名单中！');
+        console.error('   请将以下 IP 添加到公众号后台的白名单：');
+        console.error('   （查看本次运行的 GitHub Actions 日志获取具体 IP）');
+        console.error('   操作路径: 微信公众平台 → 开发 → 基本配置 → IP 白名单\n');
+      }
+    }
+    
     throw error;
   }
 }

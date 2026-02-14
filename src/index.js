@@ -100,6 +100,8 @@ async function main() {
   
   // 3. 发布到微信公众号
   if (!SKIP_PUBLISH && !DRY_RUN) {
+    console.log('\n📤 即将发布到微信公众号...');
+    console.log('   注意: 如果失败，请检查 IP 白名单配置\n');
     const wechatHtml = generateWechatHTML(groupedNews);
     const date = new Date().toLocaleDateString('zh-CN');
     
@@ -112,7 +114,8 @@ async function main() {
         title: `AI 每日快报｜${date}`,
         content: wechatHtml,
         digest: digest.substring(0, 120),
-        publishOnly: true  // 默认仅发布不推送，避免打扰用户
+        publishOnly: true,  // 仅发布到公众号，不主动推送（避免打扰粉丝）
+        preview: false
       });
       
       console.log('\n✅ 发布完成！');

@@ -2,7 +2,7 @@
 
 // 测试 Cloudflare Worker 连接
 
-const PROXY_URL = process.env.WECHAT_PROXY_URL || 'https://withered-cell-1281.wmwm1ok.workers.dev';
+const PROXY_URL = (process.env.WECHAT_PROXY_URL || 'https://withered-cell-1281.wmwm1ok.workers.dev').replace('https://', 'http://');
 
 console.log('测试 Cloudflare Worker 连接...');
 console.log(`URL: ${PROXY_URL}`);

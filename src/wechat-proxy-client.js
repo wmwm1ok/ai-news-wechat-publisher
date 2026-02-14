@@ -1,7 +1,7 @@
-import https from 'https';
+import http from 'http';
 import { CONFIG } from './config.js';
 
-const PROXY_URL = process.env.WECHAT_PROXY_URL;
+const PROXY_URL = process.env.WECHAT_PROXY_URL?.replace('https://', 'http://');
 
 /**
  * 检查是否使用代理模式
@@ -11,29 +11,26 @@ export function isProxyMode() {
 }
 
 /**
- * 使用原生 https 模块发送 POST 请求
+ * 使用 http 模块发送 POST 请求（Worker 使用 HTTP，到微信使用 HTTPS）
  */
-function httpsPost(urlPath, data, timeout = 30000) {
+function httpPost(urlPath, data, timeout = 30000) {
   return new Promise((resolve, reject) => {
     const url = new URL(`${PROXY_URL}${urlPath}`);
     const postData = JSON.stringify(data);
     
     const options = {
       hostname: url.hostname,
-      port: 443,
+      port: 80,
       path: url.pathname + url.search,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Content-Length': Buffer.byteLength(postData)
       },
-      timeout: timeout,
-      // 允许所有 TLS 版本
-      minVersion: 'TLSv1',
-      maxVersion: 'TLSv1.3'
+      timeout: timeout
     };
     
-    const req = https.request(options, (res) => {
+    const req = http.request(options, (res) => {
       let responseData = '';
       
       res.on('data', (chunk) => {
@@ -76,7 +73,7 @@ export async function getAccessTokenViaProxy() {
   console.log(`   URL: ${PROXY_URL}/wechat/token`);
   
   try {
-    const data = await httpsPost('/wechat/token', {
+    const data = await httpPost('/wechat/token', {
       appid: CONFIG.wechat.appId,
       secret: CONFIG.wechat.appSecret
     }, 15000);
@@ -100,7 +97,7 @@ export async function uploadNewsMaterialViaProxy(articles, accessToken) {
   console.log('🔌 使用 Cloudflare Worker 代理上传素材...');
   
   try {
-    const data = await httpsPost('/wechat/uploadnews', {
+    const data = await httpPost('/wechat/uploadnews', {
       access_token: accessToken,
       articles: articles.map(article => ({
         title: article.title,
@@ -134,7 +131,7 @@ export async function publishViaProxy(mediaId, accessToken, publishOnly = true) 
   console.log('🔌 使用 Cloudflare Worker 代理发布消息...');
   
   try {
-    const data = await httpsPost('/wechat/publish', {
+    const data = await httpPost('/wechat/publish', {
       access_token: accessToken,
       media_id: mediaId,
       type: publishOnly ? 'publish' : 'mass'

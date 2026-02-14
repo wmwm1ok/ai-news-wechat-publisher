@@ -152,10 +152,11 @@ async function summarizeOverseasBatch(items) {
 - 严禁添加输入数据中没有的信息
 - 严禁使用"震惊""炸了""爆火"等词汇
 
-【筛选标准】
-1) 从 articles 中筛选最有价值的 6-8 条新闻
+【筛选与去重标准】
+1) 从 articles 中筛选最有价值的 5-7 条新闻
 2) 优先选择：头部公司动态（OpenAI/Google/Meta等）、重要技术突破、大额融资、重大政策
-3) 过滤掉：地方新闻、重复报道、营销软文、过于细分的技术细节
+3) 严格去重：同一事件的多条报道只保留最完整的一条（如"豆包2.0"的多篇报道只选1条）
+4) 过滤掉：地方新闻、重复报道、营销软文、过于细分的技术细节
 
 【分类规则】
 按以下 4 个模块分类（固定）：
@@ -353,5 +354,96 @@ export async function summarizeNews({ domestic, overseas }) {
   const total = Object.values(grouped).flat().length;
   console.log(`📊 最终输出: ${total} 条新闻`);
   
-  return grouped;
+  // 后处理：合并同一公司的重复新闻
+  const finalGrouped = mergeDuplicateNews(grouped);
+  
+  // 重新统计
+  const finalTotal = Object.values(finalGrouped).flat().length;
+  console.log(`📊 去重后: ${finalTotal} 条新闻`);
+  
+  return finalGrouped;
+}
+
+/**
+ * 合并相似新闻（针对同一公司的多条新闻）
+ */
+function mergeDuplicateNews(grouped) {
+  const result = {};
+  
+  for (const [category, items] of Object.entries(grouped)) {
+    if (!items || items.length === 0) {
+      result[category] = [];
+      continue;
+    }
+    
+    const merged = [];
+    const used = new Set();
+    
+    for (let i = 0; i < items.length; i++) {
+      if (used.has(i)) continue;
+      
+      const item = items[i];
+      const duplicates = [item];
+      
+      // 查找相似的新闻（同一主题）
+      for (let j = i + 1; j < items.length; j++) {
+        if (used.has(j)) continue;
+        
+        const other = items[j];
+        
+        // 检查是否是同一主题（通过关键词匹配）
+        const itemKeywords = extractKeywords(item.title);
+        const otherKeywords = extractKeywords(other.title);
+        const commonKeywords = itemKeywords.filter(k => otherKeywords.includes(k));
+        
+        // 如果有 2 个以上共同关键词，认为是重复
+        if (commonKeywords.length >= 2) {
+          duplicates.push(other);
+          used.add(j);
+        }
+      }
+      
+      // 如果有多条重复，保留最详细的一条
+      if (duplicates.length > 1) {
+        console.log(`   🔄 合并 ${duplicates.length} 条相似新闻: "${item.title.substring(0, 30)}..."`);
+        // 选择摘要最长的一条
+        const best = duplicates.reduce((best, current) => 
+          (current.summary?.length || 0) > (best.summary?.length || 0) ? current : best
+        );
+        merged.push(best);
+      } else {
+        merged.push(item);
+      }
+      
+      used.add(i);
+    }
+    
+    result[category] = merged;
+  }
+  
+  return result;
+}
+
+/**
+ * 提取标题关键词（用于去重）
+ */
+function extractKeywords(title) {
+  if (!title) return [];
+  
+  // 提取中文词汇和公司名
+  const keywords = [];
+  
+  // 常见公司名
+  const companies = ['字节', '豆包', 'OpenAI', 'Google', 'Meta', 'Anthropic', '微软', '阿里', '百度', '腾讯'];
+  for (const company of companies) {
+    if (title.includes(company)) keywords.push(company);
+  }
+  
+  // 产品名
+  const products = ['GPT', 'Claude', 'Gemini', 'Llama', 'Kimi', '大模型'];
+  for (const product of products) {
+    if (title.includes(product)) keywords.push(product);
+  }
+  
+  return [...new Set(keywords)];
 }

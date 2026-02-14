@@ -66,8 +66,8 @@ export const CONFIG = {
     appId: process.env.WECHAT_APPID,
     appSecret: process.env.WECHAT_SECRET
   },
-  gnews: {
-    apiKey: process.env.GNEWS_API_KEY
+  serper: {
+    apiKey: process.env.SERPER_API_KEY
   },
   debug: process.env.DEBUG === 'true'
 };

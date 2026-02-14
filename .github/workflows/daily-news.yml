@@ -41,7 +41,7 @@ jobs:
           DEEPSEEK_MODEL: ${{ secrets.DEEPSEEK_MODEL }}
           WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
           WECHAT_SECRET: ${{ secrets.WECHAT_SECRET }}
-          GNEWS_API_KEY: ${{ secrets.GNEWS_API_KEY }}
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
           DEBUG: ${{ vars.DEBUG }}
         run: |
           if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then

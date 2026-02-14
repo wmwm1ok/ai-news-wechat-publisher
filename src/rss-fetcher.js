@@ -2,6 +2,9 @@ import Parser from 'rss-parser';
 import axios from 'axios';
 import { DOMESTIC_RSS_SOURCES, OVERSEAS_RSS_SOURCES, AI_KEYWORDS, CONFIG } from './config.js';
 
+// Serper API 配置
+const SERPER_API_URL = 'https://google.serper.dev/news';
+
 const rssParser = new Parser({
   timeout: 10000,
   headers: {
@@ -50,47 +53,74 @@ async function parseRSS(source) {
 }
 
 /**
- * 从 GNews API 获取海外新闻
+ * 从 Serper API 获取海外新闻
  */
-async function fetchGNews() {
-  if (!CONFIG.gnews.apiKey) {
-    console.log('⚠️ 未配置 GNews API Key，跳过海外新闻抓取');
+async function fetchSerperNews() {
+  if (!CONFIG.serper.apiKey) {
+    console.log('⚠️ 未配置 Serper API Key，跳过海外新闻搜索');
     return [];
   }
   
   try {
-    console.log('📡 正在抓取 GNews...');
+    console.log('📡 正在通过 Serper 搜索海外新闻...');
     
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
+    const searchQueries = [
+      'AI artificial intelligence news',
+      'OpenAI GPT news',
+      'Google Gemini AI news'
+    ];
     
-    const response = await axios.get('https://gnews.io/api/v4/search', {
-      params: {
-        q: 'AI OR "artificial intelligence" OR LLM OR "large language model"',
-        lang: 'en',
-        token: CONFIG.gnews.apiKey,
-        max: 50,
-        sortby: 'publishedAt',
-        from: yesterday.toISOString(),
-        to: new Date().toISOString()
-      },
-      timeout: 15000
+    const allNews = [];
+    
+    for (const query of searchQueries) {
+      const response = await axios.post(SERPER_API_URL, {
+        q: query,
+        gl: 'us',
+        hl: 'en',
+        tbs: 'qdr:d',  // 过去 24 小时
+        num: 10
+      }, {
+        headers: {
+          'X-API-KEY': CONFIG.serper.apiKey,
+          'Content-Type': 'application/json'
+        },
+        timeout: 15000
+      });
+      
+      const news = response.data.news || [];
+      
+      for (const item of news) {
+        if (item.title && item.link) {
+          allNews.push({
+            title: item.title,
+            url: item.link,
+            snippet: item.snippet || item.description || '',
+            source: item.source || 'Serper',
+            publishedAt: item.date || new Date().toISOString(),
+            region: '海外'
+          });
+        }
+      }
+      
+      // 避免 rate limit
+      await new Promise(r => setTimeout(r, 500));
+    }
+    
+    // 去重
+    const seen = new Set();
+    const unique = allNews.filter(item => {
+      if (seen.has(item.url)) return false;
+      seen.add(item.url);
+      return true;
     });
     
-    const articles = response.data.articles || [];
-    const mapped = articles.slice(0, 10).map(item => ({
-      title: item.title || '',
-      url: item.url || '',
-      snippet: item.description || item.content || '',
-      source: item.source?.name || 'GNews',
-      publishedAt: item.publishedAt || new Date().toISOString(),
-      region: '海外'
-    }));
-    
-    console.log(`   ✓ 获取 ${mapped.length} 条海外新闻`);
-    return mapped;
+    console.log(`   ✓ 获取 ${unique.length} 条海外新闻`);
+    return unique.slice(0, 15);
   } catch (error) {
-    console.error(`   ✗ GNews 抓取失败: ${error.message}`);
+    console.error(`   ✗ Serper 搜索失败: ${error.message}`);
+    if (error.response) {
+      console.error(`   响应: ${JSON.stringify(error.response.data)}`);
+    }
     return [];
   }
 }
@@ -115,7 +145,7 @@ export async function fetchAllNews() {
   const [domesticResults, overseasRssResults, gnewsResults] = await Promise.all([
     Promise.all(domesticPromises),
     Promise.all(overseasRssPromises),
-    fetchGNews()
+    fetchSerperNews()
   ]);
   
   // 合并结果

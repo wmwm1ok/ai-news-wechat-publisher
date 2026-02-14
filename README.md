@@ -53,7 +53,7 @@ git push -u origin main
 | `DEEPSEEK_API_KEY` | DeepSeek API 密钥 | [DeepSeek 开放平台](https://platform.deepseek.com/) |
 | `WECHAT_APPID` | 微信公众号 AppID | 微信公众平台 → 开发 → 基本配置 |
 | `WECHAT_SECRET` | 微信公众号 AppSecret | 微信公众平台 → 开发 → 基本配置 |
-| `GNEWS_API_KEY` | GNews API 密钥（可选）| [GNews](https://gnews.io/) |
+| `SERPER_API_KEY` | Serper API 密钥（可选）| [Serper](https://serper.dev/) |
 
 配置步骤：
 1. 打开 GitHub 仓库页面
@@ -206,4 +206,4 @@ MIT
 ## 🙏 致谢
 
 - [DeepSeek](https://deepseek.com/) - AI 能力支持
-- [GNews](https://gnews.io/) - 海外新闻 API
+- [Serper](https://serper.dev/) - Google Search API

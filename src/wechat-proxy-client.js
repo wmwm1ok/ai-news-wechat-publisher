@@ -1,13 +1,22 @@
 import http from 'http';
 import { CONFIG } from './config.js';
 
-const PROXY_URL = process.env.WECHAT_PROXY_URL?.replace('https://', 'http://');
+// 安全读取环境变量
+const RAW_PROXY_URL = process.env.WECHAT_PROXY_URL || '';
+const PROXY_URL = RAW_PROXY_URL.replace(/^https:\/\//, 'http://');
+
+console.log('🔧 [wechat-proxy-client] 初始化:');
+console.log(`   RAW_PROXY_URL: ${RAW_PROXY_URL || '(空)'}`);
+console.log(`   PROXY_URL: ${PROXY_URL || '(空)'}`);
+console.log(`   isProxyMode: ${!!PROXY_URL}`);
 
 /**
  * 检查是否使用代理模式
  */
 export function isProxyMode() {
-  return !!PROXY_URL;
+  const mode = !!PROXY_URL;
+  console.log(`   [isProxyMode] 返回: ${mode}`);
+  return mode;
 }
 
 /**
@@ -65,7 +74,7 @@ function httpPost(urlPath, data, timeout = 30000) {
  * 获取微信 access_token（通过代理）
  */
 export async function getAccessTokenViaProxy() {
-  if (!isProxyMode()) {
+  if (!PROXY_URL) {
     throw new Error('未配置 WECHAT_PROXY_URL');
   }
   

@@ -60,6 +60,16 @@ jobs:
             echo "⚠️ No output directory found"
           fi
       
+      - name: Copy latest.json to root
+        run: |
+          if [ -f "output/latest.json" ]; then
+            echo "📄 Copying output/latest.json to root..."
+            cp output/latest.json latest.json
+            echo "✅ Copied successfully"
+          else
+            echo "⚠️ output/latest.json not found, skipping"
+          fi
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

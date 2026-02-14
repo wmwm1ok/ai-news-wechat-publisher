@@ -2,9 +2,7 @@ import axios from 'axios';
 import { CONFIG } from './config.js';
 import { 
   isProxyMode, 
-  getAccessTokenViaProxy, 
-  uploadNewsMaterialViaProxy, 
-  publishViaProxy 
+  getAccessTokenViaProxy
 } from './wechat-proxy-client.js';
 
 const WECHAT_API_BASE = 'https://api.weixin.qq.com/cgi-bin';
@@ -283,9 +281,13 @@ export async function publishToWechat({
   
   // 3. 上传素材
   console.log('3️⃣ 上传图文素材...');
-  const mediaId = useProxy
-    ? await uploadNewsMaterialViaProxy([article], accessToken)
-    : await uploadNewsMaterial([article], accessToken);
+  
+  // 如果使用代理但公众号未认证，会失败，让外层捕获
+  if (useProxy) {
+    throw new Error('PROXY_MODE_NOT_SUPPORTED_FOR_UNAUTH');
+  }
+  
+  const mediaId = await uploadNewsMaterial([article], accessToken);
   console.log(`   ✓ 素材上传成功，media_id: ${mediaId}\n`);
   
   // 4. 发送/发布
@@ -300,24 +302,12 @@ export async function publishToWechat({
     return { mode: 'preview', mediaId, useProxy };
   } else if (publishOnly) {
     // 仅发布不推送
-    let result;
-    if (useProxy) {
-      result = await publishViaProxy(mediaId, accessToken, true);
-      return { mode: 'publish', mediaId, publishId: result.publish_id, useProxy };
-    } else {
-      const publishId = await publishNews(mediaId, accessToken);
-      return { mode: 'publish', mediaId, publishId, useProxy };
-    }
+    const publishId = await publishNews(mediaId, accessToken);
+    return { mode: 'publish', mediaId, publishId, useProxy };
   } else {
     // 群发推送
-    let result;
-    if (useProxy) {
-      result = await publishViaProxy(mediaId, accessToken, false);
-      return { mode: 'mass', mediaId, msgId: result.msg_id, useProxy };
-    } else {
-      const msgId = await massSendNews(mediaId, accessToken, true);
-      return { mode: 'mass', mediaId, msgId, useProxy };
-    }
+    const msgId = await massSendNews(mediaId, accessToken, true);
+    return { mode: 'mass', mediaId, msgId, useProxy };
   }
 }
 

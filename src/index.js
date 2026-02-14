@@ -133,6 +133,17 @@ async function main() {
       
     } catch (error) {
       console.error('\n❌ 发布失败:', error.message);
+      console.error('\n📋 错误详情:');
+      console.error('   名称:', error.name);
+      console.error('   消息:', error.message);
+      if (error.stack) {
+        console.error('   堆栈:', error.stack.split('\n').slice(0, 3).join('\n         '));
+      }
+      console.error('\n💡 可能的原因:');
+      console.error('   1. 微信公众号 AppID/Secret 错误');
+      console.error('   2. Cloudflare Worker 代理配置错误');
+      console.error('   3. 微信公众号未认证或没有发布权限');
+      console.error('   4. IP 白名单未正确配置');
       process.exit(1);
     }
   } else if (DRY_RUN) {

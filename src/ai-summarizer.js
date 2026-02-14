@@ -84,7 +84,7 @@ async function summarizeSingle(item) {
 时间：${item.publishedAt}
 摘要：${item.snippet}
 
-请基于以上输入数据输出 JSON：`,;
+请基于以上输入数据输出 JSON：`;
 
   try {
     const response = await callDeepSeek(prompt);

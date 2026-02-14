@@ -1,3 +1,4 @@
+import fetch from 'node-fetch';
 import { CONFIG } from './config.js';
 
 const PROXY_URL = process.env.WECHAT_PROXY_URL;
@@ -10,21 +11,29 @@ export function isProxyMode() {
 }
 
 /**
- * 使用原生 fetch API 发送请求
+ * 发送请求（使用 node-fetch）
  */
-async function fetchWithTimeout(url, options = {}, timeout = 30000) {
+async function proxyFetch(path, body, timeout = 30000) {
+  const url = `${PROXY_URL}${path}`;
+  
   const controller = new AbortController();
-  const id = setTimeout(() => controller.abort(), timeout);
+  const timeoutId = setTimeout(() => controller.abort(), timeout);
   
   try {
     const response = await fetch(url, {
-      ...options,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(body),
       signal: controller.signal
     });
-    clearTimeout(id);
-    return response;
+    
+    clearTimeout(timeoutId);
+    return await response.json();
   } catch (error) {
-    clearTimeout(id);
+    clearTimeout(timeoutId);
     throw error;
   }
 }
@@ -41,19 +50,10 @@ export async function getAccessTokenViaProxy() {
   console.log(`   URL: ${PROXY_URL}/wechat/token`);
   
   try {
-    const response = await fetchWithTimeout(`${PROXY_URL}/wechat/token`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'User-Agent': 'AI-News-Publisher/1.0'
-      },
-      body: JSON.stringify({
-        appid: CONFIG.wechat.appId,
-        secret: CONFIG.wechat.appSecret
-      })
-    });
-    
-    const data = await response.json();
+    const data = await proxyFetch('/wechat/token', {
+      appid: CONFIG.wechat.appId,
+      secret: CONFIG.wechat.appSecret
+    }, 15000);
     
     if (data.access_token) {
       console.log('✅ 通过代理获取 access_token 成功');
@@ -77,29 +77,20 @@ export async function uploadNewsMaterialViaProxy(articles, accessToken) {
   console.log('🔌 使用 Cloudflare Worker 代理上传素材...');
   
   try {
-    const response = await fetchWithTimeout(`${PROXY_URL}/wechat/uploadnews`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'User-Agent': 'AI-News-Publisher/1.0'
-      },
-      body: JSON.stringify({
-        access_token: accessToken,
-        articles: articles.map(article => ({
-          title: article.title,
-          thumb_media_id: article.thumbMediaId || '',
-          author: article.author || 'AI日报',
-          digest: article.digest || '',
-          show_cover_pic: article.showCoverPic ?? 0,
-          content: article.content,
-          content_source_url: article.contentSourceUrl || '',
-          need_open_comment: article.needOpenComment ?? 0,
-          only_fans_can_comment: article.onlyFansCanComment ?? 0
-        }))
-      })
+    const data = await proxyFetch('/wechat/uploadnews', {
+      access_token: accessToken,
+      articles: articles.map(article => ({
+        title: article.title,
+        thumb_media_id: article.thumbMediaId || '',
+        author: article.author || 'AI日报',
+        digest: article.digest || '',
+        show_cover_pic: article.showCoverPic ?? 0,
+        content: article.content,
+        content_source_url: article.contentSourceUrl || '',
+        need_open_comment: article.needOpenComment ?? 0,
+        only_fans_can_comment: article.onlyFansCanComment ?? 0
+      }))
     }, 60000);
-    
-    const data = await response.json();
     
     if (data.media_id) {
       console.log('✅ 通过代理上传素材成功');
@@ -123,20 +114,11 @@ export async function publishViaProxy(mediaId, accessToken, publishOnly = true) 
   console.log('🔌 使用 Cloudflare Worker 代理发布消息...');
   
   try {
-    const response = await fetchWithTimeout(`${PROXY_URL}/wechat/publish`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'User-Agent': 'AI-News-Publisher/1.0'
-      },
-      body: JSON.stringify({
-        access_token: accessToken,
-        media_id: mediaId,
-        type: publishOnly ? 'publish' : 'mass'
-      })
-    });
-    
-    const data = await response.json();
+    const data = await proxyFetch('/wechat/publish', {
+      access_token: accessToken,
+      media_id: mediaId,
+      type: publishOnly ? 'publish' : 'mass'
+    }, 15000);
     
     if (data.errcode === 0) {
       console.log('✅ 通过代理发布成功');

@@ -95,6 +95,20 @@ export const OVERSEAS_RSS_SOURCES = [
   }
 ];
 
+// 政策监管相关 RSS 源
+export const POLICY_RSS_SOURCES = [
+  {
+    name: '欧盟 AI 法规新闻',
+    url: 'https://www.europarl.europa.eu/rss/doc/top-stories/en.xml',
+    limit: 2
+  },
+  {
+    name: '美国 FTC 科技新闻',
+    url: 'https://www.ftc.gov/news-events/news/rss',
+    limit: 2
+  }
+];
+
 // 分类配置
 export const SECTION_ORDER = [
   '产品发布与更新',

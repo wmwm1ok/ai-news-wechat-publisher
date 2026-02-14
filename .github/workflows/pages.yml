@@ -39,16 +39,31 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       
-      - name: Prepare site content
+      - name: Download latest news artifact
+        if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
+        uses: actions/download-artifact@v4
+        with:
+          name: news-output-${{ github.event.workflow_run.id }}
+          path: './output'
+          github-token: ${{ github.token }}
+          run-id: ${{ github.event.workflow_run.id }}
+        continue-on-error: true
+      
+      - name: List site content
         run: |
-          mkdir -p docs
-          echo "📁 Preparing site content..."
-          ls -la docs/
+          echo "📁 Site content structure:"
+          ls -la
+          if [ -d "output" ]; then
+            echo "📁 Output directory contents:"
+            ls -la output/
+          else
+            echo "⚠️ No output directory found"
+          fi
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # Upload entire repository including output directory
           path: '.'
       
       - name: Deploy to GitHub Pages

@@ -397,23 +397,37 @@ function mergeDuplicateNews(grouped) {
         const commonKeywords = itemKeywords.filter(k => otherKeywords.includes(k));
         
         // 规则 1: 如果有 2 个以上共同关键词，认为是重复
-        // 规则 2: 如果只有 1 个共同关键词，但标题相似度超过 50%，也认为是重复
+        // 规则 2: 如果只有 1 个共同关键词，但标题相似度超过 40%，也认为是重复
+        // 规则 3: 如果都包含同一公司名且标题相似度超过 30%，也认为是重复
         let isDuplicate = false;
         
         if (commonKeywords.length >= 2) {
           isDuplicate = true;
         } else if (commonKeywords.length === 1) {
-          // 检查标题相似度
           const similarity = calculateSimilarity(item.title, other.title);
-          if (similarity > 0.5) {
+          if (similarity > 0.4) {
             isDuplicate = true;
+          }
+        }
+        
+        // 特殊规则：同一公司的多条新闻，如果标题相似度超过 30%，合并
+        const hasCompany = commonKeywords.some(k => 
+          ['字节', '豆包', 'openai', 'google', 'meta', 'anthropic', '阿里', '百度', '腾讯'].includes(k)
+        );
+        if (hasCompany && !isDuplicate) {
+          const similarity = calculateSimilarity(item.title, other.title);
+          if (similarity > 0.3) {
+            isDuplicate = true;
+            console.log(`     同公司相似: "${other.title.substring(0, 30)}..." (相似度: ${similarity.toFixed(2)})`);
           }
         }
         
         if (isDuplicate) {
           duplicates.push(other);
           used.add(j);
-          console.log(`     相似: "${other.title.substring(0, 30)}..." (共同关键词: ${commonKeywords.join(', ')})`);
+          if (!hasCompany || commonKeywords.length > 0) {
+            console.log(`     相似: "${other.title.substring(0, 30)}..." (共同关键词: ${commonKeywords.join(', ')})`);
+          }
         }
       }
       
@@ -484,7 +498,7 @@ function extractKeywords(title) {
   }
   
   // 技术关键词（用于识别同一主题）
-  const techTerms = ['亲吻数', 'kiss', ' RL ', '强化学习', 'agent', '智能体', '多模态'];
+  const techTerms = ['亲吻数', 'kiss', ' RL ', '强化学习', 'agent', '智能体', '多模态', '情人节'];
   for (const term of techTerms) {
     if (text.includes(term.toLowerCase())) keywords.push(term);
   }

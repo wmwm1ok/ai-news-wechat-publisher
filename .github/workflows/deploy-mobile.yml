@@ -1,0 +1,51 @@
+name: Deploy Mobile Preview
+
+on:
+  push:
+    branches: [ main ]
+  workflow_run:
+    workflows: ["AI Daily News Publisher"]
+    types:
+      - completed
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      
+      - name: Generate mobile preview
+        run: |
+          # 复制最新的 HTML 到 docs
+          mkdir -p docs
+          cp mobile-preview.html docs/index.html
+          
+          # 如果有生成的内容，更新到页面
+          if [ -f output/wechat-ready-*.html ]; then
+            cp output/wechat-ready-*.html docs/latest.html
+          fi
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

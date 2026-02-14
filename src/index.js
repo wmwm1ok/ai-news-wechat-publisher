@@ -155,6 +155,21 @@ async function main() {
       const manualResult = await generateWechatEditorFormat(groupedNews);
       const xiumiResult = await generateXiumiFormat(groupedNews);
       
+      // 生成 JSON 数据供在线编辑器使用
+      const jsonData = {
+        date: new Date().toLocaleDateString('zh-CN'),
+        count: Object.values(groupedNews).flat().length,
+        articles: Object.values(groupedNews).flat().map(item => ({
+          section: item.category || item.section || '其他',
+          title: item.title,
+          company: item.company || '',
+          source: item.source,
+          publishedAt: item.publishedAt,
+          summary: item.summary
+        }))
+      };
+      await saveOutput('latest.json', JSON.stringify(jsonData, null, 2));
+      
       console.log('\n✅ 已生成所有格式的发布文件！');
       console.log('');
       

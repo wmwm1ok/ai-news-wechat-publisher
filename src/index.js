@@ -7,6 +7,7 @@ import { generateHTML, generateWechatHTML } from './html-formatter.js';
 import { publishToWechat } from './wechat-publisher.js';
 import { generateWechatEditorFormat } from './manual-publish-helper.js';
 import { generateXiumiFormat } from './xiumi-formatter.js';
+import { sendDailyNewsEmail } from './email-sender.js';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -156,6 +157,29 @@ async function main() {
       
       console.log('\n✅ 已生成所有格式的发布文件！');
       console.log('');
+      
+      // 发送邮件通知（如果配置了 SMTP）
+      const emailTo = process.env.EMAIL_TO || 'wmwm1ok@gmail.com';
+      if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+        try {
+          console.log('📧 正在发送邮件通知...');
+          await sendDailyNewsEmail({
+            to: emailTo,
+            date: new Date().toLocaleDateString('zh-CN'),
+            xiumiHtmlPath: xiumiResult.xiumiPath,
+            wechatHtmlPath: manualResult.htmlPath,
+            plainTextPath: manualResult.textPath,
+            articleCount: Object.values(groupedNews).flat().length
+          });
+          console.log('✅ 邮件发送完成！');
+        } catch (emailError) {
+          console.error('⚠️  邮件发送失败:', emailError.message);
+          console.log('   但文件已生成，可以手动下载使用');
+        }
+      } else {
+        console.log('ℹ️  未配置 SMTP，跳过邮件发送');
+        console.log('   如需邮件功能，请配置 SMTP_USER 和 SMTP_PASS');
+      }
       
       // 保存错误信息
       await saveOutput(

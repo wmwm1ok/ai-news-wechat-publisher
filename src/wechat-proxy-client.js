@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import https from 'https';
 import { CONFIG } from './config.js';
 
 const PROXY_URL = process.env.WECHAT_PROXY_URL;
@@ -11,31 +11,57 @@ export function isProxyMode() {
 }
 
 /**
- * 发送请求（使用 node-fetch）
+ * 使用原生 https 模块发送 POST 请求
  */
-async function proxyFetch(path, body, timeout = 30000) {
-  const url = `${PROXY_URL}${path}`;
-  
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), timeout);
-  
-  try {
-    const response = await fetch(url, {
+function httpsPost(urlPath, data, timeout = 30000) {
+  return new Promise((resolve, reject) => {
+    const url = new URL(`${PROXY_URL}${urlPath}`);
+    const postData = JSON.stringify(data);
+    
+    const options = {
+      hostname: url.hostname,
+      port: 443,
+      path: url.pathname + url.search,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Content-Length': Buffer.byteLength(postData)
       },
-      body: JSON.stringify(body),
-      signal: controller.signal
+      timeout: timeout,
+      // 允许所有 TLS 版本
+      minVersion: 'TLSv1',
+      maxVersion: 'TLSv1.3'
+    };
+    
+    const req = https.request(options, (res) => {
+      let responseData = '';
+      
+      res.on('data', (chunk) => {
+        responseData += chunk;
+      });
+      
+      res.on('end', () => {
+        try {
+          const parsed = JSON.parse(responseData);
+          resolve(parsed);
+        } catch (e) {
+          reject(new Error(`解析响应失败: ${responseData}`));
+        }
+      });
     });
     
-    clearTimeout(timeoutId);
-    return await response.json();
-  } catch (error) {
-    clearTimeout(timeoutId);
-    throw error;
-  }
+    req.on('error', (error) => {
+      reject(error);
+    });
+    
+    req.on('timeout', () => {
+      req.destroy();
+      reject(new Error('请求超时'));
+    });
+    
+    req.write(postData);
+    req.end();
+  });
 }
 
 /**
@@ -50,7 +76,7 @@ export async function getAccessTokenViaProxy() {
   console.log(`   URL: ${PROXY_URL}/wechat/token`);
   
   try {
-    const data = await proxyFetch('/wechat/token', {
+    const data = await httpsPost('/wechat/token', {
       appid: CONFIG.wechat.appId,
       secret: CONFIG.wechat.appSecret
     }, 15000);
@@ -63,9 +89,6 @@ export async function getAccessTokenViaProxy() {
     throw new Error(`代理返回错误: ${JSON.stringify(data)}`);
   } catch (error) {
     console.error('❌ 代理获取 access_token 失败:', error.message);
-    if (error.name === 'AbortError') {
-      throw new Error('请求超时');
-    }
     throw error;
   }
 }
@@ -77,7 +100,7 @@ export async function uploadNewsMaterialViaProxy(articles, accessToken) {
   console.log('🔌 使用 Cloudflare Worker 代理上传素材...');
   
   try {
-    const data = await proxyFetch('/wechat/uploadnews', {
+    const data = await httpsPost('/wechat/uploadnews', {
       access_token: accessToken,
       articles: articles.map(article => ({
         title: article.title,
@@ -100,9 +123,6 @@ export async function uploadNewsMaterialViaProxy(articles, accessToken) {
     throw new Error(`代理返回错误: ${JSON.stringify(data)}`);
   } catch (error) {
     console.error('❌ 代理上传素材失败:', error.message);
-    if (error.name === 'AbortError') {
-      throw new Error('请求超时');
-    }
     throw error;
   }
 }
@@ -114,7 +134,7 @@ export async function publishViaProxy(mediaId, accessToken, publishOnly = true) 
   console.log('🔌 使用 Cloudflare Worker 代理发布消息...');
   
   try {
-    const data = await proxyFetch('/wechat/publish', {
+    const data = await httpsPost('/wechat/publish', {
       access_token: accessToken,
       media_id: mediaId,
       type: publishOnly ? 'publish' : 'mass'
@@ -128,9 +148,6 @@ export async function publishViaProxy(mediaId, accessToken, publishOnly = true) 
     throw new Error(`代理返回错误: ${JSON.stringify(data)}`);
   } catch (error) {
     console.error('❌ 代理发布失败:', error.message);
-    if (error.name === 'AbortError') {
-      throw new Error('请求超时');
-    }
     throw error;
   }
 }

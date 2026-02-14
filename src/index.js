@@ -110,7 +110,7 @@ async function main() {
   // 3. 发布到微信公众号
   if (!SKIP_PUBLISH && !DRY_RUN) {
     console.log('\n📤 即将发布到微信公众号...');
-    console.log('   注意: 如果失败，请检查 IP 白名单配置\n');
+    console.log('   注意: 未认证公众号需要手动发布\n');
     const wechatHtml = generateWechatHTML(groupedNews);
     const date = new Date().toLocaleDateString('zh-CN');
     

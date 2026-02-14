@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// 直接测试微信 draft/add API
+// 直接测试微信草稿箱 API
 
 import http from 'http';
 
@@ -45,10 +45,10 @@ function httpPost(urlPath, data, timeout = 30000) {
 }
 
 async function main() {
-  console.log('🧪 直接测试微信 API');
-  console.log('==================');
+  console.log('🧪 测试微信草稿箱 API');
+  console.log('====================');
   console.log(`Proxy: ${PROXY_URL}`);
-  console.log(`AppID: ${WECHAT_APPID?.substring(0, 6)}...`);
+  console.log(`AppID: ${WECHAT_APPID?.substring(0, 10)}...`);
   console.log('');
   
   try {
@@ -58,60 +58,65 @@ async function main() {
       appid: WECHAT_APPID,
       secret: WECHAT_SECRET
     });
-    console.log('响应:', JSON.stringify(tokenRes, null, 2));
     
     if (!tokenRes.access_token) {
-      throw new Error('获取 token 失败');
-    }
-    
-    const accessToken = tokenRes.access_token;
-    console.log(`✅ 获取成功: ${accessToken.substring(0, 15)}...`);
-    console.log('');
-    
-    // 2. 添加草稿
-    console.log('2️⃣ 调用 draft/add...');
-    const draftRes = await httpPost('/wechat/draft/add', {
-      access_token: accessToken,
-      articles: [{
-        title: '测试文章 ' + Date.now(),
-        author: '测试',
-        digest: '测试摘要',
-        content: '<p>测试内容</p>',
-        content_source_url: '',
-        thumb_media_id: '',
-        need_open_comment: 1,
-        only_fans_can_comment: 0
-      }]
-    });
-    console.log('响应:', JSON.stringify(draftRes, null, 2));
-    console.log('');
-    
-    if (!draftRes.media_id) {
-      console.error('❌ draft/add 没有返回 media_id');
-      console.error('可能的原因：');
-      console.error('- 微信公众号没有草稿箱权限');
-      console.error('- IP 白名单未配置');
-      console.error('- 需要公众号认证');
+      console.error('❌ 获取 token 失败:', tokenRes);
       process.exit(1);
     }
     
-    const mediaId = draftRes.media_id;
-    console.log(`✅ 草稿创建成功, media_id: ${mediaId}`);
+    const accessToken = tokenRes.access_token;
+    console.log(`✅ 获取成功`);
     console.log('');
     
-    // 3. 尝试发布
-    console.log('3️⃣ 调用 freepublish/submit...');
-    const publishRes = await httpPost('/wechat/publish', {
-      access_token: accessToken,
-      media_id: mediaId,
-      type: 'publish'
-    });
-    console.log('响应:', JSON.stringify(publishRes, null, 2));
+    // 2. 添加草稿（简化字段）
+    console.log('2️⃣ 调用 draft/add（简化字段）...');
     
-    if (publishRes.errcode === 0) {
-      console.log('✅ 发布成功！');
+    // 方法 A: 最简字段
+    const articleA = {
+      title: '测试文章 A ' + Date.now(),
+      content: '<p>测试内容</p>'
+    };
+    
+    console.log('   请求:', JSON.stringify({ articles: [articleA] }));
+    
+    const draftResA = await httpPost('/wechat/draft/add', {
+      access_token: accessToken,
+      articles: [articleA]
+    });
+    
+    console.log('   响应:', JSON.stringify(draftResA, null, 2));
+    
+    if (draftResA.media_id) {
+      console.log(`✅ 草稿 A 创建成功: ${draftResA.media_id}`);
     } else {
-      console.error(`❌ 发布失败: [${publishRes.errcode}] ${publishRes.errmsg}`);
+      console.log('❌ 草稿 A 创建失败');
+      
+      // 方法 B: 带更多字段
+      console.log('');
+      console.log('2️⃣-B 调用 draft/add（完整字段，无 thumb_media_id）...');
+      
+      const articleB = {
+        title: '测试文章 B ' + Date.now(),
+        author: 'AI日报',
+        digest: '测试摘要',
+        content: '<p>测试内容</p>',
+        content_source_url: '',
+        need_open_comment: 1,
+        only_fans_can_comment: 0
+      };
+      
+      const draftResB = await httpPost('/wechat/draft/add', {
+        access_token: accessToken,
+        articles: [articleB]
+      });
+      
+      console.log('   响应:', JSON.stringify(draftResB, null, 2));
+      
+      if (draftResB.media_id) {
+        console.log(`✅ 草稿 B 创建成功: ${draftResB.media_id}`);
+      } else {
+        console.log('❌ 草稿 B 也创建失败');
+      }
     }
     
   } catch (error) {

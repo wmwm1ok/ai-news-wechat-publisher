@@ -1,7 +1,22 @@
 import axios from 'axios';
+import https from 'https';
 import { CONFIG } from './config.js';
 
 const PROXY_URL = process.env.WECHAT_PROXY_URL;
+
+// 创建 axios 实例，配置 TLS 选项
+const createAxiosInstance = () => {
+  return axios.create({
+    timeout: 30000,
+    httpsAgent: new https.Agent({
+      rejectUnauthorized: true,
+      minVersion: 'TLSv1.2'
+    }),
+    headers: {
+      'User-Agent': 'AI-News-Publisher/1.0'
+    }
+  });
+};
 
 /**
  * 检查是否使用代理模式
@@ -19,13 +34,14 @@ export async function getAccessTokenViaProxy() {
   }
   
   console.log('🔌 使用 Cloudflare Worker 代理获取 access_token...');
+  console.log(`   URL: ${PROXY_URL}/wechat/token`);
+  
+  const client = createAxiosInstance();
   
   try {
-    const response = await axios.post(`${PROXY_URL}/wechat/token`, {
+    const response = await client.post(`${PROXY_URL}/wechat/token`, {
       appid: CONFIG.wechat.appId,
       secret: CONFIG.wechat.appSecret
-    }, {
-      timeout: 15000
     });
     
     if (response.data.access_token) {
@@ -49,8 +65,10 @@ export async function getAccessTokenViaProxy() {
 export async function uploadNewsMaterialViaProxy(articles, accessToken) {
   console.log('🔌 使用 Cloudflare Worker 代理上传素材...');
   
+  const client = createAxiosInstance();
+  
   try {
-    const response = await axios.post(`${PROXY_URL}/wechat/uploadnews`, {
+    const response = await client.post(`${PROXY_URL}/wechat/uploadnews`, {
       access_token: accessToken,
       articles: articles.map(article => ({
         title: article.title,
@@ -88,8 +106,10 @@ export async function uploadNewsMaterialViaProxy(articles, accessToken) {
 export async function publishViaProxy(mediaId, accessToken, publishOnly = true) {
   console.log('🔌 使用 Cloudflare Worker 代理发布消息...');
   
+  const client = createAxiosInstance();
+  
   try {
-    const response = await axios.post(`${PROXY_URL}/wechat/publish`, {
+    const response = await client.post(`${PROXY_URL}/wechat/publish`, {
       access_token: accessToken,
       media_id: mediaId,
       type: publishOnly ? 'publish' : 'mass'

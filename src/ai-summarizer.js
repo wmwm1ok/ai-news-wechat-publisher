@@ -396,10 +396,24 @@ function mergeDuplicateNews(grouped) {
         const otherKeywords = extractKeywords(other.title);
         const commonKeywords = itemKeywords.filter(k => otherKeywords.includes(k));
         
-        // 如果有 2 个以上共同关键词，认为是重复
+        // 规则 1: 如果有 2 个以上共同关键词，认为是重复
+        // 规则 2: 如果只有 1 个共同关键词，但标题相似度超过 50%，也认为是重复
+        let isDuplicate = false;
+        
         if (commonKeywords.length >= 2) {
+          isDuplicate = true;
+        } else if (commonKeywords.length === 1) {
+          // 检查标题相似度
+          const similarity = calculateSimilarity(item.title, other.title);
+          if (similarity > 0.5) {
+            isDuplicate = true;
+          }
+        }
+        
+        if (isDuplicate) {
           duplicates.push(other);
           used.add(j);
+          console.log(`     相似: "${other.title.substring(0, 30)}..." (共同关键词: ${commonKeywords.join(', ')})`);
         }
       }
       
@@ -425,25 +439,59 @@ function mergeDuplicateNews(grouped) {
 }
 
 /**
+ * 计算两个字符串的相似度（0-1）
+ */
+function calculateSimilarity(str1, str2) {
+  const s1 = str1.toLowerCase().trim();
+  const s2 = str2.toLowerCase().trim();
+  
+  if (s1 === s2) return 1.0;
+  
+  // 提取中文词汇
+  const words1 = s1.match(/[\u4e00-\u9fa5]+/g) || [];
+  const words2 = s2.match(/[\u4e00-\u9fa5]+/g) || [];
+  
+  if (words1.length === 0 || words2.length === 0) {
+    return s1.includes(s2) || s2.includes(s1) ? 0.8 : 0;
+  }
+  
+  // 计算共同词汇比例
+  const commonWords = words1.filter(w => words2.includes(w));
+  const similarity = (2 * commonWords.length) / (words1.length + words2.length);
+  
+  return similarity;
+}
+
+/**
  * 提取标题关键词（用于去重）
  */
 function extractKeywords(title) {
   if (!title) return [];
   
-  // 提取中文词汇和公司名
   const keywords = [];
+  const text = title.toLowerCase();
   
-  // 常见公司名
-  const companies = ['字节', '豆包', 'OpenAI', 'Google', 'Meta', 'Anthropic', '微软', '阿里', '百度', '腾讯'];
+  // 常见公司名（中文+英文）
+  const companies = ['字节', '豆包', 'openai', 'google', 'meta', 'anthropic', '微软', '阿里', '百度', '腾讯', '智谱'];
   for (const company of companies) {
-    if (title.includes(company)) keywords.push(company);
+    if (text.includes(company.toLowerCase())) keywords.push(company);
   }
   
   // 产品名
-  const products = ['GPT', 'Claude', 'Gemini', 'Llama', 'Kimi', '大模型'];
+  const products = ['gpt', 'claude', 'gemini', 'llama', 'kimi', '大模型', 'sora'];
   for (const product of products) {
-    if (title.includes(product)) keywords.push(product);
+    if (text.includes(product.toLowerCase())) keywords.push(product);
   }
+  
+  // 技术关键词（用于识别同一主题）
+  const techTerms = ['亲吻数', 'kiss', ' RL ', '强化学习', 'agent', '智能体', '多模态'];
+  for (const term of techTerms) {
+    if (text.includes(term.toLowerCase())) keywords.push(term);
+  }
+  
+  // 数字（版本号、年份等）
+  const versionMatch = title.match(/(\d+\.\d+|\d+代)/);
+  if (versionMatch) keywords.push(versionMatch[0]);
   
   return [...new Set(keywords)];
 }

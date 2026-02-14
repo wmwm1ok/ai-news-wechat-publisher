@@ -5,6 +5,7 @@ import { fetchAllNews } from './rss-fetcher.js';
 import { summarizeNews } from './ai-summarizer.js';
 import { generateHTML, generateWechatHTML } from './html-formatter.js';
 import { publishToWechat } from './wechat-publisher.js';
+import { generateWechatEditorFormat } from './manual-publish-helper.js';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -119,17 +120,20 @@ async function main() {
     const digest = allNews.slice(0, 3).map(n => n.title).join('；');
     
     try {
+      // 尝试使用微信 API 发布
       const result = await publishToWechat({
         title: `AI 每日快报｜${date}`,
         content: wechatHtml,
         digest: digest.substring(0, 120),
-        publishOnly: true,  // 仅发布到公众号，不主动推送（避免打扰粉丝）
+        publishOnly: true,
         preview: false
       });
       
       console.log('\n✅ 发布完成！');
       console.log(`   模式: ${result.mode}`);
-      console.log(`   Media ID: ${result.mediaId}`);
+      if (result.mediaId) {
+        console.log(`   Media ID: ${result.mediaId}`);
+      }
       if (result.publishId) {
         console.log(`   Publish ID: ${result.publishId}`);
       }
@@ -141,19 +145,18 @@ async function main() {
       );
       
     } catch (error) {
-      console.error('\n❌ 发布失败:', error.message);
-      console.error('\n📋 错误详情:');
-      console.error('   名称:', error.name);
-      console.error('   消息:', error.message);
-      if (error.stack) {
-        console.error('   堆栈:', error.stack.split('\n').slice(0, 3).join('\n         '));
-      }
-      console.error('\n💡 可能的原因:');
-      console.error('   1. 微信公众号 AppID/Secret 错误');
-      console.error('   2. Cloudflare Worker 代理配置错误');
-      console.error('   3. 微信公众号未认证或没有发布权限');
-      console.error('   4. IP 白名单未正确配置');
-      process.exit(1);
+      // 微信 API 失败，使用手动发布方案
+      console.error('\n⚠️  微信 API 发布失败:', error.message);
+      console.log('\n🔄 切换到手动发布模式（适用于未认证公众号）...\n');
+      
+      // 生成手动发布文件
+      const manualResult = await generateWechatEditorFormat(groupedNews);
+      
+      // 保存错误信息
+      await saveOutput(
+        `publish-error-${new Date().toISOString().split('T')[0]}.txt`,
+        `错误: ${error.message}\n\n已生成手动发布文件:\n- ${manualResult.htmlPath}\n- ${manualResult.textPath}`
+      );
     }
   } else if (DRY_RUN) {
     console.log('🧪 试运行模式：跳过实际发布');

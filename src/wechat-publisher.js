@@ -1,7 +1,14 @@
 import axios from 'axios';
 import { CONFIG } from './config.js';
+import { 
+  isProxyMode, 
+  getAccessTokenViaProxy, 
+  uploadNewsMaterialViaProxy, 
+  publishViaProxy 
+} from './wechat-proxy-client.js';
 
 const WECHAT_API_BASE = 'https://api.weixin.qq.com/cgi-bin';
+const PROXY_URL = process.env.WECHAT_PROXY_URL;
 
 /**
  * 获取当前出口 IP
@@ -247,9 +254,18 @@ export async function publishToWechat({
 }) {
   console.log('\n📤 开始发布到微信公众号...\n');
   
+  // 检测是否使用代理模式
+  const useProxy = isProxyMode();
+  if (useProxy) {
+    console.log(`🔌 使用 Cloudflare Worker 代理: ${PROXY_URL}`);
+    console.log('   这可以解决 GitHub Actions IP 变化导致的白名单问题\n');
+  }
+  
   // 1. 获取 access_token
   console.log('1️⃣ 获取微信 access_token...');
-  const accessToken = await getAccessToken();
+  const accessToken = useProxy 
+    ? await getAccessTokenViaProxy()
+    : await getAccessToken();
   console.log('   ✓ 获取成功\n');
   
   // 2. 准备文章
@@ -267,7 +283,9 @@ export async function publishToWechat({
   
   // 3. 上传素材
   console.log('3️⃣ 上传图文素材...');
-  const mediaId = await uploadNewsMaterial([article], accessToken);
+  const mediaId = useProxy
+    ? await uploadNewsMaterialViaProxy([article], accessToken)
+    : await uploadNewsMaterial([article], accessToken);
   console.log(`   ✓ 素材上传成功，media_id: ${mediaId}\n`);
   
   // 4. 发送/发布
@@ -279,15 +297,27 @@ export async function publishToWechat({
       throw new Error('预览模式需要提供 previewOpenid');
     }
     await previewNews(mediaId, previewOpenid, accessToken);
-    return { mode: 'preview', mediaId };
+    return { mode: 'preview', mediaId, useProxy };
   } else if (publishOnly) {
     // 仅发布不推送
-    const publishId = await publishNews(mediaId, accessToken);
-    return { mode: 'publish', mediaId, publishId };
+    let result;
+    if (useProxy) {
+      result = await publishViaProxy(mediaId, accessToken, true);
+      return { mode: 'publish', mediaId, publishId: result.publish_id, useProxy };
+    } else {
+      const publishId = await publishNews(mediaId, accessToken);
+      return { mode: 'publish', mediaId, publishId, useProxy };
+    }
   } else {
     // 群发推送
-    const msgId = await massSendNews(mediaId, accessToken, true);
-    return { mode: 'mass', mediaId, msgId };
+    let result;
+    if (useProxy) {
+      result = await publishViaProxy(mediaId, accessToken, false);
+      return { mode: 'mass', mediaId, msgId: result.msg_id, useProxy };
+    } else {
+      const msgId = await massSendNews(mediaId, accessToken, true);
+      return { mode: 'mass', mediaId, msgId, useProxy };
+    }
   }
 }
 

@@ -69,8 +69,48 @@ git push -u origin main
 3. 获取 AppID 和 AppSecret
 
 #### 3.2 添加 IP 白名单（重要！）
-1. 在「基本配置」→「IP 白名单」中添加 GitHub Actions 的出口 IP
-2. 由于 GitHub Actions IP 是动态的，建议先运行一次查看日志中的错误 IP，然后添加
+
+GitHub Actions 使用动态 IP，建议通过 **Cloudflare Worker** 提供固定 IP：
+
+**方案 A：使用 Cloudflare Worker 代理（推荐）**
+
+1. 部署 Cloudflare Worker：
+```bash
+cd cloudflare-worker
+./deploy.sh
+# 或者: npx wrangler deploy
+```
+
+2. 获取 Worker URL（如 `https://wechat-api-proxy.xxx.workers.dev`）
+
+3. 将 Worker URL 添加到 GitHub Secrets：
+   - 名称：`WECHAT_PROXY_URL`
+   - 值：`https://wechat-api-proxy.xxx.workers.dev`
+
+4. 将 Cloudflare IP 段添加到微信白名单：
+```
+173.245.48.0/20
+103.21.244.0/22
+103.22.200.0/22
+103.31.4.0/22
+141.101.64.0/18
+108.162.192.0/18
+190.93.240.0/20
+188.114.96.0/20
+197.234.240.0/22
+198.41.128.0/17
+162.158.0.0/15
+104.16.0.0/13
+104.24.0.0/14
+172.64.0.0/13
+131.0.72.0/22
+```
+
+**方案 B：每次手动添加 IP（不推荐）**
+- 运行一次 GitHub Actions，查看日志中的错误信息
+- 日志会显示当前出口 IP
+- 将该 IP 添加到微信白名单
+- ⚠️ 注意：IP 可能会变化，需要重复操作
 
 #### 3.3 开通图文消息接口
 确保公众号已认证，且具有「群发接口」权限。

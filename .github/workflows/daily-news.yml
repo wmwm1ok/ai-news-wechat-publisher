@@ -40,6 +40,7 @@ jobs:
           DEEPSEEK_MODEL: ${{ secrets.DEEPSEEK_MODEL }}
           WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
           WECHAT_SECRET: ${{ secrets.WECHAT_SECRET }}
+          WECHAT_PROXY_URL: ${{ secrets.WECHAT_PROXY_URL }}
           SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
           DEBUG: ${{ vars.DEBUG }}
         run: |

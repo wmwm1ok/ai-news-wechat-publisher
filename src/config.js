@@ -9,10 +9,15 @@ export const AI_KEYWORDS = [
   '多模态', '生成式', '推理', '端到端', '具身',
   'LLM', 'AIGC', 'GPT', 'OpenAI', 'Claude', 'Gemini', 'Sora',
   '智谱', '通义', '文心', 'Kimi', 'MiniMax', '百川', '讯飞星火', '混元',
-  'Agent', '智能体', 'GPU', 'NVIDIA', '英伟达'
+  'Agent', '智能体', 'GPU', 'NVIDIA', '英伟达',
+  // 海外公司
+  'OpenAI', 'Anthropic', 'Google', 'Gemini', 'Meta', 'Llama', 'Microsoft', 
+  'Copilot', 'NVIDIA', 'xAI', 'Grok', 'Perplexity', 'Mistral', 'Stability',
+  'DeepMind', 'LangChain', 'Hugging Face', 'Replicate', 'Scale AI',
+  'Midjourney', 'Runway', 'ElevenLabs', 'Cohere', 'Adept', 'Character.AI'
 ];
 
-// 国内 RSS 源（专注于AI/科技）
+// 国内 RSS 源
 export const DOMESTIC_RSS_SOURCES = [
   {
     name: '机器之心',
@@ -51,58 +56,69 @@ export const OVERSEAS_RSS_SOURCES = [
   {
     name: 'TechCrunch',
     url: 'https://techcrunch.com/feed/',
-    limit: 6
+    limit: 8
   },
   {
     name: 'The Verge',
     url: 'https://www.theverge.com/rss/index.xml',
-    limit: 5
+    limit: 6
   },
   {
     name: 'MIT Technology Review',
     url: 'https://www.technologyreview.com/feed/',
-    limit: 4
+    limit: 5
   },
   {
     name: 'Wired',
     url: 'https://www.wired.com/feed/rss',
-    limit: 4
+    limit: 5
   },
   {
     name: 'Ars Technica',
     url: 'https://arstechnica.com/feed/',
-    limit: 4
+    limit: 5
   },
   {
     name: 'VentureBeat',
     url: 'https://venturebeat.com/feed/',
-    limit: 4
+    limit: 5
   },
   {
-    name: 'AI News (UK)',
+    name: 'AI News UK',
     url: 'https://www.artificialintelligence-news.com/feed/',
-    limit: 4
+    limit: 5
   },
   {
     name: 'ScienceDaily AI',
     url: 'https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml',
-    limit: 3
+    limit: 4
+  },
+  {
+    name: 'Reddit MachineLearning',
+    url: 'https://www.reddit.com/r/MachineLearning/.rss',
+    limit: 6
+  },
+  {
+    name: 'Reddit Artificial',
+    url: 'https://www.reddit.com/r/artificial/.rss',
+    limit: 5
   }
 ];
 
-// 政策监管相关 RSS 源
-export const POLICY_RSS_SOURCES = [
-  {
-    name: '欧盟 AI 法规新闻',
-    url: 'https://www.europarl.europa.eu/rss/doc/top-stories/en.xml',
-    limit: 2
-  },
-  {
-    name: '美国 FTC 科技新闻',
-    url: 'https://www.ftc.gov/news-events/news/rss',
-    limit: 2
+// Reddit/Hacker News 配置
+export const SOCIAL_SOURCES = {
+  reddit: [
+    { name: 'r/MachineLearning', url: 'https://www.reddit.com/r/MachineLearning/.rss' },
+    { name: 'r/artificial', url: 'https://www.reddit.com/r/artificial/.rss' },
+    { name: 'r/OpenAI', url: 'https://www.reddit.com/r/OpenAI/.rss' },
+    { name: 'r/LocalLLaMA', url: 'https://www.reddit.com/r/LocalLLaMA/.rss' }
+  ],
+  hackernews: {
+    // Hacker News 通过 Algolia API 搜索AI相关内容
+    searchUrl: 'https://hn.algolia.com/api/v1/search_by_date',
+    queries: ['OpenAI', 'ChatGPT', 'Claude', 'AI', 'LLM', 'machine learning']
   }
-];
+};
 
 // 分类配置
 export const SECTION_ORDER = [

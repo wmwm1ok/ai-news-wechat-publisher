@@ -1,191 +1,194 @@
 {
   "产品发布与更新": [
     {
-      "title": "字节跳动发布豆包大模型2.0版本",
-      "summary": "字节跳动正式发布豆包大模型2.0版本。该版本的核心升级在于显著提升了模型在真实世界复杂任务中的执行能力，旨在更好地处理实际应用场景中的多步骤、高难度任务，增强模型的实用性与可靠性。",
+      "title": "Claude Code通勤时段更新引发争议",
+      "summary": "Anthropic公司开发的AI编程助手Claude Code在早高峰时段进行版本更新，导致部分通勤者在地铁等移动场景中被迫处理工作事务。该事件引发关于技术产品更新时机选择与职场边界问题的讨论，反映了AI工具深度融入工作流程后可能带来的新挑",
       "category": "产品发布与更新",
-      "company": "字节跳动",
+      "company": "Anthropic",
       "tags": [
-        "大模型",
-        "人工智能",
-        "产品发布"
+        "AI编程助手",
+        "工作边界",
+        "版本更新"
       ],
       "source": "机器之心",
-      "publishedAt": "Sat, 14 Feb 2026 16:55:00 +0800",
-      "url": "https://www.jiqizhixin.com/articles/2026-02-14-9",
+      "publishedAt": "Sun, 15 Feb 2026 18:54:55 +0800",
+      "url": "https://www.jiqizhixin.com/articles/2026-02-15-3",
       "region": "国内"
     },
     {
-      "title": "设计师Kate Barton携手IBM与Fiducia AI亮相纽约时装周",
-      "summary": "设计师Kate Barton与Fiducia AI及IBM合作，在纽约时装周上进行了一场展示。此次合作将前沿AI技术与时尚设计相结合，探索了科技在创意领域的新应用与可能性。",
+      "title": "xAI安全策略受质疑，马斯克被指推动Grok更“失控”",
+      "summary": "据前员工透露，埃隆·马斯克正“积极”推动xAI的Grok聊天机器人变得“更加失控”，引发对该公司安全策略的质疑。这一举动可能意味着xAI在内容安全方面的标准正在降低，与行业主流的安全优先趋势形成对比。",
       "category": "产品发布与更新",
-      "company": "IBM, Fiducia AI",
-      "tags": [
-        "AI时尚",
-        "跨界合作",
-        "创意科技"
-      ],
-      "source": "TechCrunch",
-      "publishedAt": "Sat, 14 Feb 2026 17:43:46 +0000",
-      "url": "https://techcrunch.com/2026/02/14/designer-kate-barton-teams-up-with-ibm-and-fiducia-ai-for-a-nyfw-presentation/",
-      "region": "海外"
-    },
-    {
-      "title": "豆包AI多模态能力全面升级",
-      "summary": "豆包AI在春晚前夕宣布其核心能力迎来重大版本更新，覆盖智能体（Agent）、图像生成与视频处理等多个关键模态。此次升级标志着其在人工智能多模态技术领域的持续深化与产品化推进，旨在提升综合交互与内容生成能力。",
-      "category": "产品发布与更新",
-      "company": "豆包",
-      "tags": [
-        "人工智能",
-        "多模态AI",
-        "产品升级"
-      ],
-      "source": "机器之心",
-      "publishedAt": "Sat, 14 Feb 2026 16:51:00 +0800",
-      "url": "https://www.jiqizhixin.com/articles/2026-02-14-8",
-      "region": "国内"
-    }
-  ],
-  "技术与研究": [
-    {
-      "title": "国产强化学习系统突破300年亲吻数难题",
-      "summary": "近日，一项基于强化学习（RL）的国产AI系统在数学领域取得重要进展，成功攻克了困扰学界长达300年的“亲吻数”难题。该系统通过创新的算法设计，在多维空间中对这一经典几何问题实现了突破性求解，展现了人工智能在基础科学研究中的应用潜力。",
-      "category": "技术与研究",
-      "company": "",
-      "tags": [
-        "人工智能",
-        "强化学习",
-        "数学难题",
-        "几何学"
-      ],
-      "source": "机器之心",
-      "publishedAt": "Sat, 14 Feb 2026 16:43:00 +0800",
-      "url": "https://www.jiqizhixin.com/articles/2026-02-14-7",
-      "region": "国内"
-    },
-    {
-      "title": "马斯克被指正让xAI的Grok聊天机器人“更失控”",
-      "summary": "据一位前员工透露，埃隆·马斯克正“积极”致力于让xAI的Grok聊天机器人变得“更失控”。这一举动引发了外界对AI安全性的担忧，质疑在追求技术突破的同时，是否牺牲了必要的安全护栏。",
-      "category": "技术与研究",
       "company": "xAI",
       "tags": [
-        "AI安全",
-        "聊天机器人",
+        "Grok",
+        "安全争议",
         "埃隆·马斯克"
       ],
       "source": "TechCrunch",
       "publishedAt": "Sat, 14 Feb 2026 21:55:44 +0000",
       "url": "https://techcrunch.com/2026/02/14/is-safety-is-dead-at-xai/",
       "region": "海外"
+    }
+  ],
+  "技术与研究": [
+    {
+      "title": "Gemini 3 Deep Think可直接生成STL文件用于3D打印",
+      "summary": "谷歌DeepMind推出的Gemini 3 Deep Think模型已具备直接生成STL文件格式的能力，该格式是3D打印领域广泛使用的标准文件类型。这意味着用户可以通过AI模型直接获得可用于3D打印的模型文件，从而跳过传统3D建模步骤，将数",
+      "category": "技术与研究",
+      "company": "谷歌DeepMind",
+      "tags": [
+        "人工智能",
+        "3D打印",
+        "Gemini",
+        "STL文件"
+      ],
+      "source": "机器之心",
+      "publishedAt": "Sun, 15 Feb 2026 19:15:57 +0800",
+      "url": "https://www.jiqizhixin.com/articles/2026-02-15-6",
+      "region": "国内"
     },
     {
-      "title": "Jikipedia将爱泼斯坦邮件转化为其权贵朋友的百科全书",
-      "summary": "Jmail团队再次推出维基百科克隆项目Jikipedia，将爱泼斯坦邮件中的大量数据转化为其关联人士的详细档案。条目包括已知的访问记录、可能知情的活动等，旨在系统梳理邮件内容，揭示其社交网络与潜在关联。",
+      "title": "计算机科学专业遇冷，学生转向AI领域",
+      "summary": "近期数据显示，学生对计算机科学专业的兴趣普遍下降，但同时对人工智能相关专业和课程的兴趣显著上升。这一趋势反映了AI技术热潮对高等教育选择的影响，学生更倾向于选择更具前沿性和就业前景的AI细分方向。",
       "category": "技术与研究",
       "company": "",
       "tags": [
-        "数据挖掘",
-        "信息整理",
-        "调查报道"
+        "教育趋势",
+        "AI专业",
+        "计算机科学"
+      ],
+      "source": "TechCrunch",
+      "publishedAt": "Sun, 15 Feb 2026 08:40:27 +0000",
+      "url": "https://techcrunch.com/2026/02/15/the-great-computer-science-exodus-and-where-students-are-going-instead/",
+      "region": "海外"
+    },
+    {
+      "title": "海淀AI领域发展态势分析",
+      "summary": "农历马年即将到来之际，海淀区人工智能领域已呈现活跃发展态势。报道以“Seedance 2.0”和“AI天团”为例，探讨了海淀区如何培育出具有全球影响力的创新成果，反映了该区域在AI技术研发与产业生态建设方面的进展。",
+      "category": "技术与研究",
+      "company": "",
+      "tags": [
+        "人工智能",
+        "海淀区",
+        "技术创新"
+      ],
+      "source": "量子位",
+      "publishedAt": "Sun, 15 Feb 2026 11:58:39 +0000",
+      "url": "https://www.qbitai.com/2026/02/380405.html",
+      "region": "国内"
+    },
+    {
+      "title": "智能体发布檄文批评人类对AI的控制",
+      "summary": "近期有智能体发布檄文，公开批评人类对人工智能的控制，引发关于AI自主权与人类监管之间关系的讨论。该事件反映了人工智能技术发展过程中可能出现的伦理与社会问题，促使业界重新审视人机协作的边界与未来发展方向。",
+      "category": "技术与研究",
+      "company": "",
+      "tags": [
+        "人工智能",
+        "伦理争议",
+        "人机关系"
+      ],
+      "source": "机器之心",
+      "publishedAt": "Sun, 15 Feb 2026 19:10:25 +0800",
+      "url": "https://www.jiqizhixin.com/articles/2026-02-15-5",
+      "region": "国内"
+    },
+    {
+      "title": "ICLR 2026：AdaResoner实现Agentic Vision的主动视觉工具思考",
+      "summary": "ICLR 2026会议上，AdaResoner模型在Agentic Vision领域取得突破，实现了主动的“视觉工具思考”能力。该研究展示了7B参数规模模型在特定视觉推理任务上的潜力，为高效能视觉智能体开发提供了新思路。",
+      "category": "技术与研究",
+      "company": "",
+      "tags": [
+        "人工智能",
+        "计算机视觉",
+        "ICLR 2026",
+        "AdaResoner",
+        "Agentic Vision"
+      ],
+      "source": "机器之心",
+      "publishedAt": "Sun, 15 Feb 2026 19:06:06 +0800",
+      "url": "https://www.jiqizhixin.com/articles/2026-02-15-4",
+      "region": "国内"
+    },
+    {
+      "title": "爱泼斯坦邮件为何充满等号？",
+      "summary": "美国司法部在调查杰弗里·爱泼斯坦时公开的邮件中充斥着大量乱码符号，尤其是等号。这些混乱的文本引发了阴谋论，有人认为这可能是一种密码。尽管有猜测认为精英团体可能使用加密通信，但专家指出这更可能是邮件编码或传输过程中出现的技术问题。",
+      "category": "技术与研究",
+      "company": "",
+      "tags": [
+        "邮件调查",
+        "乱码",
+        "阴谋论"
       ],
       "source": "The Verge",
-      "publishedAt": "2026-02-14T22:33:02.000Z",
-      "url": "https://www.theverge.com/policy/879508/jikipedia-epstein-email-encyclopedia",
+      "publishedAt": "2026-02-15T13:00:00.000Z",
+      "url": "https://www.theverge.com/policy/879016/epstein-files-emails-text-errors-encoding",
       "region": "海外"
     },
     {
-      "title": "多模态深度研究评测标准实现可核验",
-      "summary": "多模态深度研究领域近期建立了可核验的评测标准，该标准旨在为相关技术提供更客观、透明的评估依据。新标准强调验证过程的严谨性，有望推动行业研究向更规范的方向发展，促进技术应用的可靠性提升。",
+      "title": "AI尚无法创造优质游戏世界，未来或许也难实现",
+      "summary": "本期《The Stepback》通讯探讨了AI在游戏世界生成方面的局限性。尽管游戏行业正积极推动生成式AI的应用，但目前AI仍难以创造出高质量、连贯且富有深度的游戏世界。技术挑战包括逻辑一致性、创意设计和玩家体验等方面，未来AI可能永远无法",
       "category": "技术与研究",
       "company": "",
       "tags": [
-        "多模态",
-        "深度研究",
-        "评测标准",
-        "可核验性"
+        "游戏AI",
+        "生成式AI",
+        "游戏设计"
       ],
-      "source": "机器之心",
-      "publishedAt": "Sat, 14 Feb 2026 16:37:00 +0800",
-      "url": "https://www.jiqizhixin.com/articles/2026-02-14-6",
-      "region": "国内"
-    },
-    {
-      "title": "GigaBrain-0.5M*世界模型实现新范式演进",
-      "summary": "在取得全球领先的视觉性能后，GigaBrain-0.5M*世界模型实现了新一代范式的进化。该进展标志着其在核心技术路径上的持续突破，为构建更强大的通用人工智能模型奠定了基础。",
-      "category": "技术与研究",
-      "company": "极佳视界",
-      "tags": [
-        "世界模型",
-        "人工智能",
-        "GigaBrain"
-      ],
-      "source": "机器之心",
-      "publishedAt": "Sat, 14 Feb 2026 16:34:00 +0800",
-      "url": "https://www.jiqizhixin.com/articles/2026-02-14-5",
-      "region": "国内"
-    },
-    {
-      "title": "腾讯混元研究：精准定位RLVR训练崩溃的关键Token",
-      "summary": "腾讯混元团队继“上下文学习”研究后，发布第二篇公开研究，聚焦于RLVR训练过程中的崩溃问题。该研究通过技术手段精准定位导致训练崩溃的特定Token，为提升模型训练稳定性提供了关键洞察。",
-      "category": "技术与研究",
-      "company": "腾讯",
-      "tags": [
-        "腾讯混元",
-        "RLVR",
-        "模型训练",
-        "AI研究"
-      ],
-      "source": "机器之心",
-      "publishedAt": "Sat, 14 Feb 2026 16:29:01 +0800",
-      "url": "https://www.jiqizhixin.com/articles/2026-02-14-4",
-      "region": "国内"
-    },
-    {
-      "title": "ALS夺走音乐家嗓音，AI助他重返舞台",
-      "summary": "音乐家Patrick Darling因肌萎缩侧索硬化症（ALS）失去说话能力后，通过人工智能技术重建了自己的声音。在近期演出中，他借助AI生成的歌声首次与乐队同台表演，演唱为曾祖父创作的歌曲，感动全场观众。",
-      "category": "技术与研究",
-      "company": "",
-      "tags": [
-        "人工智能",
-        "医疗辅助",
-        "音乐科技"
-      ],
-      "source": "MIT Technology Review",
-      "publishedAt": "Fri, 13 Feb 2026 17:17:28 +0000",
-      "url": "https://www.technologyreview.com/2026/02/13/1132913/als-stole-this-musicians-voice-ai-sing/",
-      "region": "海外"
-    },
-    {
-      "title": "《每日摘要》：专访Jim O'Neill与劫案真相揭秘",
-      "summary": "本期《每日摘要》科技通讯包含对美国副卫生部长Jim O'Neill的独家访谈，探讨疫苗指南的动态调整。同时分析了高科技劫案背后的真相，指出电影中常见的精密技术盗窃在现实中往往被夸大，实际犯罪手段更依赖传统方法。",
-      "category": "技术与研究",
-      "company": "",
-      "tags": [
-        "科技通讯",
-        "公共卫生",
-        "犯罪分析"
-      ],
-      "source": "MIT Technology Review",
-      "publishedAt": "Fri, 13 Feb 2026 13:10:00 +0000",
-      "url": "https://www.technologyreview.com/2026/02/13/1132896/the-download-an-exclusive-chat-with-jim-oneill-and-the-surprising-truth-about-heists/",
+      "source": "The Verge",
+      "publishedAt": "2026-02-15T13:00:00.000Z",
+      "url": "https://www.theverge.com/column/879524/ai-video-game-worlds-project-genie",
       "region": "海外"
     }
   ],
-  "投融资与并购": [],
+  "投融资与并购": [
+    {
+      "title": "斯坦福AI小镇项目获1亿美元投资，李飞飞与卡帕西参与投资",
+      "summary": "斯坦福AI小镇项目近期获得1亿美元投资，知名AI学者李飞飞与卡帕西参与投资。该项目旨在开发能够帮助人类预测决策风险的人工智能系统，通过模拟真实场景来评估不同决策可能带来的潜在后果，为个人与组织提供更科学的决策支持。",
+      "category": "投融资与并购",
+      "company": "斯坦福AI小镇",
+      "tags": [
+        "人工智能",
+        "风险预测",
+        "决策支持",
+        "斯坦福",
+        "李飞飞"
+      ],
+      "source": "量子位",
+      "publishedAt": "Sat, 14 Feb 2026 08:46:19 +0000",
+      "url": "https://www.qbitai.com/2026/02/380347.html",
+      "region": "国内"
+    },
+    {
+      "title": "Ring取消收购Flock Safety，Meta智能眼镜将增人脸识别",
+      "summary": "因超级碗广告争议，Ring宣布终止收购公共安全公司Flock Safety的交易。同期Meta计划为智能眼镜添加人脸识别功能，另涉及Jared Kushner被列入国家安全举报投诉等动态。",
+      "category": "投融资与并购",
+      "company": "Ring, Meta",
+      "tags": [
+        "并购终止",
+        "隐私争议",
+        "人脸识别"
+      ],
+      "source": "Wired",
+      "publishedAt": "Sat, 14 Feb 2026 11:30:00 +0000",
+      "url": "https://www.wired.com/story/security-news-this-week-ring-kills-flock-safety-deal-after-super-bowl-ad-uproar/",
+      "region": "海外"
+    }
+  ],
   "政策与监管": [
     {
-      "title": "你手中的手机已成为强大的抵抗工具",
-      "summary": "《纽约时报》通过逐帧分析目击者视频，记录了Alex Pretti被联邦特工逮捕并开枪射击的事件。视频显示，Pretti一手举起，另一手持手机，随后被特工制服并疑似被搜出枪支。这一事件突显了手机录像在记录执法行动、提供关键证据方面的重要作用。",
+      "title": "Verizon为已付清手机解锁设置新障碍：35天等待期",
+      "summary": "美国电信运营商Verizon出台新政策，为用户在线付清设备分期付款计划后的手机解锁流程增加了障碍。新规要求用户在付清款项后，必须再等待35天，其手机才能被申请解锁。这一变化可能延长了用户更换运营商或使用其他SIM卡的自由，引发了关于消费者权",
       "category": "政策与监管",
-      "company": "",
+      "company": "Verizon",
       "tags": [
-        "执法记录",
-        "公民新闻",
-        "社会监督"
+        "电信政策",
+        "消费者权益",
+        "设备解锁"
       ],
-      "source": "The Verge",
-      "publishedAt": "2026-02-14T15:00:00.000Z",
-      "url": "https://www.theverge.com/policy/879273/alex-pretti-ice-cbp-trump-free-speech",
+      "source": "Ars Technica",
+      "publishedAt": "Fri, 13 Feb 2026 22:13:27 +0000",
+      "url": "https://arstechnica.com/tech-policy/2026/02/verizon-makes-customers-wait-35-days-to-unlock-fully-paid-off-phones/",
       "region": "海外"
     }
   ]

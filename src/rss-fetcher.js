@@ -24,6 +24,21 @@ const BLACKLIST_KEYWORDS = [
   '震惊', '炸了', '爆火', '全网', '疯传'
 ];
 
+// 非AI新闻排除词（硬件评测、普通消费电子产品等）
+const NON_AI_KEYWORDS = [
+  // 显示设备
+  'HDMI', '显示器', '显示屏', '屏幕', '电视', 'TV ', 'OLED', 'LCD',
+  // 电脑硬件
+  '笔记本', 'laptop', 'HP ', 'Dell', '华硕', '联想', '宏碁',
+  'CPU', '内存', '硬盘', 'SSD', '显卡', '主板',
+  // 手机平板（非AI相关）
+  'iPhone', 'iPad', '三星手机', '小米手机', '华为手机', 'OPPO', 'vivo',
+  // 游戏
+  '游戏', 'Game', 'Xbox', 'PlayStation', 'Nintendo',
+  // 家电
+  '冰箱', '洗衣机', '空调', '扫地机器人', '吸尘器'
+];
+
 const rssParser = new Parser({
   timeout: 10000,
   headers: {
@@ -86,11 +101,17 @@ function similarity(str1, str2) {
 
 /**
  * 检查文本是否与AI强相关
- * 策略：必须包含至少一个核心AI关键词
+ * 策略：必须包含至少一个核心AI关键词，且不包含非AI关键词
  */
 function containsAIKeywords(text = '') {
   if (!text) return false;
   const lowerText = text.toLowerCase();
+  
+  // 首先排除明显非AI的新闻
+  const isNonAI = NON_AI_KEYWORDS.some(keyword => 
+    lowerText.includes(keyword.toLowerCase())
+  );
+  if (isNonAI) return false;
   
   // 必须包含至少一个核心AI关键词
   const hasCoreKeyword = AI_KEYWORDS_CORE.some(keyword => 

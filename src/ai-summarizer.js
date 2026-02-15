@@ -52,6 +52,33 @@ function inferCategory(title) {
 }
 
 /**
+ * 标准化摘要长度，控制在100-120字
+ */
+function normalizeSummaryLength(summary) {
+  if (!summary) return '暂无摘要';
+  
+  // 移除多余空白
+  summary = summary.trim();
+  
+  // 如果超过120字，截断到120字并在句号处结束
+  if (summary.length > 120) {
+    // 尝试在100-120字之间找句号
+    const endPos = summary.substring(100, 120).indexOf('。');
+    if (endPos !== -1) {
+      summary = summary.substring(0, 100 + endPos + 1);
+    } else {
+      // 找不到句号就截断到120字
+      summary = summary.substring(0, 120);
+    }
+  }
+  
+  // 如果少于100字，尝试补充（实际很少发生）
+  // 暂时不处理，保持原样
+  
+  return summary;
+}
+
+/**
  * 从标题提取公司名
  */
 function extractCompanyFromTitle(title) {
@@ -90,9 +117,13 @@ async function summarizeSingle(item) {
     const response = await callDeepSeek(prompt);
     const parsed = JSON.parse(response);
     
+    // 处理摘要长度，控制在100-120字
+    let summary = parsed.summary || item.snippet?.substring(0, 200) || '暂无摘要';
+    summary = normalizeSummaryLength(summary);
+    
     return {
       title: item.title,  // 永远使用原始标题
-      summary: parsed.summary || item.snippet?.substring(0, 200) || '暂无摘要',
+      summary: summary,
       category: parsed.category || inferCategory(item.title),
       company: parsed.company || extractCompanyFromTitle(item.title),
       tags: parsed.tags || extractTagsFromTitle(item.title),
@@ -143,9 +174,14 @@ async function summarizeOverseasBatch(items) {
         for (let j = 0; j < batch.length; j++) {
           const origItem = batch[j];
           const aiItem = parsed[j] || {};
+          
+          // 处理摘要长度
+          let summary = aiItem.summary || origItem.snippet?.substring(0, 200) || '暂无摘要';
+          summary = normalizeSummaryLength(summary);
+          
           results.push({
             title: origItem.title,  // 永远使用原始标题
-            summary: aiItem.summary || origItem.snippet?.substring(0, 200) || '暂无摘要',
+            summary: summary,
             category: aiItem.category || inferCategory(origItem.title),
             company: aiItem.company || extractCompanyFromTitle(origItem.title),
             tags: aiItem.tags || extractTagsFromTitle(origItem.title),
@@ -162,7 +198,7 @@ async function summarizeOverseasBatch(items) {
       for (const item of batch) {
         results.push({
           title: item.title,
-          summary: item.snippet?.substring(0, 200) || '暂无摘要',
+          summary: normalizeSummaryLength(item.snippet) || '暂无摘要',
           category: inferCategory(item.title),
           company: extractCompanyFromTitle(item.title),
           tags: extractTagsFromTitle(item.title),

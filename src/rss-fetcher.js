@@ -147,7 +147,18 @@ async function parseRSS(source) {
       // 过滤 AI 相关新闻
       .filter(item => containsAIKeywords(item.title) || containsAIKeywords(item.snippet));
     
-    console.log(`   ✓ 获取 ${items.length} 条有效新闻`);
+    console.log(`   ✓ 获取 ${items.length} 条有效新闻 (AI过滤后)`);
+    
+    // 调试：显示被过滤的非AI新闻
+    if (items.length < feed.items.length) {
+      const filteredOut = feed.items
+        .map(item => item.title)
+        .filter(title => !items.some(i => i.title === title));
+      if (filteredOut.length > 0) {
+        console.log(`   🚫 过滤掉 ${filteredOut.length} 条非AI新闻`);
+      }
+    }
+    
     return items;
   } catch (error) {
     console.error(`   ✗ 抓取失败: ${error.message}`);

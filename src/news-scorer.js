@@ -1,154 +1,180 @@
 /**
- * 新闻质量评分系统
- * 多维度评估新闻价值
+ * 新闻质量评分系统 - 实质性内容优先
  */
 
-// 关键词权重 - 核心价值事件
-const IMPACT_KEYWORDS = {
-  // 最高权重 - 行业里程碑
-  10: ['GPT-5', 'GPT-4.5', 'AGI', 'ASI', '通用人工智能', '发布', '上线', '开源'],
-  // 高权重 - 重要产品/技术
-  8: ['Claude', 'Gemini', 'Llama 3', 'Sora', '重磅', '突破', '首次'],
-  // 中高权重 - 融资/大公司动态
-  6: ['融资', 'OpenAI', 'Meta', 'Google', 'Microsoft', 'Amazon', 'IPO', '收购', '并购'],
-  // 中等权重 - 技术进展
-  4: ['论文', '研究', '算法', '模型', '性能提升', '基准测试'],
-  // 低权重 - 普通更新
-  2: ['更新', '优化', '改进', '功能']
+// 实质性指标 - 有具体数据/行动
+const SUBSTANCE_INDICATORS = {
+  // 具体数字（金额、百分比、版本号等）
+  hasNumbers: (text) => {
+    const matches = text.match(/\d+\.?\d*\s*(亿|万|千|百|美元|元|%|倍|个|次|TB|GB|秒|分钟|小时)/g);
+    return matches ? Math.min(matches.length * 3, 10) : 0;
+  },
+  
+  // 具体行动词（已完成，不是计划）
+  actionWords: (text) => {
+    const actions = ['发布', '上线', '开源', '推出', '推出', '完成', '实现', '突破', '收购', '投资', '融资', '达成'];
+    let score = 0;
+    for (const word of actions) {
+      if (text.includes(word)) score += 4;
+    }
+    return Math.min(score, 12);
+  },
+  
+  // 负面指标 - 模糊/计划性词汇
+  vaguePenalty: (text) => {
+    const vagueWords = ['计划', '将', '可能', '或许', '考虑', '拟', '预计', '有望', '或', '传', '据悉', '知情人士'];
+    let penalty = 0;
+    for (const word of vagueWords) {
+      if (text.includes(word)) penalty += 3;
+    }
+    return -Math.min(penalty, 15);
+  },
+  
+  // 技术深度指标
+  technicalDepth: (text) => {
+    const techTerms = ['论文', 'arXiv', 'GitHub', '开源', '代码', '模型', '算法', '架构', '训练', '数据集', '基准测试', '准确率', '性能提升'];
+    let score = 0;
+    for (const term of techTerms) {
+      if (text.includes(term)) score += 3;
+    }
+    return Math.min(score, 15);
+  }
 };
 
-// 来源可信度评分
+// 来源可信度
 const SOURCE_CREDIBILITY = {
-  // 国内权威
   '机器之心': 9,
   '量子位': 9,
-  '36氪': 7,
   'InfoQ': 8,
-  // 海外权威
-  'TechCrunch': 8,
-  'The Verge': 7,
-  'MIT Technology Review': 9,
-  'Wired': 7,
-  'VentureBeat': 6,
-  'Ars Technica': 7,
-  'ZDNet': 5
+  '36氪': 7,
+  'TechCrunch AI': 8,
+  'MIT Technology Review': 10,
+  'The Verge AI': 7,
+  'VentureBeat AI': 7,
+  'Wired AI': 7,
+  'Serper': 6
 };
 
 /**
- * 计算新闻影响力评分
+ * 计算内容实质性评分（0-40分）
  */
-function calculateImpactScore(title, summary) {
-  const text = (title + ' ' + summary).toLowerCase();
+function calculateSubstanceScore(title, summary) {
+  const text = title + ' ' + summary;
+  
   let score = 0;
-  let matchedKeywords = [];
+  score += SUBSTANCE_INDICATORS.hasNumbers(text);
+  score += SUBSTANCE_INDICATORS.actionWords(text);
+  score += SUBSTANCE_INDICATORS.vaguePenalty(text);
+  score += SUBSTANCE_INDICATORS.technicalDepth(text);
   
-  for (const [weight, keywords] of Object.entries(IMPACT_KEYWORDS)) {
-    for (const keyword of keywords) {
-      if (text.includes(keyword.toLowerCase())) {
-        score += parseInt(weight);
-        matchedKeywords.push(keyword);
-      }
-    }
-  }
-  
-  return { score: Math.min(score, 25), keywords: matchedKeywords };
+  return Math.max(0, Math.min(score, 40));
 }
 
 /**
- * 计算新颖度评分
- * 基于标题独特性和技术前沿性
+ * 计算重要性评分（0-30分）
  */
-function calculateNoveltyScore(title, existingTitles) {
-  // 检查是否与已有新闻相似
+function calculateImportanceScore(title, summary) {
+  const text = (title + ' ' + summary).toLowerCase();
+  let score = 0;
+  
+  // 头部公司动态
+  const topCompanies = ['openai', 'google', 'meta', 'anthropic', 'microsoft', 'nvidia', '字节', '阿里', '腾讯', '百度'];
+  for (const company of topCompanies) {
+    if (text.includes(company.toLowerCase())) {
+      score += 5;
+      break; // 只算一次
+    }
+  }
+  
+  // 重要产品/技术
+  if (text.includes('gpt-4') || text.includes('gpt-5') || text.includes('claude 3') || text.includes('gemini')) score += 6;
+  if (text.includes('agi') || text.includes('开源') || text.includes('突破')) score += 5;
+  
+  // 大额融资
+  if (text.includes('融资') && (text.includes('亿') || text.includes('billion'))) score += 8;
+  
+  return Math.min(score, 30);
+}
+
+/**
+ * 计算时效性（0-10分）
+ */
+function calculateTimeliness(publishedAt) {
+  const hoursAgo = (new Date() - new Date(publishedAt)) / (1000 * 60 * 60);
+  
+  if (hoursAgo < 6) return 10;
+  if (hoursAgo < 12) return 8;
+  if (hoursAgo < 24) return 6;
+  if (hoursAgo < 36) return 4;
+  return 2;
+}
+
+/**
+ * 检查是否重复/相似
+ */
+function isDuplicate(title, existingTitles) {
   const normalized = title.toLowerCase().replace(/[^\w\u4e00-\u9fa5]/g, '');
   
   for (const existing of existingTitles) {
     const existingNorm = existing.toLowerCase().replace(/[^\w\u4e00-\u9fa5]/g, '');
-    // 相似度检查
-    if (similarity(normalized, existingNorm) > 0.6) {
-      return { score: 0, reason: '相似新闻已存在' };
+    
+    // 计算相似度
+    let common = 0;
+    for (let i = 0; i < Math.min(normalized.length, existingNorm.length); i++) {
+      if (normalized[i] === existingNorm[i]) common++;
     }
+    const similarity = common / Math.max(normalized.length, existingNorm.length);
+    
+    if (similarity > 0.6) return true;
   }
   
-  // 前沿技术加分
-  let score = 5; // 基础分
-  const frontierTerms = ['多模态', 'Agent', '具身智能', '世界模型', '推理', 'RAG'];
-  for (const term of frontierTerms) {
-    if (title.toLowerCase().includes(term.toLowerCase())) {
-      score += 3;
-    }
-  }
-  
-  return { score: Math.min(score, 15), reason: '新颖内容' };
-}
-
-/**
- * 计算时效性评分
- * 越新分数越高
- */
-function calculateTimelinessScore(publishedAt) {
-  const hoursAgo = (new Date() - new Date(publishedAt)) / (1000 * 60 * 60);
-  
-  if (hoursAgo < 6) return 10;  // 6小时内 - 最热
-  if (hoursAgo < 12) return 8;  // 12小时内
-  if (hoursAgo < 24) return 6;  // 24小时内
-  if (hoursAgo < 36) return 4;  // 36小时内
-  return 2; // 更旧的
+  return false;
 }
 
 /**
  * 综合评分
  */
 export function scoreNews(news, existingTitles) {
-  const impact = calculateImpactScore(news.title, news.snippet || '');
-  const novelty = calculateNoveltyScore(news.title, existingTitles);
-  const timeliness = calculateTimelinessScore(news.publishedAt);
+  // 检查重复
+  if (isDuplicate(news.title, existingTitles)) {
+    return { score: 0, isDuplicate: true, reason: '重复新闻' };
+  }
+  
+  // 非AI新闻过滤（简单检查）
+  const nonAIIndicators = ['旅游', '酒店', '餐饮', '电影', '娱乐', '体育', '天气'];
+  for (const indicator of nonAIIndicators) {
+    if (news.title.includes(indicator) && !news.title.includes('AI') && !news.title.includes('智能')) {
+      return { score: 0, isDuplicate: true, reason: '非AI新闻' };
+    }
+  }
+  
+  const substance = calculateSubstanceScore(news.title, news.summary);
+  const importance = calculateImportanceScore(news.title, news.summary);
+  const timeliness = calculateTimeliness(news.publishedAt);
   const credibility = SOURCE_CREDIBILITY[news.source] || 5;
   
-  // 国内新闻稍微加分（读者更关注）
-  const regionBonus = news.region === '国内' ? 2 : 0;
-  
-  const totalScore = impact.score + novelty.score + timeliness + credibility + regionBonus;
+  const totalScore = substance + importance + timeliness + credibility;
   
   return {
     score: totalScore,
     breakdown: {
-      impact: impact.score,
-      novelty: novelty.score,
+      substance,
+      importance,
       timeliness,
-      credibility,
-      regionBonus
+      credibility
     },
-    matchedKeywords: impact.keywords,
-    noveltyReason: novelty.reason,
-    isDuplicate: novelty.score === 0
+    isDuplicate: false
   };
 }
 
 /**
- * 简单字符串相似度
- */
-function similarity(s1, s2) {
-  if (s1 === s2) return 1;
-  if (s1.length < 3 || s2.length < 3) return 0;
-  
-  // 计算共同子串比例
-  let common = 0;
-  for (let i = 0; i < Math.min(s1.length, s2.length); i++) {
-    if (s1[i] === s2[i]) common++;
-  }
-  return common / Math.max(s1.length, s2.length);
-}
-
-/**
- * 智能排序和选择
- * 确保多样性 + 高质量
+ * 智能选择TOP新闻
  */
 export function selectTopNews(newsList, targetCount = 12) {
   const existingTitles = [];
   const scored = [];
   
-  // 给所有新闻打分
+  // 评分
   for (const news of newsList) {
     const scoring = scoreNews(news, existingTitles);
     if (!scoring.isDuplicate) {
@@ -163,29 +189,25 @@ export function selectTopNews(newsList, targetCount = 12) {
   // 选择时确保多样性
   const selected = [];
   const sourceCount = {};
-  const categoryCount = {
-    '产品发布与更新': 0,
-    '技术与研究': 0,
-    '投融资与并购': 0,
-    '政策与监管': 0
-  };
+  const categoryCount = {};
   
-  // 第一轮：确保每个分类至少1条，每个源最多2条
+  // 第一轮：严格筛选（每个源最多2条，每个分类最多3条）
   for (const news of scored) {
     if (selected.length >= targetCount) break;
+    if (news.score < 25) continue; // 质量门槛
     
     const source = news.source;
     const category = news.category || '技术与研究';
     
     if ((sourceCount[source] || 0) >= 2) continue;
-    if (categoryCount[category] >= 4) continue;
+    if ((categoryCount[category] || 0) >= 3) continue;
     
     selected.push(news);
     sourceCount[source] = (sourceCount[source] || 0) + 1;
     categoryCount[category] = (categoryCount[category] || 0) + 1;
   }
   
-  // 第二轮：填满剩余位置
+  // 第二轮：放宽条件填满
   for (const news of scored) {
     if (selected.length >= targetCount) break;
     if (selected.includes(news)) continue;
@@ -195,10 +217,11 @@ export function selectTopNews(newsList, targetCount = 12) {
     sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
   }
   
-  console.log('\n📊 新闻评分统计:');
-  console.log(`   候选总数: ${scored.length}`);
-  console.log(`   入选数量: ${selected.length}`);
-  console.log(`   平均分数: ${(selected.reduce((a, b) => a + b.score, 0) / selected.length).toFixed(1)}`);
+  // 统计
+  console.log('\n📊 质量评分统计:');
+  console.log(`   候选: ${scored.length} 条`);
+  console.log(`   入选: ${selected.length} 条`);
+  console.log(`   平均分: ${(selected.reduce((a, b) => a + b.score, 0) / selected.length).toFixed(1)}`);
   console.log('   源分布:', Object.entries(sourceCount).map(([s, c]) => `${s}:${c}`).join(', '));
   
   return selected;

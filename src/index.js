@@ -2,13 +2,11 @@
 
 import { fetchAllNews } from './rss-fetcher.js';
 import { summarizeNews } from './ai-summarizer.js';
+import { selectTopNews } from './news-scorer.js';
 import { generateHTML, generateWechatHTML } from './html-formatter.js';
 import fs from 'fs/promises';
 import path from 'path';
 
-/**
- * 保存文件
- */
 async function saveOutput(filename, content) {
   const outputDir = 'output';
   await fs.mkdir(outputDir, { recursive: true });
@@ -19,13 +17,10 @@ async function saveOutput(filename, content) {
   return filepath;
 }
 
-/**
- * 主流程
- */
 async function main() {
-  console.log('\n' + '='.repeat(50));
-  console.log('🚀 AI 新闻自动抓取系统');
-  console.log('='.repeat(50) + '\n');
+  console.log('\n' + '='.repeat(60));
+  console.log('🚀 AI 新闻智能筛选系统 (专业版)');
+  console.log('='.repeat(60) + '\n');
   
   // 检查 API Key
   if (!process.env.DEEPSEEK_API_KEY) {
@@ -43,55 +38,74 @@ async function main() {
     process.exit(1);
   }
   
-  // 2. AI 总结
-  const groupedNews = await summarizeNews(news);
+  console.log(`\n📊 抓取完成: 国内 ${news.domestic.length} 条, 海外 ${news.overseas.length} 条`);
   
-  const totalNews = Object.values(groupedNews).flat().length;
-  if (totalNews === 0) {
-    console.error('❌ 没有生成有效新闻');
+  // 2. AI 总结和分类
+  const allNews = await summarizeNews(news);
+  
+  console.log(`\n📝 AI总结完成: ${allNews.length} 条新闻`);
+  
+  // 3. 质量评分和智能筛选
+  console.log('\n🎯 开始质量评分...');
+  const topNews = selectTopNews(allNews, 12);
+  
+  if (topNews.length === 0) {
+    console.error('❌ 没有符合质量标准的新闻');
     process.exit(1);
   }
   
-  // 3. 生成 HTML
-  const html = generateHTML(groupedNews);
-  const wechatHtml = generateWechatHTML(groupedNews);
+  // 4. 按分类分组
+  const grouped = {};
+  for (const section of ['产品发布与更新', '技术与研究', '投融资与并购', '政策与监管']) {
+    grouped[section] = topNews.filter(n => n.category === section);
+  }
+  
+  const totalNews = Object.values(grouped).flat().length;
+  
+  // 5. 生成 HTML
+  const html = generateHTML(grouped);
+  const wechatHtml = generateWechatHTML(grouped);
   
   const date = new Date().toISOString().split('T')[0];
   await saveOutput(`newsletter-${date}.html`, html);
   await saveOutput(`wechat-${date}.html`, wechatHtml);
   
-  // 4. 生成 JSON 供在线编辑器使用
+  // 6. 生成 JSON
   const jsonData = {
     date: new Date().toLocaleDateString('zh-CN'),
     count: totalNews,
-    articles: Object.values(groupedNews).flat().map(item => ({
+    articles: topNews.map(item => ({
       section: item.category,
       title: item.title,
       company: item.company || '',
       source: item.source,
       publishedAt: item.publishedAt,
-      summary: item.summary
+      summary: item.summary,
+      score: item.score,
+      matchedKeywords: item.matchedKeywords
     }))
   };
   await saveOutput('latest.json', JSON.stringify(jsonData, null, 2));
-  await saveOutput(`news-${date}.json`, JSON.stringify(groupedNews, null, 2));
+  await saveOutput(`news-${date}.json`, JSON.stringify(grouped, null, 2));
   
-  // 5. 统计输出
-  console.log(`\n📊 生成完成: ${totalNews} 条新闻`);
-  console.log('分类统计:');
-  for (const [section, items] of Object.entries(groupedNews)) {
+  // 7. 统计输出
+  console.log(`\n${'='.repeat(60)}`);
+  console.log('📊 最终输出统计');
+  console.log('='.repeat(60));
+  console.log(`总计: ${totalNews} 条高质量新闻`);
+  console.log('\n分类分布:');
+  for (const [section, items] of Object.entries(grouped)) {
     if (items.length > 0) {
       const domestic = items.filter(i => i.region === '国内').length;
       const overseas = items.filter(i => i.region === '海外').length;
-      console.log(`   ${section}: ${items.length} 条 (🇨🇳${domestic} / 🇺🇸${overseas})`);
+      console.log(`   ${section}: ${items.length} 条 (🇨🇳${domestic}/🇺🇸${overseas})`);
     }
   }
   
   console.log('\n✅ 全部完成！');
-  console.log('='.repeat(50) + '\n');
+  console.log('='.repeat(60) + '\n');
 }
 
-// 运行
 main().catch(error => {
   console.error('\n❌ 错误:', error.message);
   process.exit(1);

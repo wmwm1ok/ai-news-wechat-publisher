@@ -1,11 +1,7 @@
 import Parser from 'rss-parser';
 import axios from 'axios';
-import { DOMESTIC_RSS_SOURCES, OVERSEAS_RSS_SOURCES, AI_KEYWORDS_CORE, CONFIG } from './config.js';
+import { DOMESTIC_RSS_SOURCES, OVERSEAS_RSS_SOURCES, CONFIG } from './config.js';
 
-// Serper API 配置
-const SERPER_API_URL = 'https://google.serper.dev/news';
-
-// 新闻新鲜度：只保留 48 小时内的新闻
 const FRESHNESS_HOURS = 48;
 
 const rssParser = new Parser({
@@ -15,9 +11,6 @@ const rssParser = new Parser({
   }
 });
 
-/**
- * 检查新闻是否足够新鲜（48小时内）
- */
 function isFreshNews(publishedAt) {
   if (!publishedAt) return true;
   
@@ -28,79 +21,55 @@ function isFreshNews(publishedAt) {
   return diffHours <= FRESHNESS_HOURS;
 }
 
-/**
- * 检查是否是AI相关新闻
- * 策略：标题或摘要必须包含核心AI关键词
- */
-function isAIRelated(title = '', snippet = '') {
-  const text = (title + ' ' + snippet).toLowerCase();
-  
-  // 必须包含至少一个AI关键词
-  const hasAI = AI_KEYWORDS_CORE.some(keyword => 
-    text.includes(keyword.toLowerCase())
-  );
-  
-  return hasAI;
-}
-
-/**
- * 解析 RSS Feed
- */
 async function parseRSS(source) {
   try {
-    console.log(`📡 正在抓取: ${source.name}`);
+    console.log(`📡 ${source.name}`);
     const feed = await rssParser.parseURL(source.url);
     
-    let items = feed.items
+    const items = feed.items
       .map(item => ({
         title: item.title || '',
         url: item.link || item.url || '',
         snippet: item.contentSnippet || item.summary || item.content || '',
         source: source.name,
         publishedAt: item.pubDate || item.isoDate || new Date().toISOString(),
-        region: source.region || (DOMESTIC_RSS_SOURCES.includes(source) ? '国内' : '海外')
+        region: DOMESTIC_RSS_SOURCES.includes(source) ? '国内' : '海外'
       }))
       .filter(item => isFreshNews(item.publishedAt))
-      .filter(item => isAIRelated(item.title, item.snippet))
-      .slice(0, 5); // 每个源最多取5条
+      .slice(0, source.limit || 5);
     
-    console.log(`   ✓ 获取 ${items.length}/${feed.items.length} 条AI相关新闻`);
+    console.log(`   ✓ ${items.length} 条`);
     return items;
   } catch (error) {
-    console.error(`   ✗ 抓取失败: ${error.message}`);
+    console.error(`   ✗ 失败: ${error.message}`);
     return [];
   }
 }
 
-/**
- * 从 Serper API 获取海外新闻
- */
 async function fetchSerperNews() {
   if (!CONFIG.serper.apiKey) {
-    console.log('⚠️ 未配置 Serper API Key，跳过海外新闻搜索');
     return [];
   }
   
   try {
-    console.log('📡 正在通过 Serper 搜索海外新闻...');
+    console.log('📡 Serper API');
     
-    const searchQueries = [
-      'AI artificial intelligence news today',
-      'OpenAI GPT ChatGPT news',
+    const queries = [
+      'OpenAI GPT news today',
       'Google Gemini AI news',
       'Anthropic Claude AI news'
     ];
     
     const allNews = [];
     
-    for (const query of searchQueries) {
+    for (const query of queries) {
       try {
-        const response = await axios.post(SERPER_API_URL, {
+        const response = await axios.post('https://google.serper.dev/news', {
           q: query,
           gl: 'us',
           hl: 'en',
           tbs: 'qdr:d',
-          num: 10
+          num: 5
         }, {
           headers: {
             'X-API-KEY': CONFIG.serper.apiKey,
@@ -109,96 +78,67 @@ async function fetchSerperNews() {
           timeout: 15000
         });
         
-        const news = response.data.news || [];
-        
-        for (const item of news) {
-          if (item.title && item.link && isAIRelated(item.title)) {
+        for (const item of response.data.news || []) {
+          if (item.title && item.link) {
             allNews.push({
               title: item.title,
               url: item.link,
-              snippet: item.snippet || item.description || '',
+              snippet: item.snippet || '',
               source: item.source || 'Serper',
               publishedAt: item.date || new Date().toISOString(),
               region: '海外'
             });
           }
         }
-      } catch (error) {
-        // 忽略错误
-      }
+      } catch (e) {}
       
       await new Promise(r => setTimeout(r, 200));
     }
     
-    console.log(`   ✓ 获取 ${allNews.length} 条海外新闻`);
+    console.log(`   ✓ ${allNews.length} 条`);
     return allNews;
   } catch (error) {
-    console.error('Serper API 调用失败:', error.message);
     return [];
   }
 }
 
-/**
- * 执行智能去重
- */
-function deduplicateNews(news) {
-  const seen = new Map();
-  const duplicates = [];
+function deduplicate(news) {
+  const seen = new Set();
+  const result = [];
   
   for (const item of news) {
     const key = item.title.toLowerCase().trim();
-    if (seen.has(key)) {
-      duplicates.push(item);
-    } else {
-      seen.set(key, item);
+    if (!seen.has(key)) {
+      seen.add(key);
+      result.push(item);
     }
   }
   
-  for (const dup of duplicates) {
-    console.log(`   🔄 去重: "${dup.title.substring(0, 50)}..."`);
-  }
-  
-  return Array.from(seen.values());
+  return result;
 }
 
-/**
- * 抓取所有新闻
- */
 export async function fetchAllNews() {
-  console.log('\n📰 开始抓取新闻...');
-  console.log(`   新鲜度要求: ${FRESHNESS_HOURS}小时内\n`);
+  console.log('📰 抓取新闻中...\n');
   
-  // 国内 RSS
-  const domesticNews = [];
+  const domestic = [];
   for (const source of DOMESTIC_RSS_SOURCES) {
     const items = await parseRSS(source);
-    domesticNews.push(...items);
+    domestic.push(...items);
   }
   
-  // 海外 RSS
-  const overseasNews = [];
+  const overseas = [];
   for (const source of OVERSEAS_RSS_SOURCES) {
     const items = await parseRSS(source);
-    overseasNews.push(...items);
+    overseas.push(...items);
   }
   
-  // Serper API
   const serperNews = await fetchSerperNews();
-  overseasNews.push(...serperNews);
+  overseas.push(...serperNews);
   
-  console.log(`\n📊 原始抓取:`);
-  console.log(`   国内: ${domesticNews.length} 条`);
-  console.log(`   海外: ${overseasNews.length} 条`);
+  const uniqueDomestic = deduplicate(domestic);
+  const uniqueOverseas = deduplicate(overseas);
   
-  // 去重
-  console.log(`\n🔄 执行智能去重...`);
-  const uniqueDomestic = deduplicateNews(domesticNews);
-  const uniqueOverseas = deduplicateNews(overseasNews);
-  
-  console.log(`\n📊 去重后:`);
-  console.log(`   国内: ${uniqueDomestic.length} 条`);
-  console.log(`   海外: ${uniqueOverseas.length} 条`);
-  console.log(`   总计: ${uniqueDomestic.length + uniqueOverseas.length} 条`);
+  console.log(`\n📊 去重后: 国内 ${uniqueDomestic.length}, 海外 ${uniqueOverseas.length}`);
   
   return {
     domestic: uniqueDomestic,

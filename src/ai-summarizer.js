@@ -1,9 +1,6 @@
 import axios from 'axios';
-import { CONFIG, SECTION_ORDER } from './config.js';
+import { CONFIG } from './config.js';
 
-/**
- * 调用 DeepSeek API
- */
 async function callDeepSeek(prompt) {
   try {
     const response = await axios.post(
@@ -34,9 +31,6 @@ async function callDeepSeek(prompt) {
   }
 }
 
-/**
- * 从标题推断分类
- */
 function inferCategory(title) {
   const t = title.toLowerCase();
   if (t.includes('发布') || t.includes('上线') || t.includes('推出') || t.includes('更新') || t.includes('launch') || t.includes('release')) {
@@ -51,9 +45,6 @@ function inferCategory(title) {
   return '技术与研究';
 }
 
-/**
- * 从标题提取公司名
- */
 function extractCompanyFromTitle(title) {
   if (!title) return '';
   const companies = ['字节','豆包','百度','阿里','腾讯','智谱','月之暗面','Kimi','MiniMax','稀宇',
@@ -66,28 +57,9 @@ function extractCompanyFromTitle(title) {
   return '';
 }
 
-/**
- * 从标题提取标签
- */
-function extractTagsFromTitle(title) {
-  if (!title) return ['AI'];
-  const tags = [];
-  const keywords = ['AI','大模型','GPT','Claude','Gemini','LLM','多模态','生成式','Agent','芯片','自动驾驶','机器人','深度学习'];
-  const t = title.toLowerCase();
-  for (const k of keywords) {
-    if (t.includes(k.toLowerCase())) tags.push(k);
-  }
-  return tags.length > 0 ? tags.slice(0, 3) : ['AI'];
-}
-
-/**
- * 标准化摘要长度，控制在100-120字
- */
-function normalizeSummaryLength(summary) {
+function normalizeSummary(summary) {
   if (!summary) return '暂无摘要';
-  
   summary = summary.trim();
-  
   if (summary.length > 120) {
     const endPos = summary.substring(100, 120).indexOf('。');
     if (endPos !== -1) {
@@ -96,58 +68,46 @@ function normalizeSummaryLength(summary) {
       summary = summary.substring(0, 120);
     }
   }
-  
   return summary;
 }
 
-/**
- * 单条新闻总结 - 标题永远用原始标题
- */
 async function summarizeSingle(item) {
-  const prompt = `为以下新闻写中文标题、摘要和分类。\n\n原文标题：${item.title}\n内容摘要：${item.snippet}\n\n输出JSON（严格格式）：\n{"title_cn":"中文标题（简洁专业）","summary":"100-120字专业摘要","category":"产品发布与更新/技术与研究/投融资与并购/政策与监管","company":"公司名（从标题提取，没有就空字符串）","tags":["标签1","标签2"]}\n\n规则：\n1. title_cn：将原文标题翻译为简洁的中文标题，去除营销词汇\n2. summary：严格控制在100-120字，不要过长或过短\n3. summary必须基于输入内容，严禁编造\n4. company：从标题中提取公司名，如未提及则返回空字符串，不要写解释\n5. category判断：发布/更新→产品发布与更新；融资/并购→投融资与并购；政策/法规→政策与监管；其他→技术与研究\n6. 只输出JSON，不要其他内容`;
+  const prompt = `为以下新闻写中文标题、摘要和分类。
+
+原文标题：${item.title}
+内容摘要：${item.snippet}
+
+输出JSON：
+{"title_cn":"中文标题（简洁专业）","summary":"100-120字摘要","category":"产品发布与更新/技术与研究/投融资与并购/政策与监管","company":"公司名（没有就空字符串）"}
+
+规则：
+1. title_cn：将原文翻译为简洁中文标题
+2. summary：严格100-120字，基于输入内容
+3. company：提取公司名，未提及则返回空字符串
+4. 只输出JSON`;
 
   try {
     const response = await callDeepSeek(prompt);
     const parsed = JSON.parse(response);
     
-    // 处理摘要长度
-    let summary = parsed.summary || item.snippet?.substring(0, 200) || '暂无摘要';
-    summary = normalizeSummaryLength(summary);
-    
-    // 使用中文标题，如果没有则使用原标题
-    const title = parsed.title_cn || item.title;
-    
     return {
-      title: title,
-      summary: summary,
+      ...item,
+      title: parsed.title_cn || item.title,
+      summary: normalizeSummary(parsed.summary),
       category: parsed.category || inferCategory(item.title),
-      company: parsed.company || extractCompanyFromTitle(item.title),
-      tags: parsed.tags || extractTagsFromTitle(item.title),
-      source: item.source,
-      publishedAt: item.publishedAt,
-      url: item.url,
-      region: '国内'
+      company: parsed.company || extractCompanyFromTitle(item.title)
     };
   } catch (error) {
-    console.warn(`AI总结失败，使用原始数据: ${item.title.substring(0, 30)}...`);
     return {
-      title: item.title,
-      summary: item.snippet?.substring(0, 200) || '暂无摘要',
+      ...item,
+      summary: normalizeSummary(item.snippet),
       category: inferCategory(item.title),
-      company: extractCompanyFromTitle(item.title),
-      tags: extractTagsFromTitle(item.title),
-      source: item.source,
-      publishedAt: item.publishedAt,
-      url: item.url,
-      region: '国内'
+      company: extractCompanyFromTitle(item.title)
     };
   }
 }
 
-/**
- * 批量总结海外新闻 - 标题永远用原始标题
- */
-async function summarizeOverseasBatch(items) {
+async function summarizeBatch(items) {
   if (items.length === 0) return [];
   
   const batchSize = 5;
@@ -159,7 +119,17 @@ async function summarizeOverseasBatch(items) {
       `[${idx+1}] 标题：${item.title}\n内容：${item.snippet?.substring(0, 300)}`
     ).join('\n\n');
     
-    const prompt = `为以下${batch.length}条海外AI新闻写中文标题、摘要和分类。\n\n${batchPrompt}\n\n输出JSON数组（严格格式）：\n[{"title_cn":"中文标题","summary":"摘要(100-120字)","category":"分类","company":"公司名（没有就空字符串）","tags":["标签"]}]\n\n规则：\n1. title_cn：将原文标题翻译为简洁中文标题\n2. summary：严格控制在100-120字\n3. company：提取公司名，未提及则返回空字符串，不要解释\n4. category只能是：产品发布与更新、技术与研究、投融资与并购、政策与监管\n5. 只输出JSON数组，不要其他内容`;
+    const prompt = `为以下${batch.length}条新闻写中文标题和摘要。
+
+${batchPrompt}
+
+输出JSON数组：
+[{"title_cn":"中文标题","summary":"100-120字摘要","category":"分类","company":"公司名"}]
+
+规则：
+1. title_cn：翻译为简洁中文
+2. summary：100-120字
+3. 只输出JSON`;
 
     try {
       const response = await callDeepSeek(prompt);
@@ -170,37 +140,22 @@ async function summarizeOverseasBatch(items) {
           const origItem = batch[j];
           const aiItem = parsed[j] || {};
           
-          let summary = aiItem.summary || origItem.snippet?.substring(0, 200) || '暂无摘要';
-          summary = normalizeSummaryLength(summary);
-          
-          const title = aiItem.title_cn || origItem.title;
-          
           results.push({
-            title: title,
-            summary: summary,
+            ...origItem,
+            title: aiItem.title_cn || origItem.title,
+            summary: normalizeSummary(aiItem.summary),
             category: aiItem.category || inferCategory(origItem.title),
-            company: aiItem.company || extractCompanyFromTitle(origItem.title),
-            tags: aiItem.tags || extractTagsFromTitle(origItem.title),
-            source: origItem.source,
-            publishedAt: origItem.publishedAt,
-            url: origItem.url,
-            region: '海外'
+            company: aiItem.company || extractCompanyFromTitle(origItem.title)
           });
         }
       }
     } catch (error) {
-      console.warn(`批量总结失败，使用原始数据: ${error.message}`);
       for (const item of batch) {
         results.push({
-          title: item.title,
-          summary: normalizeSummaryLength(item.snippet) || '暂无摘要',
+          ...item,
+          summary: normalizeSummary(item.snippet),
           category: inferCategory(item.title),
-          company: extractCompanyFromTitle(item.title),
-          tags: extractTagsFromTitle(item.title),
-          source: item.source,
-          publishedAt: item.publishedAt,
-          url: item.url,
-          region: '海外'
+          company: extractCompanyFromTitle(item.title)
         });
       }
     }
@@ -211,124 +166,26 @@ async function summarizeOverseasBatch(items) {
   return results;
 }
 
-/**
- * 均衡选择新闻（确保各分类都有内容，国内外 50/50，源平衡）
- */
-function selectBalancedNews(domestic, overseas) {
-  const targetTotal = 12;
-  const targetPerRegion = 6;
-  const maxPerSource = 2; // 每个源最多2条
-  const categories = ['产品发布与更新', '技术与研究', '投融资与并购', '政策与监管'];
-  const selected = [];
-  const selectedUrls = new Set();
-  const sourceCount = {}; // 记录每个源的已选数量
-  
-  const selectUnique = (list, respectSourceLimit = true) => {
-    for (const item of list) {
-      if (selectedUrls.has(item.url)) continue;
-      
-      // 检查源限制
-      if (respectSourceLimit) {
-        const source = item.source;
-        if ((sourceCount[source] || 0) >= maxPerSource) continue;
-      }
-      
-      selected.push(item);
-      selectedUrls.add(item.url);
-      sourceCount[item.source] = (sourceCount[item.source] || 0) + 1;
-      return true;
-    }
-    return false;
-  };
-  
-  // 第一轮：每个分类各选1条国内+1条海外
-  for (const cat of categories) {
-    const catDomestic = domestic.filter(d => d.category === cat);
-    const catOverseas = overseas.filter(o => o.category === cat);
-    
-    if (selected.filter(s => s.region === '国内').length < targetPerRegion) {
-      const ok = selectUnique(catDomestic);
-      if (!ok) selectUnique(domestic);
-    }
-    if (selected.filter(s => s.region === '海外').length < targetPerRegion) {
-      const ok = selectUnique(catOverseas);
-      if (!ok) selectUnique(overseas);
-    }
-  }
-  
-  // 第二轮：填充国内到6条（遵守源限制）
-  while (selected.filter(s => s.region === '国内').length < targetPerRegion) {
-    const remaining = domestic.filter(d => !selectedUrls.has(d.url));
-    if (!selectUnique(remaining, true)) {
-      if (!selectUnique(remaining, false)) break;
-    }
-  }
-  
-  // 第三轮：填充海外到6条（遵守源限制）
-  while (selected.filter(s => s.region === '海外').length < targetPerRegion) {
-    const remaining = overseas.filter(o => !selectedUrls.has(o.url));
-    if (!selectUnique(remaining, true)) {
-      if (!selectUnique(remaining, false)) break;
-    }
-  }
-  
-  // 第四轮：补满12条（不区分国内外，放宽源限制）
-  while (selected.length < targetTotal) {
-    const allRemaining = [...domestic, ...overseas].filter(i => !selectedUrls.has(i.url));
-    if (!selectUnique(allRemaining, false)) break;
-  }
-  
-  // 统计源分布
-  const sourceStats = {};
-  for (const item of selected) {
-    sourceStats[item.source] = (sourceStats[item.source] || 0) + 1;
-  }
-  
-  console.log(`   选择结果: 国内 ${selected.filter(s => s.region === '国内').length} 条, 海外 ${selected.filter(s => s.region === '海外').length} 条, 总计 ${selected.length} 条`);
-  console.log(`   源分布: ${Object.entries(sourceStats).map(([s, c]) => `${s}:${c}`).join(', ')}`);
-  return selected;
-}
-
-/**
- * 总结所有新闻
- */
 export async function summarizeNews({ domestic, overseas }) {
-  console.log('\n🤖 开始 AI 总结...');
-  console.log(`   国内候选: ${domestic.length} 条`);
-  console.log(`   海外候选: ${overseas.length} 条\n`);
+  console.log('\n🤖 AI总结中...');
   
-  // 限制处理数量
-  const domesticToProcess = domestic.slice(0, 10);
-  const overseasToProcess = overseas.slice(0, 25);
+  // 限制数量
+  const domesticItems = domestic.slice(0, 15);
+  const overseasItems = overseas.slice(0, 20);
   
-  // 国内新闻：逐条总结
-  console.log(`正在总结 ${domesticToProcess.length} 条国内新闻...`);
+  // 国内逐条总结
   const domesticSummaries = [];
-  for (const item of domesticToProcess) {
+  for (const item of domesticItems) {
     const summary = await summarizeSingle(item);
-    if (summary) domesticSummaries.push(summary);
+    domesticSummaries.push(summary);
     await new Promise(r => setTimeout(r, 300));
   }
   
-  // 海外新闻：批量总结
-  console.log(`正在总结 ${overseasToProcess.length} 条海外新闻...`);
-  const overseasSummaries = await summarizeOverseasBatch(overseasToProcess);
+  // 海外批量总结
+  const overseasSummaries = await summarizeBatch(overseasItems);
   
-  console.log(`\n✅ 总结完成:`);
   console.log(`   国内: ${domesticSummaries.length} 条`);
-  console.log(`   海外: ${overseasSummaries.length} 条\n`);
+  console.log(`   海外: ${overseasSummaries.length} 条`);
   
-  // 使用平衡选择算法：确保6国内+6海外
-  const balancedNews = selectBalancedNews(domesticSummaries, overseasSummaries);
-  
-  // 按分类分组
-  const grouped = {};
-  SECTION_ORDER.forEach(section => {
-    grouped[section] = balancedNews.filter(item => item.category === section);
-  });
-  
-  const total = Object.values(grouped).flat().length;
-  console.log(`📊 最终输出: ${total} 条新闻`);
-  
-  return grouped;
+  return [...domesticSummaries, ...overseasSummaries];
 }

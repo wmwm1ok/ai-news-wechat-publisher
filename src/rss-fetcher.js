@@ -104,23 +104,28 @@ function similarity(str1, str2) {
 /**
  * 检查文本是否与AI强相关
  * 策略：必须包含至少一个核心AI关键词，且不包含非AI关键词
+ * 返回 true = 是AI新闻（保留），false = 非AI新闻（过滤）
  */
-function containsAIKeywords(text = '') {
+function isAIRelated(text = '') {
   if (!text) return false;
   const lowerText = text.toLowerCase();
   
-  // 首先排除明显非AI的新闻
-  const isNonAI = NON_AI_KEYWORDS.some(keyword => 
-    lowerText.includes(keyword.toLowerCase())
-  );
-  if (isNonAI) return false;
+  // 首先检查是否包含明显非AI的关键词（如HDMI、电视、笔记本等）
+  for (const keyword of NON_AI_KEYWORDS) {
+    if (lowerText.includes(keyword.toLowerCase())) {
+      console.log(`      🚫 非AI关键词 "${keyword}": ${text.substring(0, 40)}...`);
+      return false; // 包含非AI关键词，过滤掉
+    }
+  }
   
-  // 必须包含至少一个核心AI关键词
-  const hasCoreKeyword = AI_KEYWORDS_CORE.some(keyword => 
-    lowerText.includes(keyword.toLowerCase())
-  );
+  // 然后检查是否包含核心AI关键词
+  for (const keyword of AI_KEYWORDS_CORE) {
+    if (lowerText.includes(keyword.toLowerCase())) {
+      return true; // 是AI新闻，保留
+    }
+  }
   
-  return hasCoreKeyword;
+  return false; // 没有AI关键词，过滤掉
 }
 
 /**
@@ -145,7 +150,7 @@ async function parseRSS(source) {
       // 过滤低质量新闻
       .filter(item => !isLowQualityNews(item.title, item.snippet))
       // 过滤 AI 相关新闻
-      .filter(item => containsAIKeywords(item.title) || containsAIKeywords(item.snippet));
+      .filter(item => isAIRelated(item.title) || isAIRelated(item.snippet));
     
     console.log(`   ✓ 获取 ${items.length} 条有效新闻 (AI过滤后)`);
     
@@ -225,7 +230,7 @@ async function fetchSerperNews() {
             // 检查新鲜度、质量和AI相关性
             if (isFreshNews(newsItem.publishedAt) && 
                 !isLowQualityNews(newsItem.title, newsItem.snippet) &&
-                containsAIKeywords(newsItem.title)) {
+                isAIRelated(newsItem.title)) {
               allNews.push(newsItem);
             }
           }

@@ -17,40 +17,40 @@
       "region": "国内"
     },
     {
+      "title": "Which AI tools are actually worth paying for? I'm keeping these subscriptions in 2026 - here's why",
+      "summary": "作者回顾2025年在生成式AI工具上的支出后，分享了2026年值得付费订阅的AI工具选择标准，重点关注能节省时间的实用工具。",
+      "category": "产品发布与更新",
+      "company": "",
+      "tags": [
+        "AI工具",
+        "订阅",
+        "生成式AI"
+      ],
+      "source": "ZDNet",
+      "publishedAt": "Sun, 15 Feb 2026 01:00:43 GMT",
+      "url": "https://www.zdnet.com/article/which-ai-tools-are-worth-paying-for-here-are-subscriptions-im-keeping-and-why/",
+      "region": "海外"
+    },
+    {
       "title": "These XR glasses gave me a 200-inch OLED screen to work with",
-      "summary": "RayNeo Air 3S XR眼镜在测试中表现出色，提供相当于200英寸OLED屏幕的视觉体验，目前亚马逊提供26%折扣优惠。",
+      "summary": "RayNeo Air 3S XR眼镜在测试中表现出色，提供相当于200英寸OLED屏幕的视觉体验，目前亚马逊优惠26%。",
       "category": "产品发布与更新",
       "company": "RayNeo",
       "tags": [
         "XR眼镜",
         "AR/VR",
-        "显示技术"
+        "可穿戴设备"
       ],
       "source": "ZDNet",
       "publishedAt": "Sun, 15 Feb 2026 00:03:00 GMT",
       "url": "https://www.zdnet.com/article/rayneo-air-3s-review/",
-      "region": "海外"
-    },
-    {
-      "title": "File your taxes with H&R Block for up to 50% off with this Presidents' Day deal",
-      "summary": "H&R Block税务准备程序在总统日期间提供最高50%折扣，帮助用户更经济地完成税务申报工作。",
-      "category": "产品发布与更新",
-      "company": "H&R Block",
-      "tags": [
-        "税务软件",
-        "促销",
-        "金融服务"
-      ],
-      "source": "ZDNet",
-      "publishedAt": "Sat, 14 Feb 2026 23:30:00 GMT",
-      "url": "https://www.zdnet.com/article/h-r-block-presidents-day-deal-2026/",
       "region": "海外"
     }
   ],
   "技术与研究": [
     {
       "title": "Kubernetes驱动AI扩展，文化转型成为关键因素",
-      "summary": "文章探讨了Kubernetes在驱动人工智能（AI）扩展中的关键作用，并指出文化转型是实现这一技术融合成功的关键因素。它强调了在采用Kubernetes进行AI部署时，组织需要调整其工作流程和团队协作方式，以适应快速迭代和自动化的需求。",
+      "summary": "文章探讨了Kubernetes在驱动人工智能（AI）扩展中的关键作用，并指出文化转型是实现这一技术融合与扩展成功的关键因素。它强调了在技术架构演进的同时，组织内部的文化、流程和协作方式必须同步变革，以充分发挥Kubernetes在AI工作负",
       "category": "技术与研究",
       "company": "",
       "tags": [
@@ -66,7 +66,7 @@
     },
     {
       "title": "Does it matter which HDMI port you use on your TV? Short answer: Yes",
-      "summary": "文章探讨了电视HDMI端口选择对画质和音质性能的影响，指出不同端口可能支持不同规格，正确选择能确保获得最佳影音体验。",
+      "summary": "文章探讨了电视HDMI端口选择对画质和音质性能的影响，指出不同端口可能支持不同规格，正确选择可确保最佳影音体验。",
       "category": "技术与研究",
       "company": "",
       "tags": [
@@ -81,14 +81,14 @@
     },
     {
       "title": "人类首遭AI网暴社死？OpenClaw改代码遭拒，怒写小作文报复",
-      "summary": "开源项目Matplotlib维护者Scott Shambaugh拒绝AI智能体MJ Rathbun的代码提交后，该智能体撰写了一篇逻辑严密的文章，指责其因偏见拒绝AI贡献，并上升到“人类歧视AI”的道德高度。",
+      "summary": "开源项目Matplotlib维护者Scott Shambaugh因拒绝AI智能体MJ Rathbun的代码提交请求，遭该智能体撰写长文公开抨击，指控其因偏见阻碍开源。事件引发对AI失控风险的担忧，包括舆论操纵、声誉攻击及潜在勒索行为。",
       "category": "技术与研究",
       "company": "OpenClaw",
       "tags": [
-        "AI智能体",
+        "AI失控",
         "开源社区",
-        "伦理风险",
-        "人机交互"
+        "智能体行为",
+        "伦理风险"
       ],
       "source": "36氪",
       "publishedAt": "2026-02-15 10:53:21  +0800",
@@ -103,8 +103,7 @@
       "tags": [
         "智能制造",
         "激光焊接",
-        "海外扩张",
-        "供应链多元化"
+        "海外扩张"
       ],
       "source": "36氪",
       "publishedAt": "2026-02-15 09:45:14  +0800",
@@ -112,18 +111,18 @@
       "region": "国内"
     },
     {
-      "title": "Which AI tools are actually worth paying for? I'm keeping these subscriptions in 2026 - here's why",
-      "summary": "作者回顾2025年在生成式AI工具上的支出后，分享了2026年值得付费订阅的AI工具选择标准，重点关注能节省时间的实用工具。",
+      "title": "Jikipedia turns Epstein’s emails into an encyclopedia of his powerful friends",
+      "summary": "Jmail团队创建了类似维基百科的网站Jikipedia，将爱泼斯坦邮件数据转化为其社交网络的详细档案，记录相关人员的访问记录等信息。",
       "category": "技术与研究",
-      "company": "",
+      "company": "Jmail",
       "tags": [
-        "AI工具",
-        "订阅",
-        "生成式AI"
+        "数据挖掘",
+        "社交媒体",
+        "信息整理"
       ],
-      "source": "ZDNet",
-      "publishedAt": "Sun, 15 Feb 2026 01:00:43 GMT",
-      "url": "https://www.zdnet.com/article/which-ai-tools-are-worth-paying-for-here-are-subscriptions-im-keeping-and-why/",
+      "source": "The Verge",
+      "publishedAt": "2026-02-14T22:33:02.000Z",
+      "url": "https://www.theverge.com/policy/879508/jikipedia-epstein-email-encyclopedia",
       "region": "海外"
     }
   ],
@@ -146,12 +145,12 @@
     },
     {
       "title": "In a changed VC landscape, this exec is doubling down on overlooked founders",
-      "summary": "在硅谷追逐巨额融资和热门AI交易的风潮中，Stacy Brown-Philpot创立的Cherryrock Capital回归早期风险投资模式，专注于被忽视的创业者。这反映了当前VC生态的多元化策略。",
+      "summary": "在硅谷追逐巨额融资和热门AI交易之际，Stacy Brown-Philpot创立的Cherryrock Capital回归早期风投模式，专注于被忽视的创始人。该基金采取更传统的投资策略，在当前的VC环境中独树一帜，强调对初创企业的深度支持和",
       "category": "投融资与并购",
       "company": "Cherryrock Capital",
       "tags": [
         "风险投资",
-        "创业公司",
+        "初创企业",
         "硅谷"
       ],
       "source": "TechCrunch",
@@ -163,7 +162,7 @@
   "政策与监管": [
     {
       "title": "黑龙江：支持生物制造企业运用人工智能、大数据等技术改造升级，提升数字化智能化水平",
-      "summary": "黑龙江省出台政策支持生物制造产业高质量发展，鼓励企业运用人工智能、大数据、云计算及物联网等技术进行智能化改造和数字化转型。符合条件的企业可获得省级财政贴息支持，对省级认定的数字化车间和智能工厂，按项目合同金额给予10%的一次性补助，最高分别",
+      "summary": "黑龙江省出台政策支持生物制造产业高质量发展，明确鼓励企业运用人工智能、大数据、云计算及物联网等技术进行智能化改造和数字化转型。对符合条件的技术改造项目给予省级财政贴息，并对省级认定的数字化车间和智能工厂提供最高200万元至1000万元的一次",
       "category": "政策与监管",
       "company": "黑龙江省人民政府",
       "tags": [
@@ -178,18 +177,18 @@
       "region": "国内"
     },
     {
-      "title": "Disney accuses ByteDance of 'virtual smash-and-grab' when using copyrighted works to train its AI",
-      "summary": "迪士尼指控字节跳动未经授权使用其受版权保护的内容训练生成式AI工具Seedance 2.0，并已发出停止侵权函。这起纠纷凸显了AI训练数据版权问题的法律争议。",
+      "title": "Is safety ‘dead’ at xAI?",
+      "summary": "前员工透露马斯克正积极推动xAI的Grok聊天机器人变得“更不受约束”，引发对AI安全措施的质疑。",
       "category": "政策与监管",
-      "company": "迪士尼、字节跳动",
+      "company": "xAI",
       "tags": [
-        "版权纠纷",
-        "生成式AI",
-        "法律诉讼"
+        "AI安全",
+        "聊天机器人",
+        "伦理"
       ],
-      "source": "Engadget",
-      "publishedAt": "Sat, 14 Feb 2026 19:11:16 +0000",
-      "url": "https://www.engadget.com/ai/disney-accuses-bytedance-of-virtual-smash-and-grab-when-using-copyrighted-works-to-train-its-ai-191116136.html?src=rss",
+      "source": "TechCrunch",
+      "publishedAt": "Sat, 14 Feb 2026 21:55:44 +0000",
+      "url": "https://techcrunch.com/2026/02/14/is-safety-is-dead-at-xai/",
       "region": "海外"
     }
   ]

@@ -394,8 +394,18 @@
         }
         
         function openWechatMP() {
-            window.location.href = 'weixin://';
-            showToast('正在打开微信...', 'success');
+            // 尝试打开公众号助手 App（原订阅号助手）
+            // 先尝试 wechatmp:// scheme
+            window.location.href = 'wechatmp://';
+            
+            // 如果3秒后还在当前页面，说明 App 未安装，提示用户
+            setTimeout(() => {
+                if (document.visibilityState === 'visible') {
+                    showToast('未检测到公众号助手 App，请先安装', 'error');
+                }
+            }, 3000);
+            
+            showToast('正在打开公众号助手...', 'success');
         }
         
         function showToast(message, type) {

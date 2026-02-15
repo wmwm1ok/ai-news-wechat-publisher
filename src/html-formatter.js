@@ -143,9 +143,7 @@ export function generateHTML(groupedNews, options = {}) {
     <!-- 导读 -->
     <div style="background:#f8f9fa;border-radius:12px;padding:16px;margin-bottom:20px;border-left:4px solid #1c5cff;">
       <div style="font-size:14px;color:#555;line-height:1.8;">
-        📌 本期要点：共收录 ${Object.values(groupedNews).flat().length} 条 AI 行业资讯，
-        涵盖${SECTION_ORDER.filter(s => groupedNews[s]?.length > 0).map(s => SECTION_ICON[s] + s).join('、')}等领域。
-        内容由 AI 自动抓取并生成摘要。
+        📌 本期涵盖${SECTION_ORDER.filter(s => groupedNews[s]?.length > 0).map(s => SECTION_ICON[s] + s).join('、')}等领域。
       </div>
     </div>
     
@@ -219,7 +217,7 @@ export function generateWechatHTML(groupedNews, options = {}) {
     <p style="text-align:center;color:#999;font-size:13px;margin-bottom:20px;">今日精选 AI 行业资讯</p>
     
     <blockquote style="background:#f0f7ff;border-left:3px solid #1c5cff;padding:12px 15px;margin:0 0 20px;font-size:13px;color:#666;">
-      📌 本期共收录 ${Object.values(groupedNews).flat().length} 条资讯，内容由 AI 自动抓取并生成摘要。
+      📌 本期精选 AI 行业资讯。
     </blockquote>
     
     ${content}

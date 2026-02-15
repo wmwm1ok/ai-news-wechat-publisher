@@ -203,28 +203,39 @@ JSON 结构：
     
     // 验证并保留原始 URL
     const validated = [];
-    const originalTitles = new Set(items.map(i => i.title.toLowerCase()));
     
     for (const item of parsed.items || []) {
       const title = item.title_cn || item.title;
-      // 检查标题是否与原始数据有较高相似度
-      const titleLower = title.toLowerCase();
+      
+      // 海外新闻验证：检查公司名/关键词是否匹配（而非完整标题）
       let matched = false;
       let originalItem = null;
+      let bestMatchScore = 0;
       
       for (const orig of items) {
-        const origTitleLower = orig.title.toLowerCase();
-        // 简单相似度检查：包含关系或编辑距离
-        if (titleLower.includes(origTitleLower.substring(0, 20)) || 
-            origTitleLower.includes(titleLower.substring(0, 20))) {
-          matched = true;
+        // 提取关键词进行匹配
+        const origKeywords = extractKeywordsForMatching(orig.title);
+        const itemKeywords = extractKeywordsForMatching(title);
+        
+        // 计算共同关键词
+        const commonKeywords = origKeywords.filter(k => 
+          itemKeywords.some(ik => ik.toLowerCase().includes(k.toLowerCase()) || 
+                                  k.toLowerCase().includes(ik.toLowerCase()))
+        );
+        
+        // 如果有公司名匹配或 2 个以上关键词匹配，认为是同一新闻
+        const score = commonKeywords.length;
+        if (score > bestMatchScore) {
+          bestMatchScore = score;
           originalItem = orig;
-          break;
         }
       }
       
+      // 只要有至少 1 个关键词匹配就接受（海外新闻翻译后标题变化大）
+      matched = bestMatchScore >= 1;
+      
       if (!matched) {
-        console.warn(`⚠️ 海外新闻标题不匹配，可能为编造: "${title.substring(0, 40)}..."`);
+        console.warn(`⚠️ 海外新闻无法匹配: "${title.substring(0, 40)}..."`);
         continue;
       }
       
@@ -452,6 +463,39 @@ function mergeDuplicateNews(grouped) {
   }
   
   return result;
+}
+
+/**
+ * 提取关键词用于海外新闻匹配（处理英文到中文的翻译）
+ */
+function extractKeywordsForMatching(title) {
+  if (!title) return [];
+  
+  const keywords = [];
+  const text = title.toLowerCase();
+  
+  // 公司名称（英文+中文）
+  const companies = [
+    'openai', 'google', 'meta', 'anthropic', 'microsoft', 'amazon', 'apple',
+    'nvidia', 'xai', 'grok', 'chatgpt', 'gpt', 'claude', 'gemini', 'llama',
+    '字节', '百度', '阿里', '腾讯', '智谱', '月之暗面', 'kimi', 'deepseek'
+  ];
+  
+  // 产品/技术名称
+  const products = [
+    'sora', 'dall-e', 'midjourney', 'stable diffusion', 'sd', 'grok',
+    'seedance', 'eva ai', 'cherryrock', 'neuromorphic'
+  ];
+  
+  // 检查匹配
+  for (const c of companies) {
+    if (text.includes(c.toLowerCase())) keywords.push(c);
+  }
+  for (const p of products) {
+    if (text.includes(p.toLowerCase())) keywords.push(p);
+  }
+  
+  return [...new Set(keywords)];
 }
 
 /**

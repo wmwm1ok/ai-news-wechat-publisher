@@ -81,12 +81,7 @@ export const OVERSEAS_RSS_SOURCES = [
   {
     name: 'VentureBeat',
     url: 'https://venturebeat.com/feed/',
-    limit: 5
-  },
-  {
-    name: 'AI News UK',
-    url: 'https://www.artificialintelligence-news.com/feed/',
-    limit: 5
+    limit: 6
   },
   {
     name: 'ScienceDaily AI',
@@ -94,13 +89,18 @@ export const OVERSEAS_RSS_SOURCES = [
     limit: 4
   },
   {
-    name: 'Reddit MachineLearning',
-    url: 'https://www.reddit.com/r/MachineLearning/.rss',
-    limit: 6
+    name: 'BBC Technology',
+    url: 'http://feeds.bbci.co.uk/news/technology/rss.xml',
+    limit: 5
   },
   {
-    name: 'Reddit Artificial',
-    url: 'https://www.reddit.com/r/artificial/.rss',
+    name: 'ZDNet',
+    url: 'https://www.zdnet.com/news/rss.xml',
+    limit: 5
+  },
+  {
+    name: 'Engadget',
+    url: 'https://www.engadget.com/rss.xml',
     limit: 5
   }
 ];

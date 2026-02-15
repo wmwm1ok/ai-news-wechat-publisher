@@ -12,14 +12,21 @@ function escapeHtml(str) {
 }
 
 /**
- * 格式化日期
+ * 格式化日期（统一格式：M月D日）
  */
 function formatDate(date) {
-  const d = new Date(date);
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
+  if (!date) return '';
+  
+  try {
+    const d = new Date(date);
+    if (isNaN(d.getTime())) return '';
+    
+    const m = d.getMonth() + 1;
+    const day = d.getDate();
+    return `${m}月${day}日`;
+  } catch (e) {
+    return '';
+  }
 }
 
 /**

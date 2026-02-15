@@ -46,17 +46,17 @@ export const DOMESTIC_RSS_SOURCES = [
   }
 ];
 
-// 海外 RSS 源
+// 海外 RSS 源（已验证可用）
 export const OVERSEAS_RSS_SOURCES = [
   {
-    name: 'TechCrunch AI',
-    url: 'https://techcrunch.com/category/artificial-intelligence/feed/',
-    limit: 5
+    name: 'TechCrunch',
+    url: 'https://techcrunch.com/feed/',
+    limit: 6
   },
   {
-    name: 'The Verge AI',
-    url: 'https://www.theverge.com/ai-artificial-intelligence/rss/index.xml',
-    limit: 4
+    name: 'The Verge',
+    url: 'https://www.theverge.com/rss/index.xml',
+    limit: 5
   },
   {
     name: 'MIT Technology Review',
@@ -64,34 +64,29 @@ export const OVERSEAS_RSS_SOURCES = [
     limit: 4
   },
   {
-    name: 'Wired AI',
-    url: 'https://www.wired.com/tag/artificial-intelligence/feed/',
+    name: 'Wired',
+    url: 'https://www.wired.com/feed/rss',
+    limit: 4
+  },
+  {
+    name: 'Ars Technica',
+    url: 'https://arstechnica.com/feed/',
+    limit: 4
+  },
+  {
+    name: 'VentureBeat',
+    url: 'https://venturebeat.com/feed/',
+    limit: 4
+  },
+  {
+    name: 'AI News (UK)',
+    url: 'https://www.artificialintelligence-news.com/feed/',
+    limit: 4
+  },
+  {
+    name: 'ScienceDaily AI',
+    url: 'https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml',
     limit: 3
-  },
-  {
-    name: 'Ars Technica AI',
-    url: 'https://arstechnica.com/tag/artificial-intelligence/feed/',
-    limit: 3
-  },
-  {
-    name: 'VentureBeat AI',
-    url: 'https://venturebeat.com/category/ai/feed/',
-    limit: 3
-  },
-  {
-    name: 'OpenAI Blog',
-    url: 'https://openai.com/blog/rss.xml',
-    limit: 2
-  },
-  {
-    name: 'Google AI Blog',
-    url: 'https://ai.googleblog.com/feeds/posts/default',
-    limit: 2
-  },
-  {
-    name: 'Anthropic News',
-    url: 'https://www.anthropic.com/rss.xml',
-    limit: 2
   }
 ];
 

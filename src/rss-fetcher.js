@@ -27,16 +27,18 @@ const BLACKLIST_KEYWORDS = [
 // 非AI新闻排除词（硬件评测、普通消费电子产品等）
 const NON_AI_KEYWORDS = [
   // 显示设备
-  'HDMI', '显示器', '显示屏', '屏幕', '电视', 'TV ', 'OLED', 'LCD',
+  'HDMI', '显示器', '显示屏', '屏幕', '电视', 'TV ', 'OLED', 'LCD', 'monitor',
   // 电脑硬件
-  '笔记本', 'laptop', 'HP ', 'Dell', '华硕', '联想', '宏碁',
-  'CPU', '内存', '硬盘', 'SSD', '显卡', '主板',
+  '笔记本', 'laptop', 'HP ', 'Dell', '华硕', '联想', '宏碁', 'MacBook',
+  'CPU', '内存', '硬盘', 'SSD', '显卡', '主板', 'Intel', 'AMD',
   // 手机平板（非AI相关）
   'iPhone', 'iPad', '三星手机', '小米手机', '华为手机', 'OPPO', 'vivo',
   // 游戏
-  '游戏', 'Game', 'Xbox', 'PlayStation', 'Nintendo',
+  '游戏', 'Game', 'Xbox', 'PlayStation', 'Nintendo', 'Switch',
   // 家电
-  '冰箱', '洗衣机', '空调', '扫地机器人', '吸尘器'
+  '冰箱', '洗衣机', '空调', '扫地机器人', '吸尘器',
+  // 软件/服务（非AI）
+  'tax', '税务', '报税', 'H&R Block', 'TurboTax', 'QuickBooks'
 ];
 
 const rssParser = new Parser({
@@ -209,8 +211,10 @@ async function fetchSerperNews() {
               region: '海外'
             };
             
-            // 检查新鲜度和质量
-            if (isFreshNews(newsItem.publishedAt) && !isLowQualityNews(newsItem.title, newsItem.snippet)) {
+            // 检查新鲜度、质量和AI相关性
+            if (isFreshNews(newsItem.publishedAt) && 
+                !isLowQualityNews(newsItem.title, newsItem.snippet) &&
+                containsAIKeywords(newsItem.title)) {
               allNews.push(newsItem);
             }
           }

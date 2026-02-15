@@ -84,7 +84,7 @@ function extractTagsFromTitle(title) {
  * 单条新闻总结 - 标题永远用原始标题
  */
 async function summarizeSingle(item) {
-  const prompt = `为以下新闻写摘要和分类。\n\n原文标题：${item.title}\n内容摘要：${item.snippet}\n\n输出JSON（严格格式）：\n{"summary":"120-180字专业摘要","category":"产品发布与更新/技术与研究/投融资与并购/政策与监管","company":"公司名","tags":["标签1","标签2"]}\n\n规则：\n1. summary必须基于输入内容，严禁编造\n2. category判断：发布/更新→产品发布与更新；融资/并购→投融资与并购；政策/法规→政策与监管；其他→技术与研究\n3. 只输出JSON，不要其他内容`;
+  const prompt = `为以下新闻写摘要和分类。\n\n原文标题：${item.title}\n内容摘要：${item.snippet}\n\n输出JSON（严格格式）：\n{"summary":"100-120字专业摘要","category":"产品发布与更新/技术与研究/投融资与并购/政策与监管","company":"公司名","tags":["标签1","标签2"]}\n\n规则：\n1. summary必须严格控制在100-120字，不要过长或过短\n2. summary必须基于输入内容，严禁编造\n3. category判断：发布/更新→产品发布与更新；融资/并购→投融资与并购；政策/法规→政策与监管；其他→技术与研究\n4. 只输出JSON，不要其他内容`;
 
   try {
     const response = await callDeepSeek(prompt);
@@ -133,7 +133,7 @@ async function summarizeOverseasBatch(items) {
       `[${idx+1}] 标题：${item.title}\n内容：${item.snippet?.substring(0, 300)}`
     ).join('\n\n');
     
-    const prompt = `为以下${batch.length}条海外AI新闻写中文摘要和分类。\n\n${batchPrompt}\n\n输出JSON数组（严格格式）：\n[{"summary":"摘要","category":"分类","company":"公司","tags":["标签"]}]\n\n规则：\n1. summary必须基于输入内容，严禁编造\n2. category只能是：产品发布与更新、技术与研究、投融资与并购、政策与监管\n3. 只输出JSON数组，不要其他内容`;
+    const prompt = `为以下${batch.length}条海外AI新闻写中文摘要和分类。\n\n${batchPrompt}\n\n输出JSON数组（严格格式）：\n[{"summary":"摘要(100-120字)","category":"分类","company":"公司","tags":["标签"]}]\n\n规则：\n1. summary必须严格控制在100-120字\n2. summary必须基于输入内容，严禁编造\n3. category只能是：产品发布与更新、技术与研究、投融资与并购、政策与监管\n4. 只输出JSON数组，不要其他内容`;
 
     try {
       const response = await callDeepSeek(prompt);

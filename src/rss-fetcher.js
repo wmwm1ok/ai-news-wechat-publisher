@@ -1,6 +1,6 @@
 import Parser from 'rss-parser';
 import axios from 'axios';
-import { DOMESTIC_RSS_SOURCES, OVERSEAS_RSS_SOURCES, AI_KEYWORDS, CONFIG } from './config.js';
+import { DOMESTIC_RSS_SOURCES, OVERSEAS_RSS_SOURCES, AI_KEYWORDS_CORE, AI_KEYWORDS_WEAK, CONFIG } from './config.js';
 
 // Serper API 配置
 const SERPER_API_URL = 'https://google.serper.dev/news';
@@ -85,13 +85,19 @@ function similarity(str1, str2) {
 }
 
 /**
- * 检查文本是否包含 AI 关键词
+ * 检查文本是否与AI强相关
+ * 策略：必须包含至少一个核心AI关键词
  */
 function containsAIKeywords(text = '') {
+  if (!text) return false;
   const lowerText = text.toLowerCase();
-  return AI_KEYWORDS.some(keyword => 
+  
+  // 必须包含至少一个核心AI关键词
+  const hasCoreKeyword = AI_KEYWORDS_CORE.some(keyword => 
     lowerText.includes(keyword.toLowerCase())
   );
+  
+  return hasCoreKeyword;
 }
 
 /**

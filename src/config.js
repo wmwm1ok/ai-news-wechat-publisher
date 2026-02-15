@@ -2,19 +2,26 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // AI 关键词（用于过滤）
-export const AI_KEYWORDS = [
-  'AI', '人工智能', '大模型', '模型', '算法', '算力',
-  '自动驾驶', '智能', '机器学习', '深度学习',
-  '芯片', '半导体', '计算', '机器人', 'AGI',
-  '多模态', '生成式', '推理', '端到端', '具身',
-  'LLM', 'AIGC', 'GPT', 'OpenAI', 'Claude', 'Gemini', 'Sora',
-  '智谱', '通义', '文心', 'Kimi', 'MiniMax', '百川', '讯飞星火', '混元',
-  'Agent', '智能体', 'GPU', 'NVIDIA', '英伟达',
-  // 海外公司
-  'OpenAI', 'Anthropic', 'Google', 'Gemini', 'Meta', 'Llama', 'Microsoft', 
-  'Copilot', 'NVIDIA', 'xAI', 'Grok', 'Perplexity', 'Mistral', 'Stability',
-  'DeepMind', 'LangChain', 'Hugging Face', 'Replicate', 'Scale AI',
-  'Midjourney', 'Runway', 'ElevenLabs', 'Cohere', 'Adept', 'Character.AI'
+// 核心强相关词汇（出现即认为是AI新闻）
+export const AI_KEYWORDS_CORE = [
+  'AI', '人工智能', '大模型', 'LLM', 'AIGC', 'AGI',
+  '机器学习', '深度学习', '神经网络', 'Transformer',
+  'GPT', 'ChatGPT', 'OpenAI', 'Claude', 'Gemini', 'Sora',
+  '智谱', '通义', '文心', 'Kimi', 'MiniMax', '百川', '讯飞星火', '混元', '豆包',
+  'Agent', '智能体', 'Copilot', 'Grok', 'Perplexity', 'Mistral',
+  '生成式', '多模态', '大语言模型', '自然语言处理', 'NLP',
+  '自动驾驶', '具身智能', '机器人', '人形机器人',
+  'AI芯片', 'GPU', 'NVIDIA', '英伟达', 'CUDA',
+  'Stable Diffusion', 'Midjourney', 'Runway', 'DALL-E',
+  'DeepMind', 'OpenAI', 'Anthropic', 'Meta AI', 'Google AI',
+  'LangChain', 'Hugging Face', '向量数据库', 'RAG',
+  'AI安全', 'AI对齐', '提示工程', 'Prompt'
+];
+
+// 弱相关词汇（必须配合其他AI词汇出现）
+export const AI_KEYWORDS_WEAK = [
+  '算法', '算力', '推理', '训练', '微调', 'Fine-tuning',
+  ' Transformer', '注意力机制', '扩散模型', 'Diffusion'
 ];
 
 // 国内 RSS 源

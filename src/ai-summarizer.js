@@ -60,14 +60,22 @@ function extractCompanyFromTitle(title) {
 function normalizeSummary(summary) {
   if (!summary) return '暂无摘要';
   summary = summary.trim();
-  if (summary.length > 120) {
-    const endPos = summary.substring(100, 120).indexOf('。');
-    if (endPos !== -1) {
-      summary = summary.substring(0, 100 + endPos + 1);
+  
+  // 如果超过140字，在完整句子处截断
+  if (summary.length > 140) {
+    // 在100-140字范围内找最后一个句号
+    const searchText = summary.substring(100, 140);
+    const lastPeriod = searchText.lastIndexOf('。');
+    
+    if (lastPeriod !== -1) {
+      // 在句子结束处截断
+      summary = summary.substring(0, 100 + lastPeriod + 1);
     } else {
-      summary = summary.substring(0, 120);
+      // 找不到句号，截断到120字并加省略号
+      summary = summary.substring(0, 120) + '...';
     }
   }
+  
   return summary;
 }
 
@@ -78,11 +86,11 @@ async function summarizeSingle(item) {
 内容摘要：${item.snippet}
 
 输出JSON：
-{"title_cn":"中文标题（简洁专业）","summary":"100-120字摘要","category":"产品发布与更新/技术与研究/投融资与并购/政策与监管","company":"公司名（没有就空字符串）"}
+{"title_cn":"中文标题（简洁专业）","summary":"摘要","category":"产品发布与更新/技术与研究/投融资与并购/政策与监管","company":"公司名（没有就空字符串）"}
 
 规则：
 1. title_cn：将原文翻译为简洁中文标题
-2. summary：严格100-120字，基于输入内容
+2. summary：写一段完整的摘要，把事情说清楚。不要过长（控制在150字以内），但也不要太短。必须在完整句子处结束，不要话说到一半就断掉。
 3. company：提取公司名，未提及则返回空字符串
 4. 只输出JSON`;
 
@@ -124,11 +132,11 @@ async function summarizeBatch(items) {
 ${batchPrompt}
 
 输出JSON数组：
-[{"title_cn":"中文标题","summary":"100-120字摘要","category":"分类","company":"公司名"}]
+[{"title_cn":"中文标题","summary":"摘要","category":"分类","company":"公司名"}]
 
 规则：
 1. title_cn：翻译为简洁中文
-2. summary：100-120字
+2. summary：写完整的摘要把事情说清楚，控制在150字以内，必须在完整句子处结束
 3. 只输出JSON`;
 
     try {

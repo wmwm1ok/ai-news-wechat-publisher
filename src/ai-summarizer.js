@@ -561,20 +561,28 @@ function extractKeywords(title) {
   const keywords = [];
   const text = title.toLowerCase();
   
-  // 常见公司名（中文+英文）
-  const companies = ['字节', '豆包', 'openai', 'google', 'meta', 'anthropic', '微软', '阿里', '百度', '腾讯', '智谱'];
+  // 常见公司名（中文+英文）- 扩展海外公司
+  const companies = [
+    // 国内
+    '字节', '豆包', '百度', '阿里', '腾讯', '智谱', '月之暗面', 'kimi', 'minimax', '稀宇',
+    // 海外
+    'openai', 'google', 'meta', 'anthropic', 'microsoft', 'amazon', 'apple', 'nvidia',
+    'xai', 'grok', 'chatgpt', 'claude', 'gemini', 'llama', 'perplexity', 'mistral',
+    'airbnb', 'disney', 'tesla', 'twitter', 'netflix', 'uber', 'lyft', 'airbnb',
+    'cherryrock', 'a16z', 'sequoia', 'benchmark', 'insight partners'
+  ];
   for (const company of companies) {
     if (text.includes(company.toLowerCase())) keywords.push(company);
   }
   
   // 产品名
-  const products = ['gpt', 'claude', 'gemini', 'llama', 'kimi', '大模型', 'sora'];
+  const products = ['gpt', 'claude', 'gemini', 'llama', 'kimi', '大模型', 'sora', 'midjourney', 'stable diffusion'];
   for (const product of products) {
     if (text.includes(product.toLowerCase())) keywords.push(product);
   }
   
   // 技术关键词（用于识别同一主题）
-  const techTerms = ['亲吻数', 'kiss', ' RL ', '强化学习', 'agent', '智能体', '多模态', '情人节'];
+  const techTerms = ['亲吻数', 'kiss', ' RL ', '强化学习', 'agent', '智能体', '多模态', '情人节', 'ai ', '人工智能'];
   for (const term of techTerms) {
     if (text.includes(term.toLowerCase())) keywords.push(term);
   }

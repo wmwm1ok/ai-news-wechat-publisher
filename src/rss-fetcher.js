@@ -1,6 +1,6 @@
 import Parser from 'rss-parser';
 import axios from 'axios';
-import { DOMESTIC_RSS_SOURCES, OVERSEAS_RSS_SOURCES, POLICY_RSS_SOURCES, AI_KEYWORDS, CONFIG } from './config.js';
+import { DOMESTIC_RSS_SOURCES, OVERSEAS_RSS_SOURCES, AI_KEYWORDS, CONFIG } from './config.js';
 
 // Serper API 配置
 const SERPER_API_URL = 'https://google.serper.dev/news';
@@ -260,22 +260,16 @@ export async function fetchAllNews() {
     parseRSS({ ...source, region: '海外' })
   );
   
-  // 抓取政策监管新闻
-  const policyPromises = POLICY_RSS_SOURCES.map(source => 
-    parseRSS({ ...source, region: '海外' })
-  );
-  
   // 并行抓取
-  const [domesticResults, overseasRssResults, policyResults, serperResults] = await Promise.all([
+  const [domesticResults, overseasRssResults, serperResults] = await Promise.all([
     Promise.all(domesticPromises),
     Promise.all(overseasRssPromises),
-    Promise.all(policyPromises),
     fetchSerperNews()
   ]);
   
   // 合并结果
   const domesticRaw = domesticResults.flat();
-  const overseasRaw = [...overseasRssResults.flat(), ...policyResults.flat(), ...serperResults];
+  const overseasRaw = [...overseasRssResults.flat(), ...serperResults];
   
   console.log(`\n📊 原始抓取:`);
   console.log(`   国内: ${domesticRaw.length} 条`);

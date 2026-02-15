@@ -194,15 +194,14 @@
     
     <div class="action-bar" id="action-bar" style="display: none;">
         <p>💡 点击下方按钮复制全部内容<br>然后在公众号编辑器中粘贴即可保留格式</p>
-        <button class="btn" onclick="copyForWechat()">📋 复制到公众号</button>
-        <button class="btn btn-secondary" onclick="openWechatMP()">📱 打开公众号助手</button>
+        <button class="btn" onclick="copyForWechat()">📋 复制全部内容</button>
     </div>
     
     <div class="tips" id="tips" style="display: none;">
         <strong>📝 使用说明：</strong><br>
-        1. 点击「复制到公众号」按钮<br>
+        1. 点击「复制全部内容」按钮<br>
         2. 内容已复制（含格式）<br>
-        3. 打开公众号助手粘贴即可
+        3. 切换到公众号编辑器粘贴即可
     </div>
     
     <div class="editor-container">
@@ -391,21 +390,6 @@
             }
             
             selection.removeAllRanges();
-        }
-        
-        function openWechatMP() {
-            // 尝试打开公众号助手 App（原订阅号助手）
-            // 先尝试 wechatmp:// scheme
-            window.location.href = 'wechatmp://';
-            
-            // 如果3秒后还在当前页面，说明 App 未安装，提示用户
-            setTimeout(() => {
-                if (document.visibilityState === 'visible') {
-                    showToast('未检测到公众号助手 App，请先安装', 'error');
-                }
-            }, 3000);
-            
-            showToast('正在打开公众号助手...', 'success');
         }
         
         function showToast(message, type) {

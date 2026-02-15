@@ -111,18 +111,21 @@ function extractTagsFromTitle(title) {
  * 单条新闻总结 - 标题永远用原始标题
  */
 async function summarizeSingle(item) {
-  const prompt = `为以下新闻写摘要和分类。\n\n原文标题：${item.title}\n内容摘要：${item.snippet}\n\n输出JSON（严格格式）：\n{"summary":"100-120字专业摘要","category":"产品发布与更新/技术与研究/投融资与并购/政策与监管","company":"公司名","tags":["标签1","标签2"]}\n\n规则：\n1. summary必须严格控制在100-120字，不要过长或过短\n2. summary必须基于输入内容，严禁编造\n3. category判断：发布/更新→产品发布与更新；融资/并购→投融资与并购；政策/法规→政策与监管；其他→技术与研究\n4. 只输出JSON，不要其他内容`;
+  const prompt = `为以下新闻写中文标题、摘要和分类。\n\n原文标题：${item.title}\n内容摘要：${item.snippet}\n\n输出JSON（严格格式）：\n{"title_cn":"中文标题（简洁专业）","summary":"100-120字专业摘要","category":"产品发布与更新/技术与研究/投融资与并购/政策与监管","company":"公司名（从标题提取，没有就空字符串）","tags":["标签1","标签2"]}\n\n规则：\n1. title_cn：将原文标题翻译为简洁的中文标题，去除营销词汇\n2. summary：严格控制在100-120字，必须基于输入内容\n3. company：从标题中提取公司名，如未提及则返回空字符串，不要写解释\n4. category：发布/更新→产品发布与更新；融资/并购→投融资与并购；政策/法规→政策与监管；其他→技术与研究\n5. 只输出JSON，不要其他内容`;
 
   try {
     const response = await callDeepSeek(prompt);
     const parsed = JSON.parse(response);
     
-    // 处理摘要长度，控制在100-120字
+    // 处理摘要长度
     let summary = parsed.summary || item.snippet?.substring(0, 200) || '暂无摘要';
     summary = normalizeSummaryLength(summary);
     
+    // 使用中文标题，如果没有则使用原标题
+    const title = parsed.title_cn || item.title;
+    
     return {
-      title: item.title,  // 永远使用原始标题
+      title: title,
       summary: summary,
       category: parsed.category || inferCategory(item.title),
       company: parsed.company || extractCompanyFromTitle(item.title),
@@ -164,7 +167,7 @@ async function summarizeOverseasBatch(items) {
       `[${idx+1}] 标题：${item.title}\n内容：${item.snippet?.substring(0, 300)}`
     ).join('\n\n');
     
-    const prompt = `为以下${batch.length}条海外AI新闻写中文摘要和分类。\n\n${batchPrompt}\n\n输出JSON数组（严格格式）：\n[{"summary":"摘要(100-120字)","category":"分类","company":"公司","tags":["标签"]}]\n\n规则：\n1. summary必须严格控制在100-120字\n2. summary必须基于输入内容，严禁编造\n3. category只能是：产品发布与更新、技术与研究、投融资与并购、政策与监管\n4. 只输出JSON数组，不要其他内容`;
+    const prompt = `为以下${batch.length}条海外AI新闻写中文标题、摘要和分类。\n\n${batchPrompt}\n\n输出JSON数组（严格格式）：\n[{"title_cn":"中文标题","summary":"摘要(100-120字)","category":"分类","company":"公司名（没有就空字符串）","tags":["标签"]}]\n\n规则：\n1. title_cn：将原文标题翻译为简洁中文标题\n2. summary：严格控制在100-120字\n3. company：提取公司名，未提及则返回空字符串，不要解释\n4. category只能是：产品发布与更新、技术与研究、投融资与并购、政策与监管\n5. 只输出JSON数组，不要其他内容`;
 
     try {
       const response = await callDeepSeek(prompt);
@@ -179,8 +182,11 @@ async function summarizeOverseasBatch(items) {
           let summary = aiItem.summary || origItem.snippet?.substring(0, 200) || '暂无摘要';
           summary = normalizeSummaryLength(summary);
           
+          // 使用中文标题
+          const title = aiItem.title_cn || origItem.title;
+          
           results.push({
-            title: origItem.title,  // 永远使用原始标题
+            title: title,
             summary: summary,
             category: aiItem.category || inferCategory(origItem.title),
             company: aiItem.company || extractCompanyFromTitle(origItem.title),

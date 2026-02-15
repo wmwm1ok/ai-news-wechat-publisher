@@ -30,16 +30,17 @@ function isFreshNews(publishedAt) {
 
 /**
  * 检查是否是AI相关新闻
- * 简单策略：标题必须包含核心AI关键词
+ * 策略：标题或摘要必须包含核心AI关键词
  */
-function isAIRelated(title = '') {
-  if (!title) return false;
-  const lowerTitle = title.toLowerCase();
+function isAIRelated(title = '', snippet = '') {
+  const text = (title + ' ' + snippet).toLowerCase();
   
-  // 简单的关键词匹配
-  return AI_KEYWORDS_CORE.some(keyword => 
-    lowerTitle.includes(keyword.toLowerCase())
+  // 必须包含至少一个AI关键词
+  const hasAI = AI_KEYWORDS_CORE.some(keyword => 
+    text.includes(keyword.toLowerCase())
   );
+  
+  return hasAI;
 }
 
 /**
@@ -60,7 +61,7 @@ async function parseRSS(source) {
         region: source.region || (DOMESTIC_RSS_SOURCES.includes(source) ? '国内' : '海外')
       }))
       .filter(item => isFreshNews(item.publishedAt))
-      .filter(item => isAIRelated(item.title));
+      .filter(item => isAIRelated(item.title, item.snippet));
     
     console.log(`   ✓ 获取 ${items.length}/${feed.items.length} 条AI相关新闻`);
     return items;

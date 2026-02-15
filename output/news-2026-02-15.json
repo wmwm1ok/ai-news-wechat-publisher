@@ -17,29 +17,14 @@
       "region": "国内"
     },
     {
-      "title": "Which AI tools are actually worth paying for? I'm keeping these subscriptions in 2026 - here's why",
-      "summary": "作者回顾2025年在生成式AI工具上的支出，基于节省时间的原则筛选出值得在2026年续费的AI工具订阅，并分享选择理由。",
-      "category": "产品发布与更新",
-      "company": "",
-      "tags": [
-        "AI工具",
-        "订阅",
-        "生成式AI"
-      ],
-      "source": "ZDNet",
-      "publishedAt": "Sun, 15 Feb 2026 01:00:43 GMT",
-      "url": "https://www.zdnet.com/article/which-ai-tools-are-worth-paying-for-here-are-subscriptions-im-keeping-and-why/",
-      "region": "海外"
-    },
-    {
       "title": "These XR glasses gave me a 200-inch OLED screen to work with",
-      "summary": "RayNeo Air 3S XR眼镜在测试中因提供200英寸OLED屏幕体验和性价比突出，目前在亚马逊使用优惠券可享26%折扣。",
+      "summary": "RayNeo Air 3S XR眼镜在测试中因提供相当于200英寸OLED屏幕的沉浸式工作体验而脱颖而出，被评为性价比最佳产品。目前亚马逊提供26%折扣优惠，进一步提升了其市场吸引力。",
       "category": "产品发布与更新",
       "company": "RayNeo",
       "tags": [
         "XR眼镜",
-        "OLED",
-        "亚马逊促销"
+        "RayNeo Air 3S",
+        "OLED屏幕"
       ],
       "source": "ZDNet",
       "publishedAt": "Sun, 15 Feb 2026 00:03:00 GMT",
@@ -50,15 +35,14 @@
   "技术与研究": [
     {
       "title": "Kubernetes驱动AI扩展，文化转型成为关键因素",
-      "summary": "文章探讨了Kubernetes在驱动人工智能（AI）应用扩展中的关键作用，并指出技术部署之外，企业内部的文化转型是成功实现AI规模化的重要决定因素。它强调了组织需要适应新的工作流程和协作方式，以充分利用容器化与编排技术带来的敏捷性和效率优势",
+      "summary": "文章探讨了Kubernetes在驱动人工智能（AI）扩展中的关键作用，并指出技术实施之外，组织文化转型是成功部署和扩展AI解决方案的关键因素。它强调了在采用Kubernetes等云原生技术以支持AI工作负载时，团队协作、流程适应和思维模式转",
       "category": "技术与研究",
       "company": "",
       "tags": [
         "Kubernetes",
         "人工智能",
-        "容器技术",
-        "数字化转型",
-        "企业文化"
+        "云原生",
+        "文化转型"
       ],
       "source": "InfoQ",
       "publishedAt": "Sun, 15 Feb 2026 08:00:00 GMT",
@@ -67,13 +51,13 @@
     },
     {
       "title": "Does it matter which HDMI port you use on your TV? Short answer: Yes",
-      "summary": "文章探讨了电视HDMI端口选择对画质和音质性能的影响，指出正确选择端口可避免性能损失，并提供了选择建议。",
+      "summary": "文章探讨了电视HDMI端口选择对音画性能的影响，指出不同端口可能支持不同规格，正确选择可确保获得最佳影像和声音体验。建议用户根据设备需求和端口版本进行匹配，以充分发挥硬件性能。",
       "category": "技术与研究",
       "company": "",
       "tags": [
         "HDMI",
         "电视",
-        "性能优化"
+        "音画性能"
       ],
       "source": "ZDNet",
       "publishedAt": "Sun, 15 Feb 2026 01:00:56 GMT",
@@ -111,13 +95,28 @@
       "region": "国内"
     },
     {
+      "title": "Which AI tools are actually worth paying for? I'm keeping these subscriptions in 2026 - here's why",
+      "summary": "作者回顾2025年在生成式AI工具上的支出后，分享了2026年仍值得付费订阅的AI工具选择标准。重点强调能有效节省时间的工具，并对订阅策略进行了调整，以提升工作效率和成本效益。",
+      "category": "技术与研究",
+      "company": "",
+      "tags": [
+        "AI工具",
+        "订阅",
+        "生成式AI"
+      ],
+      "source": "ZDNet",
+      "publishedAt": "Sun, 15 Feb 2026 01:00:43 GMT",
+      "url": "https://www.zdnet.com/article/which-ai-tools-are-worth-paying-for-here-are-subscriptions-im-keeping-and-why/",
+      "region": "海外"
+    },
+    {
       "title": "Jikipedia turns Epstein’s emails into an encyclopedia of his powerful friends",
-      "summary": "Jmail团队创建维基百科克隆站点Jikipedia，将爱泼斯坦邮件数据转化为其社交圈人物的详细档案，记录其房产访问记录等信息。",
+      "summary": "Jmail团队基于爱泼斯坦邮件数据创建了维基百科式网站Jikipedia，将其邮件内容转化为关联人物的详细档案。条目包括已知的行程记录和可能掌握的信息，旨在系统化揭示其社交网络关系。",
       "category": "技术与研究",
       "company": "Jmail",
       "tags": [
+        "Jikipedia",
         "数据挖掘",
-        "维基百科",
         "爱泼斯坦"
       ],
       "source": "The Verge",
@@ -145,12 +144,12 @@
     },
     {
       "title": "In a changed VC landscape, this exec is doubling down on overlooked founders",
-      "summary": "在硅谷追逐巨额融资和热门AI交易之际，Stacy Brown-Philpot创立的Cherryrock Capital坚持早期风险投资模式，专注于被忽视的创始人群体。该基金采取差异化策略，在当前的VC环境中加倍投入资源，支持那些可能被主流市",
+      "summary": "在硅谷追逐巨额融资和热门AI交易之际，Stacy Brown-Philpot创立的Cherryrock Capital坚持早期风险投资模式，专注于被忽视的创始人群体，展现出与传统风投不同的投资策略。",
       "category": "投融资与并购",
       "company": "Cherryrock Capital",
       "tags": [
         "风险投资",
-        "创业投资",
+        "创始人",
         "硅谷"
       ],
       "source": "TechCrunch",
@@ -162,7 +161,7 @@
   "政策与监管": [
     {
       "title": "黑龙江：支持生物制造企业运用人工智能、大数据等技术改造升级，提升数字化智能化水平",
-      "summary": "黑龙江省出台政策支持生物制造产业高质量发展，明确鼓励企业运用人工智能、大数据、云计算及物联网等技术进行智能化改造和数字化转型。对符合条件的技术改造项目给予省级财政贴息，并对省级认定的数字化车间和智能工厂提供最高200万元至1000万元的一次",
+      "summary": "黑龙江省出台政策支持生物制造产业高质量发展，鼓励企业运用人工智能、大数据、云计算及物联网等技术进行智能化改造和数字化转型。符合条件的企业可获得省级财政贴息支持，对省级认定的数字化车间和智能工厂，按项目合同金额给予10%的一次性补助，最高分别",
       "category": "政策与监管",
       "company": "黑龙江省人民政府",
       "tags": [
@@ -177,18 +176,18 @@
       "region": "国内"
     },
     {
-      "title": "Is safety ‘dead’ at xAI?",
-      "summary": "前员工透露马斯克正积极推动xAI的Grok聊天机器人变得“更失控”，引发对xAI安全措施的质疑。",
+      "title": "Disney accuses ByteDance of 'virtual smash-and-grab' when using copyrighted works to train its AI",
+      "summary": "迪士尼指控字节跳动未经授权使用其受版权保护的作品训练生成式AI工具Seedance 2.0，并已向该公司发出停止侵权函。迪士尼称此举为“虚拟打砸抢”，要求字节跳动立即停止相关行为。",
       "category": "政策与监管",
-      "company": "xAI",
+      "company": "迪士尼, 字节跳动",
       "tags": [
-        "Grok",
-        "安全争议",
-        "马斯克"
+        "版权纠纷",
+        "生成式AI",
+        "法律诉讼"
       ],
-      "source": "TechCrunch",
-      "publishedAt": "Sat, 14 Feb 2026 21:55:44 +0000",
-      "url": "https://techcrunch.com/2026/02/14/is-safety-is-dead-at-xai/",
+      "source": "Engadget",
+      "publishedAt": "Sat, 14 Feb 2026 19:11:16 +0000",
+      "url": "https://www.engadget.com/ai/disney-accuses-bytedance-of-virtual-smash-and-grab-when-using-copyrighted-works-to-train-its-ai-191116136.html?src=rss",
       "region": "海外"
     }
   ]

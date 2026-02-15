@@ -103,16 +103,26 @@ async function summarizeSingle(item) {
     const originalTitle = item.title.toLowerCase();
     const returnedTitle = (parsed.title || '').toLowerCase();
     
-    // 检查标题相似度（简单检查：是否有共同的关键词）
+    // 检查标题相似度
     const hasSimilarity = returnedTitle.includes(originalTitle.substring(0, 15)) ||
                          originalTitle.includes(returnedTitle.substring(0, 15));
     
     if (!hasSimilarity && originalTitle.length > 10) {
-      console.warn(`⚠️ 国内新闻标题不匹配，可能为编造:`);
+      console.warn(`⚠️ 国内新闻标题不匹配，丢弃编造内容:`);
       console.warn(`   原始: ${item.title.substring(0, 50)}...`);
       console.warn(`   返回: ${parsed.title?.substring(0, 50)}...`);
-      // 使用原始标题作为备选
-      parsed.title = item.title;
+      // 使用原始数据，不使用AI编造的任何内容
+      return {
+        title: item.title,
+        company: '',
+        summary: item.snippet?.substring(0, 200) || '暂无摘要',
+        category: '其他',
+        source: item.source,
+        publishedAt: item.publishedAt,
+        tags: [],
+        url: item.url,
+        region: item.region
+      };
     }
     
     return {
@@ -230,18 +240,34 @@ JSON 结构：
         // 低匹配度的也保留，但标记为可能翻译偏差
       }
       
-      // 保留所有AI总结的结果（信任AI的判断）
-      validated.push({
-        title: title,
-        summary: item.summary,
-        category: item.section || item.category,
-        source: originalItem?.source || item.source || '海外',
-        publishedAt: item.published_at || item.publishedAt || originalItem?.publishedAt,
-        tags: item.tags || [],
-        company: item.company,
-        region: '海外',
-        url: originalItem?.url || ''
-      });
+      // 如果匹配度太低，使用原始数据而不是AI编造的内容
+      if (bestMatchScore < ACCEPT_THRESHOLD) {
+        console.warn(`   使用原始数据替代编造的AI内容`);
+        validated.push({
+          title: originalItem?.title || title,
+          summary: originalItem?.snippet?.substring(0, 200) || '暂无摘要',
+          category: '其他',
+          source: originalItem?.source || '海外',
+          publishedAt: originalItem?.publishedAt,
+          tags: [],
+          company: '',
+          region: '海外',
+          url: originalItem?.url || ''
+        });
+      } else {
+        // 保留AI总结的结果
+        validated.push({
+          title: title,
+          summary: item.summary,
+          category: item.section || item.category,
+          source: originalItem?.source || item.source || '海外',
+          publishedAt: item.published_at || item.publishedAt || originalItem?.publishedAt,
+          tags: item.tags || [],
+          company: item.company,
+          region: '海外',
+          url: originalItem?.url || ''
+        });
+      }
     }
     
     console.log(`   验证通过 ${validated.length}/${parsed.items?.length || 0} 条海外新闻`);

@@ -178,8 +178,8 @@ export async function summarizeNews({ domestic, overseas }) {
   console.log('\n🤖 AI总结中...');
   
   // 限制数量
-  const domesticItems = domestic.slice(0, 15);
-  const overseasItems = overseas.slice(0, 20);
+  const domesticItems = domestic.slice(0, 25);
+  const overseasItems = overseas.slice(0, 35);
   
   // 国内逐条总结
   const domesticSummaries = [];

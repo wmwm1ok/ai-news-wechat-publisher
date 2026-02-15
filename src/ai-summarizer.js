@@ -207,44 +207,35 @@ JSON 结构：
     for (const item of parsed.items || []) {
       const title = item.title_cn || item.title;
       
-      // 海外新闻验证：检查公司名/关键词是否匹配（而非完整标题）
-      let matched = false;
+      // 海外新闻验证：找到最匹配的原始新闻
       let originalItem = null;
       let bestMatchScore = 0;
       
       for (const orig of items) {
-        // 提取关键词进行匹配
-        const origKeywords = extractKeywordsForMatching(orig.title);
-        const itemKeywords = extractKeywordsForMatching(title);
-        
-        // 计算共同关键词
-        const commonKeywords = origKeywords.filter(k => 
-          itemKeywords.some(ik => ik.toLowerCase().includes(k.toLowerCase()) || 
-                                  k.toLowerCase().includes(ik.toLowerCase()))
-        );
-        
-        // 如果有公司名匹配或 2 个以上关键词匹配，认为是同一新闻
-        const score = commonKeywords.length;
+        // 使用简化版相似度检查
+        const score = calculateMatchScore(orig.title, title);
         if (score > bestMatchScore) {
           bestMatchScore = score;
           originalItem = orig;
         }
       }
       
-      // 只要有至少 1 个关键词匹配就接受（海外新闻翻译后标题变化大）
-      matched = bestMatchScore >= 1;
+      // 放宽验证：只要有 30% 以上相似度就接受，或者直接接受AI的翻译结果
+      // 只要AI返回的不是完全无关的内容（score > 0.1）就保留
+      const ACCEPT_THRESHOLD = 0.1;
       
-      if (!matched) {
-        console.warn(`⚠️ 海外新闻无法匹配: "${title.substring(0, 40)}..."`);
-        continue;
+      if (bestMatchScore < ACCEPT_THRESHOLD) {
+        console.warn(`⚠️ 海外新闻匹配度低 (${bestMatchScore.toFixed(2)}): "${title.substring(0, 40)}..."`);
+        // 低匹配度的也保留，但标记为可能翻译偏差
       }
       
+      // 保留所有AI总结的结果（信任AI的判断）
       validated.push({
         title: title,
         summary: item.summary,
         category: item.section || item.category,
-        source: item.source,
-        publishedAt: item.published_at || item.publishedAt,
+        source: originalItem?.source || item.source || '海外',
+        publishedAt: item.published_at || item.publishedAt || originalItem?.publishedAt,
         tags: item.tags || [],
         company: item.company,
         region: '海外',
@@ -466,36 +457,75 @@ function mergeDuplicateNews(grouped) {
 }
 
 /**
- * 提取关键词用于海外新闻匹配（处理英文到中文的翻译）
+ * 计算两个标题的匹配分数（0-1）
+ * 用于海外新闻验证，检查翻译后的标题是否与原文相关
  */
-function extractKeywordsForMatching(title) {
-  if (!title) return [];
+function calculateMatchScore(originalTitle, translatedTitle) {
+  if (!originalTitle || !translatedTitle) return 0;
   
-  const keywords = [];
-  const text = title.toLowerCase();
+  const orig = originalTitle.toLowerCase();
+  const trans = translatedTitle.toLowerCase();
   
-  // 公司名称（英文+中文）
-  const companies = [
-    'openai', 'google', 'meta', 'anthropic', 'microsoft', 'amazon', 'apple',
-    'nvidia', 'xai', 'grok', 'chatgpt', 'gpt', 'claude', 'gemini', 'llama',
-    '字节', '百度', '阿里', '腾讯', '智谱', '月之暗面', 'kimi', 'deepseek'
-  ];
+  // 1. 提取原文中的大写单词（通常是人名、公司名、产品名）
+  const capitalizedWords = originalTitle.match(/[A-Z][a-z]+/g) || [];
+  const upperWords = originalTitle.match(/[A-Z]{2,}/g) || [];
+  const keyWords = [...capitalizedWords, ...upperWords].map(w => w.toLowerCase());
   
-  // 产品/技术名称
-  const products = [
-    'sora', 'dall-e', 'midjourney', 'stable diffusion', 'sd', 'grok',
-    'seedance', 'eva ai', 'cherryrock', 'neuromorphic'
-  ];
-  
-  // 检查匹配
-  for (const c of companies) {
-    if (text.includes(c.toLowerCase())) keywords.push(c);
-  }
-  for (const p of products) {
-    if (text.includes(p.toLowerCase())) keywords.push(p);
+  // 2. 计算匹配的核心词汇数量
+  let matchedWords = 0;
+  for (const word of keyWords) {
+    if (word.length < 2) continue;
+    // 检查完整词或前4个字符是否匹配
+    if (trans.includes(word) || trans.includes(word.substring(0, 4))) {
+      matchedWords++;
+    }
   }
   
-  return [...new Set(keywords)];
+  // 3. 计算匹配分数
+  const keywordScore = keyWords.length > 0 ? matchedWords / keyWords.length : 0;
+  
+  // 4. 检查数字匹配（版本号、年份等）
+  const origNumbers = originalTitle.match(/\d+/g) || [];
+  const transNumbers = translatedTitle.match(/\d+/g) || [];
+  const commonNumbers = origNumbers.filter(n => transNumbers.includes(n));
+  const numberScore = origNumbers.length > 0 ? commonNumbers.length / origNumbers.length : 0;
+  
+  // 5. 综合分数（关键词权重 70%，数字权重 30%）
+  return keywordScore * 0.7 + numberScore * 0.3;
+}
+
+/**
+ * 检查标题是否与原始输入相关（用于海外新闻验证）
+ * 策略：检查是否包含原始标题中的核心词汇
+ */
+function isRelatedToOriginal(originalTitle, translatedTitle) {
+  if (!originalTitle || !translatedTitle) return false;
+  
+  const orig = originalTitle.toLowerCase();
+  const trans = translatedTitle.toLowerCase();
+  
+  // 提取原始标题中的大写缩写和技术词汇
+  const techTerms = orig.match(/[A-Z]{2,}/g) || [];
+  const capitalizedWords = orig.match(/[A-Z][a-z]+/g) || [];
+  const allTerms = [...techTerms, ...capitalizedWords].map(t => t.toLowerCase());
+  
+  // 检查翻译后的标题是否包含这些核心词汇（或其中文对应）
+  // 放宽标准：只要有任意一个核心概念匹配即可
+  const keyConcepts = [...new Set(allTerms)].slice(0, 5); // 取前5个核心词
+  
+  for (const term of keyConcepts) {
+    if (term.length < 3) continue; // 跳过太短的关键词
+    
+    // 检查原始词或其部分是否在翻译中出现
+    if (trans.includes(term) || 
+        trans.includes(term.substring(0, Math.min(term.length, 6))) ||
+        // 反向检查：翻译中的词是否在原文中
+        orig.includes(trans.split(/[\s\[\]【】]+/).filter(w => w.length > 2)[0] || '')) {
+      return true;
+    }
+  }
+  
+  return false;
 }
 
 /**

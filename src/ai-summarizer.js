@@ -398,38 +398,38 @@ function mergeDuplicateNews(grouped) {
         const otherKeywords = extractKeywords(other.title);
         const commonKeywords = itemKeywords.filter(k => otherKeywords.includes(k));
         
-        // 规则 1: 如果有 2 个以上共同关键词，认为是重复
-        // 规则 2: 如果只有 1 个共同关键词，但标题相似度超过 40%，也认为是重复
-        // 规则 3: 如果都包含同一公司名且标题相似度超过 30%，也认为是重复
+        // 去重规则：
+        // 1. 3 个及以上共同关键词 -> 强重复
+        // 2. 2 个共同关键词 + 标题相似度 > 50% -> 重复
+        // 3. 同一公司 + 标题相似度 > 60% -> 重复（同一公司的不同产品保留）
         let isDuplicate = false;
         
-        if (commonKeywords.length >= 2) {
+        if (commonKeywords.length >= 3) {
           isDuplicate = true;
-        } else if (commonKeywords.length === 1) {
-          const similarity = calculateSimilarity(item.title, other.title);
-          if (similarity > 0.4) {
+        } else if (commonKeywords.length === 2) {
+          const sim = calculateSimilarity(item.title, other.title);
+          if (sim > 0.5) {
             isDuplicate = true;
           }
         }
         
-        // 特殊规则：同一公司的多条新闻，如果标题相似度超过 30%，合并
+        // 同一公司严格去重（只去重高度相似的）
         const hasCompany = commonKeywords.some(k => 
           ['字节', '豆包', 'openai', 'google', 'meta', 'anthropic', '阿里', '百度', '腾讯'].includes(k)
         );
         if (hasCompany && !isDuplicate) {
-          const similarity = calculateSimilarity(item.title, other.title);
-          if (similarity > 0.3) {
+          const sim = calculateSimilarity(item.title, other.title);
+          // 只有高度相似才合并（避免合并同一公司的不同产品新闻）
+          if (sim > 0.6) {
             isDuplicate = true;
-            console.log(`     同公司相似: "${other.title.substring(0, 30)}..." (相似度: ${similarity.toFixed(2)})`);
+            console.log(`     高度相似: "${other.title.substring(0, 30)}..." (相似度: ${sim.toFixed(2)})`);
           }
         }
         
         if (isDuplicate) {
           duplicates.push(other);
           used.add(j);
-          if (!hasCompany || commonKeywords.length > 0) {
-            console.log(`     相似: "${other.title.substring(0, 30)}..." (共同关键词: ${commonKeywords.join(', ')})`);
-          }
+          console.log(`     相似: "${other.title.substring(0, 30)}..." (关键词: ${commonKeywords.join(', ')})`);
         }
       }
       

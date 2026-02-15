@@ -189,11 +189,14 @@ async function fetchSerperNews() {
           }
         }
       } catch (queryError) {
-        console.warn(`   ⚠️ 搜索 "${query}" 失败: ${queryError.message}`);
+        // 静默处理 404（可能是 RSS 源暂时不可用）
+        if (queryError.response?.status !== 404) {
+          console.warn(`   ⚠️ 搜索 "${query}" 失败: ${queryError.message}`);
+        }
       }
       
       // 避免 rate limit
-      await new Promise(r => setTimeout(r, 300));
+      await new Promise(r => setTimeout(r, 200));
     }
     
     console.log(`   ✓ 获取 ${allNews.length} 条海外新闻`);

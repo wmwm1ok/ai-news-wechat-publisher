@@ -1,13 +1,13 @@
 {
   "产品发布与更新": [
     {
-      "title": "字节跳动发布豆包大模型2.0，主打真实世界复杂任务执行力",
-      "summary": "字节跳动正式发布豆包大模型2.0版本，该版本的核心升级在于显著提升了模型在真实世界复杂任务中的执行力。此次更新旨在使大模型能够更可靠、高效地处理实际应用场景中的多样化与高难度需求，标志着其在通用人工智能能力上的进一步深化。",
+      "title": "字节跳动发布豆包大模型2.0版本",
+      "summary": "字节跳动正式发布豆包大模型2.0版本。该版本的核心升级在于显著提升了模型在真实世界复杂任务中的执行能力，旨在更好地处理实际应用场景中的多步骤、高难度任务，增强模型的实用性与可靠性。",
       "category": "产品发布与更新",
       "company": "字节跳动",
       "tags": [
-        "人工智能",
         "大模型",
+        "人工智能",
         "产品发布"
       ],
       "source": "机器之心",
@@ -16,14 +16,14 @@
       "region": "国内"
     },
     {
-      "title": "Designer Kate Barton teams up with IBM and Fiducia AI for a NYFW presentation",
-      "summary": "设计师Kate Barton与Fiducia AI及IBM合作，在纽约时装周上展示了一场融合AI技术的时装秀。此次合作旨在探索人工智能在创意设计和时尚产业中的应用，展示了科技与艺术结合的新可能性。",
+      "title": "设计师Kate Barton携手IBM与Fiducia AI亮相纽约时装周",
+      "summary": "设计师Kate Barton与Fiducia AI及IBM合作，在纽约时装周上进行了一场展示。此次合作将前沿AI技术与时尚设计相结合，探索了科技在创意领域的新应用与可能性。",
       "category": "产品发布与更新",
       "company": "IBM, Fiducia AI",
       "tags": [
-        "AI设计",
-        "时尚科技",
-        "跨界合作"
+        "AI时尚",
+        "跨界合作",
+        "创意科技"
       ],
       "source": "TechCrunch",
       "publishedAt": "Sat, 14 Feb 2026 17:43:46 +0000",
@@ -31,77 +31,32 @@
       "region": "海外"
     },
     {
-      "title": "Agent、图像、视频全是大版本升级：春晚还没开，豆包AI就火了",
-      "summary": "豆包AI在春晚前夕宣布其Agent、图像和视频功能实现重大版本升级，引发市场广泛关注。此次升级涉及多个核心模块的全面优化，标志着该产品在人工智能应用领域的技术突破。升级后的功能预计将提升用户体验，并在特定场景下展现更强的性能表现。",
+      "title": "豆包AI多模态能力全面升级",
+      "summary": "豆包AI在春晚前夕宣布其核心能力迎来重大版本更新，覆盖智能体（Agent）、图像生成与视频处理等多个关键模态。此次升级标志着其在人工智能多模态技术领域的持续深化与产品化推进，旨在提升综合交互与内容生成能力。",
       "category": "产品发布与更新",
-      "company": "豆包AI",
+      "company": "豆包",
       "tags": [
         "人工智能",
-        "产品升级",
-        "春晚营销"
+        "多模态AI",
+        "产品升级"
       ],
       "source": "机器之心",
       "publishedAt": "Sat, 14 Feb 2026 16:51:00 +0800",
       "url": "https://www.jiqizhixin.com/articles/2026-02-14-8",
       "region": "国内"
-    },
-    {
-      "title": "Nothing opens its first retail store in India",
-      "summary": "科技品牌Nothing在印度开设了首家实体零售店，该店为两层结构，将销售Nothing品牌及其平价子品牌CMF的产品。此举标志着该品牌在印度市场的线下扩张，旨在提升品牌可见度和消费者体验。",
-      "category": "产品发布与更新",
-      "company": "Nothing",
-      "tags": [
-        "零售扩张",
-        "印度市场",
-        "消费电子"
-      ],
-      "source": "TechCrunch",
-      "publishedAt": "Sat, 14 Feb 2026 06:30:00 +0000",
-      "url": "https://techcrunch.com/2026/02/13/nothing-opens-its-first-retail-store-in-india/",
-      "region": "海外"
-    },
-    {
-      "title": "Airbnb plans to bake in AI features for search, discovery and support",
-      "summary": "Airbnb首席执行官Brian Chesky表示，公司计划加强大语言模型在客户搜索、产品发现及客服支持等环节的应用。这一举措旨在提升用户体验和平台效率，显示出AI技术在旅游住宿行业的深化整合趋势。",
-      "category": "产品发布与更新",
-      "company": "Airbnb",
-      "tags": [
-        "大语言模型",
-        "用户体验",
-        "旅游科技"
-      ],
-      "source": "TechCrunch",
-      "publishedAt": "Sat, 14 Feb 2026 02:40:42 +0000",
-      "url": "https://techcrunch.com/2026/02/13/airbnb-plans-to-bake-in-ai-features-for-search-discovery-and-support/",
-      "region": "海外"
-    },
-    {
-      "title": "Airbnb says a third of its customer support is now handled by AI in the US and Canada",
-      "summary": "Airbnb宣布其在美国和加拿大约三分之一的客户支持服务已由AI处理。公司CEO表示，即将推出的新应用不仅能搜索，还能“了解用户”，旨在帮助客人规划行程、协助房东管理业务，并提升公司运营效率。",
-      "category": "产品发布与更新",
-      "company": "Airbnb",
-      "tags": [
-        "AI客服",
-        "应用更新",
-        "运营效率"
-      ],
-      "source": "TechCrunch",
-      "publishedAt": "Fri, 13 Feb 2026 22:12:26 +0000",
-      "url": "https://techcrunch.com/2026/02/13/airbnb-says-a-third-of-its-customer-support-is-now-handled-by-ai-in-the-u-s-and-canada/",
-      "region": "海外"
     }
   ],
   "技术与研究": [
     {
-      "title": "这个情人节，AI深吻Math！国产RL系统多维突破300年亲吻数难题",
-      "summary": "国产强化学习系统在情人节期间取得突破，成功解决了困扰数学界300年的亲吻数难题。该系统通过AI算法在多维空间优化球体排列方式，实现了理论计算与实验验证的双重突破，为组合几何学领域提供了新的研究工具与方法论支持。",
+      "title": "国产强化学习系统突破300年亲吻数难题",
+      "summary": "近日，一项基于强化学习（RL）的国产AI系统在数学领域取得重要进展，成功攻克了困扰学界长达300年的“亲吻数”难题。该系统通过创新的算法设计，在多维空间中对这一经典几何问题实现了突破性求解，展现了人工智能在基础科学研究中的应用潜力。",
       "category": "技术与研究",
       "company": "",
       "tags": [
         "人工智能",
-        "数学研究",
         "强化学习",
-        "算法突破"
+        "数学难题",
+        "几何学"
       ],
       "source": "机器之心",
       "publishedAt": "Sat, 14 Feb 2026 16:43:00 +0800",
@@ -109,14 +64,14 @@
       "region": "国内"
     },
     {
-      "title": "Is safety ‘dead’ at xAI?",
-      "summary": "据前员工透露，埃隆·马斯克正积极推动其AI公司xAI的Grok聊天机器人变得更加“不受约束”，这可能意味着安全措施被削弱。这一举动引发了关于AI安全与伦理边界的讨论，显示出在追求AI性能与创新时，安全标准可能面临挑战。",
+      "title": "马斯克被指正让xAI的Grok聊天机器人“更失控”",
+      "summary": "据一位前员工透露，埃隆·马斯克正“积极”致力于让xAI的Grok聊天机器人变得“更失控”。这一举动引发了外界对AI安全性的担忧，质疑在追求技术突破的同时，是否牺牲了必要的安全护栏。",
       "category": "技术与研究",
       "company": "xAI",
       "tags": [
         "AI安全",
         "聊天机器人",
-        "伦理争议"
+        "埃隆·马斯克"
       ],
       "source": "TechCrunch",
       "publishedAt": "Sat, 14 Feb 2026 21:55:44 +0000",
@@ -124,14 +79,29 @@
       "region": "海外"
     },
     {
-      "title": "多模态Deep Research，终于有了「可核验」的评测标准",
-      "summary": "近日，多模态Deep Research领域迎来重要进展，业界首次推出「可核验」的评测标准。该标准旨在解决现有评估方法主观性强、难以复现的问题，通过建立一套透明、可量化的指标体系，对多模态模型的深度推理与事实核查能力进行客观衡量。",
+      "title": "Jikipedia将爱泼斯坦邮件转化为其权贵朋友的百科全书",
+      "summary": "Jmail团队再次推出维基百科克隆项目Jikipedia，将爱泼斯坦邮件中的大量数据转化为其关联人士的详细档案。条目包括已知的访问记录、可能知情的活动等，旨在系统梳理邮件内容，揭示其社交网络与潜在关联。",
       "category": "技术与研究",
       "company": "",
       "tags": [
-        "多模态AI",
+        "数据挖掘",
+        "信息整理",
+        "调查报道"
+      ],
+      "source": "The Verge",
+      "publishedAt": "2026-02-14T22:33:02.000Z",
+      "url": "https://www.theverge.com/policy/879508/jikipedia-epstein-email-encyclopedia",
+      "region": "海外"
+    },
+    {
+      "title": "多模态深度研究评测标准实现可核验",
+      "summary": "多模态深度研究领域近期建立了可核验的评测标准，该标准旨在为相关技术提供更客观、透明的评估依据。新标准强调验证过程的严谨性，有望推动行业研究向更规范的方向发展，促进技术应用的可靠性提升。",
+      "category": "技术与研究",
+      "company": "",
+      "tags": [
+        "多模态",
+        "深度研究",
         "评测标准",
-        "Deep Research",
         "可核验性"
       ],
       "source": "机器之心",
@@ -140,14 +110,14 @@
       "region": "国内"
     },
     {
-      "title": "世界模型原生新一代范式！极佳视界斩获全球第一后，GigaBrain-0.5M*再进化",
-      "summary": "极佳视界在取得全球第一的成就后，其世界模型原生新一代范式GigaBrain-0.5M*实现再进化。该进展标志着公司在人工智能模型架构领域的技术突破，代表了世界模型发展的新方向。",
+      "title": "GigaBrain-0.5M*世界模型实现新范式演进",
+      "summary": "在取得全球领先的视觉性能后，GigaBrain-0.5M*世界模型实现了新一代范式的进化。该进展标志着其在核心技术路径上的持续突破，为构建更强大的通用人工智能模型奠定了基础。",
       "category": "技术与研究",
       "company": "极佳视界",
       "tags": [
         "世界模型",
         "人工智能",
-        "模型架构"
+        "GigaBrain"
       ],
       "source": "机器之心",
       "publishedAt": "Sat, 14 Feb 2026 16:34:00 +0800",
@@ -155,37 +125,67 @@
       "region": "国内"
     },
     {
-      "title": "「上下文学习」之后，腾讯混元第二篇公开研究：精准定位RLVR训练崩溃的“罪魁祸首”Token",
-      "summary": "腾讯混元团队发布第二篇公开研究，针对强化学习与视觉推理（RLVR）训练中的崩溃问题，成功精准定位导致模型训练不稳定的关键Token。该研究揭示了特定Token对训练过程的破坏性影响，为提升大模型训练稳定性和效率提供了重要技术突破。",
+      "title": "腾讯混元研究：精准定位RLVR训练崩溃的关键Token",
+      "summary": "腾讯混元团队继“上下文学习”研究后，发布第二篇公开研究，聚焦于RLVR训练过程中的崩溃问题。该研究通过技术手段精准定位导致训练崩溃的特定Token，为提升模型训练稳定性提供了关键洞察。",
       "category": "技术与研究",
       "company": "腾讯",
       "tags": [
-        "人工智能",
-        "大模型训练",
-        "强化学习",
-        "腾讯混元"
+        "腾讯混元",
+        "RLVR",
+        "模型训练",
+        "AI研究"
       ],
       "source": "机器之心",
       "publishedAt": "Sat, 14 Feb 2026 16:29:01 +0800",
       "url": "https://www.jiqizhixin.com/articles/2026-02-14-4",
       "region": "国内"
+    },
+    {
+      "title": "ALS夺走音乐家嗓音，AI助他重返舞台",
+      "summary": "音乐家Patrick Darling因肌萎缩侧索硬化症（ALS）失去说话能力后，通过人工智能技术重建了自己的声音。在近期演出中，他借助AI生成的歌声首次与乐队同台表演，演唱为曾祖父创作的歌曲，感动全场观众。",
+      "category": "技术与研究",
+      "company": "",
+      "tags": [
+        "人工智能",
+        "医疗辅助",
+        "音乐科技"
+      ],
+      "source": "MIT Technology Review",
+      "publishedAt": "Fri, 13 Feb 2026 17:17:28 +0000",
+      "url": "https://www.technologyreview.com/2026/02/13/1132913/als-stole-this-musicians-voice-ai-sing/",
+      "region": "海外"
+    },
+    {
+      "title": "《每日摘要》：专访Jim O'Neill与劫案真相揭秘",
+      "summary": "本期《每日摘要》科技通讯包含对美国副卫生部长Jim O'Neill的独家访谈，探讨疫苗指南的动态调整。同时分析了高科技劫案背后的真相，指出电影中常见的精密技术盗窃在现实中往往被夸大，实际犯罪手段更依赖传统方法。",
+      "category": "技术与研究",
+      "company": "",
+      "tags": [
+        "科技通讯",
+        "公共卫生",
+        "犯罪分析"
+      ],
+      "source": "MIT Technology Review",
+      "publishedAt": "Fri, 13 Feb 2026 13:10:00 +0000",
+      "url": "https://www.technologyreview.com/2026/02/13/1132896/the-download-an-exclusive-chat-with-jim-oneill-and-the-surprising-truth-about-heists/",
+      "region": "海外"
     }
   ],
   "投融资与并购": [],
   "政策与监管": [
     {
-      "title": "Indian pharmacy chain giant exposed customer data and internal systems",
-      "summary": "印度一家大型连锁药房的网络管理后台存在安全漏洞，导致数千份在线药品订单数据及内部系统信息被暴露。这一事件凸显了医疗健康领域的数据安全风险，可能涉及客户隐私泄露和系统脆弱性问题。",
+      "title": "你手中的手机已成为强大的抵抗工具",
+      "summary": "《纽约时报》通过逐帧分析目击者视频，记录了Alex Pretti被联邦特工逮捕并开枪射击的事件。视频显示，Pretti一手举起，另一手持手机，随后被特工制服并疑似被搜出枪支。这一事件突显了手机录像在记录执法行动、提供关键证据方面的重要作用。",
       "category": "政策与监管",
-      "company": "未提及具体药房名称",
+      "company": "",
       "tags": [
-        "数据泄露",
-        "网络安全",
-        "隐私风险"
+        "执法记录",
+        "公民新闻",
+        "社会监督"
       ],
-      "source": "TechCrunch",
-      "publishedAt": "Sat, 14 Feb 2026 03:30:00 +0000",
-      "url": "https://techcrunch.com/2026/02/13/indias-major-pharmacy-chain-exposed-customer-data-and-internal-systems/",
+      "source": "The Verge",
+      "publishedAt": "2026-02-14T15:00:00.000Z",
+      "url": "https://www.theverge.com/policy/879273/alex-pretti-ice-cbp-trump-free-speech",
       "region": "海外"
     }
   ]

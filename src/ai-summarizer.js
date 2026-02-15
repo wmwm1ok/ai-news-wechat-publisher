@@ -154,11 +154,11 @@ async function summarizeOverseasBatch(items) {
 - 严禁使用"震惊""炸了""爆火"等词汇
 
 【筛选与去重标准】
-1) 从 articles 中筛选最有价值的 7-9 条新闻
+1) 从 articles 中筛选最有价值的 10-12 条新闻
 2) 优先选择：头部公司动态（OpenAI/Google/Meta等）、重要技术突破、大额融资、重大政策
 3) 严格去重：同一事件的多条报道只保留最完整的一条（如"豆包2.0"的多篇报道只选1条）
 4) 过滤掉：地方新闻、重复报道、营销软文、过于细分的技术细节
-5) 确保四个分类都有内容：产品发布2-3条、技术研究2-3条、投融资1-2条、政策监管1-2条
+5) 确保四个分类都有内容：产品发布2-4条、技术研究2-4条、投融资1-3条、政策监管1-2条
 
 【分类规则】
 按以下 4 个模块分类（固定）：
@@ -308,9 +308,9 @@ export async function summarizeNews({ domestic, overseas }) {
   console.log(`   国内候选: ${domestic.length} 条`);
   console.log(`   海外候选: ${overseas.length} 条\n`);
   
-  // 限制处理数量，确保最终输出 10-15 条
-  const domesticToProcess = domestic.slice(0, 10);
-  const overseasToProcess = overseas.slice(0, 12);
+  // 限制处理数量，确保最终输出 12-16 条
+  const domesticToProcess = domestic.slice(0, 12);
+  const overseasToProcess = overseas.slice(0, 14);
   
   // 国内新闻：逐条总结
   console.log(`正在总结 ${domesticToProcess.length} 条国内新闻...`);

@@ -154,11 +154,12 @@ async function summarizeOverseasBatch(items) {
 - 严禁使用"震惊""炸了""爆火"等词汇
 
 【筛选与去重标准】
-1) 从 articles 中筛选最有价值的 10-12 条新闻
+1) 从 articles 中筛选最有价值的 12-16 条AI新闻
 2) 优先选择：头部公司动态（OpenAI/Google/Meta等）、重要技术突破、大额融资、重大政策
-3) 严格去重：同一事件的多条报道只保留最完整的一条（如"豆包2.0"的多篇报道只选1条）
-4) 过滤掉：地方新闻、重复报道、营销软文、过于细分的技术细节
-5) 确保四个分类都有内容：产品发布2-4条、技术研究2-4条、投融资1-3条、政策监管1-2条
+3) 平衡国内外：确保海外AI新闻有足够比例（至少30-40%）
+4) 严格去重：同一事件的多条报道只保留最完整的一条
+5) 过滤掉：非AI内容、地方新闻、营销软文
+6) 确保四个分类都有内容：产品发布3-5条、技术研究3-5条、投融资2-3条、政策监管1-2条
 
 【分类规则】
 按以下 4 个模块分类（固定）：
@@ -310,9 +311,9 @@ export async function summarizeNews({ domestic, overseas }) {
   console.log(`   国内候选: ${domestic.length} 条`);
   console.log(`   海外候选: ${overseas.length} 条\n`);
   
-  // 限制处理数量，确保最终输出 12-16 条
-  const domesticToProcess = domestic.slice(0, 12);
-  const overseasToProcess = overseas.slice(0, 14);
+  // 限制处理数量 - 增加海外新闻处理量以确保有足够AI相关内容
+  const domesticToProcess = domestic.slice(0, 10);
+  const overseasToProcess = overseas.slice(0, 25);  // 增加海外新闻处理量
   
   // 国内新闻：逐条总结
   console.log(`正在总结 ${domesticToProcess.length} 条国内新闻...`);
@@ -342,9 +343,9 @@ export async function summarizeNews({ domestic, overseas }) {
     grouped[section] = allNews.filter(item => item.category === section);
   });
   
-  // 限制每个分类的数量（确保总量 10-15 条）
-  grouped['产品发布与更新'] = (grouped['产品发布与更新'] || []).slice(0, 4);
-  grouped['技术与研究'] = (grouped['技术与研究'] || []).slice(0, 4);
+  // 限制每个分类的数量（确保总量 12-16 条，给海外新闻留足够位置）
+  grouped['产品发布与更新'] = (grouped['产品发布与更新'] || []).slice(0, 5);
+  grouped['技术与研究'] = (grouped['技术与研究'] || []).slice(0, 5);
   grouped['投融资与并购'] = (grouped['投融资与并购'] || []).slice(0, 4);
   grouped['政策与监管'] = (grouped['政策与监管'] || []).slice(0, 3);
   

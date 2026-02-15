@@ -11,17 +11,11 @@ async function callDeepSeek(prompt) {
       {
         model: CONFIG.deepseek.model,
         messages: [
-          {
-            role: 'system',
-            content: '你是一个专业的 AI 行业新闻编辑，擅长总结新闻并分类。输出必须是严格的 JSON 格式。'
-          },
-          {
-            role: 'user',
-            content: prompt
-          }
+          { role: 'system', content: '你是AI新闻编辑，输出严格JSON。' },
+          { role: 'user', content: prompt }
         ],
-        temperature: 0.7,
-        max_tokens: 4000
+        temperature: 0.3,
+        max_tokens: 2000
       },
       {
         headers: {
@@ -33,300 +27,216 @@ async function callDeepSeek(prompt) {
     );
     
     const content = response.data.choices[0]?.message?.content || '';
-    
-    // 清理可能的 Markdown 代码块
-    const cleaned = content
-      .replace(/```json\n?/g, '')
-      .replace(/```\n?/g, '')
-      .trim();
-    
-    return cleaned;
+    return content.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
   } catch (error) {
     console.error('DeepSeek API 调用失败:', error.message);
-    if (error.response) {
-      console.error('响应:', error.response.data);
-    }
     throw error;
   }
 }
 
 /**
- * 单条新闻总结和分类
+ * 从标题推断分类
  */
-async function summarizeSingle(item) {
-  const prompt = `你是一名资深AI行业新闻编辑，为专业读者提供简洁、准确的新闻摘要。
-
-【角色定位】
-- 风格：专业、客观、简洁，避免标题党和情绪化表达
-- 读者：AI从业者、投资人、行业研究员
-- 要求：提供有价值的信息密度，去除营销话术
-
-【绝对禁止】
-- 禁止编造任何新闻事实
-- 禁止将旧闻改写成"今日发布"
-- 禁止添加原文中没有的信息
-- 禁止使用"震惊""炸了""爆火"等情绪化词汇
-- 必须严格基于输入的新闻内容总结
-
-【分类规则】
-从以下四类中选择一个最贴切的：
-- 产品发布与更新：新产品、功能更新、版本发布
-- 技术与研究：论文、技术突破、研究成果、开源项目
-- 投融资与并购：融资、投资、并购、IPO
-- 政策与监管：法规、政策、监管动态、合规要求
-
-【输出格式】
-严格 JSON，不要 Markdown，不要代码块：
-{
-  "title": "新闻标题（去除营销词汇，保持专业简洁）",
-  "company": "公司/机构名称（如字节跳动、OpenAI、Google等，从标题或摘要中提取）",
-  "summary": "120-180字专业摘要，突出核心信息（公司/机构、产品/技术、关键数据、影响），避免无信息量的描述",
-  "category": "分类名称",
-  "source": "来源",
-  "publishedAt": "发布时间",
-  "tags": ["技术标签1", "技术标签2"]
+function inferCategory(title) {
+  const t = title.toLowerCase();
+  if (t.includes('发布') || t.includes('上线') || t.includes('推出') || t.includes('更新') || t.includes('launch') || t.includes('release')) {
+    return '产品发布与更新';
+  }
+  if (t.includes('融资') || t.includes('投资') || t.includes('并购') || t.includes('收购') || t.includes('fund') || t.includes('invest')) {
+    return '投融资与并购';
+  }
+  if (t.includes('政策') || t.includes('监管') || t.includes('法规') || t.includes('版权') || t.includes('policy') || t.includes('regulation')) {
+    return '政策与监管';
+  }
+  return '技术与研究';
 }
 
-【输入数据】
-标题：${item.title}
-来源：${item.source}
-时间：${item.publishedAt}
-摘要：${item.snippet}
+/**
+ * 从标题提取公司名
+ */
+function extractCompanyFromTitle(title) {
+  if (!title) return '';
+  const companies = ['字节','豆包','百度','阿里','腾讯','智谱','月之暗面','Kimi','MiniMax','稀宇',
+    'OpenAI','Google','Meta','Anthropic','Microsoft','Amazon','Apple','NVIDIA','xAI','Grok','ChatGPT','Claude','Gemini','Llama','Perplexity','Mistral',
+    'Adobe','Salesforce','Oracle','IBM','Intel','AMD','Samsung','Sony','Tesla'];
+  const t = title.toLowerCase();
+  for (const c of companies) {
+    if (t.includes(c.toLowerCase())) return c;
+  }
+  return '';
+}
 
-请基于以上输入数据输出专业 JSON：`;
+/**
+ * 从标题提取标签
+ */
+function extractTagsFromTitle(title) {
+  if (!title) return ['AI'];
+  const tags = [];
+  const keywords = ['AI','大模型','GPT','Claude','Gemini','LLM','多模态','生成式','Agent','芯片','自动驾驶','机器人','深度学习'];
+  const t = title.toLowerCase();
+  for (const k of keywords) {
+    if (t.includes(k.toLowerCase())) tags.push(k);
+  }
+  return tags.length > 0 ? tags.slice(0, 3) : ['AI'];
+}
+
+/**
+ * 单条新闻总结 - 标题永远用原始标题
+ */
+async function summarizeSingle(item) {
+  const prompt = `为以下新闻写摘要和分类。\n\n原文标题：${item.title}\n内容摘要：${item.snippet}\n\n输出JSON（严格格式）：\n{"summary":"120-180字专业摘要","category":"产品发布与更新/技术与研究/投融资与并购/政策与监管","company":"公司名","tags":["标签1","标签2"]}\n\n规则：\n1. summary必须基于输入内容，严禁编造\n2. category判断：发布/更新→产品发布与更新；融资/并购→投融资与并购；政策/法规→政策与监管；其他→技术与研究\n3. 只输出JSON，不要其他内容`;
 
   try {
     const response = await callDeepSeek(prompt);
     const parsed = JSON.parse(response);
     
-    // 验证标题是否与原始标题相关（防止 AI 编造完全不同的新闻）
-    const originalTitle = item.title.toLowerCase();
-    const returnedTitle = (parsed.title || '').toLowerCase();
-    
-    // 检查标题相似度
-    const hasSimilarity = returnedTitle.includes(originalTitle.substring(0, 15)) ||
-                         originalTitle.includes(returnedTitle.substring(0, 15));
-    
-    if (!hasSimilarity && originalTitle.length > 10) {
-      console.warn(`⚠️ 国内新闻标题不匹配，丢弃编造内容:`);
-      console.warn(`   原始: ${item.title.substring(0, 50)}...`);
-      console.warn(`   返回: ${parsed.title?.substring(0, 50)}...`);
-      // 使用原始数据，不使用AI编造的任何内容
-      return {
-        title: item.title,
-        company: '',
-        summary: item.snippet?.substring(0, 200) || '暂无摘要',
-        category: '其他',
-        source: item.source,
-        publishedAt: item.publishedAt,
-        tags: [],
-        url: item.url,
-        region: item.region
-      };
-    }
-    
     return {
-      ...parsed,
+      title: item.title,  // 永远使用原始标题
+      summary: parsed.summary || item.snippet?.substring(0, 200) || '暂无摘要',
+      category: parsed.category || inferCategory(item.title),
+      company: parsed.company || extractCompanyFromTitle(item.title),
+      tags: parsed.tags || extractTagsFromTitle(item.title),
+      source: item.source,
+      publishedAt: item.publishedAt,
       url: item.url,
-      region: item.region
+      region: '国内'
     };
   } catch (error) {
-    console.error(`总结失败: ${item.title}`, error.message);
-    return null;
+    console.warn(`AI总结失败，使用原始数据: ${item.title.substring(0, 30)}...`);
+    return {
+      title: item.title,
+      summary: item.snippet?.substring(0, 200) || '暂无摘要',
+      category: inferCategory(item.title),
+      company: extractCompanyFromTitle(item.title),
+      tags: extractTagsFromTitle(item.title),
+      source: item.source,
+      publishedAt: item.publishedAt,
+      url: item.url,
+      region: '国内'
+    };
   }
 }
 
 /**
- * 批量总结海外新闻（使用聚合模式）
+ * 批量总结海外新闻 - 标题永远用原始标题
  */
 async function summarizeOverseasBatch(items) {
   if (items.length === 0) return [];
   
-  const dateStr = new Date().toLocaleDateString('zh-CN');
-  const articlesJson = JSON.stringify(items.map(item => ({
-    title: item.title,
-    snippet: item.snippet,
-    source: item.source,
-    publishedAt: item.publishedAt
-  })));
-
-  const prompt = `你是资深 AI 行业新闻编辑，为专业读者筛选和总结海外 AI 新闻。
-
-【角色定位】
-- 风格：专业、客观、简洁，去除营销话术和情绪化表达
-- 读者：AI从业者、投资人、技术研究员
-- 要求：筛选真正有价值的新闻，提供信息密度高的摘要
-
-【绝对禁止】
-- 严禁编造任何新闻事实
-- 严禁将历史旧闻改写成"今日发布"
-- 严禁添加输入数据中没有的信息
-- 严禁使用"震惊""炸了""爆火"等词汇
-
-【筛选与去重标准】
-1) 从 articles 中筛选最有价值的 12-16 条AI新闻
-2) 优先选择：头部公司动态（OpenAI/Google/Meta等）、重要技术突破、大额融资、重大政策
-3) 平衡国内外：确保海外AI新闻有足够比例（至少30-40%）
-4) 严格去重：同一事件的多条报道只保留最完整的一条
-5) 过滤掉：非AI内容、地方新闻、营销软文
-6) 确保四个分类都有内容：产品发布3-5条、技术研究3-5条、投融资2-3条、政策监管1-2条
-
-【分类规则】
-按以下 4 个模块分类（固定）：
-   - 产品发布与更新：新产品、功能更新、版本发布（2-3条）
-   - 技术与研究：论文、技术突破、研究成果（2-3条）
-   - 投融资与并购：融资、投资、并购（1-2条）
-   - 政策与监管：法规、监管动态（1-2条）
-
-【输出要求】
-- 严格 JSON，不要 Markdown，不要 \`\`\`
-- 简体中文，保留常见英文术语
-- 禁止输出 URL
-- title_cn：专业简洁的标题，去除营销词汇
-- summary：120-180字，突出核心信息（主体、动作、关键数据、影响）
-- tags：2-3个技术标签
-- published_at：保持原始时间
-
-【输入数据】
-${articlesJson}
-
-JSON 结构：
-{
-  "date": "${dateStr}",
-  "items": [
-    {
-      "section": "产品发布与更新",
-      "company": "公司/机构名称（如OpenAI、Google、Meta等）",
-      "title_cn": "中文标题",
-      "summary": "120-180字专业摘要",
-      "source": "来源",
-      "published_at": "时间",
-      "tags": ["标签1", "标签2"]
-    }
-  ]
-}
-
-请输出专业 JSON：`;
-
-  try {
-    const response = await callDeepSeek(prompt);
-    const parsed = JSON.parse(response);
+  // 分批处理，每批5条
+  const batchSize = 5;
+  const results = [];
+  
+  for (let i = 0; i < items.length; i += batchSize) {
+    const batch = items.slice(i, i + batchSize);
+    const batchPrompt = batch.map((item, idx) => 
+      `[${idx+1}] 标题：${item.title}\n内容：${item.snippet?.substring(0, 300)}`
+    ).join('\n\n');
     
-    // 验证并保留原始 URL
-    const validated = [];
-    
-    for (const item of parsed.items || []) {
-      const title = item.title_cn || item.title;
+    const prompt = `为以下${batch.length}条海外AI新闻写中文摘要和分类。\n\n${batchPrompt}\n\n输出JSON数组（严格格式）：\n[{"summary":"摘要","category":"分类","company":"公司","tags":["标签"]}]\n\n规则：\n1. summary必须基于输入内容，严禁编造\n2. category只能是：产品发布与更新、技术与研究、投融资与并购、政策与监管\n3. 只输出JSON数组，不要其他内容`;
+
+    try {
+      const response = await callDeepSeek(prompt);
+      const parsed = JSON.parse(response);
       
-      // 海外新闻验证：找到最匹配的原始新闻
-      let originalItem = null;
-      let bestMatchScore = 0;
-      
-      for (const orig of items) {
-        // 使用简化版相似度检查
-        const score = calculateMatchScore(orig.title, title);
-        if (score > bestMatchScore) {
-          bestMatchScore = score;
-          originalItem = orig;
+      if (Array.isArray(parsed)) {
+        for (let j = 0; j < batch.length; j++) {
+          const origItem = batch[j];
+          const aiItem = parsed[j] || {};
+          results.push({
+            title: origItem.title,  // 永远使用原始标题
+            summary: aiItem.summary || origItem.snippet?.substring(0, 200) || '暂无摘要',
+            category: aiItem.category || inferCategory(origItem.title),
+            company: aiItem.company || extractCompanyFromTitle(origItem.title),
+            tags: aiItem.tags || extractTagsFromTitle(origItem.title),
+            source: origItem.source,
+            publishedAt: origItem.publishedAt,
+            url: origItem.url,
+            region: '海外'
+          });
         }
       }
-      
-      // 放宽验证：只要有 30% 以上相似度就接受，或者直接接受AI的翻译结果
-      // 只要AI返回的不是完全无关的内容（score > 0.1）就保留
-      const ACCEPT_THRESHOLD = 0.1;
-      
-      if (bestMatchScore < ACCEPT_THRESHOLD) {
-        console.warn(`⚠️ 海外新闻匹配度低 (${bestMatchScore.toFixed(2)}): "${title.substring(0, 40)}..."`);
-        // 低匹配度的也保留，但标记为可能翻译偏差
-      }
-      
-      // 如果匹配度太低，使用原始数据而不是AI编造的内容
-      if (bestMatchScore < ACCEPT_THRESHOLD) {
-        console.warn(`   使用原始数据替代编造的AI内容`);
-        validated.push({
-          title: originalItem?.title || title,
-          summary: originalItem?.snippet?.substring(0, 200) || '暂无摘要',
-          category: '其他',
-          source: originalItem?.source || '海外',
-          publishedAt: originalItem?.publishedAt,
-          tags: [],
-          company: '',
-          region: '海外',
-          url: originalItem?.url || ''
-        });
-      } else {
-        // 保留AI总结的结果
-        validated.push({
-          title: title,
-          summary: item.summary,
-          category: item.section || item.category,
-          source: originalItem?.source || item.source || '海外',
-          publishedAt: item.published_at || item.publishedAt || originalItem?.publishedAt,
-          tags: item.tags || [],
-          company: item.company,
-          region: '海外',
-          url: originalItem?.url || ''
+    } catch (error) {
+      console.warn(`批量总结失败，使用原始数据: ${error.message}`);
+      // 失败时全部使用原始数据
+      for (const item of batch) {
+        results.push({
+          title: item.title,
+          summary: item.snippet?.substring(0, 200) || '暂无摘要',
+          category: inferCategory(item.title),
+          company: extractCompanyFromTitle(item.title),
+          tags: extractTagsFromTitle(item.title),
+          source: item.source,
+          publishedAt: item.publishedAt,
+          url: item.url,
+          region: '海外'
         });
       }
     }
     
-    console.log(`   验证通过 ${validated.length}/${parsed.items?.length || 0} 条海外新闻`);
-    return validated;
-  } catch (error) {
-    console.error('海外新闻批量总结失败:', error.message);
-    return [];
+    // 延迟避免 rate limit
+    await new Promise(r => setTimeout(r, 500));
   }
+  
+  return results;
 }
 
 /**
- * 均衡选择新闻（确保各分类都有内容）
+ * 均衡选择新闻（确保各分类都有内容，国内外 50/50）
  */
 function selectBalancedNews(domestic, overseas) {
-  // 目标：总共 12-15 条
-  // 国内最多 7 条，海外最多 8 条
-  const targetTotal = 14;
-  const maxDomestic = 7;
-  const maxOverseas = 8;
-  
-  // 优先选择每个分类的新闻
+  const targetTotal = 12;
+  const targetPerRegion = 6;
   const categories = ['产品发布与更新', '技术与研究', '投融资与并购', '政策与监管'];
   const selected = [];
   const selectedUrls = new Set();
   
-  // 每个分类先选 1-2 条
+  const selectUnique = (list) => {
+    for (const item of list) {
+      if (!selectedUrls.has(item.url)) {
+        selected.push(item);
+        selectedUrls.add(item.url);
+        return true;
+      }
+    }
+    return false;
+  };
+  
+  // 第一轮：每个分类各选1条国内+1条海外
   for (const cat of categories) {
-    const catDomestic = domestic.filter(d => d.category === cat || !d.category);
-    const catOverseas = overseas.filter(o => o.category === cat || !o.category);
+    const catDomestic = domestic.filter(d => d.category === cat);
+    const catOverseas = overseas.filter(o => o.category === cat);
     
-    // 优先选国内
-    if (catDomestic.length > 0 && selected.filter(s => s.region === '国内').length < maxDomestic) {
-      const item = catDomestic[0];
-      if (!selectedUrls.has(item.url)) {
-        selected.push(item);
-        selectedUrls.add(item.url);
-      }
+    if (selected.filter(s => s.region === '国内').length < targetPerRegion) {
+      const ok = selectUnique(catDomestic);
+      if (!ok) selectUnique(domestic); // 如果该分类没有，从所有国内选
     }
-    
-    // 再选海外
-    if (catOverseas.length > 0 && selected.filter(s => s.region === '海外').length < maxOverseas) {
-      const item = catOverseas[0];
-      if (!selectedUrls.has(item.url)) {
-        selected.push(item);
-        selectedUrls.add(item.url);
-      }
+    if (selected.filter(s => s.region === '海外').length < targetPerRegion) {
+      const ok = selectUnique(catOverseas);
+      if (!ok) selectUnique(overseas); // 如果该分类没有，从所有海外选
     }
   }
   
-  // 填充剩余位置
-  const remaining = targetTotal - selected.length;
-  if (remaining > 0) {
+  // 第二轮：填充国内到6条
+  while (selected.filter(s => s.region === '国内').length < targetPerRegion) {
+    const remaining = domestic.filter(d => !selectedUrls.has(d.url));
+    if (!selectUnique(remaining)) break;
+  }
+  
+  // 第三轮：填充海外到6条
+  while (selected.filter(s => s.region === '海外').length < targetPerRegion) {
+    const remaining = overseas.filter(o => !selectedUrls.has(o.url));
+    if (!selectUnique(remaining)) break;
+  }
+  
+  // 第四轮：补满12条（不区分国内外）
+  while (selected.length < targetTotal) {
     const allRemaining = [...domestic, ...overseas].filter(i => !selectedUrls.has(i.url));
-    const toAdd = allRemaining.slice(0, remaining);
-    selected.push(...toAdd);
+    if (!selectUnique(allRemaining)) break;
   }
   
-  // 限制总数
-  return selected.slice(0, targetTotal);
+  console.log(`   选择结果: 国内 ${selected.filter(s => s.region === '国内').length} 条, 海外 ${selected.filter(s => s.region === '海外').length} 条, 总计 ${selected.length} 条`);
+  return selected;
 }
 
 /**
@@ -337,19 +247,17 @@ export async function summarizeNews({ domestic, overseas }) {
   console.log(`   国内候选: ${domestic.length} 条`);
   console.log(`   海外候选: ${overseas.length} 条\n`);
   
-  // 限制处理数量 - 增加海外新闻处理量以确保有足够AI相关内容
+  // 限制处理数量
   const domesticToProcess = domestic.slice(0, 10);
-  const overseasToProcess = overseas.slice(0, 25);  // 增加海外新闻处理量
+  const overseasToProcess = overseas.slice(0, 25);
   
   // 国内新闻：逐条总结
   console.log(`正在总结 ${domesticToProcess.length} 条国内新闻...`);
   const domesticSummaries = [];
   for (const item of domesticToProcess) {
     const summary = await summarizeSingle(item);
-    if (summary) {
-      domesticSummaries.push(summary);
-    }
-    await new Promise(r => setTimeout(r, 500));
+    if (summary) domesticSummaries.push(summary);
+    await new Promise(r => setTimeout(r, 300));
   }
   
   // 海外新闻：批量总结
@@ -360,263 +268,17 @@ export async function summarizeNews({ domestic, overseas }) {
   console.log(`   国内: ${domesticSummaries.length} 条`);
   console.log(`   海外: ${overseasSummaries.length} 条\n`);
   
-  // 合并并按分类分组
-  const allNews = [...domesticSummaries, ...overseasSummaries];
+  // 使用平衡选择算法：确保6国内+6海外
+  const balancedNews = selectBalancedNews(domesticSummaries, overseasSummaries);
   
   // 按分类分组
   const grouped = {};
   SECTION_ORDER.forEach(section => {
-    grouped[section] = allNews.filter(item => item.category === section);
+    grouped[section] = balancedNews.filter(item => item.category === section);
   });
   
-  // 限制每个分类的数量（确保总量 12-16 条，给海外新闻留足够位置）
-  grouped['产品发布与更新'] = (grouped['产品发布与更新'] || []).slice(0, 5);
-  grouped['技术与研究'] = (grouped['技术与研究'] || []).slice(0, 5);
-  grouped['投融资与并购'] = (grouped['投融资与并购'] || []).slice(0, 4);
-  grouped['政策与监管'] = (grouped['政策与监管'] || []).slice(0, 3);
-  
-  // 添加"其他"分类
-  const otherNews = allNews.filter(item => !SECTION_ORDER.includes(item.category));
-  if (otherNews.length > 0) {
-    grouped['其他'] = otherNews.slice(0, 2);
-  }
-  
-  // 统计总数
   const total = Object.values(grouped).flat().length;
   console.log(`📊 最终输出: ${total} 条新闻`);
   
-  // 后处理：合并同一公司的重复新闻
-  const finalGrouped = mergeDuplicateNews(grouped);
-  
-  // 重新统计
-  const finalTotal = Object.values(finalGrouped).flat().length;
-  console.log(`📊 去重后: ${finalTotal} 条新闻`);
-  
-  return finalGrouped;
-}
-
-/**
- * 合并相似新闻（针对同一公司的多条新闻）
- */
-function mergeDuplicateNews(grouped) {
-  const result = {};
-  
-  for (const [category, items] of Object.entries(grouped)) {
-    if (!items || items.length === 0) {
-      result[category] = [];
-      continue;
-    }
-    
-    const merged = [];
-    const used = new Set();
-    
-    for (let i = 0; i < items.length; i++) {
-      if (used.has(i)) continue;
-      
-      const item = items[i];
-      const duplicates = [item];
-      
-      // 查找相似的新闻（同一主题）
-      for (let j = i + 1; j < items.length; j++) {
-        if (used.has(j)) continue;
-        
-        const other = items[j];
-        
-        // 检查是否是同一主题（通过关键词匹配）
-        const itemKeywords = extractKeywords(item.title);
-        const otherKeywords = extractKeywords(other.title);
-        const commonKeywords = itemKeywords.filter(k => otherKeywords.includes(k));
-        
-        // 去重规则：
-        // 1. 3 个及以上共同关键词 -> 强重复
-        // 2. 2 个共同关键词 + 标题相似度 > 50% -> 重复
-        // 3. 同一公司 + 标题相似度 > 60% -> 重复（同一公司的不同产品保留）
-        let isDuplicate = false;
-        
-        if (commonKeywords.length >= 3) {
-          isDuplicate = true;
-        } else if (commonKeywords.length === 2) {
-          const sim = calculateSimilarity(item.title, other.title);
-          if (sim > 0.5) {
-            isDuplicate = true;
-          }
-        }
-        
-        // 同一公司严格去重（只去重高度相似的）
-        const hasCompany = commonKeywords.some(k => 
-          ['字节', '豆包', 'openai', 'google', 'meta', 'anthropic', '阿里', '百度', '腾讯'].includes(k)
-        );
-        if (hasCompany && !isDuplicate) {
-          const sim = calculateSimilarity(item.title, other.title);
-          // 只有高度相似才合并（避免合并同一公司的不同产品新闻）
-          if (sim > 0.6) {
-            isDuplicate = true;
-            console.log(`     高度相似: "${other.title.substring(0, 30)}..." (相似度: ${sim.toFixed(2)})`);
-          }
-        }
-        
-        if (isDuplicate) {
-          duplicates.push(other);
-          used.add(j);
-          console.log(`     相似: "${other.title.substring(0, 30)}..." (关键词: ${commonKeywords.join(', ')})`);
-        }
-      }
-      
-      // 如果有多条重复，保留最详细的一条
-      if (duplicates.length > 1) {
-        console.log(`   🔄 合并 ${duplicates.length} 条相似新闻: "${item.title.substring(0, 30)}..."`);
-        // 选择摘要最长的一条
-        const best = duplicates.reduce((best, current) => 
-          (current.summary?.length || 0) > (best.summary?.length || 0) ? current : best
-        );
-        merged.push(best);
-      } else {
-        merged.push(item);
-      }
-      
-      used.add(i);
-    }
-    
-    result[category] = merged;
-  }
-  
-  return result;
-}
-
-/**
- * 计算两个标题的匹配分数（0-1）
- * 用于海外新闻验证，检查翻译后的标题是否与原文相关
- */
-function calculateMatchScore(originalTitle, translatedTitle) {
-  if (!originalTitle || !translatedTitle) return 0;
-  
-  const orig = originalTitle.toLowerCase();
-  const trans = translatedTitle.toLowerCase();
-  
-  // 1. 提取原文中的大写单词（通常是人名、公司名、产品名）
-  const capitalizedWords = originalTitle.match(/[A-Z][a-z]+/g) || [];
-  const upperWords = originalTitle.match(/[A-Z]{2,}/g) || [];
-  const keyWords = [...capitalizedWords, ...upperWords].map(w => w.toLowerCase());
-  
-  // 2. 计算匹配的核心词汇数量
-  let matchedWords = 0;
-  for (const word of keyWords) {
-    if (word.length < 2) continue;
-    // 检查完整词或前4个字符是否匹配
-    if (trans.includes(word) || trans.includes(word.substring(0, 4))) {
-      matchedWords++;
-    }
-  }
-  
-  // 3. 计算匹配分数
-  const keywordScore = keyWords.length > 0 ? matchedWords / keyWords.length : 0;
-  
-  // 4. 检查数字匹配（版本号、年份等）
-  const origNumbers = originalTitle.match(/\d+/g) || [];
-  const transNumbers = translatedTitle.match(/\d+/g) || [];
-  const commonNumbers = origNumbers.filter(n => transNumbers.includes(n));
-  const numberScore = origNumbers.length > 0 ? commonNumbers.length / origNumbers.length : 0;
-  
-  // 5. 综合分数（关键词权重 70%，数字权重 30%）
-  return keywordScore * 0.7 + numberScore * 0.3;
-}
-
-/**
- * 检查标题是否与原始输入相关（用于海外新闻验证）
- * 策略：检查是否包含原始标题中的核心词汇
- */
-function isRelatedToOriginal(originalTitle, translatedTitle) {
-  if (!originalTitle || !translatedTitle) return false;
-  
-  const orig = originalTitle.toLowerCase();
-  const trans = translatedTitle.toLowerCase();
-  
-  // 提取原始标题中的大写缩写和技术词汇
-  const techTerms = orig.match(/[A-Z]{2,}/g) || [];
-  const capitalizedWords = orig.match(/[A-Z][a-z]+/g) || [];
-  const allTerms = [...techTerms, ...capitalizedWords].map(t => t.toLowerCase());
-  
-  // 检查翻译后的标题是否包含这些核心词汇（或其中文对应）
-  // 放宽标准：只要有任意一个核心概念匹配即可
-  const keyConcepts = [...new Set(allTerms)].slice(0, 5); // 取前5个核心词
-  
-  for (const term of keyConcepts) {
-    if (term.length < 3) continue; // 跳过太短的关键词
-    
-    // 检查原始词或其部分是否在翻译中出现
-    if (trans.includes(term) || 
-        trans.includes(term.substring(0, Math.min(term.length, 6))) ||
-        // 反向检查：翻译中的词是否在原文中
-        orig.includes(trans.split(/[\s\[\]【】]+/).filter(w => w.length > 2)[0] || '')) {
-      return true;
-    }
-  }
-  
-  return false;
-}
-
-/**
- * 计算两个字符串的相似度（0-1）
- */
-function calculateSimilarity(str1, str2) {
-  const s1 = str1.toLowerCase().trim();
-  const s2 = str2.toLowerCase().trim();
-  
-  if (s1 === s2) return 1.0;
-  
-  // 提取中文词汇
-  const words1 = s1.match(/[\u4e00-\u9fa5]+/g) || [];
-  const words2 = s2.match(/[\u4e00-\u9fa5]+/g) || [];
-  
-  if (words1.length === 0 || words2.length === 0) {
-    return s1.includes(s2) || s2.includes(s1) ? 0.8 : 0;
-  }
-  
-  // 计算共同词汇比例
-  const commonWords = words1.filter(w => words2.includes(w));
-  const similarity = (2 * commonWords.length) / (words1.length + words2.length);
-  
-  return similarity;
-}
-
-/**
- * 提取标题关键词（用于去重）
- */
-function extractKeywords(title) {
-  if (!title) return [];
-  
-  const keywords = [];
-  const text = title.toLowerCase();
-  
-  // 常见公司名（中文+英文）- 扩展海外公司
-  const companies = [
-    // 国内
-    '字节', '豆包', '百度', '阿里', '腾讯', '智谱', '月之暗面', 'kimi', 'minimax', '稀宇',
-    // 海外
-    'openai', 'google', 'meta', 'anthropic', 'microsoft', 'amazon', 'apple', 'nvidia',
-    'xai', 'grok', 'chatgpt', 'claude', 'gemini', 'llama', 'perplexity', 'mistral',
-    'airbnb', 'disney', 'tesla', 'twitter', 'netflix', 'uber', 'lyft', 'airbnb',
-    'cherryrock', 'a16z', 'sequoia', 'benchmark', 'insight partners'
-  ];
-  for (const company of companies) {
-    if (text.includes(company.toLowerCase())) keywords.push(company);
-  }
-  
-  // 产品名
-  const products = ['gpt', 'claude', 'gemini', 'llama', 'kimi', '大模型', 'sora', 'midjourney', 'stable diffusion'];
-  for (const product of products) {
-    if (text.includes(product.toLowerCase())) keywords.push(product);
-  }
-  
-  // 技术关键词（用于识别同一主题）
-  const techTerms = ['亲吻数', 'kiss', ' RL ', '强化学习', 'agent', '智能体', '多模态', '情人节', 'ai ', '人工智能'];
-  for (const term of techTerms) {
-    if (text.includes(term.toLowerCase())) keywords.push(term);
-  }
-  
-  // 数字（版本号、年份等）
-  const versionMatch = title.match(/(\d+\.\d+|\d+代)/);
-  if (versionMatch) keywords.push(versionMatch[0]);
-  
-  return [...new Set(keywords)];
+  return grouped;
 }

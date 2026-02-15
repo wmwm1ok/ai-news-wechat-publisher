@@ -1,24 +1,12 @@
-name: AI Daily News Publisher
+name: AI Daily News
 
 on:
   schedule:
-    # 每天早上 8:00 UTC+8 (对应 UTC 0:00)
-    - cron: '0 0 * * *'
-  
-  # 允许手动触发
-  workflow_dispatch:
-    inputs:
-      dry_run:
-        description: '试运行模式（不实际发布）'
-        type: boolean
-        default: false
-      skip_publish:
-        description: '跳过发布'
-        type: boolean
-        default: false
+    - cron: '0 0 * * *'  # 每天 UTC 0:00 (北京时间 8:00)
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
-  publish:
+  fetch-news:
     runs-on: ubuntu-latest
     
     steps:
@@ -33,57 +21,27 @@ jobs:
       - name: Install dependencies
         run: npm install
       
-      - name: Test Cloudflare Worker connection
-        env:
-          WECHAT_PROXY_URL: ${{ secrets.WECHAT_PROXY_URL }}
-        run: node test-proxy.js || echo "测试失败，继续尝试主程序"
-      
-      - name: Run news publisher
+      - name: Fetch and generate news
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_API_URL: ${{ secrets.DEEPSEEK_API_URL }}
           DEEPSEEK_MODEL: ${{ secrets.DEEPSEEK_MODEL }}
-          WECHAT_APPID: ${{ secrets.WECHAT_APPID }}
-          WECHAT_SECRET: ${{ secrets.WECHAT_SECRET }}
-          WECHAT_PROXY_URL: ${{ secrets.WECHAT_PROXY_URL }}
-          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
-          DEBUG: ${{ vars.DEBUG }}
-          NODE_OPTIONS: "--tls-min-v1.2"
-          # 邮件配置
-          EMAIL_TO: ${{ secrets.EMAIL_TO }}
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
-        run: |
-          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
-            npm run dry-run
-          elif [ "${{ github.event.inputs.skip_publish }}" == "true" ]; then
-            npm run fetch
-          else
-            npm start
-          fi
+        run: npm start
       
-      - name: Upload output artifacts
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: news-output-${{ github.run_id }}
+          name: news-output
           path: output/
           retention-days: 30
       
-      - name: Commit and push news data
+      - name: Commit to repository
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
-          # 强制添加生成的文件（即使被 .gitignore 忽略）
           git add -f output/
-          
-          # 如果有变更则提交
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update daily AI news: $(date +'%Y-%m-%d')"
+          if ! git diff --cached --quiet; then
+            git commit -m "Update AI news: $(date +'%Y-%m-%d')"
             git push
           fi
         continue-on-error: true

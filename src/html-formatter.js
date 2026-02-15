@@ -14,15 +14,25 @@ function escapeHtml(str) {
 /**
  * 格式化日期（统一格式：M月D日）
  */
-function formatDate(date) {
-  if (!date) return '';
+function formatDate(dateStr) {
+  if (!dateStr) return '';
   
   try {
-    const d = new Date(date);
-    if (isNaN(d.getTime())) return '';
+    // 处理各种日期格式
+    const date = new Date(dateStr);
+    if (isNaN(date.getTime())) {
+      // 尝试提取日期部分（如 "Sat, 14 Feb 2026..."）
+      const match = dateStr.match(/(\d{4})[-/](\d{1,2})[-/](\d{1,2})/);
+      if (match) {
+        const m = parseInt(match[2]);
+        const d = parseInt(match[3]);
+        return `${m}月${d}日`;
+      }
+      return '';
+    }
     
-    const m = d.getMonth() + 1;
-    const day = d.getDate();
+    const m = date.getMonth() + 1;
+    const day = date.getDate();
     return `${m}月${day}日`;
   } catch (e) {
     return '';

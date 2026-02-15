@@ -51,7 +51,7 @@ async function parseRSS(source) {
     console.log(`📡 正在抓取: ${source.name}`);
     const feed = await rssParser.parseURL(source.url);
     
-    const items = feed.items
+    let items = feed.items
       .map(item => ({
         title: item.title || '',
         url: item.link || item.url || '',
@@ -61,7 +61,8 @@ async function parseRSS(source) {
         region: source.region || (DOMESTIC_RSS_SOURCES.includes(source) ? '国内' : '海外')
       }))
       .filter(item => isFreshNews(item.publishedAt))
-      .filter(item => isAIRelated(item.title, item.snippet));
+      .filter(item => isAIRelated(item.title, item.snippet))
+      .slice(0, 5); // 每个源最多取5条
     
     console.log(`   ✓ 获取 ${items.length}/${feed.items.length} 条AI相关新闻`);
     return items;

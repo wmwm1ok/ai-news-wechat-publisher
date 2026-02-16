@@ -116,20 +116,26 @@ function calculateTimeliness(publishedAt) {
 function isDuplicate(title, existingTitles) {
   // 提取核心关键词（人名、公司名、关键事件）
   function extractKeywords(text) {
-    // 匹配：公司名+人名+关键动作词
     const keywords = [];
+    const lowerText = text.toLowerCase();
     
-    // 提取英文单词（可能是人名、公司名）
-    const englishWords = text.match(/[A-Z][a-z]+/g) || [];
+    // 提取英文单词（可能是人名、公司名、项目名）
+    const englishWords = text.match(/[A-Z][a-z]+|[A-Z]+/g) || [];
     keywords.push(...englishWords.map(w => w.toLowerCase()));
     
     // 提取中文关键词
-    const chineseKeywords = ['创始人', '加入', '加盟', '收购', '融资', '发布', '推出', '开源'];
+    const chineseKeywords = ['创始人', '加入', '加盟', '收购', '融资', '发布', '推出', '开源', '投资', '出售'];
     for (const kw of chineseKeywords) {
       if (text.includes(kw)) keywords.push(kw);
     }
     
-    return [...new Set(keywords)]; // 去重
+    // 提取特定实体名称（OpenAI, OpenClaw等）
+    const entities = ['openai', 'openclaw', 'google', 'meta', 'anthropic', '字节', '阿里', '腾讯'];
+    for (const entity of entities) {
+      if (lowerText.includes(entity)) keywords.push(entity);
+    }
+    
+    return [...new Set(keywords)];
   }
   
   const titleKeywords = extractKeywords(title);
@@ -137,12 +143,17 @@ function isDuplicate(title, existingTitles) {
   for (const existing of existingTitles) {
     const existingKeywords = extractKeywords(existing);
     
-    // 计算共同关键词比例
+    // 计算共同关键词
     const common = titleKeywords.filter(k => existingKeywords.includes(k));
-    const similarity = common.length / Math.max(titleKeywords.length, existingKeywords.length);
     
-    // 如果共同关键词>=3个且相似度>0.5，认为是同一事件
-    if (common.length >= 3 && similarity > 0.5) return true;
+    // 如果有共同实体名(OpenAI/OpenClaw等) + 共同动作词(加入/加盟等)，认为是同一事件
+    const hasCommonEntity = common.some(k => ['openai', 'openclaw', 'google', 'meta', 'anthropic', '字节', '阿里', '腾讯'].includes(k));
+    const hasCommonAction = common.some(k => ['创始人', '加入', '加盟', '收购', '融资', '出售'].includes(k));
+    
+    if (hasCommonEntity && hasCommonAction) return true;
+    
+    // 如果共同关键词>=4个，认为是同一事件
+    if (common.length >= 4) return true;
     
     // 标题完全相同
     if (title.toLowerCase().trim() === existing.toLowerCase().trim()) return true;

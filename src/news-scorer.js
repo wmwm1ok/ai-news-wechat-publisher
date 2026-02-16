@@ -111,21 +111,41 @@ function calculateTimeliness(publishedAt) {
 
 /**
  * 检查是否重复/相似
+ * 基于关键词匹配检测同一事件
  */
 function isDuplicate(title, existingTitles) {
-  const normalized = title.toLowerCase().replace(/[^\w\u4e00-\u9fa5]/g, '');
+  // 提取核心关键词（人名、公司名、关键事件）
+  function extractKeywords(text) {
+    // 匹配：公司名+人名+关键动作词
+    const keywords = [];
+    
+    // 提取英文单词（可能是人名、公司名）
+    const englishWords = text.match(/[A-Z][a-z]+/g) || [];
+    keywords.push(...englishWords.map(w => w.toLowerCase()));
+    
+    // 提取中文关键词
+    const chineseKeywords = ['创始人', '加入', '加盟', '收购', '融资', '发布', '推出', '开源'];
+    for (const kw of chineseKeywords) {
+      if (text.includes(kw)) keywords.push(kw);
+    }
+    
+    return [...new Set(keywords)]; // 去重
+  }
+  
+  const titleKeywords = extractKeywords(title);
   
   for (const existing of existingTitles) {
-    const existingNorm = existing.toLowerCase().replace(/[^\w\u4e00-\u9fa5]/g, '');
+    const existingKeywords = extractKeywords(existing);
     
-    // 计算相似度
-    let common = 0;
-    for (let i = 0; i < Math.min(normalized.length, existingNorm.length); i++) {
-      if (normalized[i] === existingNorm[i]) common++;
-    }
-    const similarity = common / Math.max(normalized.length, existingNorm.length);
+    // 计算共同关键词比例
+    const common = titleKeywords.filter(k => existingKeywords.includes(k));
+    const similarity = common.length / Math.max(titleKeywords.length, existingKeywords.length);
     
-    if (similarity > 0.6) return true;
+    // 如果共同关键词>=3个且相似度>0.5，认为是同一事件
+    if (common.length >= 3 && similarity > 0.5) return true;
+    
+    // 标题完全相同
+    if (title.toLowerCase().trim() === existing.toLowerCase().trim()) return true;
   }
   
   return false;

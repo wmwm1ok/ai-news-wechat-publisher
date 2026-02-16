@@ -22,27 +22,27 @@ export const DOMESTIC_RSS_SOURCES = [
   {
     name: '机器之心',
     url: 'https://www.jiqizhixin.com/rss',
-    limit: 3  // 限制数量保证多样性
+    limit: 5  // 增加抓取数量，确保有足够候选
   },
   {
     name: '量子位',
     url: 'https://www.qbitai.com/feed',
-    limit: 3
+    limit: 5
   },
   {
     name: '36氪',
     url: 'https://36kr.com/feed',
-    limit: 2
+    limit: 4
   },
   {
     name: 'InfoQ',
     url: 'https://www.infoq.cn/feed',
-    limit: 2
+    limit: 4
   },
   {
     name: 'AI科技评论',
     url: 'https://www.leiphone.com/category/ai/feed',
-    limit: 2
+    limit: 4
   }
 ];
 
@@ -51,32 +51,32 @@ export const OVERSEAS_RSS_SOURCES = [
   {
     name: 'TechCrunch AI',
     url: 'https://techcrunch.com/category/artificial-intelligence/feed/',
-    limit: 3
+    limit: 5
   },
   {
     name: 'MIT Technology Review',
     url: 'https://www.technologyreview.com/feed/',
-    limit: 2
+    limit: 4
   },
   {
     name: 'The Verge AI',
     url: 'https://www.theverge.com/ai-artificial-intelligence/rss/index.xml',
-    limit: 2
+    limit: 4
   },
   {
     name: 'VentureBeat AI',
     url: 'https://venturebeat.com/category/ai/feed/',
-    limit: 2
+    limit: 4
   },
   {
     name: 'Wired AI',
     url: 'https://www.wired.com/tag/artificial-intelligence/rss',
-    limit: 2
+    limit: 4
   },
   {
     name: 'Ars Technica',
     url: 'https://arstechnica.com/tag/artificial-intelligence/feed/',
-    limit: 2
+    limit: 4
   }
 ];
 

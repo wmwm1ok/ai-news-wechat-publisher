@@ -224,12 +224,22 @@ export function selectTopNews(newsList, targetCount = 12) {
     sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
   }
   
-  // 第三轮：再降门槛确保填满（最低10分），严格保持源限制
+  // 第三轮：再降门槛确保填满（最低5分），严格保持源限制
   for (const news of scored) {
     if (selected.length >= targetCount) break;
     if (selected.includes(news)) continue;
-    if (news.score < 10) continue;
+    if (news.score < 5) continue; // 进一步降低门槛确保填满
     if ((sourceCount[news.source] || 0) >= 2) continue; // 严格限制每个源最多2条
+    
+    selected.push(news);
+    sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
+  }
+  
+  // 第四轮： desperate mode - 只要是非重复新闻就入选（确保达到目标数量）
+  for (const news of scored) {
+    if (selected.length >= targetCount) break;
+    if (selected.includes(news)) continue;
+    if ((sourceCount[news.source] || 0) >= 3) continue; // 放宽到3条作为最后手段
     
     selected.push(news);
     sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;

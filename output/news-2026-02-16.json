@@ -1,34 +1,33 @@
 {
-  "产品发布与更新": [
+  "产品发布与更新": [],
+  "技术与研究": [
     {
-      "title": "千问情人节免单活动带动县城钟点房预订量激增约300%",
-      "url": "https://www.jiqizhixin.com/articles/2026-02-15-7",
+      "title": "华盛顿大学开源多模型协同框架MoCo，突破单一LLM性能瓶颈",
+      "url": "https://www.jiqizhixin.com/articles/2026-02-16",
       "snippet": "<![CDATA[]]>",
       "source": "机器之心",
-      "publishedAt": "Sun, 15 Feb 2026 19:44:43 +0800",
+      "publishedAt": "Mon, 16 Feb 2026 10:10:17 +0800",
       "region": "国内",
-      "summary": "千问在情人节期间推出第二波免单活动，数据显示县城钟点房的帮订量因此暴增约300%，反映了促销活动对特定消费场景的显著拉动作用。",
-      "category": "产品发布与更新",
-      "company": "千问",
-      "score": 29,
+      "summary": "华盛顿大学研究团队近日开源了名为MoCo（Multi-Model Collaboration）的多模型协同框架，旨在解决单一大型语言模型在处理复杂任务时存在的性能局限。该框架通过协调多个不同专长的AI模型进行协作，能够显著提升任务处理的准确性和效率，特别是在需要多领域知识融合的场景中表现突出。MoCo采用创新的模型间通信协议和动态任务分配机制，实现了模型间的智能调度与信息共享，其开源发布将推动AI社区在模型协同技术方向的研究与应用。这一技术突破不仅为构建更强大的AI系统提供了新思路，也可能对未来AI应用架构产生深远影响，标志着人工智能从单一模型向多模型协同演进的重要一步。",
+      "category": "技术与研究",
+      "company": "华盛顿大学",
+      "score": 39,
       "breakdown": {
-        "substance": 14,
-        "importance": 0,
-        "timeliness": 6,
+        "substance": 15,
+        "importance": 5,
+        "timeliness": 10,
         "credibility": 9
       },
       "isDuplicate": false
-    }
-  ],
-  "技术与研究": [
+    },
     {
-      "title": "极佳视界发布新VLA大模型，突破具身智能天花板，复杂长时程任务成功率近100%",
+      "title": "极佳视界发布新一代VLA大模型，具身智能实现近100%复杂任务成功率",
       "url": "https://www.qbitai.com/2026/02/380388.html",
       "snippet": "叠衣服冲咖啡折纸盒样样精通",
       "source": "量子位",
       "publishedAt": "Sun, 15 Feb 2026 05:52:39 +0000",
       "region": "国内",
-      "summary": "极佳视界公司最新发布的视觉语言动作大模型在具身智能领域取得重大突破，能够高效完成叠衣服、冲咖啡、折纸盒等复杂长时程任务，成功率接近100%，展现了卓越的物理交互与多步骤任务执行能力。",
+      "summary": "极佳视界近日推出新一代视觉语言动作（VLA）大模型，在具身智能领域取得重大突破。该模型在执行叠衣服、冲咖啡、折纸盒等复杂长时程任务时，成功率接近100%，显著提升了机器人对现实环境的理解和操作能力。这一技术突破意味着具身智能在理解和执行多步骤、长时间跨度的日常任务方面达到了新的高度，为家庭服务机器人、工业自动化等应用场景提供了更可靠的技术基础。该模型的成功标志着人工智能从感知智能向行动智能的重要跨越，对推动机器人技术在实际生活中的普及应用具有里程碑意义。",
       "category": "技术与研究",
       "company": "极佳视界",
       "score": 39,
@@ -41,95 +40,57 @@
       "isDuplicate": false
     },
     {
-      "title": "华盛顿大学开源多模型协同框架MoCo，突破单一LLM局限",
-      "url": "https://www.jiqizhixin.com/articles/2026-02-16",
-      "snippet": "<![CDATA[]]>",
-      "source": "机器之心",
-      "publishedAt": "Mon, 16 Feb 2026 10:10:17 +0800",
-      "region": "国内",
-      "summary": "华盛顿大学研究团队开源了多模型协同框架MoCo，旨在通过整合多个大型语言模型的优势，克服单一模型的局限性，提升复杂任务的解决能力与可靠性。该框架代表了人工智能协作系统领域的新研究方向。",
-      "category": "技术与研究",
-      "company": "华盛顿大学",
-      "score": 38,
-      "breakdown": {
-        "substance": 14,
-        "importance": 5,
-        "timeliness": 10,
-        "credibility": 9
-      },
-      "isDuplicate": false
-    },
-    {
-      "title": "OpenClaw创始人加盟OpenAI，奥特曼成功揽获关键人才",
+      "title": "OpenClaw创始人加盟OpenAI，奥特曼成功招揽顶尖人才",
       "url": "https://www.jiqizhixin.com/articles/2026-02-16-2",
       "snippet": "<![CDATA[]]>",
       "source": "机器之心",
       "publishedAt": "Mon, 16 Feb 2026 10:13:37 +0800",
       "region": "国内",
-      "summary": "OpenAI成功邀请到OpenClaw项目的创始人加入公司，标志着其在人工智能领域人才争夺战中取得重要进展。此次人事变动预计将加强OpenAI在相关技术方向的研究实力与创新能力。",
+      "summary": "人工智能领域发生重要人才流动，知名AI模型OpenClaw的创始人已正式加入OpenAI团队，此次人事变动由OpenAI首席执行官萨姆·奥特曼主导完成。OpenClaw作为开源社区中具有影响力的AI项目，其创始人的技术专长和研发经验将为OpenAI带来新的创新视角。这一举措不仅强化了OpenAI在生成式AI领域的技术领导地位，也反映出顶级科技公司对核心人才的激烈争夺。此次人才引进预计将加速OpenAI在多模态AI、强化学习等前沿方向的研究进展，并对行业竞争格局产生深远影响。",
       "category": "技术与研究",
       "company": "OpenAI",
-      "score": 24,
+      "score": 37,
       "breakdown": {
-        "substance": 0,
-        "importance": 5,
+        "substance": 8,
+        "importance": 10,
         "timeliness": 10,
         "credibility": 9
       },
       "isDuplicate": false
     },
     {
-      "title": "AI生成MVP对软件架构的深远影响",
+      "title": "AI生成MVP对软件架构的变革意义",
       "url": "https://www.infoq.cn/article/hIHSjxraqSi1kJL2a7uQ?utm_source=rss&utm_medium=article",
       "snippet": "点击查看原文>",
       "source": "InfoQ",
       "publishedAt": "Mon, 16 Feb 2026 13:00:00 GMT",
       "region": "国内",
-      "summary": "本文探讨了使用人工智能生成最小可行产品对传统软件架构设计流程带来的变革，分析了AI辅助开发在架构决策、设计模式选择和系统可维护性方面可能产生的影响与挑战。",
+      "summary": "随着人工智能技术的快速发展，AI生成最小可行产品（MVP）正成为软件开发领域的新趋势。这一技术突破允许开发团队在数小时内自动生成具备核心功能的可运行原型，相比传统开发模式可缩短70%以上的初期开发周期。关键技术包括基于大语言模型的代码生成、架构模式自动匹配以及云原生组件智能编排。该变革对软件架构设计产生了深远影响：一方面降低了架构决策的技术门槛，使初创团队能快速验证商业模式；另一方面也引发了关于架构标准化与创新平衡的讨论，传统分层架构可能向更灵活的AI驱动架构演进。行业专家指出，这标志着软件开发从“人工设计”向“人机协同设计”的范式转移，预计未来三年内将...",
       "category": "技术与研究",
       "company": "",
-      "score": 18,
+      "score": 27,
       "breakdown": {
-        "substance": 0,
-        "importance": 0,
+        "substance": 4,
+        "importance": 5,
         "timeliness": 10,
         "credibility": 8
       },
       "isDuplicate": false
     },
     {
-      "title": "海淀AI圈万马奔腾：从Seedance 2.0到AI天团，生成全球爆款",
-      "url": "https://www.qbitai.com/2026/02/380405.html",
-      "snippet": "农历马年尚未到来，海淀AI圈已呈万马奔腾之势",
-      "source": "量子位",
-      "publishedAt": "Sun, 15 Feb 2026 11:58:39 +0000",
-      "region": "国内",
-      "summary": "农历马年即将到来之际，海淀AI领域已呈现蓬勃发展的态势。报道聚焦从Seedance 2.0到AI天团的创新生态，探讨海淀区如何孕育并催生出具有全球影响力的AI产品与团队。",
-      "category": "技术与研究",
-      "company": "",
-      "score": 15,
-      "breakdown": {
-        "substance": 0,
-        "importance": 0,
-        "timeliness": 6,
-        "credibility": 9
-      },
-      "isDuplicate": false
-    },
-    {
-      "title": "2026全球开发者先锋大会启动，聚焦产业与科技融合",
+      "title": "2026全球开发者先锋大会正式启动，聚焦“产业出题·科技答题”主题",
       "url": "https://www.qbitai.com/2026/02/380406.html",
       "snippet": "将于3月27日至29日在上海举办",
       "source": "量子位",
       "publishedAt": "Sun, 15 Feb 2026 11:56:50 +0000",
       "region": "国内",
-      "summary": "2026全球开发者先锋大会将于3月27日至29日在上海举办，大会以“产业出题·科技答题”为主题，旨在推动产业需求与科技创新的深度融合，为全球开发者提供交流与合作的平台。",
+      "summary": "2026全球开发者先锋大会将于3月27日至29日在上海正式举办，本届大会以“产业出题·科技答题”为核心主题，旨在搭建产业需求与科技创新之间的高效对接平台。大会将汇聚全球顶尖开发者、技术专家及产业领袖，通过主题演讲、技术研讨、项目路演及产业对接等多种形式，深入探讨人工智能、云计算、开源技术等前沿领域的发展趋势与落地应用。此次大会预计将吸引超过5000名现场参与者及数万名线上观众，发布百余项产业技术需求，并促成多项重大技术合作与创新项目孵化。作为全球开发者生态的重要年度盛会，本届大会的举办不仅将加速技术创新与产业升级的深度融合，还将进一步巩固上海作为全球科技...",
       "category": "技术与研究",
       "company": "",
-      "score": 15,
+      "score": 25,
       "breakdown": {
-        "substance": 0,
-        "importance": 0,
+        "substance": 5,
+        "importance": 5,
         "timeliness": 6,
         "credibility": 9
       },
@@ -138,59 +99,59 @@
   ],
   "投融资与并购": [
     {
-      "title": "黑石集团投资Neysa，支持印度本土AI基础设施建设",
-      "url": "https://techcrunch.com/2026/02/15/blackstone-backs-neysa-in-up-to-1-2b-financing-as-india-pushes-to-build-domestic-ai-compute/",
-      "snippet": "Neysa is targeting deployments of more than 20,000 GPUs over time as demand for local AI compute accelerates.",
-      "source": "TechCrunch AI",
-      "publishedAt": "Mon, 16 Feb 2026 00:30:00 +0000",
-      "region": "海外",
-      "summary": "黑石集团向印度AI基础设施公司Neysa提供高达12亿美元的融资支持。随着本地AI计算需求加速增长，Neysa计划未来部署超过2万块GPU，以推动印度国内AI基础设施的发展。",
-      "category": "投融资与并购",
-      "company": "Neysa",
-      "score": 37,
-      "breakdown": {
-        "substance": 11,
-        "importance": 8,
-        "timeliness": 10,
-        "credibility": 8
-      },
-      "isDuplicate": false
-    },
-    {
-      "title": "AI数据中心遇电力瓶颈，Peak XV投资C2i以解决难题",
-      "url": "https://techcrunch.com/2026/02/15/as-ai-data-centers-hit-power-limits-peak-xv-backs-indian-startup-c2i-to-fix-the-bottleneck/",
-      "snippet": "C2i has raised $15 million as it tests a grid-to-GPU approach to reducing power losses in AI data centers.",
-      "source": "TechCrunch AI",
-      "publishedAt": "Mon, 16 Feb 2026 01:00:00 +0000",
-      "region": "海外",
-      "summary": "印度初创公司C2i获得1500万美元融资，用于测试一种从电网到GPU的解决方案，旨在减少AI数据中心的电力损耗，应对当前AI基础设施面临的电力限制挑战。",
-      "category": "投融资与并购",
-      "company": "C2i",
-      "score": 29,
-      "breakdown": {
-        "substance": 11,
-        "importance": 0,
-        "timeliness": 10,
-        "credibility": 8
-      },
-      "isDuplicate": false
-    },
-    {
-      "title": "字节跳动拟出售沐瞳科技，预计获利超140亿元",
+      "title": "字节跳动拟以60-70亿美元出售沐瞳科技，五年投资回报超140亿元",
       "url": "https://36kr.com/p/3684271723261828?f=rss",
       "snippet": "图片来源：视觉中国\n作者/杨继云\n报道/投资界PEdaily\n新年本土最大并购要诞生了。\n日前，路透社援引知情人士消息披露，字节跳动正与沙特Savvy Games Group就出售旗下游戏部门——上海沐瞳科技展开深入磋商，此次交易估值预计60-70亿美元（约合人民币420-490亿元），据悉最快将在本季度敲定。\n乍听陌生，沐瞳科技正是海外热门手游《决胜巅峰》的开发商。五年前，字节跳动以40亿美元估值买下。如今按照最低60亿美金交易估值计算，现在这一笔投资将赚超20亿美元（人民币140亿元）。\n一边是卖掉王牌游戏，另一边则是AI火力全开。此时此刻，字节的转身多了一番新意味。\n五年前，字节买下一个团队\n外界可能不知道，沐瞳科技创始团队曾带着腾讯的基因。\n那是2014年，前腾讯员工徐振华与袁菁选择跳出大厂舒适区，在上海携手创立沐瞳科技。带着“做世界级游戏公司”的愿景，他们走出一条与同期创业者截然不同的道路——避开国内红海，主攻海外新兴市场。\n彼时中国手游市场处于群雄逐鹿的爆发期，用户红利虽盛，但竞争壁垒已高，而东南亚、拉美等海外市场的手游渗透率低、供给不足，尚未有巨头形成垄断，正是切入的最佳窗口。\n成立初期，沐瞳团队仅有20余人，资源有限。创办的第二年，沐瞳推出首款自研游戏《Magic Rush: Heroes（魔法英雄）》，这款集卡牌、塔防、策略于一体的产品，在海外发行后意外爆火，登顶多国应用畅销榜，月流水最高达4700万元。如此，沐瞳开始在海外市场站稳脚跟。\n转折发生在2016年。意识到MOBA手游的全球潜力，沐瞳从完美世界引入新团队，合资成立上海沐龙，全力攻坚MOBA赛道，仅用8个月便完成核心产品《Mobile Legends: Bang Bang（MLBB，国服名《决胜巅峰》）》的研发与上线。\n此后，一个现象级爆款面世。上线两年，MLBB实现爆发式增长——凭借轻量化设计、低硬件门槛和本地化运营策略，在东南亚市场迅速崛起，成为印尼、菲律宾、马来西亚等地的“国民级”手游，一度被称为“东南亚版王者荣耀”。\n游戏之外，沐瞳还提前布局了电竞生态——自2017年起，沐瞳科技积极打造“电竞出海”，成为率先建立海外职业电竞体系的中国公司。此后，沐瞳科技渐渐成为海外游戏市场的“隐形巨头”。\n这吸引了互联网大厂的关注。2021年，字节跳动与腾讯展开激烈竞购，最终字节以40亿美元估值全资收购沐瞳科技，新故事拉开帷幕。\n现在，卖给中东豪门\n我们把目光拉回此次收购，中东豪门沙特公共投资基金（PIF）身影浮现。\n买方Savvy Games Group，正是PIF旗下专注于游戏与电竞产业的投资与战略平台。与字节就沐瞳的谈判却是早有风声，直到如今接近尘埃落定。\n出售沐瞳，无疑是字节跳动对游戏业务的再度收缩。\n时间回到2021年，野心勃勃的字节试图在腾讯、网易游戏双雄的格局中撕开一道口子，通过其游戏品牌“朝夕光年”收购沐瞳，后者CEO袁菁继续留任。彼时朝夕光年作为字节跳动游戏业务总品牌，负责统筹全球发行、IP合作与新项目孵化，而沐瞳则专注于MLBB生态及新IP拓展。\n合并的蜜月期里，协同效应显现。字节为沐瞳导入TikTok等流量资源，强化MLBB在拉美、中东等地的用户增长；沐瞳则为朝夕光年提供成熟的海外运营模板。沐瞳，曾被看作字节游戏出海的头号王牌。\n然而，现实很快泼来冷水。MLBB虽稳居东南亚MOBA榜首，但在欧美市场始终未能破圈，iOS畅销榜长期徘徊百名之外；国服版本亦未能撼动《王者荣耀》的统治地位。更关键的是，沐瞳自MLBB之后再未推出第二款爆款。\n与此同时，字节整体战略发生转向。自2023年下半年，字节大幅收缩中重度游戏投入，裁撤上海101工作室等团队，转向发力休闲游戏与UGC/AIGC方向。对沐瞳的资源倾斜也随之减少。\n2024年，字节跳动迎来张云帆出任朝夕光年和沐瞳CEO，游戏业务走上一个更务实的道路。投资界从接近字节跳动的人士处获悉，随着PIF的接手，沐瞳科技的现有管理团队不会发生变化，张云帆也不再留任字节。\n目前沐瞳主体及《决胜巅峰》已确认在购买范围里，此外上海工作室的俯视角射击游戏《头号禁区》、广州Lighthouse工作室等打包出售。另有一些游戏工作室留在字节。\n需要指出的是，目前沐瞳约有86%的收入都来自《决胜巅峰》，这个爆款游戏的全球累计下载量突破15亿次，月活超1.1亿，在全球80多个国家和地区的热门游戏榜单中稳居前十。如今，沐瞳科技拥有超过2000名员工，在东南亚、拉美等多个地区设有分支机构。\n无论如何，巨轮已然转向了。\n最近28亿北京买地，重仓AI\n游戏似乎渐渐远去，如今大厂眼里只有AI。\n今年1月29日，字节跳动CEO梁汝波在公司全员大会上说：“AI时代存在许多重要机会，我们要追求其中最重要的，去攀登最高的高峰。”行业“高峰”不常有，而AI是当前最值得全力投入的历史性机遇窗口，必须集中火力攻坚。\n就在昨天（2月14日），字节跳动宣布推出豆包大模型2.0（Doubao-Seed-2.0）系列，针对大规模生产环境的使用需求进行系统性优化；此前，字节视频模型Seedance 2.0刷爆全网，又一个世界级的模型来自中国，成为2026开年最惊喜一幕。\n而缔造Seedance 2.0的，是字节跳动重金打造的Seed团队。资料显示，Seed成立于2023年，是字节专门为大模型研究设立的部门，人员规模上千人。部门带头人是前Google Fellow、曾参与Gemini开发的吴永辉博士，他于2025年初加入字节并接管Seed，直接向CEO梁汝波汇报。\n“探索智能上限”——Seed被寄予厚望，在字节内部享有相当程度的资源倾斜，据业内信息，连隐退的掌门人张一鸣也会定期参与Seed核心技术团队的复盘和讨论会，被认为是当下字节“最愿意砸钱、最愿意投入人才和技术资源的部门”。\n不久前，字节跳动以28亿元底价拿下海淀区蓝景丽家收储项目HD00-1603-01、HD00-1603-03A地块，该地块位于海淀区中关村街道。业内流传，字节28亿买地，正是为了Seed团队建立大本营。\n凡此种种，无不折射着互联网巨头的AI焦虑。中国的AI正迎来诸神之战，大厂们相继出招，腾讯元宝率先开启红包之战、阿里砸30亿红包让千问点奶茶、百度等也纷纷加入，大家都在争夺AI时代的超级入口。\n春晚开场在即，据悉字节有些外地团队已经奔赴北京留守，将在春节期间支持豆包。AI席卷，史上最猛春节大战拉开帷幕。\n本文来自微信公众号“投资界”，作者：杨继云，36氪经授权发布。",
       "source": "36氪",
       "publishedAt": "2026-02-15 15:55:25  +0800",
       "region": "国内",
-      "summary": "字节跳动正与沙特Savvy Games Group深入磋商，拟以60-70亿美元估值出售旗下游戏部门沐瞳科技，交易最快本季度敲定。字节跳动五年前以40亿美元收购沐瞳，此次出售预计将获利超20亿美元。与此同时，字节跳动正全力转向AI领域，近期...",
+      "summary": "字节跳动正与沙特Savvy Games Group深入磋商，拟以60-70亿美元（约合人民币420-490亿元）估值出售旗下游戏部门上海沐瞳科技，交易最快将于本季度敲定。沐瞳科技是海外热门手游《决胜巅峰》的开发商，五年前字节跳动以40亿美元估值收购。若以最低60亿美元交易估值计算，此次出售将带来超过20亿美元（约140亿元人民币）的投资回报。沐瞳科技约86%的收入来自《决胜巅峰》，该游戏全球累计下载量突破15亿次，月活用户超1.1亿。此次出售标志着字节跳动进一步收缩游戏业务，同时公司正将战略重心转向AI领域，近期不仅推出豆包大模型2.0系列，还以28亿元在北京购地，计划为AI团队建立大本营。",
       "category": "投融资与并购",
       "company": "字节跳动",
+      "score": 39,
+      "breakdown": {
+        "substance": 16,
+        "importance": 10,
+        "timeliness": 6,
+        "credibility": 7
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "黑石集团投资Neysa高达12亿美元，助力印度构建本土AI基础设施",
+      "url": "https://techcrunch.com/2026/02/15/blackstone-backs-neysa-in-up-to-1-2b-financing-as-india-pushes-to-build-domestic-ai-compute/",
+      "snippet": "Neysa is targeting deployments of more than 20,000 GPUs over time as demand for local AI compute accelerates.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Mon, 16 Feb 2026 00:30:00 +0000",
+      "region": "海外",
+      "summary": "黑石集团宣布向印度AI云平台Neysa提供高达12亿美元的融资支持，以响应印度政府推动建设国内AI基础设施的战略。Neysa计划在未来逐步部署超过20,000个GPU，以满足当地市场对AI算力日益增长的需求。该投资将用于扩大数据中心规模、采购高性能计算硬件以及优化云服务平台，旨在减少印度企业对海外AI计算资源的依赖，提升本土数据处理能力和技术主权。此举标志着全球资本对印度AI生态系统的信心，有望加速印度在人工智能领域的自主创新，并为当地企业提供更高效、安全的算力支持，推动数字经济发展。",
+      "category": "投融资与并购",
+      "company": "Neysa",
+      "score": 32,
+      "breakdown": {
+        "substance": 8,
+        "importance": 8,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "AI数据中心遭遇电力瓶颈，Peak XV投资印度初创公司C2i寻求解决方案",
+      "url": "https://techcrunch.com/2026/02/15/as-ai-data-centers-hit-power-limits-peak-xv-backs-indian-startup-c2i-to-fix-the-bottleneck/",
+      "snippet": "C2i has raised $15 million as it tests a grid-to-GPU approach to reducing power losses in AI data centers.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Mon, 16 Feb 2026 01:00:00 +0000",
+      "region": "海外",
+      "summary": "印度初创公司C2i近日获得1500万美元融资，由Peak XV领投，旨在解决AI数据中心面临的电力限制问题。该公司正在测试一种“电网到GPU”的创新方法，通过优化电力传输路径和减少转换环节的能源损耗，以提升数据中心的整体能效。随着全球AI算力需求激增，数据中心的能耗问题日益突出，电力瓶颈已成为制约行业发展的关键因素。C2i的技术若成功应用，有望为高密度计算场景提供更可持续的电力解决方案，降低运营成本，并对印度乃至全球的AI基础设施建设和绿色计算发展产生积极影响。",
+      "category": "投融资与并购",
+      "company": "C2i",
       "score": 23,
       "breakdown": {
         "substance": 5,
-        "importance": 5,
-        "timeliness": 6,
-        "credibility": 7
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 8
       },
       "isDuplicate": false
     }

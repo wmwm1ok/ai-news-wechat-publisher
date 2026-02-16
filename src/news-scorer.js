@@ -213,22 +213,23 @@ export function selectTopNews(newsList, targetCount = 12) {
     categoryCount[category] = (categoryCount[category] || 0) + 1;
   }
   
-  // 第二轮：降低门槛填满（最低15分）
+  // 第二轮：降低门槛填满（最低15分），严格保持源限制
   for (const news of scored) {
     if (selected.length >= targetCount) break;
     if (selected.includes(news)) continue;
     if (news.score < 15) continue; // 降低分数门槛
-    if ((sourceCount[news.source] || 0) >= 3) continue;
+    if ((sourceCount[news.source] || 0) >= 2) continue; // 严格限制每个源最多2条
     
     selected.push(news);
     sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
   }
   
-  // 第三轮：再降门槛确保填满（最低10分）
+  // 第三轮：再降门槛确保填满（最低10分），严格保持源限制
   for (const news of scored) {
     if (selected.length >= targetCount) break;
     if (selected.includes(news)) continue;
     if (news.score < 10) continue;
+    if ((sourceCount[news.source] || 0) >= 2) continue; // 严格限制每个源最多2条
     
     selected.push(news);
     sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;

@@ -61,18 +61,18 @@ function normalizeSummary(summary) {
   if (!summary) return '暂无摘要';
   summary = summary.trim();
   
-  // 如果超过140字，在完整句子处截断
-  if (summary.length > 140) {
-    // 在100-140字范围内找最后一个句号
-    const searchText = summary.substring(100, 140);
+  // 如果超过300字，在完整句子处截断
+  if (summary.length > 300) {
+    // 在250-300字范围内找最后一个句号
+    const searchText = summary.substring(250, 300);
     const lastPeriod = searchText.lastIndexOf('。');
     
     if (lastPeriod !== -1) {
       // 在句子结束处截断
-      summary = summary.substring(0, 100 + lastPeriod + 1);
+      summary = summary.substring(0, 250 + lastPeriod + 1);
     } else {
-      // 找不到句号，截断到120字并加省略号
-      summary = summary.substring(0, 120) + '...';
+      // 找不到句号，截断到280字并加省略号
+      summary = summary.substring(0, 280) + '...';
     }
   }
   
@@ -101,7 +101,10 @@ async function summarizeSingle(item) {
    - 含"政策/法规/监管/合规"→政策与监管
    - 其他→技术与研究
 
-3. summary控制在150字以内，完整句子结束
+3. summary控制在250-300字，要求：
+   - 包含关键信息：具体数字、技术细节、影响范围
+   - 说明事件的重要性和行业意义
+   - 完整句子结束
 4. company从标题提取，没有就空字符串
 5. 只输出JSON`;
 
@@ -152,7 +155,7 @@ ${batchPrompt}
    - 融资/投资/收购→投融资与并购
    - 政策/法规/监管→政策与监管
    - 其他→技术与研究
-3. summary控制在150字内，完整句子结束
+3. summary控制在250-300字，包含关键信息、技术细节、影响范围和行业意义，完整句子结束
 4. 只输出JSON`;
 
     try {

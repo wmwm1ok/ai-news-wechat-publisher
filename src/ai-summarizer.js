@@ -86,13 +86,24 @@ async function summarizeSingle(item) {
 内容摘要：${item.snippet}
 
 输出JSON：
-{"title_cn":"中文标题（简洁专业）","summary":"摘要","category":"产品发布与更新/技术与研究/投融资与并购/政策与监管","company":"公司名（没有就空字符串）"}
+{"title_cn":"中文标题","summary":"摘要","category":"技术与研究","company":"公司名"}
 
-规则：
-1. title_cn：将原文翻译为简洁中文标题
-2. summary：写一段完整的摘要，把事情说清楚。不要过长（控制在150字以内），但也不要太短。必须在完整句子处结束，不要话说到一半就断掉。
-3. company：提取公司名，未提及则返回空字符串
-4. 只输出JSON`;
+【强制规则】
+1. category只能是以下4个之一，不允许其他分类：
+   - "产品发布与更新" → 新产品发布、功能更新、版本上线
+   - "技术与研究" → 技术突破、论文、研究成果、算法改进
+   - "投融资与并购" → 融资、投资、收购、IPO、估值
+   - "政策与监管" → 政策法规、监管动态、合规、版权
+   
+2. 根据标题关键词判断：
+   - 含"发布/上线/推出/更新"→产品发布与更新
+   - 含"融资/投资/收购/并购/估值"→投融资与并购
+   - 含"政策/法规/监管/合规"→政策与监管
+   - 其他→技术与研究
+
+3. summary控制在150字以内，完整句子结束
+4. company从标题提取，没有就空字符串
+5. 只输出JSON`;
 
   try {
     const response = await callDeepSeek(prompt);
@@ -132,12 +143,17 @@ async function summarizeBatch(items) {
 ${batchPrompt}
 
 输出JSON数组：
-[{"title_cn":"中文标题","summary":"摘要","category":"分类","company":"公司名"}]
+[{"title_cn":"中文标题","summary":"摘要","category":"技术与研究","company":"公司名"}]
 
-规则：
-1. title_cn：翻译为简洁中文
-2. summary：写完整的摘要把事情说清楚，控制在150字以内，必须在完整句子处结束
-3. 只输出JSON`;
+【强制规则】
+1. category只能是这4个之一："产品发布与更新"、"技术与研究"、"投融资与并购"、"政策与监管"
+2. 判断标准：
+   - 发布/上线/更新→产品发布与更新
+   - 融资/投资/收购→投融资与并购
+   - 政策/法规/监管→政策与监管
+   - 其他→技术与研究
+3. summary控制在150字内，完整句子结束
+4. 只输出JSON`;
 
     try {
       const response = await callDeepSeek(prompt);

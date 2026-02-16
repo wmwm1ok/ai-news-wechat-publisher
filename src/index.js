@@ -54,13 +54,32 @@ async function main() {
     process.exit(1);
   }
   
-  // 4. 按分类分组
+  // 4. 标准化分类并分组
+  const standardCategories = ['产品发布与更新', '技术与研究', '投融资与并购', '政策与监管'];
+  
+  // 将非标准分类映射到标准分类
+  for (const news of topNews) {
+    if (!standardCategories.includes(news.category)) {
+      // 根据关键词映射
+      const t = news.title.toLowerCase();
+      if (t.includes('发布') || t.includes('上线') || t.includes('推出')) {
+        news.category = '产品发布与更新';
+      } else if (t.includes('融资') || t.includes('投资') || t.includes('收购')) {
+        news.category = '投融资与并购';
+      } else if (t.includes('政策') || t.includes('监管') || t.includes('法规')) {
+        news.category = '政策与监管';
+      } else {
+        news.category = '技术与研究';
+      }
+    }
+  }
+  
   const grouped = {};
-  for (const section of ['产品发布与更新', '技术与研究', '投融资与并购', '政策与监管']) {
+  for (const section of standardCategories) {
     grouped[section] = topNews.filter(n => n.category === section);
   }
   
-  const totalNews = Object.values(grouped).flat().length;
+  const totalNews = topNews.length;
   
   // 5. 生成 HTML
   const html = generateHTML(grouped);

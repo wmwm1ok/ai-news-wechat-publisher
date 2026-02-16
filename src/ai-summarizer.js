@@ -1,6 +1,58 @@
 import axios from 'axios';
 import { CONFIG } from './config.js';
 
+// 检测摘要是否完整（不以...结尾且以句号/感叹号/问号结尾）
+function isSummaryComplete(summary) {
+  if (!summary || summary.length < 50) return false;
+  
+  const trimmed = summary.trim();
+  
+  // 如果以...或…结尾，说明被截断了
+  if (trimmed.endsWith('...') || trimmed.endsWith('…')) return false;
+  
+  // 如果以句子结束符结尾，认为是完整的
+  const sentenceEndings = /[。！？]$/;
+  return sentenceEndings.test(trimmed);
+}
+
+// 抓取网页全文
+async function fetchFullContent(url) {
+  try {
+    console.log(`   🔍 抓取全文: ${url.substring(0, 60)}...`);
+    
+    const response = await axios.get(url, {
+      timeout: 15000,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Connection': 'keep-alive',
+      },
+      maxRedirects: 5
+    });
+    
+    const html = response.data;
+    
+    // 简单的正文提取：移除script/style标签后提取文本
+    let text = html
+      .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+      .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    
+    // 截取前2000字符（足够AI理解全文）
+    text = text.substring(0, 2000);
+    
+    console.log(`   ✅ 抓取成功: ${text.length} 字符`);
+    return text;
+  } catch (error) {
+    console.log(`   ⚠️ 抓取失败: ${error.message}`);
+    return null;
+  }
+}
+
 async function callDeepSeek(prompt) {
   try {
     const response = await axios.post(
@@ -83,10 +135,24 @@ function normalizeSummary(summary) {
 }
 
 async function summarizeSingle(item) {
+  let content = item.snippet;
+  let usedFullContent = false;
+  
+  // 检测RSS摘要是否完整
+  if (!isSummaryComplete(content)) {
+    console.log(`   ⚠️ RSS摘要不完整，尝试抓取全文...`);
+    const fullContent = await fetchFullContent(item.url);
+    if (fullContent) {
+      content = fullContent;
+      usedFullContent = true;
+    }
+  }
+  
   const prompt = `为以下新闻写中文标题、摘要和分类。
 
 原文标题：${item.title}
-内容摘要：${item.snippet}
+${usedFullContent ? '【这是抓取的全文内容】' : '【这是RSS提供的摘要，可能不完整】'}
+内容：${content.substring(0, 1500)}
 
 输出JSON：
 {"title_cn":"中文标题","summary":"摘要","category":"技术与研究","company":"公司名"}
@@ -105,18 +171,8 @@ async function summarizeSingle(item) {
    - 其他→技术与研究
 
 3. summary必须是一段完整的新闻摘要（200-400字）：
-   【警告】输入的内容可能在句子中间被截断（如"以28亿元在北..."），请你：
-   - 不要直接复制这些截断的内容
-   - 根据已有信息，用自己的语言完整阐述事件
-   - 如果某个细节在输入中不完整，可以合理推断或省略该细节，但不要在句子中间停止
-   
-   【必须包含的要素】
-   - 核心事件：谁做了什么（公司/机构名称、具体动作）
-   - 关键数字：金额、用户数、增长率、时间点等具体数据（如果输入中有）
-   - 背景信息：相关产品/业务的历史背景（如果输入中有）
-   - 影响意义：对行业、公司、用户的意义
-   
-   【格式要求】
+   ${usedFullContent ? '【基于完整原文生成】' : '【警告】输入内容可能在句子中间被截断，不要直接复制截断的片段'}
+   - 用自己的语言完整阐述事件，不要复制截断内容
    - 用3-4个完整句子写成一段流畅的文字
    - 必须在意思完整的地方结束，不能在句子中间截断
    - 结尾必须是句号

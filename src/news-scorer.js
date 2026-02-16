@@ -2,6 +2,11 @@
  * 新闻质量评分系统 - 实质性内容优先
  */
 
+import { DeduplicationEngine } from './deduplication-engine.js';
+
+// 全局去重引擎实例
+const dedupEngine = new DeduplicationEngine();
+
 // 实质性指标 - 有具体数据/行动
 const SUBSTANCE_INDICATORS = {
   // 具体数字（金额、百分比、版本号等）
@@ -110,56 +115,12 @@ function calculateTimeliness(publishedAt) {
 }
 
 /**
- * 检查是否重复/相似
- * 基于关键词匹配检测同一事件
+ * 使用语义指纹引擎检查重复
+ * 保留旧函数名以保持向后兼容
  */
 function isDuplicate(title, existingTitles) {
-  // 提取核心关键词（人名、公司名、关键事件）
-  function extractKeywords(text) {
-    const keywords = [];
-    const lowerText = text.toLowerCase();
-    
-    // 提取英文单词（可能是人名、公司名、项目名）
-    const englishWords = text.match(/[A-Z][a-z]+|[A-Z]+/g) || [];
-    keywords.push(...englishWords.map(w => w.toLowerCase()));
-    
-    // 提取中文关键词
-    const chineseKeywords = ['创始人', '加入', '加盟', '收购', '融资', '发布', '推出', '开源', '投资', '出售'];
-    for (const kw of chineseKeywords) {
-      if (text.includes(kw)) keywords.push(kw);
-    }
-    
-    // 提取特定实体名称（OpenAI, OpenClaw等）
-    const entities = ['openai', 'openclaw', 'google', 'meta', 'anthropic', '字节', '阿里', '腾讯'];
-    for (const entity of entities) {
-      if (lowerText.includes(entity)) keywords.push(entity);
-    }
-    
-    return [...new Set(keywords)];
-  }
-  
-  const titleKeywords = extractKeywords(title);
-  
-  for (const existing of existingTitles) {
-    const existingKeywords = extractKeywords(existing);
-    
-    // 计算共同关键词
-    const common = titleKeywords.filter(k => existingKeywords.includes(k));
-    
-    // 如果有共同实体名(OpenAI/OpenClaw等) + 共同动作词(加入/加盟等)，认为是同一事件
-    const hasCommonEntity = common.some(k => ['openai', 'openclaw', 'google', 'meta', 'anthropic', '字节', '阿里', '腾讯'].includes(k));
-    const hasCommonAction = common.some(k => ['创始人', '加入', '加盟', '收购', '融资', '出售'].includes(k));
-    
-    if (hasCommonEntity && hasCommonAction) return true;
-    
-    // 如果共同关键词>=4个，认为是同一事件
-    if (common.length >= 4) return true;
-    
-    // 标题完全相同
-    if (title.toLowerCase().trim() === existing.toLowerCase().trim()) return true;
-  }
-  
-  return false;
+  const result = dedupEngine.checkDuplicate(title, existingTitles);
+  return result.isDuplicate;
 }
 
 /**
@@ -204,6 +165,7 @@ export function scoreNews(news, existingTitles) {
 export function selectTopNews(newsList, targetCount = 12) {
   const existingTitles = [];
   const scored = [];
+  const duplicates = [];
   
   // 评分
   for (const news of newsList) {
@@ -211,6 +173,19 @@ export function selectTopNews(newsList, targetCount = 12) {
     if (!scoring.isDuplicate) {
       scored.push({ ...news, ...scoring });
       existingTitles.push(news.title);
+    } else {
+      duplicates.push({ title: news.title, source: news.source, reason: scoring.reason });
+    }
+  }
+  
+  // 输出去重报告
+  if (duplicates.length > 0) {
+    console.log(`\n🔄 去重统计: 过滤掉 ${duplicates.length} 条重复新闻`);
+    for (const dup of duplicates.slice(0, 5)) {
+      console.log(`   ❌ [${dup.source}] ${dup.title.slice(0, 60)}...`);
+    }
+    if (duplicates.length > 5) {
+      console.log(`   ... 还有 ${duplicates.length - 5} 条`);
     }
   }
   

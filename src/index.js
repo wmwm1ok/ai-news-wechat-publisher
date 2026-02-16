@@ -14,6 +14,13 @@ async function saveOutput(filename, content) {
   const filepath = path.join(outputDir, filename);
   await fs.writeFile(filepath, content, 'utf-8');
   console.log(`💾 已保存: ${filepath}`);
+  
+  // latest.json 同时保存到根目录，供网站直接访问
+  if (filename === 'latest.json') {
+    await fs.writeFile(filename, content, 'utf-8');
+    console.log(`💾 已保存: ${filename}`);
+  }
+  
   return filepath;
 }
 

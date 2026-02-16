@@ -49,6 +49,10 @@ jobs:
           # 检查文件是否存在
           if [ -f "output/latest.json" ]; then
             git add -f output/
+            # 同时提交根目录的 latest.json（供网站直接访问）
+            if [ -f "latest.json" ]; then
+              git add -f latest.json
+            fi
             if ! git diff --cached --quiet; then
               git commit -m "Update AI news: $(date +'%Y-%m-%d')"
               git push

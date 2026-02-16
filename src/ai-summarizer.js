@@ -12,7 +12,7 @@ async function callDeepSeek(prompt) {
           { role: 'user', content: prompt }
         ],
         temperature: 0.3,
-        max_tokens: 2000
+        max_tokens: 4000  // 增加token确保摘要完整
       },
       {
         headers: {
@@ -61,19 +61,22 @@ function normalizeSummary(summary) {
   if (!summary) return '暂无摘要';
   summary = summary.trim();
   
-  // 如果超过300字，在完整句子处截断
-  if (summary.length > 300) {
-    // 在250-300字范围内找最后一个句号
-    const searchText = summary.substring(250, 300);
-    const lastPeriod = searchText.lastIndexOf('。');
+  // 检查是否以完整句子结尾（。！？）
+  const sentenceEndings = /[。！？]$/;
+  
+  if (!sentenceEndings.test(summary)) {
+    // 尝试在最后一个句子结束处截断（而不是在中间截断）
+    const lastPeriod = Math.max(
+      summary.lastIndexOf('。'),
+      summary.lastIndexOf('！'),
+      summary.lastIndexOf('？')
+    );
     
-    if (lastPeriod !== -1) {
-      // 在句子结束处截断
-      summary = summary.substring(0, 250 + lastPeriod + 1);
-    } else {
-      // 找不到句号，截断到280字并加省略号
-      summary = summary.substring(0, 280) + '...';
+    if (lastPeriod > 0) {
+      // 保留到最后一个完整句子
+      summary = summary.substring(0, lastPeriod + 1);
     }
+    // 如果没有找到句子结束符，保留原文（可能是AI生成不完整，但不强行截断）
   }
   
   return summary;
@@ -101,10 +104,16 @@ async function summarizeSingle(item) {
    - 含"政策/法规/监管/合规"→政策与监管
    - 其他→技术与研究
 
-3. summary控制在250-300字，要求：
-   - 包含关键信息：具体数字、技术细节、影响范围
-   - 说明事件的重要性和行业意义
-   - 完整句子结束
+3. summary必须是一段完整的新闻摘要（200-400字）：
+   【重要】必须包含以下要素，不要遗漏：
+   - 核心事件：谁做了什么（公司/机构名称、具体动作）
+   - 关键数字：金额、用户数、增长率、时间点等所有具体数据
+   - 背景信息：相关产品/业务的历史背景
+   - 影响意义：对行业、公司、用户的意义
+   【格式要求】
+   - 必须用完整句子写成一段话
+   - 必须写完，不能在句子中间截断
+   - 结尾必须是句号、感叹号或问号
 4. company从标题提取，没有就空字符串
 5. 只输出JSON`;
 
@@ -155,7 +164,10 @@ ${batchPrompt}
    - 融资/投资/收购→投融资与并购
    - 政策/法规/监管→政策与监管
    - 其他→技术与研究
-3. summary控制在250-300字，包含关键信息、技术细节、影响范围和行业意义，完整句子结束
+3. summary必须是一段完整的新闻摘要（200-400字）：
+   - 必须包含：核心事件、关键数字、背景信息、影响意义
+   - 必须用完整句子写成，不能在句子中间截断
+   - 结尾必须是句号、感叹号或问号
 4. 只输出JSON`;
 
     try {

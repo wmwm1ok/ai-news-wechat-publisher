@@ -295,10 +295,11 @@ export function scoreNews(news, existingTitles) {
 /**
  * 智能选择TOP新闻
  * @param {Array} newsList - 新闻列表
- * @param {number} targetCount - 目标数量
+ * @param {number} targetCount - 目标数量（注：实际范围 12-15，1:1 国内外比例）
  * @param {Array} previousNews - 之前已抓取的新闻 [{title, url, summary}, ...]（用于跨天去重）
  */
 export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
+  // targetCount 参数保留兼容，实际内部使用 12-15 范围
   // previousNews 是对象数组，需要提取标题用于当天去重
   const previousTitles = previousNews.map(n => n.title);
   const existingNews = []; // 已处理的新闻（包含完整信息）
@@ -368,14 +369,17 @@ export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
   scored.sort((a, b) => b.score - a.score);
   
   // 选择时确保多样性，并严格平衡国内外比例（目标 1:1）
+  // 目标数量范围 12-15 条，1:1 比例即每区域 6-8 条
   const selected = [];
   const sourceCount = {};
   const categoryCount = {};
-  const maxPerRegion = Math.floor(targetCount / 2); // 每区域最多6条（共12条）
+  const minTarget = 12;
+  const maxTarget = 15;
+  const maxPerRegion = Math.floor(maxTarget / 2); // 每区域最多7-8条
   
   // 第一轮：严格筛选，强制 1:1 比例
   for (const news of scored) {
-    if (selected.length >= targetCount) break;
+    if (selected.length >= maxTarget) break;
     if (news.score < 20) continue; // 降低质量门槛让更多海外新闻有机会
     
     const source = news.source;
@@ -397,7 +401,7 @@ export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
   
   // 第二轮：填补空缺，优先补充数量少的区域
   for (const news of scored) {
-    if (selected.length >= targetCount) break;
+    if (selected.length >= maxTarget) break;
     if (selected.includes(news)) continue;
     if (news.score < 10) continue;
     if ((sourceCount[news.source] || 0) >= 2) continue;
@@ -414,7 +418,7 @@ export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
   
   // 第三轮：确保填满目标数量（比例放宽）
   for (const news of scored) {
-    if (selected.length >= targetCount) break;
+    if (selected.length >= maxTarget) break;
     if (selected.includes(news)) continue;
     if (news.score < 5) continue;
     if ((sourceCount[news.source] || 0) >= 2) continue;
@@ -425,7 +429,7 @@ export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
   
   // 第四轮：最后手段
   for (const news of scored) {
-    if (selected.length >= targetCount) break;
+    if (selected.length >= maxTarget) break;
     if (selected.includes(news)) continue;
     if ((sourceCount[news.source] || 0) >= 3) continue;
     

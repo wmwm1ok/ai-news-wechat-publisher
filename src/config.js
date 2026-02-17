@@ -53,16 +53,26 @@ export const OVERSEAS_RSS_SOURCES = [
   {
     name: 'TechCrunch AI',
     url: 'https://techcrunch.com/category/artificial-intelligence/feed/',
-    limit: 8
+    limit: 10
   },
   {
     name: 'MIT Technology Review',
     url: 'https://www.technologyreview.com/feed/',
-    limit: 6
+    limit: 8
   },
   {
     name: 'Ars Technica',
     url: 'https://arstechnica.com/tag/artificial-intelligence/feed/',
+    limit: 8
+  },
+  {
+    name: 'The Register AI',
+    url: 'https://www.theregister.com/ai_headlines.rss',
+    limit: 6
+  },
+  {
+    name: 'TNW AI',
+    url: 'https://thenextweb.com/artificial-intelligence/feed/',
     limit: 6
   }
 ];

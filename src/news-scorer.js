@@ -367,16 +367,16 @@ export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
   // 按分数排序
   scored.sort((a, b) => b.score - a.score);
   
-  // 选择时确保多样性，并平衡国内外比例（目标 1:1）
+  // 选择时确保多样性，并严格平衡国内外比例（目标 1:1）
   const selected = [];
   const sourceCount = {};
   const categoryCount = {};
-  const targetPerRegion = Math.ceil(targetCount / 2); // 国内外各约一半
+  const maxPerRegion = Math.floor(targetCount / 2); // 每区域最多6条（共12条）
   
-  // 第一轮：严格筛选，同时平衡国内外比例
+  // 第一轮：严格筛选，强制 1:1 比例
   for (const news of scored) {
     if (selected.length >= targetCount) break;
-    if (news.score < 25) continue;
+    if (news.score < 20) continue; // 降低质量门槛让更多海外新闻有机会
     
     const source = news.source;
     const category = news.category || '技术与研究';
@@ -384,33 +384,35 @@ export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
     
     // 源和分类限制
     if ((sourceCount[source] || 0) >= 2) continue;
-    if ((categoryCount[category] || 0) >= 3) continue;
+    if ((categoryCount[category] || 0) >= 4) continue;
     
-    // 区域平衡：如果某区域已满，降低该区域新闻的优先级
+    // 严格区域平衡：每区域最多 maxPerRegion 条
     const currentRegionCount = selected.filter(n => (n.region || '国内') === region).length;
-    if (currentRegionCount >= targetPerRegion + 1) continue;
+    if (currentRegionCount >= maxPerRegion) continue;
     
     selected.push(news);
     sourceCount[source] = (sourceCount[source] || 0) + 1;
     categoryCount[category] = (categoryCount[category] || 0) + 1;
   }
   
-  // 第二轮：降低门槛填满，继续平衡比例
+  // 第二轮：填补空缺，优先补充数量少的区域
   for (const news of scored) {
     if (selected.length >= targetCount) break;
     if (selected.includes(news)) continue;
-    if (news.score < 15) continue;
+    if (news.score < 10) continue;
     if ((sourceCount[news.source] || 0) >= 2) continue;
     
     const region = news.region || '国内';
     const currentRegionCount = selected.filter(n => (n.region || '国内') === region).length;
-    if (currentRegionCount >= targetPerRegion + 2) continue;
+    
+    // 如果该区域已满，跳过
+    if (currentRegionCount >= maxPerRegion + 1) continue;
     
     selected.push(news);
     sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
   }
   
-  // 第三轮：再降门槛，比例放宽
+  // 第三轮：确保填满目标数量（比例放宽）
   for (const news of scored) {
     if (selected.length >= targetCount) break;
     if (selected.includes(news)) continue;
@@ -421,7 +423,7 @@ export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
     sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
   }
   
-  // 第四轮：确保填满目标数量
+  // 第四轮：最后手段
   for (const news of scored) {
     if (selected.length >= targetCount) break;
     if (selected.includes(news)) continue;

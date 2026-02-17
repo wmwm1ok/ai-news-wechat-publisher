@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 每日快报（2月17日）</title>
+</head>
+<body style="margin:0;padding:0;background:#f5f5f5;">
+  <div style="max-width:760px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Segoe UI',Roboto,Arial;line-height:1.75;color:#111;padding:20px;background:#fff;">
+    
+    <!-- 标题区 -->
+    <div style="text-align:center;padding:20px 0;border-bottom:2px solid #1c5cff;margin-bottom:20px;">
+      <div style="font-size:28px;font-weight:900;margin-bottom:8px;color:#1c5cff;">AI 每日快报（2月17日）</div>
+      <div style="color:#666;font-size:14px;">今日精选 AI 资讯</div>
+    </div>
+    
+    <!-- 导读 -->
+    <div style="background:#f8f9fa;border-radius:12px;padding:16px;margin-bottom:20px;border-left:4px solid #1c5cff;">
+      <div style="font-size:14px;color:#555;line-height:1.8;">
+        📌 本期涵盖🚀产品发布与更新、🧠技术与研究、💰投融资与并购等领域。
+      </div>
+    </div>
+    
+    <!-- 内容区 -->
+    
+    <div style="background:#f2f2f2;border-radius:16px;padding:18px;margin:18px 0;">
+      <div style="font-size:18px;font-weight:900;color:#1c5cff;margin-bottom:14px;">
+        🚀 产品发布与更新 
+        <span style="color:#666;font-weight:700;">（2）</span>
+      </div>
+      
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        1. <span style="color:#1c5cff;font-weight:700;">阿里</span> · 阿里开源千问3.5大模型：3970亿参数超越Gemini 3，百万Tokens成本低至0.8元
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">量子位 · 2月16日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        阿里巴巴在除夕期间发布了全新一代开源大模型Qwen3.5-Plus，该模型以3970亿总参数和170亿激活参数实现了性能突破，在多项基准测试中超越了Gemini-3-Pro和GPT-5.2等顶级闭源模型。模型不仅部署显存占用降低60%、推理吞吐量提升至19倍，还通过阿里云百炼平台将API价格降至百万Tokens输入0.8元，仅为同级别模型的1/18，同时首次实现201种语言全覆盖。普通用户可通过千问APP免费体验，开发者也可在魔搭社区等平台获取，这标志着阿里在春节档开源系列的首个重要发布。
+      </div>
+      
+    </div>
+  
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        2. Pandas 3.0正式发布：引入默认字符串数据类型与写时复制语义
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">InfoQ · 2月16日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        Pandas团队近日发布了3.0.0重大更新版本，该版本对核心功能进行了多项关键重构。主要更新包括：将字符串数据的默认存储类型从NumPy object改为专用的str dtype，以提供更统一的字符串处理方法并简化缺失值管理；正式采用写时复制语义，使索引和子集操作默认返回副本，从而彻底解决了长期存在的视图与副本歧义问题，并移除了链式赋值警告。此外，版本还引入了对新表达式语法的早期支持、改进了日期时间精度推断逻辑、提升了对Arrow PyCapsule接口的兼容性，并将最低运行要求提升至Python 3.11和NumPy 1.26.0。此次更新在社区中引发了关于Pandas发展方向及其与Polars等新兴库竞争的讨论。
+      </div>
+      
+    </div>
+  
+    </div>
+  
+    <div style="background:#f2f2f2;border-radius:16px;padding:18px;margin:18px 0;">
+      <div style="font-size:18px;font-weight:900;color:#1c5cff;margin-bottom:14px;">
+        🧠 技术与研究 
+        <span style="color:#666;font-weight:700;">（8）</span>
+      </div>
+      
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        1. <span style="color:#1c5cff;font-weight:700;">极佳视界</span> · 极佳视界发布新一代VLA大模型GigaBrain-0.5M*，具身智能长时程任务成功率接近100%
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">量子位 · 2月15日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        极佳视界近日推出了新一代VLA大模型GigaBrain-0.5M*，该模型在复杂长时程任务中展现出突破性性能。基于世界模型的强化学习范式，并结合人在回路持续学习机制，模型实现了“行动—反思—进化”的闭环自主迭代。在折纸盒、冲咖啡、叠衣物等多阶段精细操作任务中，GigaBrain-0.5M*取得了接近100%的成功率，较主流基线方法RECAP提升近30%。该模型依托上万小时机器人操作数据预训练，其价值预测方案在执行效率和精度上均优于现有方法，标志着具身智能在长时程任务可靠性方面取得重要进展。
+      </div>
+      
+    </div>
+  
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        2. <span style="color:#1c5cff;font-weight:700;">通义千问</span> · Qwen3.5模型除夕亮相，以性价比优势开启大模型竞赛新阶段
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">机器之心 · 2月16日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        在除夕之际，通义千问团队发布了Qwen3.5模型，该模型以“小胜大”的显著特点，在性能表现上成功挑战了规模更大的模型，实现了性价比的重大突破。这一进展不仅展示了模型优化和算法改进上的技术成果，更被业界视为大模型竞赛进入下半场的标志性事件。Qwen3.5的推出预示着行业竞争焦点可能从单纯追求参数规模，转向更注重效率、成本和实际应用价值的综合比拼。
+      </div>
+      
+    </div>
+  
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        3. <span style="color:#1c5cff;font-weight:700;">DeepSeek</span> · AI战事正酣，都在等梁文锋
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">36氪 · 2月15日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        当前中国AI大模型市场竞争激烈，各大互联网巨头纷纷投入巨资进行产品推广和模型升级，如腾讯、百度、阿里和字节跳动等公司通过现金红包激励用户并发布新一代模型。然而，曾以低成本高性能的推理大模型R1征服全球科技圈的DeepSeek及其创始人梁文锋，在此次混战中却显得异常沉默，仅进行了低调的上下文窗口升级，未如外界预期发布新一代旗舰模型V4。梁文锋作为来自广东湛江的85后技术领袖，以其纯粹的技术理想和创新精神著称，其团队近期发布的论文和持续的招聘动作引发了市场对DeepSeek未来动向的猜测。在行业普遍跟随而非创新的背景下，外界正期待梁文锋能再次带来颠覆性的技术突破。
+      </div>
+      
+    </div>
+  
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        4. <span style="color:#1c5cff;font-weight:700;">魔法原子</span> · 春晚极限验证，魔法原子秀出中国智造新高度
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">机器之心 · 2月16日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        在春晚的极限应用场景中，魔法原子技术成功展示了中国智能制造的最新成就。该技术通过高精度、高稳定性的表现，验证了其在复杂环境下的可靠性与先进性。这不仅体现了中国在尖端制造领域的突破，也为未来智能技术的广泛应用提供了有力支撑。此次展示标志着中国智造在技术创新与工程实践方面达到了新的高度。
+      </div>
+      
+    </div>
+  
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        5. <span style="color:#1c5cff;font-weight:700;">Flapping Airplanes</span> · Flapping Airplanes探索AI新范式：尝试真正激进的不同路径
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">TechCrunch AI · 2月16日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        人工智能研究机构Flapping Airplanes表示，他们正致力于探索人工智能发展的全新可能性，目标是尝试一些真正激进而不同的技术路径。该团队强调，他们正在权衡一套与传统AI研究不同的取舍标准，以期在基础研究上取得突破。这反映了AI领域内部分研究者寻求范式转移的探索精神。
+      </div>
+      
+    </div>
+  
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        6. 黑客对安全研究员发出死亡威胁，反暴露自身
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">MIT Technology Review · 2月16日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        2024年春季，网络安全研究员艾莉森·尼克松开始遭受一名使用“Waifu”和“Judische”等化名的神秘人物的死亡威胁，相关信息被发布在Telegram和Discord等平台上。然而，威胁者的这一行为被证明是一个重大失误，其鲁莽举动反而为安全专家和执法部门追踪其身份和动机留下了线索。
+      </div>
+      
+    </div>
+  
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        7. 远程协作的未来：声音技术重塑沟通方式
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">MIT Technology Review · 2月16日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        随着远程办公的普及，商业沟通的声音环境发生了根本性改变。从最初匆忙搭建家庭办公室，到如今人们如何被听见和理解的方式已经迎来一场革命。从教育到企业，各行各业的公司都在重新构想清晰、可靠的沟通所能带来的意义，这推动了音频技术和协作工具的持续创新与发展。
+      </div>
+      
+    </div>
+  
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        8. AI生成MVP对软件架构的挑战与影响
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">InfoQ · 2月16日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        本文探讨了AI在生成最小可行产品代码时对软件架构工作本质的改变。作者指出，AI生成的代码如同黑盒，其架构决策不透明且难以理解，这可能导致技术债务积累和系统可持续性问题。开发团队在利用AI提升效率的同时，仍需通过实验来评估生成代码的行为，并确保其满足质量属性需求。文章强调，尽管AI能加速产品验证过程，但团队仍需关注架构决策的透明度和系统的长期可维护性。
+      </div>
+      
+    </div>
+  
+    </div>
+  
+    <div style="background:#f2f2f2;border-radius:16px;padding:18px;margin:18px 0;">
+      <div style="font-size:18px;font-weight:900;color:#1c5cff;margin-bottom:14px;">
+        💰 投融资与并购 
+        <span style="color:#666;font-weight:700;">（2）</span>
+      </div>
+      
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        1. <span style="color:#1c5cff;font-weight:700;">Ricursive Intelligence</span> · 创始人是王牌：Ricursive Intelligence四个月融资33.5亿美元
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">TechCrunch AI · 2月16日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        人工智能初创公司Ricursive Intelligence在短短四个月内以40亿美元估值完成了33.5亿美元的巨额融资。其成功的关键在于创始团队在AI领域的卓越声誉和深厚背景，吸引了众多风险投资机构的激烈追捧。这笔融资凸显了顶级人才在当前AI热潮中的核心价值与市场号召力。
+      </div>
+      
+    </div>
+  
+    <div style="padding:14px 14px;border-radius:14px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);margin-bottom:12px;">
+      <div style="font-size:15.5px;font-weight:900;margin-bottom:6px;color:#111;">
+        2. <span style="color:#1c5cff;font-weight:700;">字节跳动</span> · 字节跳动拟出售沐瞳科技，交易估值或达70亿美元
+      </div>
+      <div style="font-size:12px;color:#888;margin-bottom:10px;">36氪 · 2月15日</div>
+      <div style="font-size:14px;color:#333;line-height:1.75;">
+        据报道，字节跳动正与沙特Savvy Games Group就出售旗下游戏部门上海沐瞳科技进行深入磋商，交易估值预计在60-70亿美元之间。若以最低60亿美元估值计算，字节跳动将从此笔交易中获利超过20亿美元，相比五年前40亿美元的收购价实现显著回报。此次出售标志着字节跳动对游戏业务的进一步收缩，同时公司将更多资源转向人工智能等新兴领域。沐瞳科技是海外热门手游《决胜巅峰》的开发商，该游戏在东南亚市场表现尤为突出。
+      </div>
+      
+    </div>
+  
+    </div>
+  
+    
+    <!-- 底部 -->
+    <div style="margin-top:30px;padding-top:20px;border-top:1px solid #eee;text-align:center;color:#999;font-size:12px;">
+      <div>AI 每日快报 · 每日 8:00 自动更新</div>
+      <div style="margin-top:8px;">2月17日</div>
+    </div>
+    
+  </div>
+</body>
+</html>

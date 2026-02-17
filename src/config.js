@@ -59,23 +59,23 @@ export const OVERSEAS_RSS_SOURCES = [
     limit: 4
   },
   {
-    name: 'The Verge AI',
-    url: 'https://www.theverge.com/ai-artificial-intelligence/rss/index.xml',
-    limit: 4
-  },
-  {
-    name: 'VentureBeat AI',
-    url: 'https://venturebeat.com/category/ai/feed/',
-    limit: 4
-  },
-  {
-    name: 'Wired AI',
-    url: 'https://www.wired.com/tag/artificial-intelligence/rss',
-    limit: 4
-  },
-  {
     name: 'Ars Technica',
     url: 'https://arstechnica.com/tag/artificial-intelligence/feed/',
+    limit: 4
+  },
+  {
+    name: 'IEEE Spectrum AI',
+    url: 'https://spectrum.ieee.org/rss/topic/artificial-intelligence',
+    limit: 4
+  },
+  {
+    name: 'Google AI Blog',
+    url: 'https://ai.googleblog.com/feeds/posts/default',
+    limit: 4
+  },
+  {
+    name: 'OpenAI Blog',
+    url: 'https://openai.com/blog/rss.xml',
     limit: 4
   }
 ];

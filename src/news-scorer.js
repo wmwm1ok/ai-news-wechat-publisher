@@ -367,63 +367,77 @@ export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
   // 按分数排序
   scored.sort((a, b) => b.score - a.score);
   
-  // 选择时确保多样性
+  // 选择时确保多样性，并平衡国内外比例（目标 1:1）
   const selected = [];
   const sourceCount = {};
   const categoryCount = {};
+  const targetPerRegion = Math.ceil(targetCount / 2); // 国内外各约一半
   
-  // 第一轮：严格筛选（每个源最多2条，每个分类最多3条）
+  // 第一轮：严格筛选，同时平衡国内外比例
   for (const news of scored) {
     if (selected.length >= targetCount) break;
-    if (news.score < 25) continue; // 质量门槛
+    if (news.score < 25) continue;
     
     const source = news.source;
     const category = news.category || '技术与研究';
+    const region = news.region || '国内';
     
+    // 源和分类限制
     if ((sourceCount[source] || 0) >= 2) continue;
     if ((categoryCount[category] || 0) >= 3) continue;
+    
+    // 区域平衡：如果某区域已满，降低该区域新闻的优先级
+    const currentRegionCount = selected.filter(n => (n.region || '国内') === region).length;
+    if (currentRegionCount >= targetPerRegion + 1) continue;
     
     selected.push(news);
     sourceCount[source] = (sourceCount[source] || 0) + 1;
     categoryCount[category] = (categoryCount[category] || 0) + 1;
   }
   
-  // 第二轮：降低门槛填满（最低15分），严格保持源限制
+  // 第二轮：降低门槛填满，继续平衡比例
   for (const news of scored) {
     if (selected.length >= targetCount) break;
     if (selected.includes(news)) continue;
-    if (news.score < 15) continue; // 降低分数门槛
-    if ((sourceCount[news.source] || 0) >= 2) continue; // 严格限制每个源最多2条
+    if (news.score < 15) continue;
+    if ((sourceCount[news.source] || 0) >= 2) continue;
+    
+    const region = news.region || '国内';
+    const currentRegionCount = selected.filter(n => (n.region || '国内') === region).length;
+    if (currentRegionCount >= targetPerRegion + 2) continue;
     
     selected.push(news);
     sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
   }
   
-  // 第三轮：再降门槛确保填满（最低5分），严格保持源限制
+  // 第三轮：再降门槛，比例放宽
   for (const news of scored) {
     if (selected.length >= targetCount) break;
     if (selected.includes(news)) continue;
-    if (news.score < 5) continue; // 进一步降低门槛确保填满
-    if ((sourceCount[news.source] || 0) >= 2) continue; // 严格限制每个源最多2条
+    if (news.score < 5) continue;
+    if ((sourceCount[news.source] || 0) >= 2) continue;
     
     selected.push(news);
     sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
   }
   
-  // 第四轮： desperate mode - 只要是非重复新闻就入选（确保达到目标数量）
+  // 第四轮：确保填满目标数量
   for (const news of scored) {
     if (selected.length >= targetCount) break;
     if (selected.includes(news)) continue;
-    if ((sourceCount[news.source] || 0) >= 3) continue; // 放宽到3条作为最后手段
+    if ((sourceCount[news.source] || 0) >= 3) continue;
     
     selected.push(news);
     sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
   }
   
   // 统计
+  const domesticCount = selected.filter(n => (n.region || '国内') === '国内').length;
+  const overseasCount = selected.filter(n => n.region === '海外').length;
+  
   console.log('\n📊 质量评分统计:');
   console.log(`   候选: ${scored.length} 条`);
-  console.log(`   入选: ${selected.length} 条`);
+  console.log(`   入选: ${selected.length} 条 (🇨🇳${domesticCount}/🇺🇸${overseasCount})`);
   console.log(`   平均分: ${(selected.reduce((a, b) => a + b.score, 0) / selected.length).toFixed(1)}`);
   console.log('   源分布:', Object.entries(sourceCount).map(([s, c]) => `${s}:${c}`).join(', '));
   

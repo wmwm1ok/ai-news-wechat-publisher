@@ -161,14 +161,32 @@ export function scoreNews(news, existingTitles) {
 
 /**
  * 智能选择TOP新闻
+ * @param {Array} newsList - 新闻列表
+ * @param {number} targetCount - 目标数量
+ * @param {Array} previousTitles - 之前已抓取的新闻标题（用于跨天去重）
  */
-export function selectTopNews(newsList, targetCount = 12) {
-  const existingTitles = [];
+export function selectTopNews(newsList, targetCount = 12, previousTitles = []) {
+  const existingTitles = [...previousTitles];
   const scored = [];
   const duplicates = [];
+  const crossDayDuplicates = []; // 跨天重复统计
   
   // 评分
   for (const news of newsList) {
+    // 先检查是否和昨天的新闻重复
+    let isCrossDayDup = false;
+    if (previousTitles.length > 0) {
+      const yesterdayCheck = dedupEngine.checkDuplicate(news.title, previousTitles);
+      if (yesterdayCheck.isDuplicate) {
+        isCrossDayDup = true;
+        crossDayDuplicates.push({
+          title: news.title,
+          source: news.source,
+          matchedWith: yesterdayCheck.details?.matchedWith || '昨日新闻'
+        });
+      }
+    }
+    
     const scoring = scoreNews(news, existingTitles);
     if (!scoring.isDuplicate) {
       scored.push({ ...news, ...scoring });
@@ -181,6 +199,9 @@ export function selectTopNews(newsList, targetCount = 12) {
   // 输出去重报告
   if (duplicates.length > 0) {
     console.log(`\n🔄 去重统计: 过滤掉 ${duplicates.length} 条重复新闻`);
+    if (crossDayDuplicates.length > 0) {
+      console.log(`   📅 其中 ${crossDayDuplicates.length} 条与昨日新闻重复`);
+    }
     for (const dup of duplicates.slice(0, 5)) {
       console.log(`   ❌ [${dup.source}] ${dup.title.slice(0, 60)}...`);
     }

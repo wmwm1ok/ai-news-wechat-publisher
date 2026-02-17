@@ -9,7 +9,7 @@ const ENTITY_PATTERNS = {
   companyEn: /\b(OpenAI|Anthropic|Google|Meta|Microsoft|NVIDIA|Amazon|Apple|Intel|AMD|Salesforce|Adobe|IBM|Oracle|DeepMind|Stability AI|Hugging Face|Midjourney|Runway|Character\.AI|Cohere|Adept|Inflection|xAI|OpenClaw|Perplexity|Scale AI|DataBricks|Snowflake|Pinecone|Weaviate|Chroma|LangChain|LlamaIndex|CrewAI|AutoGPT|BabyAGI)\b/gi,
   
   // 公司/组织名（中文）
-  companyZh: /(字节跳动|字节|阿里巴巴|阿里|腾讯|百度|华为|小米|美团|滴滴|京东|网易|快手|拼多多|商汤|旷视|依图|云从|科大讯飞|讯飞|智谱|月之暗面|MiniMax|零一万物|百川智能|面壁智能|深度求索|DeepSeek|澜舟科技|思必驰|云知声|第四范式|出门问问|循环智能|智源研究院|清华|北大|中科院|MIT|斯坦福|Google|OpenAI|Meta|微软|英伟达)/g,
+  companyZh: /(字节跳动|字节|阿里巴巴|阿里|腾讯|百度|华为|小米|美团|滴滴|京东|网易|快手|拼多多|商汤|旷视|依图|云从|科大讯飞|讯飞|智谱|月之暗面|MiniMax|零一万物|百川智能|面壁智能|深度求索|DeepSeek|澜舟科技|思必驰|云知声|第四范式|出门问问|循环智能|智源研究院|清华|北大|中科院|MIT|斯坦福|Google|OpenAI|Meta|微软|英伟达|极佳视界)/g,
   
   // 产品/模型名
   product: /\b(GPT-[45]|GPT-4o|Claude [34]|Gemini [12]\.5|Gemini Pro|Llama [23]|Mistral|Mixtral|Phi-[34]|Stable Diffusion|Midjourney|DALL-E [23]|Sora|Whisper|Embeddings|GPTs|Assistants API|Function Calling|RAG|LangChain|LlamaIndex|AutoGPT|vLLM|TensorRT|Triton|ONNX|PyTorch|TensorFlow|JAX|Keras|Hugging Face|Transformers|BERT|RoBERTa|T5|GPT-2|GPT-3|PaLM|LaMDA|GLaM|Chinchilla|Gopher|MT-NLG|Jurassic|Bloom|GPT-Neo|GPT-J|OPT|LLaMA|Alpaca|Vicuna|WizardLM|Guanaco|MPT|Falcon|RedPajama|Dolly|StableLM|OpenLLaMA|Qwen|Baichuan|ChatGLM|InternLM|Yi|DeepSeek|Skywork|BlueLM|Chinese-LLaMA|Chinese-Alpaca|ChatYuan|CPM|EVA|Pangu|Ernie|Wudao|GLM)\b/gi,
@@ -218,8 +218,8 @@ export class DeduplicationResult {
 export class DeduplicationEngine {
   constructor(options = {}) {
     this.thresholds = {
-      fingerprintSimilarity: options.fingerprintThreshold || 0.6,  // 指纹相似度阈值
-      textSimilarity: options.textThreshold || 0.75,               // 文本相似度阈值
+      fingerprintSimilarity: options.fingerprintThreshold || 0.5,  // 指纹相似度阈值（降低以更好捕捉变体）
+      textSimilarity: options.textThreshold || 0.7,                // 文本相似度阈值（降低）
       minConfidence: options.minConfidence || 0.7                  // 最小置信度
     };
     this.history = []; // 去重历史日志

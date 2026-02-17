@@ -25,13 +25,20 @@ pids/
 # Coverage directory used by tools like istanbul
 coverage/
 
-# Output files
+# Output files - 保留 JSON 用于跨天去重，排除 HTML
 output/
-dist/
+!output/.gitkeep
+!output/*.json
+
+# HTML 文件（生成的，不需要提交）
 *.html
-*.json
-!package.json
-!package-lock.json
+!index.html
+!mobile-preview.html
+
+# JSON 数据文件（需要提交用于跨天去重）
+!latest.json
+
+dist/
 
 # OS files
 .DS_Store

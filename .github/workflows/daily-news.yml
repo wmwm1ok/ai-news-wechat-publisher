@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0  # 获取完整历史，确保昨天的新闻文件存在
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -48,10 +49,12 @@ jobs:
           
           # 检查文件是否存在
           if [ -f "output/latest.json" ]; then
-            git add -f output/
+            # 只提交 JSON 文件（用于跨天去重），HTML 文件通过 artifact 保存
+            git add output/*.json
+            git add output/latest.json
             # 同时提交根目录的 latest.json（供网站直接访问）
             if [ -f "latest.json" ]; then
-              git add -f latest.json
+              git add latest.json
             fi
             if ! git diff --cached --quiet; then
               git commit -m "Update AI news: $(date +'%Y-%m-%d')"

@@ -2,7 +2,7 @@ import Parser from 'rss-parser';
 import axios from 'axios';
 import { DOMESTIC_RSS_SOURCES, OVERSEAS_RSS_SOURCES, CONFIG } from './config.js';
 
-const FRESHNESS_HOURS = 48;
+const FRESHNESS_HOURS = 24;
 
 const rssParser = new Parser({
   timeout: 10000,

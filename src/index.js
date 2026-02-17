@@ -24,6 +24,45 @@ async function saveOutput(filename, content) {
   return filepath;
 }
 
+/**
+ * 加载昨天的新闻标题（用于跨天去重）
+ */
+async function loadYesterdayTitles() {
+  try {
+    // 计算昨天的日期
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const dateStr = yesterday.toISOString().split('T')[0];
+    
+    const filepath = path.join('output', `news-${dateStr}.json`);
+    
+    // 读取文件
+    const content = await fs.readFile(filepath, 'utf-8');
+    const data = JSON.parse(content);
+    
+    // 从所有分类中提取标题
+    const titles = [];
+    for (const category of Object.values(data)) {
+      if (Array.isArray(category)) {
+        for (const news of category) {
+          if (news.title) {
+            titles.push(news.title);
+          }
+        }
+      }
+    }
+    
+    console.log(`📅 加载昨日新闻: ${titles.length} 条（${dateStr}）`);
+    return titles;
+  } catch (error) {
+    // 文件不存在或读取失败，返回空数组
+    console.log('⚠️  未找到昨日新闻文件，跨天去重功能未生效');
+    console.log('   提示: 如使用 GitHub Actions 无需处理');
+    console.log('   本地运行请先执行: git pull origin main');
+    return [];
+  }
+}
+
 async function main() {
   console.log('\n' + '='.repeat(60));
   console.log('🚀 AI 新闻智能筛选系统 (专业版)');
@@ -52,16 +91,19 @@ async function main() {
   
   console.log(`\n📝 AI总结完成: ${allNews.length} 条新闻`);
   
-  // 3. 质量评分和智能筛选
+  // 3. 加载昨天的新闻标题（跨天去重）
+  const yesterdayTitles = await loadYesterdayTitles();
+  
+  // 4. 质量评分和智能筛选（带上昨天标题进行跨天去重）
   console.log('\n🎯 开始质量评分...');
-  const topNews = selectTopNews(allNews, 12);
+  const topNews = selectTopNews(allNews, 12, yesterdayTitles);
   
   if (topNews.length === 0) {
     console.error('❌ 没有符合质量标准的新闻');
     process.exit(1);
   }
   
-  // 4. 标准化分类并分组
+  // 5. 标准化分类并分组
   const standardCategories = ['产品发布与更新', '技术与研究', '投融资与并购', '政策与监管'];
   
   // 将非标准分类映射到标准分类
@@ -88,7 +130,7 @@ async function main() {
   
   const totalNews = topNews.length;
   
-  // 5. 生成 HTML
+  // 6. 生成 HTML
   const html = generateHTML(grouped);
   const wechatHtml = generateWechatHTML(grouped);
   
@@ -96,7 +138,7 @@ async function main() {
   await saveOutput(`newsletter-${date}.html`, html);
   await saveOutput(`wechat-${date}.html`, wechatHtml);
   
-  // 6. 生成 JSON
+  // 7. 生成 JSON
   const jsonData = {
     date: new Date().toLocaleDateString('zh-CN'),
     count: totalNews,
@@ -114,7 +156,7 @@ async function main() {
   await saveOutput('latest.json', JSON.stringify(jsonData, null, 2));
   await saveOutput(`news-${date}.json`, JSON.stringify(grouped, null, 2));
   
-  // 7. 统计输出
+  // 8. 统计输出
   console.log(`\n${'='.repeat(60)}`);
   console.log('📊 最终输出统计');
   console.log('='.repeat(60));

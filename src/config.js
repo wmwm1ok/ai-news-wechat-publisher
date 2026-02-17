@@ -64,18 +64,18 @@ export const OVERSEAS_RSS_SOURCES = [
     limit: 4
   },
   {
-    name: 'IEEE Spectrum AI',
-    url: 'https://spectrum.ieee.org/rss/topic/artificial-intelligence',
+    name: 'AI News',
+    url: 'https://www.artificialintelligence-news.com/feed/',
     limit: 4
   },
   {
-    name: 'Google AI Blog',
-    url: 'https://ai.googleblog.com/feeds/posts/default',
+    name: 'ScienceDaily AI',
+    url: 'https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml',
     limit: 4
   },
   {
-    name: 'OpenAI Blog',
-    url: 'https://openai.com/blog/rss.xml',
+    name: 'MarkTechPost AI',
+    url: 'https://www.marktechpost.com/category/artificial-intelligence/feed/',
     limit: 4
   }
 ];

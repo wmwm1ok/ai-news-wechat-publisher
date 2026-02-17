@@ -1,8 +1,23 @@
 import Parser from 'rss-parser';
 import axios from 'axios';
-import { DOMESTIC_RSS_SOURCES, OVERSEAS_RSS_SOURCES, CONFIG } from './config.js';
+import { DOMESTIC_RSS_SOURCES, OVERSEAS_RSS_SOURCES, CONFIG, AI_KEYWORDS_CORE } from './config.js';
 
 const FRESHNESS_HOURS = 24;
+
+/**
+ * 检查新闻是否与AI行业相关
+ */
+function isAIRelated(title, snippet = '') {
+  const text = (title + ' ' + snippet).toLowerCase();
+  
+  for (const keyword of AI_KEYWORDS_CORE) {
+    if (text.includes(keyword.toLowerCase())) {
+      return true;
+    }
+  }
+  
+  return false;
+}
 
 const rssParser = new Parser({
   timeout: 10000,
@@ -36,9 +51,15 @@ async function parseRSS(source) {
         region: DOMESTIC_RSS_SOURCES.includes(source) ? '国内' : '海外'
       }))
       .filter(item => isFreshNews(item.publishedAt))
+      .filter(item => isAIRelated(item.title, item.snippet))  // 只保留AI相关新闻
       .slice(0, source.limit || 5);
     
-    console.log(`   ✓ ${items.length} 条`);
+    const filteredCount = feed.items.filter(item => isFreshNews(item.pubDate || item.isoDate)).length - items.length;
+    if (filteredCount > 0) {
+      console.log(`   ✓ ${items.length} 条 (过滤掉 ${filteredCount} 条非AI新闻)`);
+    } else {
+      console.log(`   ✓ ${items.length} 条`);
+    }
     return items;
   } catch (error) {
     console.error(`   ✗ 失败: ${error.message}`);
@@ -93,6 +114,10 @@ async function fetchSerperNews() {
         });
         
         for (const item of response.data.news || []) {
+          // 检查是否AI相关
+          if (!isAIRelated(item.title, item.snippet)) {
+            continue;
+          }
           if (item.title && item.link && !seenUrls.has(item.link)) {
             seenUrls.add(item.link);
             allNews.push({

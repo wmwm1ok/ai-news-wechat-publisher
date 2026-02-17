@@ -124,6 +124,139 @@ function isDuplicate(title, existingTitles) {
 }
 
 /**
+ * 智能语义去重 - 基于URL、标题和摘要的综合判断
+ * @param {Object} news - 当前新闻 {title, url, summary}
+ * @param {Array} existingNews - 已有新闻列表 [{title, url, summary}, ...]
+ * @returns {Object} {isDuplicate, reason, confidence}
+ */
+export function checkSemanticDuplicate(news, existingNews) {
+  if (!news || !existingNews || existingNews.length === 0) {
+    return { isDuplicate: false, reason: '无需检查', confidence: 1 };
+  }
+  
+  const currentUrl = (news.url || '').trim();
+  const currentTitle = (news.title || '').trim();
+  const currentSummary = (news.summary || '').trim();
+  
+  for (const existing of existingNews) {
+    const existingUrl = (existing.url || '').trim();
+    const existingTitle = (existing.title || '').trim();
+    const existingSummary = (existing.summary || '').trim();
+    
+    // 1. URL 完全匹配（最可靠）
+    if (currentUrl && existingUrl && currentUrl === existingUrl) {
+      return { 
+        isDuplicate: true, 
+        reason: 'URL相同', 
+        confidence: 1.0,
+        matchedWith: existingTitle
+      };
+    }
+    
+    // 2. 标题完全匹配
+    if (currentTitle.toLowerCase() === existingTitle.toLowerCase()) {
+      return { 
+        isDuplicate: true, 
+        reason: '标题完全相同', 
+        confidence: 1.0,
+        matchedWith: existingTitle
+      };
+    }
+    
+    // 3. 标题语义指纹匹配
+    const titleResult = dedupEngine.checkDuplicate(currentTitle, [existingTitle]);
+    if (titleResult.isDuplicate) {
+      return { 
+        isDuplicate: true, 
+        reason: `标题语义相似 (${titleResult.reason})`, 
+        confidence: titleResult.confidence,
+        matchedWith: existingTitle
+      };
+    }
+    
+    // 4. 摘要语义匹配（如果摘要不空）
+    if (currentSummary && existingSummary) {
+      // 提取摘要的核心实体和关键词
+      const currentEntities = extractCoreEntities(currentTitle + ' ' + currentSummary);
+      const existingEntities = extractCoreEntities(existingTitle + ' ' + existingSummary);
+      
+      // 计算实体重叠度
+      const commonEntities = currentEntities.filter(e => existingEntities.includes(e));
+      const entityOverlap = commonEntities.length / Math.max(currentEntities.length, existingEntities.length);
+      
+      // 如果实体重叠度高且涉及相同公司/产品，认为是重复
+      if (entityOverlap >= 0.6 && commonEntities.length >= 2) {
+        return { 
+          isDuplicate: true, 
+          reason: '内容实体高度重叠', 
+          confidence: entityOverlap,
+          matchedWith: existingTitle,
+          commonEntities
+        };
+      }
+    }
+  }
+  
+  return { isDuplicate: false, reason: '未检测到重复', confidence: 1 };
+}
+
+/**
+ * 提取文本中的核心实体（公司、产品、技术、人名）
+ */
+function extractCoreEntities(text) {
+  if (!text) return [];
+  
+  const entities = [];
+  const lowerText = text.toLowerCase();
+  
+  // 公司/组织名
+  const companies = [
+    'openai', 'anthropic', 'google', 'meta', 'microsoft', 'nvidia', 'amazon', 'apple', 'intel', 'amd',
+    '字节', '字节跳动', '阿里', '阿里巴巴', '腾讯', '百度', '华为', '小米', '美团', '滴滴', '京东', '网易', '快手', '拼多多',
+    '商汤', '旷视', '依图', '云从', '科大讯飞', '讯飞', '智谱', '月之暗面', 'minimax', '零一万物',
+    '百川智能', '面壁智能', '深度求索', 'deepseek', '极佳视界', '澜舟科技', '思必驰', '云知声',
+    '第四范式', '出门问问', '循环智能', '智源研究院', '清华', '北大', '中科院', '斯坦福', 'mit'
+  ];
+  
+  // 产品/模型名
+  const products = [
+    'gpt-4', 'gpt-5', 'gpt-4o', 'claude', 'gemini', 'llama', 'mistral', 'mixtral',
+    'gpt', 'dall-e', 'sora', 'whisper', 'qwen', 'baichuan', 'chatglm', 'internlm',
+    'yi', 'skywork', 'bluelm', 'deepseek', 'kimi', '豆包', '文心一言', '通义千问',
+    'gigabrain', 'vla', 'moco', 'seedance'
+  ];
+  
+  // 技术术语
+  const techTerms = [
+    '大模型', 'llm', 'ai', '人工智能', '神经网络', '深度学习', '机器学习',
+    '多模态', 'transformer', 'diffusion', '强化学习', 'rlhf', 'rag',
+    '具身智能', '生成式ai', 'ag'
+  ];
+  
+  // 人名
+  const persons = [
+    'sam altman', '奥特曼', '李彦宏', '马云', '马化腾', '雷军', '张一鸣',
+    '梁文锋', '李飞飞', 'andrej karpathy', 'karpathy', 'jeff dean', '黄仁勋'
+  ];
+  
+  // 检查匹配
+  for (const c of companies) {
+    if (lowerText.includes(c.toLowerCase())) entities.push(c);
+  }
+  for (const p of products) {
+    if (lowerText.includes(p.toLowerCase())) entities.push(p);
+  }
+  for (const t of techTerms) {
+    if (lowerText.includes(t.toLowerCase())) entities.push(t);
+  }
+  for (const p of persons) {
+    if (lowerText.includes(p.toLowerCase())) entities.push(p);
+  }
+  
+  return [...new Set(entities)]; // 去重
+}
+
+/**
  * 综合评分
  */
 export function scoreNews(news, existingTitles) {
@@ -163,47 +296,68 @@ export function scoreNews(news, existingTitles) {
  * 智能选择TOP新闻
  * @param {Array} newsList - 新闻列表
  * @param {number} targetCount - 目标数量
- * @param {Array} previousTitles - 之前已抓取的新闻标题（用于跨天去重）
+ * @param {Array} previousNews - 之前已抓取的新闻 [{title, url, summary}, ...]（用于跨天去重）
  */
-export function selectTopNews(newsList, targetCount = 12, previousTitles = []) {
-  const existingTitles = [...previousTitles];
+export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
+  // previousNews 是对象数组，需要提取标题用于当天去重
+  const previousTitles = previousNews.map(n => n.title);
+  const existingNews = []; // 已处理的新闻（包含完整信息）
   const scored = [];
   const duplicates = [];
   const crossDayDuplicates = []; // 跨天重复统计
   
   // 评分
   for (const news of newsList) {
-    // 先检查是否和昨天的新闻重复
+    // 使用语义去重检查（包含 URL、标题、摘要）
+    const duplicateCheck = checkSemanticDuplicate(news, [...previousNews, ...existingNews]);
+    
+    // 检查是否是跨天重复
     let isCrossDayDup = false;
-    if (previousTitles.length > 0) {
-      const yesterdayCheck = dedupEngine.checkDuplicate(news.title, previousTitles);
+    if (previousNews.length > 0 && duplicateCheck.isDuplicate) {
+      // 检查是否匹配到昨天的新闻
+      const yesterdayCheck = checkSemanticDuplicate(news, previousNews);
       if (yesterdayCheck.isDuplicate) {
         isCrossDayDup = true;
         crossDayDuplicates.push({
           title: news.title,
           source: news.source,
-          matchedWith: yesterdayCheck.details?.matchedWith || '昨日新闻'
+          reason: yesterdayCheck.reason,
+          matchedWith: yesterdayCheck.matchedWith || '昨日新闻'
         });
       }
     }
     
-    const scoring = scoreNews(news, existingTitles);
-    if (!scoring.isDuplicate) {
-      scored.push({ ...news, ...scoring });
-      existingTitles.push(news.title);
+    if (duplicateCheck.isDuplicate) {
+      duplicates.push({ 
+        title: news.title, 
+        source: news.source, 
+        reason: duplicateCheck.reason,
+        isCrossDay: isCrossDayDup
+      });
     } else {
-      duplicates.push({ title: news.title, source: news.source, reason: scoring.reason });
+      // 当天去重仍使用标题（确保当天不重复）
+      const scoring = scoreNews(news, existingNews.map(n => n.title));
+      if (!scoring.isDuplicate) {
+        scored.push({ ...news, ...scoring });
+        existingNews.push({
+          title: news.title,
+          url: news.url,
+          summary: news.summary
+        });
+      }
     }
   }
   
   // 输出去重报告
   if (duplicates.length > 0) {
     console.log(`\n🔄 去重统计: 过滤掉 ${duplicates.length} 条重复新闻`);
-    if (crossDayDuplicates.length > 0) {
-      console.log(`   📅 其中 ${crossDayDuplicates.length} 条与昨日新闻重复`);
+    const crossDayCount = crossDayDuplicates.length;
+    if (crossDayCount > 0) {
+      console.log(`   📅 其中 ${crossDayCount} 条与昨日新闻重复`);
     }
     for (const dup of duplicates.slice(0, 5)) {
-      console.log(`   ❌ [${dup.source}] ${dup.title.slice(0, 60)}...`);
+      const crossDayMark = dup.isCrossDay ? '📅 ' : '';
+      console.log(`   ❌ ${crossDayMark}[${dup.source}] ${dup.title.slice(0, 60)}... (${dup.reason})`);
     }
     if (duplicates.length > 5) {
       console.log(`   ... 还有 ${duplicates.length - 5} 条`);

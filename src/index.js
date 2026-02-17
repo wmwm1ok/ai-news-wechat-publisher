@@ -25,9 +25,10 @@ async function saveOutput(filename, content) {
 }
 
 /**
- * 加载昨天的新闻标题（用于跨天去重）
+ * 加载昨天的新闻（用于跨天去重）
+ * 返回包含标题、URL、摘要的完整信息
  */
-async function loadYesterdayTitles() {
+async function loadYesterdayNews() {
   try {
     // 计算昨天的日期
     const yesterday = new Date();
@@ -40,20 +41,25 @@ async function loadYesterdayTitles() {
     const content = await fs.readFile(filepath, 'utf-8');
     const data = JSON.parse(content);
     
-    // 从所有分类中提取标题
-    const titles = [];
+    // 从所有分类中提取完整新闻信息
+    const news = [];
     for (const category of Object.values(data)) {
       if (Array.isArray(category)) {
-        for (const news of category) {
-          if (news.title) {
-            titles.push(news.title);
+        for (const item of category) {
+          if (item.title) {
+            news.push({
+              title: item.title,
+              url: item.url || '',
+              summary: item.summary || '',
+              source: item.source || ''
+            });
           }
         }
       }
     }
     
-    console.log(`📅 加载昨日新闻: ${titles.length} 条（${dateStr}）`);
-    return titles;
+    console.log(`📅 加载昨日新闻: ${news.length} 条（${dateStr}）`);
+    return news;
   } catch (error) {
     // 文件不存在或读取失败，返回空数组
     console.log('⚠️  未找到昨日新闻文件，跨天去重功能未生效');
@@ -91,12 +97,12 @@ async function main() {
   
   console.log(`\n📝 AI总结完成: ${allNews.length} 条新闻`);
   
-  // 3. 加载昨天的新闻标题（跨天去重）
-  const yesterdayTitles = await loadYesterdayTitles();
+  // 3. 加载昨天的新闻（跨天去重）
+  const yesterdayNews = await loadYesterdayNews();
   
-  // 4. 质量评分和智能筛选（带上昨天标题进行跨天去重）
+  // 4. 质量评分和智能筛选（带上昨天新闻进行语义去重）
   console.log('\n🎯 开始质量评分...');
-  const topNews = selectTopNews(allNews, 12, yesterdayTitles);
+  const topNews = selectTopNews(allNews, 12, yesterdayNews);
   
   if (topNews.length === 0) {
     console.error('❌ 没有符合质量标准的新闻');

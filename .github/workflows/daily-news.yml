@@ -55,11 +55,11 @@ jobs:
           # 检查文件是否存在
           if [ -f "output/latest.json" ]; then
             # 只提交 JSON 文件（用于跨天去重），HTML 文件通过 artifact 保存
-            git add output/*.json
-            git add output/latest.json
+            # 使用 -f 强制添加（可能被 .gitignore 忽略）
+            git add -f output/*.json
             # 同时提交根目录的 latest.json（供网站直接访问）
             if [ -f "latest.json" ]; then
-              git add latest.json
+              git add -f latest.json
             fi
             if ! git diff --cached --quiet; then
               git commit -m "Update AI news: $(date +'%Y-%m-%d')"

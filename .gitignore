@@ -26,11 +26,12 @@ pids/
 coverage/
 
 # Output files - 保留 JSON 用于跨天去重，排除 HTML
-# 先保留目录和 JSON
+# 保留 output 目录本身和 .gitkeep
 !output/
+!output/.gitkeep
+
+# 排除 output 目录下的 HTML 文件
 output/*.html
-output/newsletter-*.html
-output/wechat-*.html
 
 # 根目录 HTML 文件（除了静态页面）
 *.html

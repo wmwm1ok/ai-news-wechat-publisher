@@ -54,13 +54,20 @@ async function fetchSerperNews() {
   try {
     console.log('📡 Serper API');
     
+    // 增加更多查询词以获取更多海外新闻
     const queries = [
       'OpenAI GPT news today',
-      'Google Gemini AI news',
-      'Anthropic Claude AI news'
+      'Google Gemini AI news', 
+      'Anthropic Claude AI news',
+      'Meta AI news today',
+      'NVIDIA AI news today',
+      'Microsoft Copilot AI news',
+      'AI startup funding today',
+      'artificial intelligence breakthrough'
     ];
     
     const allNews = [];
+    const seenUrls = new Set();
     
     for (const query of queries) {
       try {
@@ -79,7 +86,8 @@ async function fetchSerperNews() {
         });
         
         for (const item of response.data.news || []) {
-          if (item.title && item.link) {
+          if (item.title && item.link && !seenUrls.has(item.link)) {
+            seenUrls.add(item.link);
             allNews.push({
               title: item.title,
               url: item.link,
@@ -92,7 +100,7 @@ async function fetchSerperNews() {
         }
       } catch (e) {}
       
-      await new Promise(r => setTimeout(r, 200));
+      await new Promise(r => setTimeout(r, 300));
     }
     
     console.log(`   ✓ ${allNews.length} 条`);

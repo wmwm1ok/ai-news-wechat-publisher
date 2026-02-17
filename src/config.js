@@ -47,6 +47,8 @@ export const DOMESTIC_RSS_SOURCES = [
 ];
 
 // 海外 RSS 源（精选高质）
+// 注：部分海外源在国内网络环境下可能不稳定
+// 建议配置 SERPER_API_KEY 通过 API 补充海外新闻
 export const OVERSEAS_RSS_SOURCES = [
   {
     name: 'TechCrunch AI',
@@ -61,21 +63,6 @@ export const OVERSEAS_RSS_SOURCES = [
   {
     name: 'Ars Technica',
     url: 'https://arstechnica.com/tag/artificial-intelligence/feed/',
-    limit: 4
-  },
-  {
-    name: 'AI News',
-    url: 'https://www.artificialintelligence-news.com/feed/',
-    limit: 4
-  },
-  {
-    name: 'ScienceDaily AI',
-    url: 'https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml',
-    limit: 4
-  },
-  {
-    name: 'MarkTechPost AI',
-    url: 'https://www.marktechpost.com/category/artificial-intelligence/feed/',
     limit: 4
   }
 ];

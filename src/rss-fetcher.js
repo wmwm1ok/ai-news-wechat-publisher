@@ -69,6 +69,7 @@ async function parseRSS(source) {
 
 async function fetchSerperNews() {
   if (!CONFIG.serper.apiKey) {
+    console.log('📡 Serper API: ⚠️ 未配置 API Key');
     return [];
   }
   
@@ -77,21 +78,31 @@ async function fetchSerperNews() {
     
     // 大量查询词确保海外新闻充足
     const queries = [
-      'OpenAI GPT news today',
+      'OpenAI GPT news',
+      'OpenAI Sora video AI',
       'Google Gemini AI news', 
-      'Anthropic Claude AI news',
-      'Meta AI news today',
-      'NVIDIA AI news today',
-      'Microsoft Copilot AI news',
-      'AI startup funding today',
+      'Anthropic Claude AI',
+      'Meta AI Llama news',
+      'NVIDIA AI chips news',
+      'Microsoft Copilot AI',
+      'AI startup funding',
       'artificial intelligence breakthrough',
-      'AI research paper today',
-      'Elon Musk AI news',
-      'Apple AI news today',
-      'Amazon AI news today',
-      'AI regulation news',
-      'robotics AI news',
-      'self-driving car AI'
+      'AI research paper',
+      'Elon Musk xAI Grok',
+      'Apple Intelligence AI',
+      'Amazon Bedrock AI',
+      'AI regulation policy',
+      'robotics humanoid AI',
+      'self-driving autonomous vehicle',
+      'Perplexity AI search',
+      'Mistral AI France',
+      'Cohere AI enterprise',
+      'Stability AI image',
+      'Runway ML video',
+      'Hugging Face AI',
+      'DeepMind Google AI',
+      'Character AI chatbot',
+      'Replika AI companion'
     ];
     
     const allNews = [];
@@ -104,13 +115,13 @@ async function fetchSerperNews() {
           gl: 'us',
           hl: 'en',
           tbs: 'qdr:d',
-          num: 8  // 增加每页数量
+          num: 10  // 每查询词最多10条
         }, {
           headers: {
             'X-API-KEY': CONFIG.serper.apiKey,
             'Content-Type': 'application/json'
           },
-          timeout: 15000
+          timeout: 20000
         });
         
         for (const item of response.data.news || []) {

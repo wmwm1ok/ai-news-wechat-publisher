@@ -40,15 +40,14 @@ export const DOMESTIC_RSS_SOURCES = [
     limit: 5
   },
   {
-    name: 'AI科技评论',
-    url: 'https://www.leiphone.com/category/ai/feed',
-    limit: 5
+    name: '雷锋网',
+    url: 'https://www.leiphone.com/feed',
+    limit: 8
   }
 ];
 
 // 海外 RSS 源（精选高质）
-// 注：部分海外源在国内网络环境下可能不稳定
-// 建议配置 SERPER_API_KEY 通过 API 补充海外新闻
+// 注：大部分海外源在国内网络环境下不稳定，主要依赖 Serper API 补充海外新闻
 export const OVERSEAS_RSS_SOURCES = [
   {
     name: 'TechCrunch AI',
@@ -64,16 +63,6 @@ export const OVERSEAS_RSS_SOURCES = [
     name: 'Ars Technica',
     url: 'https://arstechnica.com/tag/artificial-intelligence/feed/',
     limit: 8
-  },
-  {
-    name: 'The Register AI',
-    url: 'https://www.theregister.com/ai_headlines.rss',
-    limit: 6
-  },
-  {
-    name: 'TNW AI',
-    url: 'https://thenextweb.com/artificial-intelligence/feed/',
-    limit: 6
   }
 ];
 

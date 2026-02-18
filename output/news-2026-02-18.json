@@ -1,39 +1,20 @@
 {
   "产品发布与更新": [
     {
-      "title": "Teleport推出智能体身份框架，为企业AI智能体提供安全基础设施",
+      "title": "Teleport推出智能体身份框架，保障企业AI智能体安全",
       "url": "https://www.infoq.cn/article/NCScMoBflBRBsFh5tQmJ?utm_source=rss&utm_medium=article",
       "snippet": "点击查看原文>",
       "source": "InfoQ",
       "publishedAt": "Wed, 18 Feb 2026 08:00:00 GMT",
       "region": "国内",
-      "summary": "Teleport公司近日发布了智能体身份框架，这是一个以AI为核心的安全模型，旨在帮助企业安全地在云环境和本地环境中部署自主和半自主AI智能体。该框架通过将AI智能体作为可信身份进行管理，提供了一套实施路径，以应对智能体快速落地过程中日益凸显的数据泄露、合规失效与对抗性攻击等风险。Teleport的基础设施身份平台为该框架提供了以统一硬件信任根为支撑的加密安全身份层，用强大的临时身份取代静态凭证，实现零信任认证和实时监控。行业分析师认为，随着企业部署自主AI智能体，身份将成为核心的安全管控手段，而该框架通过标准化实践和采用开放标准，旨在帮助企业更安全、更快速地落地AI。",
+      "summary": "Teleport公司发布了Teleport智能体身份框架，这是一个以AI为核心的安全模型，旨在帮助企业安全地在云环境和本地环境中部署自主和半自主AI智能体。该框架将AI智能体作为可信身份进行管理，通过定义规模化安全运行AI智能体所需的策略、参考架构与开发者工具，应对数据泄露、合规失效与对抗性攻击等风险。Teleport的基础设施身份平台为该框架提供了以统一硬件信任根为支撑的加密安全身份层，用临时身份取代静态凭证，实现零信任认证和实时监控。行业分析师认为，随着企业部署自主AI智能体，身份将成为核心的安全管控手段，缺乏统一的身份基础会带来不可控的风险。",
       "category": "产品发布与更新",
       "company": "Teleport",
-      "score": 30,
+      "score": 33,
       "breakdown": {
-        "substance": 12,
+        "substance": 15,
         "importance": 0,
         "timeliness": 10,
-        "credibility": 8
-      },
-      "isDuplicate": false
-    },
-    {
-      "title": "WordPress.com推出AI助手，支持编辑、调整样式与创建图像",
-      "url": "https://techcrunch.com/2026/02/17/wordpress-com-adds-an-ai-assistant-that-can-edit-adjust-styles-create-images-and-more/",
-      "snippet": "The feature is designed to work inside the website to understand its content and layout, allowing site owners to make changes with natural language commands. The WordPress AI assistant doesn't need precisely tailored prompts, either.",
-      "source": "TechCrunch AI",
-      "publishedAt": "Tue, 17 Feb 2026 16:10:44 +0000",
-      "region": "海外",
-      "summary": "WordPress.com近日推出一款AI助手功能，旨在帮助网站所有者更便捷地管理内容。该助手能够理解网站的内容和布局，用户只需使用自然语言指令即可进行编辑、调整样式甚至创建图像。它不需要精心设计的提示词，降低了使用门槛。这一更新标志着内容管理平台在集成智能化工具方面迈出了重要一步。",
-      "category": "产品发布与更新",
-      "company": "WordPress.com",
-      "score": 24,
-      "breakdown": {
-        "substance": 8,
-        "importance": 0,
-        "timeliness": 8,
         "credibility": 8
       },
       "isDuplicate": false
@@ -41,53 +22,91 @@
   ],
   "技术与研究": [
     {
-      "title": "运行AI模型正演变为一场内存竞赛",
-      "url": "https://techcrunch.com/2026/02/17/running-ai-models-is-turning-into-a-memory-game/",
-      "snippet": "When we talk about the cost of AI infrastructure, the focus is usually on Nvidia and GPUs -- but memory is an increasingly important part of the picture.",
-      "source": "TechCrunch AI",
-      "publishedAt": "Tue, 17 Feb 2026 16:44:14 +0000",
-      "region": "海外",
-      "summary": "在讨论AI基础设施成本时，焦点通常集中在英伟达及其GPU上，但内存正成为日益重要的组成部分。随着AI模型变得越来越大、越来越复杂，对高性能内存的需求急剧上升，内存带宽和容量已成为制约AI计算效率和成本的关键瓶颈。这一趋势正在推动整个行业重新评估和投资于下一代内存技术。",
+      "title": "豆包Seedance 2.0生成春晚《驭风歌》水墨骏马及多个节目视觉特效",
+      "url": "https://www.qbitai.com/2026/02/380771.html",
+      "snippet": "豆包含量巨高",
+      "source": "量子位",
+      "publishedAt": "Tue, 17 Feb 2026 04:58:17 +0000",
+      "region": "国内",
+      "summary": "在2026年春晚中，张杰演唱的《驭风歌》背景视频里气势磅礴的奔腾骏马，是由豆包Seedance 2.0生成的。该模型成功应对了让水墨风格马匹灵动起来的挑战，通过了春晚严格的审核，其能力包括遵循物理特性、精准执行指令以及支持多模态素材参考。此外，Seedance 2.0还被应用于歌舞创意秀《贺花神》的定制化中式视觉奇观，以及《快乐小马》节目中实现从真人视频到卡通形象的一键动作迁移，火山引擎视频云团队则提供了画质增强技术支持以满足8K高清、50FPS的播出要求。",
       "category": "技术与研究",
-      "company": "Nvidia",
-      "score": 23,
+      "company": "豆包",
+      "score": 22,
       "breakdown": {
         "substance": 7,
         "importance": 0,
-        "timeliness": 8,
-        "credibility": 8
-      },
-      "isDuplicate": false
-    },
-    {
-      "title": "苹果据传正研发三款AI可穿戴设备",
-      "url": "https://techcrunch.com/2026/02/17/apple-is-reportedly-cooking-up-a-trio-of-ai-wearables/",
-      "snippet": "As the AI hardware space heats up, the iPhone maker has multiple smart products in development.",
-      "source": "TechCrunch AI",
-      "publishedAt": "Tue, 17 Feb 2026 20:14:00 +0000",
-      "region": "海外",
-      "summary": "随着AI硬件领域的竞争日益激烈，iPhone制造商苹果公司据称正在开发多款智能可穿戴产品。这表明苹果正积极布局下一代AI驱动的硬件生态，以应对市场变化并巩固其创新地位。这些新设备的推出将进一步拓展苹果在个人智能设备领域的版图。",
-      "category": "技术与研究",
-      "company": "Apple",
-      "score": 20,
-      "breakdown": {
-        "substance": 2,
-        "importance": 0,
-        "timeliness": 10,
-        "credibility": 8
+        "timeliness": 6,
+        "credibility": 9
       },
       "isDuplicate": false
     }
   ],
   "投融资与并购": [
     {
-      "title": "从“不可投资”到“可投资”：硬科技领域迎来风投转向",
+      "title": "月之暗面融资超7亿美元估值超百亿，大模型赛道热钱涌动",
+      "url": "https://36kr.com/p/3688162369908611?f=rss",
+      "snippet": "文｜周鑫雨\n编辑｜苏建勋\n春节，热钱涌动在中国大模型赛道上。\n一端，是狂撒几十亿元发红包、请奶茶，替当家AI应用拉流量的大厂们；另一端，则是股价飞涨、融资迅猛的大模型六小虎们。\n在搞钱的战场上，开年最大的一笔融资，来自月之暗面。\n此前彭博社等媒体报道称，近期月之暗面即将完成的超7亿美元融资，由阿里、腾讯、五源资本、九安医疗等老股东领投，并且已经超募。与此同时，月之暗面已经以100亿-120亿美金的估值，无缝开启了新一轮融资。\n《智能涌现》独家获悉，月之暗面的超7亿美元融资中，股东阵容除了联合领投的老股东们，还包括老股东高榕创投，以及新增的凯辉基金——这也是凯辉，首次朝大模型公司开枪；\n据我们了解，以超100亿美金估值开启的新一轮融资，已经收到了多家机构的意向，包括欧洲背景的海外基金。\n有关上述信息，截至发稿前，月之暗面暂无回应。\n用“抢”形容月之暗面这轮融资的局面，一点也不过分。\n一名知情人士告诉我们，从2025年下半年，月之暗面开启融资之初，不少机构的LP，就“催着投资”。\n这几轮融资，还吸引到了不少首次对大模型出手的基金。\n比如，我们得知，在月之暗面上一轮超7亿美金的融资中，凯辉基金成为了新增股东——直到2025年5月，凯辉基金管理合伙人段兰春，还在36氪的访谈中提到，凯辉暂时没有参与通用大模型或底层Infra的投资，原因是凯辉的投资策略是“重落地、重生态”。\n这或许是除了2023年初，行业对大模型最大的一次FOMO（错失恐慌症）。\n溯其缘由，是自港股IPO以来，智谱和MiniMax这两家大模型初创公司飞速上涨的市值，再次给予一级市场投资大模型的热情。\n自2026年初相继IPO后，智谱和MiniMax的股价就水涨船高。尤其2月12日，两家公司上架新一代模型后，市值又达到了新的峰值——\n截至2月17日，智谱的盘中最高市值已经超过2200亿港元，MiniMax则超过2600亿港元，两者相较上市初期，均翻了四五倍。\n二级市场可观的回报，也让一级市场的捕手们，将目光投向尚未上市的月之暗面，试图囤积居奇。\n港股IPO，也将中国大模型的影响力扩大至海外。可见的是，此前鲜少接触中国企业的欧洲资本，也在新一轮融资中，罕见地向月之暗面伸出了橄榄枝。\n一名知情人告诉《智能涌现》，月之暗面上一轮7亿美金的融资，新投资者“速度快才能抢到份额”。以超100亿美金估值开启的新一轮融资，某种意义上也是没抢到上一轮份额的机构，“推着开启的”。\n与此同时，“智谱和MiniMax的市值，给了大模型公司在二级市场的一个估值锚点。”另有知情人士表示。\n之前，月之暗面和阶跃星辰的估值都相对偏低。即便如今估值已超过100亿美金，但相较智谱（估值约280亿美金）和MiniMax（估值约330亿美金），两家未上市的模型初创公司，还有数倍的差距。\n二级市场逐渐验证了模型公司的价值，这一现象也改变了月之暗面和阶跃星辰的融资策略：自2025年下半年以来，开启滚动融资，迅速抬高估值。\n就月之暗面而言，2025年12月底，公司宣布完成5亿美金的融资后，就开启了价值7亿美金的新一轮；之后无缝开启的，则是如今以超100亿美金估值快速推进的融资——短短两个月，月之暗面估值翻了超过2.2倍。\n如今，大模型六小虎，纷纷在一二级市场，加快了筹措资金的步伐。他们最强劲的对手——大厂战队的字节、阿里、腾讯，已经先他们一步，迈入了撒钱换用户的阶段。\n春节期间，赞助上春晚，豪掷几十亿元发红包、请奶茶，显然，大厂们已经更早抢滩“AI国民应用”。\n对于留在场上的4家大模型创业公司而言，稳住模型技术第一梯队的位置，是当下最重要的命题。\n阶跃星辰董事长印奇在最近的访谈中提到，基模研发，一年需要30亿-50亿元的资金投入，才能留在牌桌上。\n高涨的估值，仍愿意买单的一二级市场，对创业公司而言，是个乐观的信号。\n\n欢迎交流！",
+      "source": "36氪",
+      "publishedAt": "2026-02-18 09:54:31  +0800",
+      "region": "国内",
+      "summary": "春节前后，中国大模型赛道呈现热钱涌动局面。一方面，字节、阿里、腾讯等大厂通过巨额红包和营销活动为AI应用拉新；另一方面，以月之暗面为代表的大模型初创公司融资活跃。月之暗面近期完成了超7亿美元融资，由阿里、腾讯等老股东领投，并已以超100亿美元估值开启新一轮融资，吸引了包括欧洲基金在内的多家机构意向。与此同时，智谱和MiniMax在港股上市后市值大幅上涨，分别为约280亿美元和330亿美元，这为一级市场投资大模型公司提供了估值参考，也促使月之暗面等公司采用滚动融资策略快速抬升估值。",
+      "category": "投融资与并购",
+      "company": "月之暗面",
+      "score": 55,
+      "breakdown": {
+        "substance": 25,
+        "importance": 13,
+        "timeliness": 10,
+        "credibility": 7
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "2026年已有17家美国AI公司融资额超过1亿美元",
+      "url": "https://techcrunch.com/2026/02/17/here-are-the-17-us-based-ai-companies-that-have-raised-100m-or-more-in-2026/",
+      "snippet": "Three U.S.-based AI companies raised rounds larger than $1 billion so far in 2026, with 14 others raising rounds of $100 million or more.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Tue, 17 Feb 2026 14:58:09 +0000",
+      "region": "海外",
+      "summary": "2026年至今，已有3家美国AI公司融资轮次规模超过10亿美元。此外，还有另外14家公司融资额达到或超过1亿美元。",
+      "category": "投融资与并购",
+      "company": "17 US-based AI companies",
+      "score": 34,
+      "breakdown": {
+        "substance": 10,
+        "importance": 8,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "SpendRule融资200万美元，推出AI平台帮助医院追踪支出",
+      "url": "https://techcrunch.com/2026/02/17/spendrule-raises-2-million-emerges-from-stealth-to-help-hospitals-track-spending/",
+      "snippet": "SpendRule, launched last summer, is an AI-powered platform that helps healthcare systems track their spending.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Tue, 17 Feb 2026 14:00:00 +0000",
+      "region": "海外",
+      "summary": "SpendRule是一家AI驱动的平台，旨在帮助医疗系统追踪其支出。该公司于去年夏天推出，现已获得200万美元融资并脱离隐身模式。",
+      "category": "投融资与并购",
+      "company": "SpendRule",
+      "score": 32,
+      "breakdown": {
+        "substance": 18,
+        "importance": 0,
+        "timeliness": 6,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "昔日“不可投资”领域如何变得可投资",
       "url": "https://thenextweb.com/news/how-the-uninvestable-is-becoming-investable",
       "snippet": "Venture capital has long avoided ‘hard’ sectors such as government, defence, energy, manufacturing, and hardware, viewing them as uninvestable because startups have limited scope to challenge incumbents. Instead, investors have prioritised fast-moving and lightly regulated software markets with lower barriers to entry. End users in these hard industries have paid the price, as a lack […]\nThis story continues at The Next Web",
       "source": "TNW AI",
       "publishedAt": "Tue, 17 Feb 2026 14:17:44 +0000",
       "region": "海外",
-      "summary": "长期以来，风险资本倾向于避开政府、国防、能源、制造业和硬件等“硬”科技领域，认为这些行业初创公司挑战现有巨头的空间有限。然而，这一趋势正在发生转变。投资者开始重新评估这些曾被贴上“不可投资”标签的领域，发现其中蕴含的长期价值和颠覆潜力。这一转变意味着资本正从快速迭代、监管宽松的软件市场，流向更具实体和战略意义的硬科技赛道。",
+      "summary": "风险投资长期以来避开政府、国防、能源、制造业和硬件等“硬”科技领域，认为这些领域的初创公司难以挑战现有巨头。然而，这种情况正在发生变化，这些曾被视作不可投资的领域正逐渐获得投资者的关注。",
       "category": "投融资与并购",
       "company": "",
       "score": 17,
@@ -96,6 +115,25 @@
         "importance": 0,
         "timeliness": 8,
         "credibility": 5
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "印度计划到2028年吸引超过2000亿美元AI基础设施投资",
+      "url": "https://techcrunch.com/2026/02/17/india-bids-to-attract-over-200b-in-ai-infrastructure-investment-by-2028/",
+      "snippet": "India is ramping up shared AI compute, adding 20,000 GPUs as part of a broader push to attract global AI investment.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Tue, 17 Feb 2026 14:13:54 +0000",
+      "region": "海外",
+      "summary": "印度正在增加共享AI算力，作为吸引全球AI投资更广泛努力的一部分，计划增加20,000个GPU。其目标是到2028年吸引超过2000亿美元的投资。",
+      "category": "投融资与并购",
+      "company": "India",
+      "score": 26,
+      "breakdown": {
+        "substance": 10,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 8
       },
       "isDuplicate": false
     }

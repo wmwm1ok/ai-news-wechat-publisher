@@ -1,0 +1,104 @@
+{
+  "产品发布与更新": [
+    {
+      "title": "Teleport推出智能体身份框架，为企业AI智能体提供安全基础设施",
+      "url": "https://www.infoq.cn/article/NCScMoBflBRBsFh5tQmJ?utm_source=rss&utm_medium=article",
+      "snippet": "点击查看原文>",
+      "source": "InfoQ",
+      "publishedAt": "Wed, 18 Feb 2026 08:00:00 GMT",
+      "region": "国内",
+      "summary": "Teleport公司近日发布了智能体身份框架，这是一个以AI为核心的安全模型，旨在帮助企业安全地在云环境和本地环境中部署自主和半自主AI智能体。该框架通过将AI智能体作为可信身份进行管理，提供了一套实施路径，以应对智能体快速落地过程中日益凸显的数据泄露、合规失效与对抗性攻击等风险。Teleport的基础设施身份平台为该框架提供了以统一硬件信任根为支撑的加密安全身份层，用强大的临时身份取代静态凭证，实现零信任认证和实时监控。行业分析师认为，随着企业部署自主AI智能体，身份将成为核心的安全管控手段，而该框架通过标准化实践和采用开放标准，旨在帮助企业更安全、更快速地落地AI。",
+      "category": "产品发布与更新",
+      "company": "Teleport",
+      "score": 30,
+      "breakdown": {
+        "substance": 12,
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "WordPress.com推出AI助手，支持编辑、调整样式与创建图像",
+      "url": "https://techcrunch.com/2026/02/17/wordpress-com-adds-an-ai-assistant-that-can-edit-adjust-styles-create-images-and-more/",
+      "snippet": "The feature is designed to work inside the website to understand its content and layout, allowing site owners to make changes with natural language commands. The WordPress AI assistant doesn't need precisely tailored prompts, either.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Tue, 17 Feb 2026 16:10:44 +0000",
+      "region": "海外",
+      "summary": "WordPress.com近日推出一款AI助手功能，旨在帮助网站所有者更便捷地管理内容。该助手能够理解网站的内容和布局，用户只需使用自然语言指令即可进行编辑、调整样式甚至创建图像。它不需要精心设计的提示词，降低了使用门槛。这一更新标志着内容管理平台在集成智能化工具方面迈出了重要一步。",
+      "category": "产品发布与更新",
+      "company": "WordPress.com",
+      "score": 24,
+      "breakdown": {
+        "substance": 8,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ],
+  "技术与研究": [
+    {
+      "title": "运行AI模型正演变为一场内存竞赛",
+      "url": "https://techcrunch.com/2026/02/17/running-ai-models-is-turning-into-a-memory-game/",
+      "snippet": "When we talk about the cost of AI infrastructure, the focus is usually on Nvidia and GPUs -- but memory is an increasingly important part of the picture.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Tue, 17 Feb 2026 16:44:14 +0000",
+      "region": "海外",
+      "summary": "在讨论AI基础设施成本时，焦点通常集中在英伟达及其GPU上，但内存正成为日益重要的组成部分。随着AI模型变得越来越大、越来越复杂，对高性能内存的需求急剧上升，内存带宽和容量已成为制约AI计算效率和成本的关键瓶颈。这一趋势正在推动整个行业重新评估和投资于下一代内存技术。",
+      "category": "技术与研究",
+      "company": "Nvidia",
+      "score": 23,
+      "breakdown": {
+        "substance": 7,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "苹果据传正研发三款AI可穿戴设备",
+      "url": "https://techcrunch.com/2026/02/17/apple-is-reportedly-cooking-up-a-trio-of-ai-wearables/",
+      "snippet": "As the AI hardware space heats up, the iPhone maker has multiple smart products in development.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Tue, 17 Feb 2026 20:14:00 +0000",
+      "region": "海外",
+      "summary": "随着AI硬件领域的竞争日益激烈，iPhone制造商苹果公司据称正在开发多款智能可穿戴产品。这表明苹果正积极布局下一代AI驱动的硬件生态，以应对市场变化并巩固其创新地位。这些新设备的推出将进一步拓展苹果在个人智能设备领域的版图。",
+      "category": "技术与研究",
+      "company": "Apple",
+      "score": 20,
+      "breakdown": {
+        "substance": 2,
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ],
+  "投融资与并购": [
+    {
+      "title": "从“不可投资”到“可投资”：硬科技领域迎来风投转向",
+      "url": "https://thenextweb.com/news/how-the-uninvestable-is-becoming-investable",
+      "snippet": "Venture capital has long avoided ‘hard’ sectors such as government, defence, energy, manufacturing, and hardware, viewing them as uninvestable because startups have limited scope to challenge incumbents. Instead, investors have prioritised fast-moving and lightly regulated software markets with lower barriers to entry. End users in these hard industries have paid the price, as a lack […]\nThis story continues at The Next Web",
+      "source": "TNW AI",
+      "publishedAt": "Tue, 17 Feb 2026 14:17:44 +0000",
+      "region": "海外",
+      "summary": "长期以来，风险资本倾向于避开政府、国防、能源、制造业和硬件等“硬”科技领域，认为这些行业初创公司挑战现有巨头的空间有限。然而，这一趋势正在发生转变。投资者开始重新评估这些曾被贴上“不可投资”标签的领域，发现其中蕴含的长期价值和颠覆潜力。这一转变意味着资本正从快速迭代、监管宽松的软件市场，流向更具实体和战略意义的硬科技赛道。",
+      "category": "投融资与并购",
+      "company": "",
+      "score": 17,
+      "breakdown": {
+        "substance": 4,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 5
+      },
+      "isDuplicate": false
+    }
+  ],
+  "政策与监管": []
+}

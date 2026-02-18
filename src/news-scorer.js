@@ -283,7 +283,19 @@ export function scoreNews(news, existingTitles) {
   }
   
   // AI行业相关性检查 - 标题或摘要必须包含AI关键词
-  if (!isAIRelated(news.title, news.summary)) {
+  // 放宽： RSS源已经是AI相关媒体，只过滤明显非AI的
+  const lowerTitle = news.title.toLowerCase();
+  const nonAIKeywords = ['旅游', '酒店', '美食', '电影', '体育', '天气', '星座', '情感'];
+  let isNonAI = false;
+  for (const kw of nonAIKeywords) {
+    if (lowerTitle.includes(kw)) {
+      isNonAI = true;
+      break;
+    }
+  }
+  // 如果是科技/IT媒体的新闻，不过滤太严格
+  const isTechMedia = ['机器之心', '量子位', 'InfoQ', 'TechCrunch AI', 'MIT Technology Review', 'Ars Technica'].includes(news.source);
+  if (isNonAI && !isTechMedia) {
     return { score: 0, isDuplicate: true, reason: '非AI行业新闻' };
   }
   
@@ -391,51 +403,66 @@ export function selectTopNews(newsList, targetCount = 14, previousNews = []) {
   // 按分数排序
   scored.sort((a, b) => b.score - a.score);
   
-  // 强制选14条，国内7条、海外7条
-  const TARGET_TOTAL = 14;
-  const TARGET_PER_REGION = 7;
-  
-  const selected = [];
-  const sourceCount = {};
-  
   // 分离国内和海外
   const domesticNews = scored.filter(n => (n.region || '国内') === '国内');
   const overseasNews = scored.filter(n => n.region === '海外');
   
-  // 第一步：从国内选7条（放宽限制，确保能选够）
-  for (const news of domesticNews) {
-    if (selected.filter(n => (n.region || '国内') === '国内').length >= TARGET_PER_REGION) break;
-    if (selected.includes(news)) continue;
-    
-    const source = news.source;
-    if ((sourceCount[source] || 0) >= 4) continue; // 每源最多4条
-    
-    selected.push(news);
-    sourceCount[source] = (sourceCount[source] || 0) + 1;
-  }
+  // 检查候选是否足够
+  const totalAvailable = scored.length;
+  const domesticAvailable = domesticNews.length;
+  const overseasAvailable = overseasNews.length;
   
-  // 第二步：从海外选7条（放宽限制，确保能选够）
-  for (const news of overseasNews) {
-    if (selected.filter(n => n.region === '海外').length >= TARGET_PER_REGION) break;
-    if (selected.includes(news)) continue;
-    
-    const source = news.source;
-    if ((sourceCount[source] || 0) >= 4) continue;
-    
-    selected.push(news);
-    sourceCount[source] = (sourceCount[source] || 0) + 1;
-  }
+  const selected = [];
+  const sourceCount = {};
   
-  // 第三步：如果某一方不足7条，从另一方补充到14条总数
-  for (const news of scored) {
-    if (selected.length >= TARGET_TOTAL) break;
-    if (selected.includes(news)) continue;
+  // 如果候选总数不足14条，直接全部选用（最多14条）
+  if (totalAvailable <= 14) {
+    selected.push(...scored.slice(0, 14));
+    // 统计源分布
+    for (const news of selected) {
+      const source = news.source;
+      sourceCount[source] = (sourceCount[source] || 0) + 1;
+    }
+  } else {
+    // 候选充足，尝试1:1比例
+    const TARGET_TOTAL = 14;
+    const TARGET_PER_REGION = 7;
     
-    const source = news.source;
-    if ((sourceCount[source] || 0) >= 5) continue;
+    // 第一步：从国内选最多7条
+    for (const news of domesticNews) {
+      if (selected.filter(n => (n.region || '国内') === '国内').length >= TARGET_PER_REGION) break;
+      if (selected.includes(news)) continue;
+      
+      const source = news.source;
+      if ((sourceCount[source] || 0) >= 4) continue;
+      
+      selected.push(news);
+      sourceCount[source] = (sourceCount[source] || 0) + 1;
+    }
     
-    selected.push(news);
-    sourceCount[source] = (sourceCount[source] || 0) + 1;
+    // 第二步：从海外选最多7条
+    for (const news of overseasNews) {
+      if (selected.filter(n => n.region === '海外').length >= TARGET_PER_REGION) break;
+      if (selected.includes(news)) continue;
+      
+      const source = news.source;
+      if ((sourceCount[source] || 0) >= 4) continue;
+      
+      selected.push(news);
+      sourceCount[source] = (sourceCount[source] || 0) + 1;
+    }
+    
+    // 第三步：如果总数不够14条，补充到14条
+    for (const news of scored) {
+      if (selected.length >= TARGET_TOTAL) break;
+      if (selected.includes(news)) continue;
+      
+      const source = news.source;
+      if ((sourceCount[source] || 0) >= 5) continue;
+      
+      selected.push(news);
+      sourceCount[source] = (sourceCount[source] || 0) + 1;
+    }
   }
   
   // 统计

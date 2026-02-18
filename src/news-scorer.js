@@ -3,9 +3,143 @@
  */
 
 import { DeduplicationEngine } from './deduplication-engine.js';
+import { AI_KEYWORDS_CORE } from './config.js';
 
 // 全局去重引擎实例
 const dedupEngine = new DeduplicationEngine();
+
+/**
+ * 提取文本中的核心实体（公司、产品、技术、人名）
+ */
+function extractCoreEntities(text) {
+  if (!text) return [];
+  
+  const entities = [];
+  const lowerText = text.toLowerCase();
+  
+  // 公司/组织名
+  const companies = [
+    'openai', 'anthropic', 'google', 'meta', 'microsoft', 'nvidia', 'amazon', 'apple', 'intel', 'amd',
+    '字节', '字节跳动', '阿里', '阿里巴巴', '腾讯', '百度', '华为', '小米', '美团', '滴滴', '京东', '网易', '快手', '拼多多',
+    '商汤', '旷视', '依图', '云从', '科大讯飞', '讯飞', '智谱', '月之暗面', 'minimax', '零一万物',
+    '百川智能', '面壁智能', '深度求索', 'deepseek', '极佳视界', '澜舟科技', '思必驰', '云知声',
+    '第四范式', '出门问问', '循环智能', '智源研究院', '清华', '北大', '中科院', '斯坦福', 'mit'
+  ];
+  
+  // 产品/模型名
+  const products = [
+    'gpt-4', 'gpt-5', 'gpt-4o', 'claude', 'gemini', 'llama', 'mistral', 'mixtral',
+    'gpt', 'dall-e', 'sora', 'whisper', 'qwen', 'baichuan', 'chatglm', 'internlm',
+    'yi', 'skywork', 'bluelm', 'deepseek', 'kimi', '豆包', '文心一言', '通义千问',
+    'gigabrain', 'vla', 'moco', 'seedance'
+  ];
+  
+  // 技术术语
+  const techTerms = [
+    '大模型', 'llm', 'ai', '人工智能', '神经网络', '深度学习', '机器学习',
+    '多模态', 'transformer', 'diffusion', '强化学习', 'rlhf', 'rag',
+    '具身智能', '生成式ai', 'ag'
+  ];
+  
+  // 人名
+  const persons = [
+    'sam altman', '奥特曼', '李彦宏', '马云', '马化腾', '雷军', '张一鸣',
+    '梁文锋', '李飞飞', 'andrej karpathy', 'karpathy', 'jeff dean', '黄仁勋'
+  ];
+  
+  // 检查匹配
+  for (const c of companies) {
+    if (lowerText.includes(c.toLowerCase())) entities.push(c);
+  }
+  for (const p of products) {
+    if (lowerText.includes(p.toLowerCase())) entities.push(p);
+  }
+  for (const t of techTerms) {
+    if (lowerText.includes(t.toLowerCase())) entities.push(t);
+  }
+  for (const p of persons) {
+    if (lowerText.includes(p.toLowerCase())) entities.push(p);
+  }
+  
+  return [...new Set(entities)]; // 去重
+}
+
+/**
+ * 智能语义去重 - 基于URL、标题和摘要的综合判断
+ * @param {Object} news - 当前新闻 {title, url, summary}
+ * @param {Array} existingNews - 已有新闻列表 [{title, url, summary}, ...]
+ * @returns {Object} {isDuplicate, reason, confidence}
+ */
+export function checkSemanticDuplicate(news, existingNews) {
+  if (!news || !existingNews || existingNews.length === 0) {
+    return { isDuplicate: false, reason: '无需检查', confidence: 1 };
+  }
+  
+  const currentUrl = (news.url || '').trim();
+  const currentTitle = (news.title || '').trim();
+  const currentSummary = (news.summary || '').trim();
+  
+  for (const existing of existingNews) {
+    const existingUrl = (existing.url || '').trim();
+    const existingTitle = (existing.title || '').trim();
+    const existingSummary = (existing.summary || '').trim();
+    
+    // 1. URL 完全匹配（最可靠）
+    if (currentUrl && existingUrl && currentUrl === existingUrl) {
+      return { 
+        isDuplicate: true, 
+        reason: 'URL相同', 
+        confidence: 1.0,
+        matchedWith: existingTitle
+      };
+    }
+    
+    // 2. 标题完全匹配
+    if (currentTitle.toLowerCase() === existingTitle.toLowerCase()) {
+      return { 
+        isDuplicate: true, 
+        reason: '标题完全相同', 
+        confidence: 1.0,
+        matchedWith: existingTitle
+      };
+    }
+    
+    // 3. 标题语义指纹匹配
+    const titleResult = dedupEngine.checkDuplicate(currentTitle, [existingTitle]);
+    if (titleResult.isDuplicate) {
+      return { 
+        isDuplicate: true, 
+        reason: `标题语义相似 (${titleResult.reason})`, 
+        confidence: titleResult.confidence,
+        matchedWith: existingTitle
+      };
+    }
+    
+    // 4. 摘要语义匹配（如果摘要不空）
+    if (currentSummary && existingSummary) {
+      // 提取摘要的核心实体和关键词
+      const currentEntities = extractCoreEntities(currentTitle + ' ' + currentSummary);
+      const existingEntities = extractCoreEntities(existingTitle + ' ' + existingSummary);
+      
+      // 计算实体重叠度
+      const commonEntities = currentEntities.filter(e => existingEntities.includes(e));
+      const entityOverlap = commonEntities.length / Math.max(currentEntities.length, existingEntities.length);
+      
+      // 如果实体重叠度高且涉及相同公司/产品，认为是重复
+      if (entityOverlap >= 0.6 && commonEntities.length >= 2) {
+        return { 
+          isDuplicate: true, 
+          reason: '内容实体高度重叠', 
+          confidence: entityOverlap,
+          matchedWith: existingTitle,
+          commonEntities
+        };
+      }
+    }
+  }
+  
+  return { isDuplicate: false, reason: '未检测到重复', confidence: 1 };
+}
 
 // 实质性指标 - 有具体数据/行动
 const SUBSTANCE_INDICATORS = {
@@ -124,136 +258,19 @@ function isDuplicate(title, existingTitles) {
 }
 
 /**
- * 智能语义去重 - 基于URL、标题和摘要的综合判断
- * @param {Object} news - 当前新闻 {title, url, summary}
- * @param {Array} existingNews - 已有新闻列表 [{title, url, summary}, ...]
- * @returns {Object} {isDuplicate, reason, confidence}
+ * 检查新闻是否与AI行业相关
+ * 标题或摘要必须包含至少一个AI关键词
  */
-export function checkSemanticDuplicate(news, existingNews) {
-  if (!news || !existingNews || existingNews.length === 0) {
-    return { isDuplicate: false, reason: '无需检查', confidence: 1 };
-  }
+function isAIRelated(title, summary = '') {
+  const text = (title + ' ' + summary).toLowerCase();
   
-  const currentUrl = (news.url || '').trim();
-  const currentTitle = (news.title || '').trim();
-  const currentSummary = (news.summary || '').trim();
-  
-  for (const existing of existingNews) {
-    const existingUrl = (existing.url || '').trim();
-    const existingTitle = (existing.title || '').trim();
-    const existingSummary = (existing.summary || '').trim();
-    
-    // 1. URL 完全匹配（最可靠）
-    if (currentUrl && existingUrl && currentUrl === existingUrl) {
-      return { 
-        isDuplicate: true, 
-        reason: 'URL相同', 
-        confidence: 1.0,
-        matchedWith: existingTitle
-      };
-    }
-    
-    // 2. 标题完全匹配
-    if (currentTitle.toLowerCase() === existingTitle.toLowerCase()) {
-      return { 
-        isDuplicate: true, 
-        reason: '标题完全相同', 
-        confidence: 1.0,
-        matchedWith: existingTitle
-      };
-    }
-    
-    // 3. 标题语义指纹匹配
-    const titleResult = dedupEngine.checkDuplicate(currentTitle, [existingTitle]);
-    if (titleResult.isDuplicate) {
-      return { 
-        isDuplicate: true, 
-        reason: `标题语义相似 (${titleResult.reason})`, 
-        confidence: titleResult.confidence,
-        matchedWith: existingTitle
-      };
-    }
-    
-    // 4. 摘要语义匹配（如果摘要不空）
-    if (currentSummary && existingSummary) {
-      // 提取摘要的核心实体和关键词
-      const currentEntities = extractCoreEntities(currentTitle + ' ' + currentSummary);
-      const existingEntities = extractCoreEntities(existingTitle + ' ' + existingSummary);
-      
-      // 计算实体重叠度
-      const commonEntities = currentEntities.filter(e => existingEntities.includes(e));
-      const entityOverlap = commonEntities.length / Math.max(currentEntities.length, existingEntities.length);
-      
-      // 如果实体重叠度高且涉及相同公司/产品，认为是重复
-      if (entityOverlap >= 0.6 && commonEntities.length >= 2) {
-        return { 
-          isDuplicate: true, 
-          reason: '内容实体高度重叠', 
-          confidence: entityOverlap,
-          matchedWith: existingTitle,
-          commonEntities
-        };
-      }
+  for (const keyword of AI_KEYWORDS_CORE) {
+    if (text.includes(keyword.toLowerCase())) {
+      return true;
     }
   }
   
-  return { isDuplicate: false, reason: '未检测到重复', confidence: 1 };
-}
-
-/**
- * 提取文本中的核心实体（公司、产品、技术、人名）
- */
-function extractCoreEntities(text) {
-  if (!text) return [];
-  
-  const entities = [];
-  const lowerText = text.toLowerCase();
-  
-  // 公司/组织名
-  const companies = [
-    'openai', 'anthropic', 'google', 'meta', 'microsoft', 'nvidia', 'amazon', 'apple', 'intel', 'amd',
-    '字节', '字节跳动', '阿里', '阿里巴巴', '腾讯', '百度', '华为', '小米', '美团', '滴滴', '京东', '网易', '快手', '拼多多',
-    '商汤', '旷视', '依图', '云从', '科大讯飞', '讯飞', '智谱', '月之暗面', 'minimax', '零一万物',
-    '百川智能', '面壁智能', '深度求索', 'deepseek', '极佳视界', '澜舟科技', '思必驰', '云知声',
-    '第四范式', '出门问问', '循环智能', '智源研究院', '清华', '北大', '中科院', '斯坦福', 'mit'
-  ];
-  
-  // 产品/模型名
-  const products = [
-    'gpt-4', 'gpt-5', 'gpt-4o', 'claude', 'gemini', 'llama', 'mistral', 'mixtral',
-    'gpt', 'dall-e', 'sora', 'whisper', 'qwen', 'baichuan', 'chatglm', 'internlm',
-    'yi', 'skywork', 'bluelm', 'deepseek', 'kimi', '豆包', '文心一言', '通义千问',
-    'gigabrain', 'vla', 'moco', 'seedance'
-  ];
-  
-  // 技术术语
-  const techTerms = [
-    '大模型', 'llm', 'ai', '人工智能', '神经网络', '深度学习', '机器学习',
-    '多模态', 'transformer', 'diffusion', '强化学习', 'rlhf', 'rag',
-    '具身智能', '生成式ai', 'ag'
-  ];
-  
-  // 人名
-  const persons = [
-    'sam altman', '奥特曼', '李彦宏', '马云', '马化腾', '雷军', '张一鸣',
-    '梁文锋', '李飞飞', 'andrej karpathy', 'karpathy', 'jeff dean', '黄仁勋'
-  ];
-  
-  // 检查匹配
-  for (const c of companies) {
-    if (lowerText.includes(c.toLowerCase())) entities.push(c);
-  }
-  for (const p of products) {
-    if (lowerText.includes(p.toLowerCase())) entities.push(p);
-  }
-  for (const t of techTerms) {
-    if (lowerText.includes(t.toLowerCase())) entities.push(t);
-  }
-  for (const p of persons) {
-    if (lowerText.includes(p.toLowerCase())) entities.push(p);
-  }
-  
-  return [...new Set(entities)]; // 去重
+  return false;
 }
 
 /**
@@ -265,7 +282,12 @@ export function scoreNews(news, existingTitles) {
     return { score: 0, isDuplicate: true, reason: '重复新闻' };
   }
   
-  // 非AI新闻过滤（简单检查）
+  // AI行业相关性检查 - 标题或摘要必须包含AI关键词
+  if (!isAIRelated(news.title, news.summary)) {
+    return { score: 0, isDuplicate: true, reason: '非AI行业新闻' };
+  }
+  
+  // 非AI新闻过滤（明显非AI的领域）
   const nonAIIndicators = ['旅游', '酒店', '餐饮', '电影', '娱乐', '体育', '天气'];
   for (const indicator of nonAIIndicators) {
     if (news.title.includes(indicator) && !news.title.includes('AI') && !news.title.includes('智能')) {
@@ -295,11 +317,12 @@ export function scoreNews(news, existingTitles) {
 /**
  * 智能选择TOP新闻
  * @param {Array} newsList - 新闻列表
- * @param {number} targetCount - 目标数量（注：实际范围 12-15，1:1 国内外比例）
+ * @param {number} targetCount - 目标数量（注：实际强制 14 条，7:7 国内外比例）
  * @param {Array} previousNews - 之前已抓取的新闻 [{title, url, summary}, ...]（用于跨天去重）
  */
 export function selectTopNews(newsList, targetCount = 14, previousNews = []) {
   // targetCount 参数保留兼容，实际内部强制 14 条，7:7 比例
+  
   // previousNews 是对象数组，需要提取标题用于当天去重
   const previousTitles = previousNews.map(n => n.title);
   const existingNews = []; // 已处理的新闻（包含完整信息）
@@ -368,88 +391,48 @@ export function selectTopNews(newsList, targetCount = 14, previousNews = []) {
   // 按分数排序
   scored.sort((a, b) => b.score - a.score);
   
-  // 选择时强制 14 条，国内7条、海外7条
+  // 强制选14条，国内7条、海外7条
   const TARGET_TOTAL = 14;
-  const TARGET_PER_REGION = 7; // 国内7条，海外7条
+  const TARGET_PER_REGION = 7;
   
   const selected = [];
   const sourceCount = {};
-  const categoryCount = {};
   
-  // 分离国内和海外新闻
+  // 分离国内和海外
   const domesticNews = scored.filter(n => (n.region || '国内') === '国内');
   const overseasNews = scored.filter(n => n.region === '海外');
   
-  // 第一轮：从国内和海外各选7条（质量优先）
-  const selectFromRegion = (newsList, regionName) => {
-    const regionSelected = [];
-    for (const news of newsList) {
-      if (regionSelected.length >= TARGET_PER_REGION) break;
-      if (selected.includes(news)) continue; // 已选过
-      
-      const source = news.source;
-      const category = news.category || '技术与研究';
-      
-      // 源限制：每个源最多2条
-      if ((sourceCount[source] || 0) >= 2) continue;
-      // 分类限制：每个分类最多4条
-      if ((categoryCount[category] || 0) >= 4) continue;
-      // 质量门槛
-      if (news.score < 15) continue;
-      
-      regionSelected.push(news);
-      selected.push(news);
-      sourceCount[source] = (sourceCount[source] || 0) + 1;
-      categoryCount[category] = (categoryCount[category] || 0) + 1;
-    }
-    return regionSelected.length;
-  };
-  
-  const domesticSelected = selectFromRegion(domesticNews, '国内');
-  const overseasSelected = selectFromRegion(overseasNews, '海外');
-  
-  // 第二轮：如果某一方不足7条，从另一方补充（但最多不超过8条）
-  const MAX_PER_REGION = 8;
-  
-  if (domesticSelected < TARGET_PER_REGION) {
-    // 国内不足，继续从国内选（降低质量门槛）
-    for (const news of domesticNews) {
-      if (selected.length >= TARGET_TOTAL) break;
-      if (selected.includes(news)) continue;
-      if (selected.filter(n => (n.region || '国内') === '国内').length >= MAX_PER_REGION) break;
-      
-      const source = news.source;
-      if ((sourceCount[source] || 0) >= 2) continue;
-      if (news.score < 5) continue;
-      
-      selected.push(news);
-      sourceCount[source] = (sourceCount[source] || 0) + 1;
-    }
+  // 第一步：从国内选7条（放宽限制，确保能选够）
+  for (const news of domesticNews) {
+    if (selected.filter(n => (n.region || '国内') === '国内').length >= TARGET_PER_REGION) break;
+    if (selected.includes(news)) continue;
+    
+    const source = news.source;
+    if ((sourceCount[source] || 0) >= 4) continue; // 每源最多4条
+    
+    selected.push(news);
+    sourceCount[source] = (sourceCount[source] || 0) + 1;
   }
   
-  if (overseasSelected < TARGET_PER_REGION) {
-    // 海外不足，继续从海外选（降低质量门槛）
-    for (const news of overseasNews) {
-      if (selected.length >= TARGET_TOTAL) break;
-      if (selected.includes(news)) continue;
-      if (selected.filter(n => n.region === '海外').length >= MAX_PER_REGION) break;
-      
-      const source = news.source;
-      if ((sourceCount[source] || 0) >= 2) continue;
-      if (news.score < 5) continue;
-      
-      selected.push(news);
-      sourceCount[source] = (sourceCount[source] || 0) + 1;
-    }
+  // 第二步：从海外选7条（放宽限制，确保能选够）
+  for (const news of overseasNews) {
+    if (selected.filter(n => n.region === '海外').length >= TARGET_PER_REGION) break;
+    if (selected.includes(news)) continue;
+    
+    const source = news.source;
+    if ((sourceCount[source] || 0) >= 4) continue;
+    
+    selected.push(news);
+    sourceCount[source] = (sourceCount[source] || 0) + 1;
   }
   
-  // 第三轮：最后手段，无论如何凑够14条
+  // 第三步：如果某一方不足7条，从另一方补充到14条总数
   for (const news of scored) {
     if (selected.length >= TARGET_TOTAL) break;
     if (selected.includes(news)) continue;
     
     const source = news.source;
-    if ((sourceCount[source] || 0) >= 3) continue;
+    if ((sourceCount[source] || 0) >= 5) continue;
     
     selected.push(news);
     sourceCount[source] = (sourceCount[source] || 0) + 1;

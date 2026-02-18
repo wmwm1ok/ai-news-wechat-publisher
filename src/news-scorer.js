@@ -298,8 +298,8 @@ export function scoreNews(news, existingTitles) {
  * @param {number} targetCount - 目标数量（注：实际范围 12-15，1:1 国内外比例）
  * @param {Array} previousNews - 之前已抓取的新闻 [{title, url, summary}, ...]（用于跨天去重）
  */
-export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
-  // targetCount 参数保留兼容，实际内部使用 12-15 范围
+export function selectTopNews(newsList, targetCount = 14, previousNews = []) {
+  // targetCount 参数保留兼容，实际内部强制 14 条，7:7 比例
   // previousNews 是对象数组，需要提取标题用于当天去重
   const previousTitles = previousNews.map(n => n.title);
   const existingNews = []; // 已处理的新闻（包含完整信息）
@@ -368,73 +368,91 @@ export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
   // 按分数排序
   scored.sort((a, b) => b.score - a.score);
   
-  // 选择时确保多样性，并严格平衡国内外比例（目标 1:1）
-  // 目标数量范围 12-15 条，1:1 比例即每区域 6-8 条
+  // 选择时强制 14 条，国内7条、海外7条
+  const TARGET_TOTAL = 14;
+  const TARGET_PER_REGION = 7; // 国内7条，海外7条
+  
   const selected = [];
   const sourceCount = {};
   const categoryCount = {};
-  const minTarget = 12;
-  const maxTarget = 15;
-  const maxPerRegion = Math.floor(maxTarget / 2); // 每区域最多7-8条
   
-  // 第一轮：严格筛选，强制 1:1 比例
+  // 分离国内和海外新闻
+  const domesticNews = scored.filter(n => (n.region || '国内') === '国内');
+  const overseasNews = scored.filter(n => n.region === '海外');
+  
+  // 第一轮：从国内和海外各选7条（质量优先）
+  const selectFromRegion = (newsList, regionName) => {
+    const regionSelected = [];
+    for (const news of newsList) {
+      if (regionSelected.length >= TARGET_PER_REGION) break;
+      if (selected.includes(news)) continue; // 已选过
+      
+      const source = news.source;
+      const category = news.category || '技术与研究';
+      
+      // 源限制：每个源最多2条
+      if ((sourceCount[source] || 0) >= 2) continue;
+      // 分类限制：每个分类最多4条
+      if ((categoryCount[category] || 0) >= 4) continue;
+      // 质量门槛
+      if (news.score < 15) continue;
+      
+      regionSelected.push(news);
+      selected.push(news);
+      sourceCount[source] = (sourceCount[source] || 0) + 1;
+      categoryCount[category] = (categoryCount[category] || 0) + 1;
+    }
+    return regionSelected.length;
+  };
+  
+  const domesticSelected = selectFromRegion(domesticNews, '国内');
+  const overseasSelected = selectFromRegion(overseasNews, '海外');
+  
+  // 第二轮：如果某一方不足7条，从另一方补充（但最多不超过8条）
+  const MAX_PER_REGION = 8;
+  
+  if (domesticSelected < TARGET_PER_REGION) {
+    // 国内不足，继续从国内选（降低质量门槛）
+    for (const news of domesticNews) {
+      if (selected.length >= TARGET_TOTAL) break;
+      if (selected.includes(news)) continue;
+      if (selected.filter(n => (n.region || '国内') === '国内').length >= MAX_PER_REGION) break;
+      
+      const source = news.source;
+      if ((sourceCount[source] || 0) >= 2) continue;
+      if (news.score < 5) continue;
+      
+      selected.push(news);
+      sourceCount[source] = (sourceCount[source] || 0) + 1;
+    }
+  }
+  
+  if (overseasSelected < TARGET_PER_REGION) {
+    // 海外不足，继续从海外选（降低质量门槛）
+    for (const news of overseasNews) {
+      if (selected.length >= TARGET_TOTAL) break;
+      if (selected.includes(news)) continue;
+      if (selected.filter(n => n.region === '海外').length >= MAX_PER_REGION) break;
+      
+      const source = news.source;
+      if ((sourceCount[source] || 0) >= 2) continue;
+      if (news.score < 5) continue;
+      
+      selected.push(news);
+      sourceCount[source] = (sourceCount[source] || 0) + 1;
+    }
+  }
+  
+  // 第三轮：最后手段，无论如何凑够14条
   for (const news of scored) {
-    if (selected.length >= maxTarget) break;
-    if (news.score < 20) continue; // 降低质量门槛让更多海外新闻有机会
+    if (selected.length >= TARGET_TOTAL) break;
+    if (selected.includes(news)) continue;
     
     const source = news.source;
-    const category = news.category || '技术与研究';
-    const region = news.region || '国内';
-    
-    // 源和分类限制
-    if ((sourceCount[source] || 0) >= 2) continue;
-    if ((categoryCount[category] || 0) >= 4) continue;
-    
-    // 严格区域平衡：每区域最多 maxPerRegion 条
-    const currentRegionCount = selected.filter(n => (n.region || '国内') === region).length;
-    if (currentRegionCount >= maxPerRegion) continue;
+    if ((sourceCount[source] || 0) >= 3) continue;
     
     selected.push(news);
     sourceCount[source] = (sourceCount[source] || 0) + 1;
-    categoryCount[category] = (categoryCount[category] || 0) + 1;
-  }
-  
-  // 第二轮：填补空缺，优先补充数量少的区域
-  for (const news of scored) {
-    if (selected.length >= maxTarget) break;
-    if (selected.includes(news)) continue;
-    if (news.score < 10) continue;
-    if ((sourceCount[news.source] || 0) >= 2) continue;
-    
-    const region = news.region || '国内';
-    const currentRegionCount = selected.filter(n => (n.region || '国内') === region).length;
-    
-    // 如果该区域已满，跳过
-    if (currentRegionCount >= maxPerRegion + 1) continue;
-    
-    selected.push(news);
-    sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
-  }
-  
-  // 第三轮：确保填满目标数量（比例放宽）
-  for (const news of scored) {
-    if (selected.length >= maxTarget) break;
-    if (selected.includes(news)) continue;
-    if (news.score < 5) continue;
-    if ((sourceCount[news.source] || 0) >= 2) continue;
-    
-    selected.push(news);
-    sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
-  }
-  
-  // 第四轮：最后手段
-  for (const news of scored) {
-    if (selected.length >= maxTarget) break;
-    if (selected.includes(news)) continue;
-    if ((sourceCount[news.source] || 0) >= 3) continue;
-    
-    selected.push(news);
-    sourceCount[news.source] = (sourceCount[news.source] || 0) + 1;
   }
   
   // 统计
@@ -442,7 +460,7 @@ export function selectTopNews(newsList, targetCount = 12, previousNews = []) {
   const overseasCount = selected.filter(n => n.region === '海外').length;
   
   console.log('\n📊 质量评分统计:');
-  console.log(`   候选: ${scored.length} 条`);
+  console.log(`   候选: ${scored.length} 条 (🇨🇳${domesticNews.length}/🇺🇸${overseasNews.length})`);
   console.log(`   入选: ${selected.length} 条 (🇨🇳${domesticCount}/🇺🇸${overseasCount})`);
   console.log(`   平均分: ${(selected.reduce((a, b) => a + b.score, 0) / selected.length).toFixed(1)}`);
   console.log('   源分布:', Object.entries(sourceCount).map(([s, c]) => `${s}:${c}`).join(', '));

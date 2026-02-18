@@ -102,7 +102,7 @@ async function main() {
   
   // 4. 质量评分和智能筛选（带上昨天新闻进行语义去重）
   console.log('\n🎯 开始质量评分...');
-  const topNews = selectTopNews(allNews, 12, yesterdayNews);
+  const topNews = selectTopNews(allNews, 14, yesterdayNews);
   
   if (topNews.length === 0) {
     console.error('❌ 没有符合质量标准的新闻');

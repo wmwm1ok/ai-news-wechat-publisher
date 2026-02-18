@@ -150,38 +150,56 @@ async function summarizeSingle(item) {
   
   const prompt = `为以下新闻写中文标题、摘要和分类。
 
-原文标题：${item.title}
-${usedFullContent ? '【这是抓取的全文内容】' : '【这是RSS提供的摘要，可能不完整】'}
-内容：${content.substring(0, 1500)}
+【原文标题】${item.title}
+${usedFullContent ? '【原文内容 - 基于此文总结】' : '【原文摘要 - 基于此内容总结】'}
+${content.substring(0, 1500)}
 
 输出JSON：
 {"title_cn":"中文标题","summary":"摘要","category":"技术与研究","company":"公司名"}
 
-【强制规则】
-1. category只能是以下4个之一，不允许其他分类：
-   - "产品发布与更新" → 新产品发布、功能更新、版本上线
-   - "技术与研究" → 技术突破、论文、研究成果、算法改进
-   - "投融资与并购" → 融资、投资、收购、IPO、估值
-   - "政策与监管" → 政策法规、监管动态、合规、版权
-   
-2. 根据标题关键词判断：
-   - 含"发布/上线/推出/更新"→产品发布与更新
-   - 含"融资/投资/收购/并购/估值"→投融资与并购
-   - 含"政策/法规/监管/合规"→政策与监管
-   - 其他→技术与研究
+【绝对禁止 - 违反会导致错误信息】
+1. 禁止编造原文没有的事实、数字、公司名称
+2. 禁止添加原文未提及的技术细节或功能描述
+3. 禁止推测原文没有的未来计划或影响
+4. 如果原文信息不完整，如实反映，不要脑补
+5. 只总结原文明确提及的内容
 
-3. summary必须是一段完整的新闻摘要（200-400字）：
-   ${usedFullContent ? '【基于完整原文生成】' : '【警告】输入内容可能在句子中间被截断，不要直接复制截断的片段'}
-   - 用自己的语言完整阐述事件，不要复制截断内容
-   - 用3-4个完整句子写成一段流畅的文字
-   - 必须在意思完整的地方结束，不能在句子中间截断
-   - 结尾必须是句号
-4. company从标题提取，没有就空字符串
-5. 只输出JSON`;
+【强制规则】
+1. category只能是以下4个之一：
+   - "产品发布与更新" → 新产品发布、功能更新
+   - "技术与研究" → 技术突破、论文、研究成果
+   - "投融资与并购" → 融资、投资、收购
+   - "政策与监管" → 政策法规、监管动态
+2. summary要求：
+   - 严格基于原文内容进行总结，字数200-400字
+   - 用自己的话重述原文事实，不要复制原文片段
+   - 只写原文明确提到的信息，不确定的内容不写
+   - 3-4个完整句子，结尾必须是句号
+3. company必须从标题提取原文提到的公司名，没有就空字符串
+4. title_cn基于原标题改写，保留核心事实，不要添加原标题没有的信息
+5. 只输出JSON，不要其他内容`;
 
   try {
     const response = await callDeepSeek(prompt);
     const parsed = JSON.parse(response);
+    
+    // 简单验证：检查AI输出是否包含原文没有的数字（可能编造）
+    const aiSummary = parsed.summary || '';
+    const originalNumbers = content.match(/\d+\.?\d*/g) || [];
+    const aiNumbers = aiSummary.match(/\d+\.?\d*/g) || [];
+    
+    // 如果AI出现了原文没有的数字，使用原文摘要作为后备
+    const hasFabricatedNumbers = aiNumbers.some(n => !originalNumbers.includes(n));
+    if (hasFabricatedNumbers && aiNumbers.length > originalNumbers.length) {
+      console.log(`   ⚠️ 检测到AI可能编造数字，使用原文摘要`);
+      return {
+        ...item,
+        title: parsed.title_cn || item.title,
+        summary: normalizeSummary(item.snippet),
+        category: parsed.category || inferCategory(item.title),
+        company: parsed.company || extractCompanyFromTitle(item.title)
+      };
+    }
     
     return {
       ...item,
@@ -219,19 +237,20 @@ ${batchPrompt}
 输出JSON数组：
 [{"title_cn":"中文标题","summary":"摘要","category":"技术与研究","company":"公司名"}]
 
+【绝对禁止 - 违反会导致错误信息】
+1. 禁止编造原文没有的事实、数字、公司名称
+2. 禁止添加原文未提及的技术细节
+3. 禁止推测原文没有的未来计划
+4. 只总结原文明确提及的内容
+
 【强制规则】
 1. category只能是这4个之一："产品发布与更新"、"技术与研究"、"投融资与并购"、"政策与监管"
-2. 判断标准：
-   - 发布/上线/更新→产品发布与更新
-   - 融资/投资/收购→投融资与并购
-   - 政策/法规/监管→政策与监管
-   - 其他→技术与研究
-3. summary必须是一段完整的新闻摘要（200-400字）：
-   【警告】输入内容可能在句子中间被截断，不要直接复制截断的片段
-   - 用自己的语言完整阐述事件，不要复制截断内容
-   - 用3-4个完整句子写成一段流畅的文字
-   - 必须在意思完整的地方结束，不能在句子中间截断
-   - 结尾必须是句号
+2. summary要求：
+   - 严格基于原文内容进行总结，200-400字
+   - 用自己的话重述原文明确提到的事实
+   - 不确定的内容不写，不脑补
+   - 3-4个完整句子，结尾必须是句号
+3. company必须从标题提取原文提到的公司名
 4. 只输出JSON`;
 
     try {

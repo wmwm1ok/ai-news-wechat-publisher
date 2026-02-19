@@ -7,34 +7,34 @@
       "source": "36氪",
       "publishedAt": "2026-02-18 21:42:30  +0800",
       "region": "国内",
-      "summary": "腾讯于2月18日正式宣布，其产品元宝的日活跃用户数已超过5000万，月活跃用户数达到1.14亿。在春节活动期间，元宝主会场累计抽奖次数超过36亿次，用户通过“创作”栏完成的AI任务量也超过了10亿次。该产品在21天内进行了159项功能迭代，并计划推出更多更新，包括在特定节日期间提供互动红包和直播观看等功能。",
+      "summary": "腾讯于2月18日正式宣布，其产品元宝的日活跃用户数已超过5000万，月活跃用户数达到1.14亿。在春节活动期间，元宝主会场累计抽奖次数超过36亿次，用户通过创作栏完成的AI任务量也超过了10亿次。该产品在21天内进行了159项功能迭代，并计划推出更多更新，包括在特定节日期间提供互动红包和直播观看等功能。",
       "category": "产品发布与更新",
       "company": "腾讯",
-      "score": 39,
+      "score": 37,
       "breakdown": {
         "substance": 19,
         "importance": 5,
-        "timeliness": 8,
+        "timeliness": 6,
         "credibility": 7
       },
       "isDuplicate": false
     },
     {
-      "title": "Claude最强Sonnet模型4.6发布，支持百万token上下文",
-      "url": "https://www.jiqizhixin.com/articles/2026-02-18-4",
-      "snippet": "<![CDATA[]]>",
-      "source": "机器之心",
-      "publishedAt": "Wed, 18 Feb 2026 21:36:25 +0800",
+      "title": "谷歌发布音乐生成模型Lyria 3，可通过Gemini根据描述或媒体文件创作音乐",
+      "url": "https://36kr.com/newsflashes/3689519379181444?f=rss",
+      "snippet": "谷歌当地时间2月18日宣布推出音乐生成模型Lyria 3，用户在工具菜单中选择“创建音乐”，然后描述想听的内容，Gemini即可将灵感转化为高质量的音乐作品，用户还可以要求Gemini从上传的照片或视频中汲取灵感。（界面）",
+      "source": "36氪",
+      "publishedAt": "2026-02-19 09:52:07  +0800",
       "region": "国内",
-      "summary": "<![CDATA[]]>",
+      "summary": "谷歌于当地时间2月18日宣布推出音乐生成模型Lyria 3。用户可以在工具菜单中选择“创建音乐”功能，并通过描述想听的内容，由Gemini将灵感转化为高质量的音乐作品。此外，用户还可以要求Gemini从上传的照片或视频中汲取灵感来生成音乐。",
       "category": "产品发布与更新",
-      "company": "Anthropic",
-      "score": 24,
+      "company": "谷歌",
+      "score": 29,
       "breakdown": {
-        "substance": 7,
-        "importance": 0,
-        "timeliness": 8,
-        "credibility": 9
+        "substance": 6,
+        "importance": 6,
+        "timeliness": 10,
+        "credibility": 7
       },
       "isDuplicate": false
     },
@@ -45,7 +45,7 @@
       "source": "Ars Technica",
       "publishedAt": "Wed, 18 Feb 2026 16:00:11 +0000",
       "region": "海外",
-      "summary": "谷歌的Lyria 3 AI音乐模型于今日登陆Gemini。用户可以通过简单的提示，生成一段约30秒的音乐类音频。这标志着AI音乐生成能力被集成到谷歌的产品中。",
+      "summary": "谷歌的Lyria 3 AI音乐模型于今日登陆Gemini。用户通过简单的提示，即可生成一段约30秒的音乐类内容。",
       "category": "产品发布与更新",
       "company": "Google",
       "score": 25,
@@ -56,41 +56,22 @@
         "credibility": 5
       },
       "isDuplicate": false
-    },
-    {
-      "title": "谷歌为Gemini应用增加音乐生成功能",
-      "url": "https://techcrunch.com/2026/02/18/google-adds-music-generation-capabilities-to-the-gemini-app/",
-      "snippet": "Users will be able to use text, images, and videos as a reference to generate music.",
-      "source": "TechCrunch AI",
-      "publishedAt": "Wed, 18 Feb 2026 16:00:00 +0000",
-      "region": "海外",
-      "summary": "谷歌在其Gemini应用程序中新增了音乐生成功能。用户将能够使用文本、图像或视频作为参考来生成音乐。",
-      "category": "产品发布与更新",
-      "company": "Google",
-      "score": 22,
-      "breakdown": {
-        "substance": 0,
-        "importance": 6,
-        "timeliness": 8,
-        "credibility": 8
-      },
-      "isDuplicate": false
     }
   ],
   "技术与研究": [
     {
-      "title": "春晚百台机器熊猫协同演出，魔法原子展示具身智能技术",
+      "title": "春晚百台机器熊猫协同演出，魔法原子展示具身智能技术突破",
       "url": "https://www.qbitai.com/2026/02/381146.html",
       "snippet": "全栈能力加持，商业化与全球化同步加速",
       "source": "量子位",
       "publishedAt": "Wed, 18 Feb 2026 14:52:27 +0000",
       "region": "国内",
-      "summary": "在2026年春晚宜宾分会场，魔法原子公司的双足机器人MagicBot Z1完成了单臂撑地托马斯360°回旋等高难度特技动作，展示了其硬件性能和运动控制能力。该公司还通过四足机器人MagicDog改造的百台机器熊猫实现了全球首次大规模协同奔跑跳舞表演，体现了群体控制技术的突破。这些表演标志着中国具身智能产业从技术验证走向公众视野，在复杂动作和密集协同方面展现了成熟的技术体系。",
+      "summary": "在2026年央视春晚宜宾分会场上，魔法原子公司的双足机器人MagicBot Z1完成了单臂撑地接托马斯360°回旋、侧空翻等高难度特技动作，展示了其硬件性能与运动控制能力。该公司还将四足机器人MagicDog改造为一百台机器熊猫，实现了全球首次百台机器熊猫协同奔跑跳舞的群体控制表演。这些表演体现了从感知、决策到协同的全链路智能操作技术已从实验室走向公众舞台，标志着中国具身智能产业进入加速发展阶段。",
       "category": "技术与研究",
       "company": "魔法原子",
-      "score": 34,
+      "score": 31,
       "breakdown": {
-        "substance": 12,
+        "substance": 9,
         "importance": 5,
         "timeliness": 8,
         "credibility": 9
@@ -104,7 +85,7 @@
       "source": "量子位",
       "publishedAt": "Wed, 18 Feb 2026 02:54:35 +0000",
       "region": "国内",
-      "summary": "在2026年春晚舞台上，银河通用机器人公司推出的机器人“小盖”成为首个在舞台上执行实际任务的机器人，而非仅仅进行动作表演。它展示了包括货架取物、清理玻璃碎片、整理环境、串烤肠、叠衣服以及盘核桃等任务。这些能力由银河通用机器人公司的“银河星脑AstraBrain”系统驱动，该系统采用“大脑-小脑-神经控制”一体化架构，实现了从感知、决策到执行的完整闭环，使机器人不再依赖预设的动作脚本。节目之外，该机器人已将能力应用于全国100家银河太空舱。",
+      "summary": "在2026年春晚舞台上，银河通用机器人公司推出的机器人“小盖”成为首个在舞台上执行实际任务的机器人，而非仅进行动作表演。它展示了包括货架取物、清理玻璃碎片、整理环境、串烤肠、叠衣服以及盘核桃等任务。这些能力由该公司首次公开的“大脑-小脑-神经控制”一体化系统“银河星脑AstraBrain”驱动，该系统实现了完整的感知-决策-执行闭环，使机器人不再依赖预设的动作脚本。节目之外，小盖的这套能力已被应用于全国100家银河太空舱，标志着机器人正走进实际生活场景。",
       "category": "技术与研究",
       "company": "银河通用",
       "score": 30,
@@ -126,30 +107,30 @@
       "summary": "<![CDATA[]]>",
       "category": "技术与研究",
       "company": "蚂蚁",
-      "score": 29,
+      "score": 27,
       "breakdown": {
         "substance": 7,
         "importance": 5,
-        "timeliness": 8,
+        "timeliness": 6,
         "credibility": 9
       },
       "isDuplicate": false
     },
     {
-      "title": "魔法原子机器人春晚舞台倒酒，突破机器人仅能表演的局限",
+      "title": "魔法原子机器人春晚舞台倒酒，突破机器人仅能表演局限",
       "url": "https://www.jiqizhixin.com/articles/2026-02-18-6",
       "snippet": "<![CDATA[]]>",
       "source": "机器之心",
       "publishedAt": "Wed, 18 Feb 2026 22:02:09 +0800",
       "region": "国内",
-      "summary": "魔法原子公司的机器人在春晚舞台上展示了倒酒动作，这一行为被视为突破了机器人通常仅限于表演的范畴。文章指出，该演示捅破了机器人“只会表演”的窗户纸，暗示了其实用性功能的拓展。",
+      "summary": "魔法原子公司的机器人在春晚舞台上展示了倒酒动作，这一行为被视为突破了机器人“只会表演”的既有印象。文章指出，该演示展现了机器人执行实际任务的能力，而不仅仅是进行预设的表演。这一事件引发了关于机器人实用性的讨论，表明其在日常应用中的潜力。",
       "category": "技术与研究",
       "company": "魔法原子",
-      "score": 26,
+      "score": 24,
       "breakdown": {
         "substance": 4,
         "importance": 5,
-        "timeliness": 8,
+        "timeliness": 6,
         "credibility": 9
       },
       "isDuplicate": false
@@ -161,12 +142,12 @@
       "source": "量子位",
       "publishedAt": "Wed, 18 Feb 2026 04:20:28 +0000",
       "region": "国内",
-      "summary": "2026年春晚节目中，机器人成为亮点，松延动力公司的机器人参与了小品《奶奶的最爱》的表演。节目中亮相的机器人包括被称为“大孙子们”的西天取经四人组、能完成后空翻的“小孩哥”双胞胎，以及一款售价9998元起的全球首款万元级机器人“小布米”。小布米身高不足一米，具备语音交互能力，其底层采用豆包大模型，能够回答“洗车悖论”等问题并进行情感交流。文章通过现场观察，描述了这些机器人在节目排练和互动中的表现。",
+      "summary": "2026年春晚节目中，机器人成为亮点，松延动力公司的机器人参与了小品《奶奶的最爱》的表演。其中，售价9998元起的全球首款万元级机器人“小布米”以奶声奶气的语音和萌态引人注目，其底层搭载了豆包大模型，具备语音交互和逻辑推理能力，例如能回答“洗车悖论”问题并展现高情商对话。此外，曾在亦庄机器人马拉松上出现的“小孩哥”机器人也以双胞胎形式登场，并表演了后空翻。文章通过现场观察，描述了这些机器人在台下的训练情况与表现。",
       "category": "技术与研究",
       "company": "松延动力",
-      "score": 25,
+      "score": 24,
       "breakdown": {
-        "substance": 10,
+        "substance": 9,
         "importance": 0,
         "timeliness": 6,
         "credibility": 9
@@ -183,30 +164,49 @@
       "summary": "新的产品线包括300亿和1050亿参数的模型、一个文本转语音模型、一个语音转文本模型以及一个用于解析文档的视觉模型。",
       "category": "技术与研究",
       "company": "Sarvam",
-      "score": 41,
+      "score": 39,
       "breakdown": {
         "substance": 20,
         "importance": 5,
-        "timeliness": 8,
+        "timeliness": 6,
         "credibility": 8
       },
       "isDuplicate": false
     },
     {
-      "title": "《下载》简报：区块链谜题与主宰生活的算法",
+      "title": "谷歌云副总裁谈初创企业如何应对早期基础设施挑战",
+      "url": "https://techcrunch.com/video/is-your-startups-check-engine-light-on-google-clouds-vp-explains-what-to-do/",
+      "snippet": "Startup founders are being pushed to move faster than ever, using AI while facing tighter funding, rising infrastructure costs, and more pressure to show real traction early. Cloud credits, access to GPUs, and foundation models have made it easier to get started, but those early infrastructure choices can have unforeseen consequences once startups move beyond […]",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 18 Feb 2026 21:07:00 +0000",
+      "region": "海外",
+      "summary": "初创企业创始人正面临前所未有的压力，需要在更紧张的融资环境、不断上涨的基础设施成本以及更早展示实际进展的压力下，加速发展并利用人工智能。虽然云积分、GPU访问和基础模型降低了起步门槛，但早期的技术基础设施选择至关重要。谷歌云副总裁建议创始人应密切关注这些早期决策，如同关注汽车的“检查引擎”指示灯，以避免未来出现重大问题。",
+      "category": "技术与研究",
+      "company": "Google Cloud",
+      "score": 25,
+      "breakdown": {
+        "substance": 7,
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "《下载》：区块链之谜与主宰我们生活的算法",
       "url": "https://www.technologyreview.com/2026/02/18/1133291/the-download-a-blockchain-enigma-and-the-algorithms-governing-our-lives/",
       "snippet": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. Welcome to the dark side of crypto’s permissionless dream Jean-Paul Thorbjornsen, an Australian man in his mid-30s, with a rural Catholic upbringing, is a founder of THORChain, a blockchain through which users can…",
       "source": "MIT Technology Review",
       "publishedAt": "Wed, 18 Feb 2026 13:10:00 +0000",
       "region": "海外",
-      "summary": "这是《下载》简报的今日版，这是一份工作日通讯，每日提供科技世界动态。本期内容涉及区块链的谜题以及主宰我们生活的算法。简报旨在为读者提供每日的科技资讯概览。",
+      "summary": "这是《下载》的今日版，这是一份工作日通讯，每日提供科技世界动态。本期内容涉及区块链的谜题以及主宰我们生活的算法。",
       "category": "技术与研究",
       "company": "无",
-      "score": 21,
+      "score": 19,
       "breakdown": {
         "substance": 3,
         "importance": 0,
-        "timeliness": 8,
+        "timeliness": 6,
         "credibility": 10
       },
       "isDuplicate": false
@@ -218,7 +218,7 @@
       "source": "MIT Technology Review",
       "publishedAt": "Wed, 18 Feb 2026 16:00:22 +0000",
       "region": "海外",
-      "summary": "谷歌DeepMind呼吁对大语言模型的道德行为进行严格审查，其审查标准应与评估其编码或数学能力同样严谨。随着大语言模型能力的提升，人们开始要求它们扮演伴侣、治疗师、医疗顾问等角色。因此，对这些模型在相关场景下的行为进行道德评估变得至关重要。",
+      "summary": "谷歌DeepMind呼吁，对于大语言模型在充当伴侣、治疗师、医疗顾问等角色时的道德行为，应进行与其编码或数学能力同等严格的审查。随着大语言模型能力的提升，人们正越来越多地要求它们承担这些角色。",
       "category": "技术与研究",
       "company": "Google DeepMind",
       "score": 18,
@@ -233,18 +233,18 @@
   ],
   "投融资与并购": [
     {
-      "title": "World Labs获10亿美元融资，其中2亿美元来自Autodesk，旨在将世界模型引入3D工作流",
+      "title": "World Labs获10亿美元融资，将与Autodesk合作将世界模型引入3D工作流",
       "url": "https://techcrunch.com/2026/02/18/world-labs-lands-200m-from-autodesk-to-bring-world-models-into-3d-workflows/",
       "snippet": "The partnership will see the two companies exploring how World Labs’ models can work alongside Autodesk’s tools, and vice versa, starting with a focus on entertainment use cases.",
       "source": "TechCrunch AI",
       "publishedAt": "Wed, 18 Feb 2026 18:07:16 +0000",
       "region": "海外",
-      "summary": "World Labs公司获得总计10亿美元的融资，其中2亿美元来自软件公司Autodesk。双方将建立合作伙伴关系，共同探索如何将World Labs的世界模型与Autodesk的工具进行整合与协作。合作初期将重点关注娱乐领域的应用案例。",
+      "summary": "World Labs公司获得了总额10亿美元的融资，其中2亿美元来自软件公司Autodesk。双方达成合作伙伴关系，将共同探索如何将World Labs的世界模型与Autodesk的工具相结合。合作初期将重点关注娱乐领域的应用案例。",
       "category": "投融资与并购",
       "company": "World Labs, Autodesk",
-      "score": 38,
+      "score": 41,
       "breakdown": {
-        "substance": 14,
+        "substance": 17,
         "importance": 8,
         "timeliness": 8,
         "credibility": 8

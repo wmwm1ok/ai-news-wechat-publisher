@@ -1,0 +1,275 @@
+{
+  "产品发布与更新": [
+    {
+      "title": "腾讯宣布元宝DAU超5000万，MAU达1.14亿",
+      "url": "https://36kr.com/newsflashes/3688860060594052?f=rss",
+      "snippet": "2月18日，腾讯正式宣布，元宝日活跃用户（DAU）超5000万，月活跃用户（MAU）已达1.14亿。此前一天，腾讯发布的元宝分10亿现金红包活动报告显示，元宝春节主会场累计抽奖次数超36亿次，用户通过「创作」栏完成AI任务超10亿次。元宝21天内已迭代更新159项功能，今天元宝还公布了更多更新计划。正月初五，用户在元宝派内聊天，元宝会随机掉落红包。同时，在切换不同元宝派时，一起听不会掉线。正月十五元宵节，用户还可以在派里一起看湖南卫视元宵晚会直播。",
+      "source": "36氪",
+      "publishedAt": "2026-02-18 21:42:30  +0800",
+      "region": "国内",
+      "summary": "腾讯于2月18日正式宣布，其产品元宝的日活跃用户数已超过5000万，月活跃用户数达到1.14亿。在春节活动期间，元宝主会场累计抽奖次数超过36亿次，用户通过“创作”栏完成的AI任务量也超过了10亿次。该产品在21天内进行了159项功能迭代，并计划推出更多更新，包括在特定节日期间提供互动红包和直播观看等功能。",
+      "category": "产品发布与更新",
+      "company": "腾讯",
+      "score": 39,
+      "breakdown": {
+        "substance": 19,
+        "importance": 5,
+        "timeliness": 8,
+        "credibility": 7
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "Claude最强Sonnet模型4.6发布，支持百万token上下文",
+      "url": "https://www.jiqizhixin.com/articles/2026-02-18-4",
+      "snippet": "<![CDATA[]]>",
+      "source": "机器之心",
+      "publishedAt": "Wed, 18 Feb 2026 21:36:25 +0800",
+      "region": "国内",
+      "summary": "<![CDATA[]]>",
+      "category": "产品发布与更新",
+      "company": "Anthropic",
+      "score": 24,
+      "breakdown": {
+        "substance": 7,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "谷歌Lyria 3 AI音乐模型今日登陆Gemini",
+      "url": "https://arstechnica.com/google/2026/02/gemini-can-now-generate-ai-music-for-you-no-lyrics-required/",
+      "snippet": "With a simple prompt, you can generate 30 seconds of something like music.",
+      "source": "Ars Technica",
+      "publishedAt": "Wed, 18 Feb 2026 16:00:11 +0000",
+      "region": "海外",
+      "summary": "谷歌的Lyria 3 AI音乐模型于今日登陆Gemini。用户可以通过简单的提示，生成一段约30秒的音乐类音频。这标志着AI音乐生成能力被集成到谷歌的产品中。",
+      "category": "产品发布与更新",
+      "company": "Google",
+      "score": 25,
+      "breakdown": {
+        "substance": 6,
+        "importance": 6,
+        "timeliness": 8,
+        "credibility": 5
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "谷歌为Gemini应用增加音乐生成功能",
+      "url": "https://techcrunch.com/2026/02/18/google-adds-music-generation-capabilities-to-the-gemini-app/",
+      "snippet": "Users will be able to use text, images, and videos as a reference to generate music.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 18 Feb 2026 16:00:00 +0000",
+      "region": "海外",
+      "summary": "谷歌在其Gemini应用程序中新增了音乐生成功能。用户将能够使用文本、图像或视频作为参考来生成音乐。",
+      "category": "产品发布与更新",
+      "company": "Google",
+      "score": 22,
+      "breakdown": {
+        "substance": 0,
+        "importance": 6,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ],
+  "技术与研究": [
+    {
+      "title": "春晚百台机器熊猫协同演出，魔法原子展示具身智能技术",
+      "url": "https://www.qbitai.com/2026/02/381146.html",
+      "snippet": "全栈能力加持，商业化与全球化同步加速",
+      "source": "量子位",
+      "publishedAt": "Wed, 18 Feb 2026 14:52:27 +0000",
+      "region": "国内",
+      "summary": "在2026年春晚宜宾分会场，魔法原子公司的双足机器人MagicBot Z1完成了单臂撑地托马斯360°回旋等高难度特技动作，展示了其硬件性能和运动控制能力。该公司还通过四足机器人MagicDog改造的百台机器熊猫实现了全球首次大规模协同奔跑跳舞表演，体现了群体控制技术的突破。这些表演标志着中国具身智能产业从技术验证走向公众视野，在复杂动作和密集协同方面展现了成熟的技术体系。",
+      "category": "技术与研究",
+      "company": "魔法原子",
+      "score": 34,
+      "breakdown": {
+        "substance": 12,
+        "importance": 5,
+        "timeliness": 8,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "银河通用机器人携端到端大模型银河星脑亮相春晚，实现从表演到执行任务的转变",
+      "url": "https://www.qbitai.com/2026/02/380787.html",
+      "snippet": "哦豁，今年春晚舞台来了个会干活的机器人",
+      "source": "量子位",
+      "publishedAt": "Wed, 18 Feb 2026 02:54:35 +0000",
+      "region": "国内",
+      "summary": "在2026年春晚舞台上，银河通用机器人公司推出的机器人“小盖”成为首个在舞台上执行实际任务的机器人，而非仅仅进行动作表演。它展示了包括货架取物、清理玻璃碎片、整理环境、串烤肠、叠衣服以及盘核桃等任务。这些能力由银河通用机器人公司的“银河星脑AstraBrain”系统驱动，该系统采用“大脑-小脑-神经控制”一体化架构，实现了从感知、决策到执行的完整闭环，使机器人不再依赖预设的动作脚本。节目之外，该机器人已将能力应用于全国100家银河太空舱。",
+      "category": "技术与研究",
+      "company": "银河通用",
+      "score": 30,
+      "breakdown": {
+        "substance": 15,
+        "importance": 0,
+        "timeliness": 6,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "蚂蚁开源UI-Venus-1.5，GUI智能体办事时代加速到来",
+      "url": "https://www.jiqizhixin.com/articles/2026-02-18-3",
+      "snippet": "<![CDATA[]]>",
+      "source": "机器之心",
+      "publishedAt": "Wed, 18 Feb 2026 21:33:43 +0800",
+      "region": "国内",
+      "summary": "<![CDATA[]]>",
+      "category": "技术与研究",
+      "company": "蚂蚁",
+      "score": 29,
+      "breakdown": {
+        "substance": 7,
+        "importance": 5,
+        "timeliness": 8,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "魔法原子机器人春晚舞台倒酒，突破机器人仅能表演的局限",
+      "url": "https://www.jiqizhixin.com/articles/2026-02-18-6",
+      "snippet": "<![CDATA[]]>",
+      "source": "机器之心",
+      "publishedAt": "Wed, 18 Feb 2026 22:02:09 +0800",
+      "region": "国内",
+      "summary": "魔法原子公司的机器人在春晚舞台上展示了倒酒动作，这一行为被视为突破了机器人通常仅限于表演的范畴。文章指出，该演示捅破了机器人“只会表演”的窗户纸，暗示了其实用性功能的拓展。",
+      "category": "技术与研究",
+      "company": "魔法原子",
+      "score": 26,
+      "breakdown": {
+        "substance": 4,
+        "importance": 5,
+        "timeliness": 8,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "春晚机器人小品揭秘：蔡明搭档万元级机器人，具身智能走向消费级",
+      "url": "https://www.qbitai.com/2026/02/380804.html",
+      "snippet": "具身智能正在走进消费级",
+      "source": "量子位",
+      "publishedAt": "Wed, 18 Feb 2026 04:20:28 +0000",
+      "region": "国内",
+      "summary": "2026年春晚节目中，机器人成为亮点，松延动力公司的机器人参与了小品《奶奶的最爱》的表演。节目中亮相的机器人包括被称为“大孙子们”的西天取经四人组、能完成后空翻的“小孩哥”双胞胎，以及一款售价9998元起的全球首款万元级机器人“小布米”。小布米身高不足一米，具备语音交互能力，其底层采用豆包大模型，能够回答“洗车悖论”等问题并进行情感交流。文章通过现场观察，描述了这些机器人在节目排练和互动中的表现。",
+      "category": "技术与研究",
+      "company": "松延动力",
+      "score": 25,
+      "breakdown": {
+        "substance": 10,
+        "importance": 0,
+        "timeliness": 6,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "印度AI实验室Sarvam发布新模型，大力押注开源AI可行性",
+      "url": "https://techcrunch.com/2026/02/18/indian-ai-lab-sarvams-new-models-are-a-major-bet-on-the-viability-of-open-source-ai/",
+      "snippet": "The new lineup includes 30-billion- and 105-billion-parameter models; a text-to-speech model; a speech-to-text model; and a vision model to parse documents.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 18 Feb 2026 12:55:20 +0000",
+      "region": "海外",
+      "summary": "新的产品线包括300亿和1050亿参数的模型、一个文本转语音模型、一个语音转文本模型以及一个用于解析文档的视觉模型。",
+      "category": "技术与研究",
+      "company": "Sarvam",
+      "score": 41,
+      "breakdown": {
+        "substance": 20,
+        "importance": 5,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "《下载》简报：区块链谜题与主宰生活的算法",
+      "url": "https://www.technologyreview.com/2026/02/18/1133291/the-download-a-blockchain-enigma-and-the-algorithms-governing-our-lives/",
+      "snippet": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. Welcome to the dark side of crypto’s permissionless dream Jean-Paul Thorbjornsen, an Australian man in his mid-30s, with a rural Catholic upbringing, is a founder of THORChain, a blockchain through which users can…",
+      "source": "MIT Technology Review",
+      "publishedAt": "Wed, 18 Feb 2026 13:10:00 +0000",
+      "region": "海外",
+      "summary": "这是《下载》简报的今日版，这是一份工作日通讯，每日提供科技世界动态。本期内容涉及区块链的谜题以及主宰我们生活的算法。简报旨在为读者提供每日的科技资讯概览。",
+      "category": "技术与研究",
+      "company": "无",
+      "score": 21,
+      "breakdown": {
+        "substance": 3,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 10
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "谷歌DeepMind呼吁严格审查大语言模型的道德行为",
+      "url": "https://www.technologyreview.com/2026/02/18/1133299/google-deepmind-wants-to-know-if-chatbots-are-just-virtue-signaling/",
+      "snippet": "Google DeepMind is calling for the moral behavior of large language models—such as what they do when called on to act as companions, therapists, medical advisors, and so on—to be scrutinized with the same kind of rigor as their ability to code or do math. As LLMs improve, people are asking them to play more…",
+      "source": "MIT Technology Review",
+      "publishedAt": "Wed, 18 Feb 2026 16:00:22 +0000",
+      "region": "海外",
+      "summary": "谷歌DeepMind呼吁对大语言模型的道德行为进行严格审查，其审查标准应与评估其编码或数学能力同样严谨。随着大语言模型能力的提升，人们开始要求它们扮演伴侣、治疗师、医疗顾问等角色。因此，对这些模型在相关场景下的行为进行道德评估变得至关重要。",
+      "category": "技术与研究",
+      "company": "Google DeepMind",
+      "score": 18,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 10
+      },
+      "isDuplicate": false
+    }
+  ],
+  "投融资与并购": [
+    {
+      "title": "World Labs获10亿美元融资，其中2亿美元来自Autodesk，旨在将世界模型引入3D工作流",
+      "url": "https://techcrunch.com/2026/02/18/world-labs-lands-200m-from-autodesk-to-bring-world-models-into-3d-workflows/",
+      "snippet": "The partnership will see the two companies exploring how World Labs’ models can work alongside Autodesk’s tools, and vice versa, starting with a focus on entertainment use cases.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 18 Feb 2026 18:07:16 +0000",
+      "region": "海外",
+      "summary": "World Labs公司获得总计10亿美元的融资，其中2亿美元来自软件公司Autodesk。双方将建立合作伙伴关系，共同探索如何将World Labs的世界模型与Autodesk的工具进行整合与协作。合作初期将重点关注娱乐领域的应用案例。",
+      "category": "投融资与并购",
+      "company": "World Labs, Autodesk",
+      "score": 38,
+      "breakdown": {
+        "substance": 14,
+        "importance": 8,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "Kana获1500万美元融资，为营销人员打造灵活AI代理",
+      "url": "https://techcrunch.com/2026/02/18/kana-emerges-from-stealth-with-15m-to-build-flexible-ai-agents-for-marketers/",
+      "snippet": "Kana, a new AI marketing startup from the founders of Rapt and Krux, has raised $15 million to build customizable, agent-based marketing tools.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 18 Feb 2026 15:08:40 +0000",
+      "region": "海外",
+      "summary": "由Rapt和Krux创始人创立的新AI营销初创公司Kana已筹集1500万美元。该公司计划开发可定制的、基于代理的营销工具。",
+      "category": "投融资与并购",
+      "company": "Kana",
+      "score": 23,
+      "breakdown": {
+        "substance": 7,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ],
+  "政策与监管": []
+}

@@ -2,7 +2,8 @@ import Parser from 'rss-parser';
 import axios from 'axios';
 import { DOMESTIC_RSS_SOURCES, OVERSEAS_RSS_SOURCES, CONFIG, AI_KEYWORDS_CORE } from './config.js';
 
-const FRESHNESS_HOURS = 24;
+// 延长至48小时，覆盖跨天发布的情况
+const FRESHNESS_HOURS = 48;
 
 /**
  * 检查新闻是否与AI行业相关

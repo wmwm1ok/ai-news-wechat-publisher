@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="refresh" content="300">
     <title>AI日报 - 在线编辑器</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -270,7 +271,15 @@
         
         // 渲染内容
         function renderContent(data) {
-            document.getElementById('current-date').textContent = data.date;
+            // 使用北京时间显示
+        const beijingDate = new Date().toLocaleString('zh-CN', { 
+            timeZone: 'Asia/Shanghai',
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            weekday: 'short'
+        });
+        document.getElementById('current-date').textContent = beijingDate.split(' ')[0];
             document.getElementById('article-count').textContent = `共 ${data.count} 条精选资讯`;
             
             const editor = document.getElementById('rich-editor');
@@ -402,6 +411,9 @@
                 toast.style.display = 'none';
             }, 2500);
         }
+        
+        // 每5分钟自动刷新数据
+        setInterval(loadData, 5 * 60 * 1000);
         
         // 初始化
         document.addEventListener('DOMContentLoaded', loadData);

@@ -37,6 +37,29 @@ function isFreshNews(publishedAt) {
   return diffHours <= FRESHNESS_HOURS;
 }
 
+function extractSnippet(item) {
+  // 优先顺序：contentSnippet > summary > content > content:encoded
+  let snippet = item.contentSnippet || item.summary || item.content || item['content:encoded'] || '';
+  
+  // 清理 CDATA 标记（有些 RSS 返回 <![CDATA[...]]> 或空的 <![CDATA[]>）
+  snippet = snippet.replace(/^\s*<!\[CDATA\[\]\]>\s*$/i, '');
+  snippet = snippet.replace(/^\s*<!\[CDATA\[(.*)\]\]>\s*$/is, '$1');
+  snippet = snippet.trim();
+  
+  // 如果清理后为空，尝试从 content:encoded 提取（有些源 contentSnippet 为空但 content:encoded 有内容）
+  if (!snippet && item['content:encoded']) {
+    snippet = item['content:encoded']
+      .replace(/^\s*<!\[CDATA\[/, '')
+      .replace(/\]\]>\s*$/, '')
+      .trim();
+  }
+  
+  // 提取纯文本（移除 HTML 标签）
+  snippet = snippet.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  
+  return snippet;
+}
+
 async function parseRSS(source) {
   try {
     console.log(`📡 ${source.name}`);
@@ -46,7 +69,7 @@ async function parseRSS(source) {
       .map(item => ({
         title: item.title || '',
         url: item.link || item.url || '',
-        snippet: item.contentSnippet || item.summary || item.content || '',
+        snippet: extractSnippet(item),
         source: source.name,
         publishedAt: item.pubDate || item.isoDate || new Date().toISOString(),
         region: DOMESTIC_RSS_SOURCES.includes(source) ? '国内' : '海外'

@@ -1,0 +1,276 @@
+{
+  "产品发布与更新": [
+    {
+      "title": "阿里千问推出Qwen Coding Plan，支持更多模型与AI工具",
+      "url": "https://36kr.com/newsflashes/3692864510389889?f=rss",
+      "snippet": "2月21日，阿里千问宣布推出Qwen Coding Plan，支持更多模型，上新Qwen3.5-Plus、Qwen3-Coder-Next，适配QwenCode、ClaudeCode、Cline等Al工具使用。",
+      "source": "36氪",
+      "publishedAt": "2026-02-21 19:39:49  +0800",
+      "region": "国内",
+      "summary": "2月21日，阿里千问宣布推出Qwen Coding Plan。该计划支持更多模型，并上新了Qwen3.5-Plus和Qwen3-Coder-Next两款模型。同时，该计划适配了包括QwenCode、ClaudeCode和Cline在内的多种AI工具。",
+      "category": "产品发布与更新",
+      "company": "阿里千问",
+      "score": 26,
+      "breakdown": {
+        "substance": 8,
+        "importance": 5,
+        "timeliness": 6,
+        "credibility": 7
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "谷歌AI Plus、Pro和Ultra套餐包含哪些Gemini功能 [2026年2月]",
+      "url": "https://9to5google.com/2026/02/21/google-ai-pro-ultra-features/",
+      "snippet": "At I/O 2025, Google One AI Premium (and Gemini Advanced) became Google AI Pro, while a more expensive tier was introduced with AI Ultra.",
+      "source": "9to5Google",
+      "publishedAt": "4 hours ago",
+      "region": "海外",
+      "summary": "文章介绍了谷歌在2025年I/O大会上对其AI订阅服务的调整。Google One AI Premium（以及Gemini Advanced）更名为Google AI Pro，同时推出了价格更高的AI Ultra套餐。内容主要围绕不同套餐层级所提供的Gemini功能进行说明。",
+      "category": "产品发布与更新",
+      "company": "Google",
+      "score": 26,
+      "breakdown": {
+        "substance": 8,
+        "importance": 11,
+        "timeliness": 2,
+        "credibility": 5
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "GPT-4o和GPT-5的终结？OpenAI今日起将停用旧版GPT模型",
+      "url": "https://www.livemint.com/technology/tech-news/end-of-the-road-for-gpt-4o-and-gpt-5-openai-set-to-retire-legacy-gpt-models-today-heres-why-11771002559821.html",
+      "snippet": "OpenAI is retiring GPT-4o and several older models from ChatGPT today, shifting focus to newer GPT-5 systems with improved personality, creativity and...",
+      "source": "Mint",
+      "publishedAt": "3 hours ago",
+      "region": "海外",
+      "summary": "OpenAI将从今日起在ChatGPT中停用GPT-4o及多个旧版模型。此举是为了将重心转向具有改进个性、创造力和其他特性的新版GPT-5系统。",
+      "category": "产品发布与更新",
+      "company": "OpenAI",
+      "score": 18,
+      "breakdown": {
+        "substance": 0,
+        "importance": 11,
+        "timeliness": 2,
+        "credibility": 5
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "微软新任游戏CEO承诺不会用‘无尽的AI垃圾’淹没生态系统",
+      "url": "https://techcrunch.com/2026/02/21/microsofts-new-gaming-ceo-vows-not-to-flood-the-ecosystem-with-endless-ai-slop/",
+      "snippet": "Is Microsoft's gaming division doubling down on AI?",
+      "source": "TechCrunch AI",
+      "publishedAt": "Sat, 21 Feb 2026 17:41:27 +0000",
+      "region": "海外",
+      "summary": "微软新任游戏首席执行官表示，不会让生态系统充斥低质量的AI生成内容。这一表态回应了外界对微软游戏部门是否过度依赖AI的疑问。",
+      "category": "产品发布与更新",
+      "company": "Microsoft",
+      "score": 16,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ],
+  "技术与研究": [
+    {
+      "title": "16个Claude智能体无人工干预协作构建C语言编译器",
+      "url": "https://www.infoq.cn/article/YSdbKmoPyzFgxvPA3TZl?utm_source=rss&utm_medium=article",
+      "snippet": "点击查看原文>",
+      "source": "InfoQ",
+      "publishedAt": "Sat, 21 Feb 2026 08:00:00 GMT",
+      "region": "国内",
+      "summary": "Anthropic研究员Nicholas Carlini使用十六个Claude Opus 4.6 AI智能体从零开始构建了一个基于Rust的C编译器，整个过程没有人工干预。这些智能体在共享仓库中并行协作，通过基于锁的方案同步协调代码修改，最终实现了能够编译Linux 6.9内核的编译器，并支持x86、ARM和RISC-V架构。该项目共进行了约2000次会话，产生了约20000美元的API费用，其深层意义在于探索为长期自主运行的智能体团队设计控制框架。",
+      "category": "技术与研究",
+      "company": "Anthropic",
+      "score": 38,
+      "breakdown": {
+        "substance": 19,
+        "importance": 5,
+        "timeliness": 6,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "北航开源Code2Bench：双扩展动态评测框架，推动代码大模型告别静态刷分",
+      "url": "https://www.jiqizhixin.com/articles/2026-02-21-3",
+      "snippet": "<![CDATA[]]>",
+      "source": "机器之心",
+      "publishedAt": "Sat, 21 Feb 2026 21:56:23 +0800",
+      "region": "国内",
+      "summary": "<![CDATA[]]>",
+      "category": "技术与研究",
+      "company": "北航",
+      "score": 35,
+      "breakdown": {
+        "substance": 13,
+        "importance": 5,
+        "timeliness": 8,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "春节档票房超50%来自三四线城市",
+      "url": "https://36kr.com/newsflashes/3692827975757704?f=rss",
+      "snippet": "据网络平台数据，2026年春节档档期总票房（含预售）破40亿。如今，在春节假期看电影已经成为越来越多基层群众的新年俗。随着我国电影市场持续向纵深发展，“下沉”市场在春节档展现出了不俗的消费潜力。据票务平台数据显示，三、四线城市已连续三年成为春节档票房的绝对主力。除了影片内容更贴合地域偏好等传统原因，今年春节档，AI购票的全新方式也让‌购票更加便捷。电影数据分析师陈晋表示：“截至目前，三、四线城市贡献了今年春节档总票房的53.72%，较去年大幅增长，同时也是历年春节档最高贡献率。”（央视财经）",
+      "source": "36氪",
+      "publishedAt": "2026-02-21 17:33:37  +0800",
+      "region": "国内",
+      "summary": "根据网络平台数据，2026年春节档总票房（含预售）已突破40亿元。数据显示，三、四线城市已连续三年成为春节档票房的绝对主力，今年贡献了总票房的53.72%，这一比例较去年大幅增长，并创下历年春节档最高纪录。电影数据分析师陈晋指出，随着电影市场向纵深发展，下沉市场展现出强劲的消费潜力，而今年AI购票新方式的出现也让购票过程更加便捷。",
+      "category": "技术与研究",
+      "company": "",
+      "score": 31,
+      "breakdown": {
+        "substance": 13,
+        "importance": 5,
+        "timeliness": 6,
+        "credibility": 7
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "24人初创公司Taalas推出HC1芯片，推理速度达每秒17000个token",
+      "url": "https://www.qbitai.com/2026/02/381552.html",
+      "snippet": "成本却只有1/10",
+      "source": "量子位",
+      "publishedAt": "Sat, 21 Feb 2026 06:31:56 +0000",
+      "region": "国内",
+      "summary": "一家名为Taalas的初创公司推出了首款芯片HC1，该芯片在搭载Llama 3.1 8B模型时，峰值推理速度高达每秒17000个token，远超当前其他主流芯片。其技术方案是将模型直接刻在硅片上，采用结构化ASIC理念，通过调整掩模层快速生产专用AI推理芯片，从而在降低成本与功耗的同时大幅提升速度。该芯片采用台积电N6工艺，典型功耗为250W，设计生产周期可缩短至两个月。",
+      "category": "技术与研究",
+      "company": "Taalas",
+      "score": 29,
+      "breakdown": {
+        "substance": 14,
+        "importance": 0,
+        "timeliness": 6,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "Sam Altman提醒：人类同样消耗大量能源",
+      "url": "https://techcrunch.com/2026/02/21/sam-altman-would-like-remind-you-that-humans-use-a-lot-of-energy-too/",
+      "snippet": "\"It also takes a lot of energy to train a human.\"",
+      "source": "TechCrunch AI",
+      "publishedAt": "Sat, 21 Feb 2026 21:38:01 +0000",
+      "region": "海外",
+      "summary": "Sam Altman指出，训练人类也需要消耗大量能源。他通过这一类比来回应关于人工智能能耗的讨论。",
+      "category": "技术与研究",
+      "company": "Sam Altman",
+      "score": 21,
+      "breakdown": {
+        "substance": 3,
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "谷歌副总裁警告两类AI初创公司可能难以生存",
+      "url": "https://techcrunch.com/2026/02/21/google-vp-warns-that-two-types-of-ai-startups-may-not-survive/",
+      "snippet": "As generative AI evolves, a Google VP warns that LLM wrappers and AI aggregators face mounting pressure, with shrinking margins and limited differentiation threatening their long-term viability.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Sat, 21 Feb 2026 16:00:00 +0000",
+      "region": "海外",
+      "summary": "随着生成式AI的发展，谷歌副总裁警告称，LLM包装器和AI聚合器面临越来越大的压力。利润空间缩小和差异化有限威胁着这些公司的长期生存能力。",
+      "category": "技术与研究",
+      "company": "Google",
+      "score": 16,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "微软的在线真实性核查与麻疹病例的令人担忧的增长",
+      "url": "https://www.technologyreview.com/2026/02/20/1133396/the-download-microsofts-online-reality-check-and-the-worrying-rise-in-measles-cases/",
+      "snippet": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. Microsoft has a new plan to prove what’s real and what’s AI online AI-enabled deception now permeates our online lives. There are the high-profile cases you may easily spot. Other times, it slips…",
+      "source": "MIT Technology Review",
+      "publishedAt": "Fri, 20 Feb 2026 13:10:00 +0000",
+      "region": "海外",
+      "summary": "这是《每日摘要》的今日版，该工作日通讯提供每日科技世界动态。微软有一项新计划，旨在证明在线内容的真实性并区分AI生成内容。AI驱动的欺骗现已渗透到我们的在线生活中。此外，麻疹病例也出现了令人担忧的增长。",
+      "category": "技术与研究",
+      "company": "微软",
+      "score": 14,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 4,
+        "credibility": 10
+      },
+      "isDuplicate": false
+    }
+  ],
+  "投融资与并购": [
+    {
+      "title": "Anthropic CEO改口称软件比白领更易被AI击穿，反讽马斯克观点危言耸听",
+      "url": "https://www.infoq.cn/article/auecWVTgm3Eh8lo5PK8U?utm_source=rss&utm_medium=article",
+      "snippet": "点击查看原文>",
+      "source": "InfoQ",
+      "publishedAt": "Fri, 20 Feb 2026 12:01:25 GMT",
+      "region": "国内",
+      "summary": "Anthropic公司宣布在G轮融资中筹集到300亿美元，估值达3800亿美元，资金将用于前沿研究、产品发展和基础设施扩建，目标是成为企业人工智能和编码市场的领导者。马斯克对此批评其AI具有厌世和反人类倾向，而Anthropic CEO Dario Amodei则在最新采访中暗讽马斯克关于AI未来发展的观点是危言耸听，强调AI发展的核心是实现人类巅峰水平智能的规模化，并认为人机关系应是共生而非对立。Amodei还改口表示，相比白领工作，软件更容易被AI技术所突破。",
+      "category": "投融资与并购",
+      "company": "Anthropic",
+      "score": 43,
+      "breakdown": {
+        "substance": 15,
+        "importance": 18,
+        "timeliness": 2,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "OpenAI估值或超8500亿美元，刷新AI公司纪录",
+      "url": "https://www.qbitai.com/2026/02/381542.html",
+      "snippet": "",
+      "source": "量子位",
+      "publishedAt": "Fri, 20 Feb 2026 09:49:58 +0000",
+      "region": "国内",
+      "summary": "据报道，OpenAI接近完成新一轮融资的第一阶段，预计募集超过1000亿美元，公司整体估值可能超过8500亿美元，成为AI领域估值最高的企业。主要战略投资者包括亚马逊、软银、英伟达和微软，其中亚马逊预计投资最多500亿美元，软银最多300亿美元。作为对比，其竞争对手Anthropic近期以3800亿美元估值完成融资，OpenAI的估值是后者的2.2倍以上。",
+      "category": "投融资与并购",
+      "company": "OpenAI",
+      "score": 37,
+      "breakdown": {
+        "substance": 13,
+        "importance": 13,
+        "timeliness": 2,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    }
+  ],
+  "政策与监管": [
+    {
+      "title": "OpenAI曾考虑就加拿大枪击案嫌疑人聊天记录报警",
+      "url": "https://techcrunch.com/2026/02/21/openai-debated-calling-police-about-suspected-canadian-shooters-chats/",
+      "snippet": "Jesse Van Rootselaar's descriptions of gun violence were flagged by tools that monitor ChatGPT for misuse.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Sat, 21 Feb 2026 15:25:44 +0000",
+      "region": "海外",
+      "summary": "Jesse Van Rootselaar在聊天中描述枪支暴力，被监测ChatGPT滥用的工具标记。OpenAI内部曾讨论是否就此向警方报告。",
+      "category": "政策与监管",
+      "company": "OpenAI",
+      "score": 21,
+      "breakdown": {
+        "substance": 0,
+        "importance": 5,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ]
+}

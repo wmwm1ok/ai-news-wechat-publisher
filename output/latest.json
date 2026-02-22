@@ -1,132 +1,132 @@
 {
-  "date": "2026/2/21",
+  "date": "2026/2/22",
   "count": 14,
   "articles": [
     {
-      "section": "产品发布与更新",
-      "title": "谷歌发布Gemini 3.1 Pro模型，推理性能提升至前代两倍",
-      "company": "谷歌",
-      "source": "量子位",
-      "publishedAt": "Fri, 20 Feb 2026 01:25:54 +0000",
-      "summary": "谷歌在2026年2月20日发布了Gemini 3.1 Pro模型，这是其首次采用“.1”版本号进行小版本更新。该模型在核心推理能力上相比Gemini 3 Pro有显著提升，在ARC-AGI-2基准测试中的推理表现达到前代的两倍，整体排名分数也高出13分。新模型支持1M上下文，知识截止日期为2025年1月，并在多模态理解、代码生成、多语言性能和长上下文处理方面均有所增强，能够生成更复杂的可视化内容和交互应用。目前该模型已在Gemini应用和API中上线，供Google AI Pro和Ultra用户在NotebookLM中使用。",
-      "score": 49
-    },
-    {
       "section": "投融资与并购",
-      "title": "智谱与MINIMAX市值双双突破3000亿港元，超越快手携程",
-      "company": "智谱,MINIMAX",
-      "source": "36氪",
-      "publishedAt": "2026-02-20 16:17:43  +0800",
-      "summary": "2月20日港股开盘后，大模型公司智谱和MINIMAX股价均大幅上涨并创下上市以来新高。截至发稿时，智谱股价上涨36%至691港元，MINIMAX股价上涨12%至957港元，两家公司的市值均突破3000亿港元。这一市值水平已接连超越携程、快手和京东，并逼近泡泡玛特与百度的市值。当日恒生科技指数虽整体下跌，但国产AI大模型板块逆势收涨，智谱涨近43%，MINIMAX涨超14%。",
-      "score": 40
+      "title": "Anthropic CEO改口称软件比白领更易被AI击穿，反讽马斯克观点危言耸听",
+      "company": "Anthropic",
+      "source": "InfoQ",
+      "publishedAt": "Fri, 20 Feb 2026 12:01:25 GMT",
+      "summary": "Anthropic公司宣布在G轮融资中筹集到300亿美元，估值达3800亿美元，资金将用于前沿研究、产品发展和基础设施扩建，目标是成为企业人工智能和编码市场的领导者。马斯克对此批评其AI具有厌世和反人类倾向，而Anthropic CEO Dario Amodei则在最新采访中暗讽马斯克关于AI未来发展的观点是危言耸听，强调AI发展的核心是实现人类巅峰水平智能的规模化，并认为人机关系应是共生而非对立。Amodei还改口表示，相比白领工作，软件更容易被AI技术所突破。",
+      "score": 43
     },
     {
       "section": "技术与研究",
-      "title": "美股三大指数集体收涨，谷歌股价涨幅超4%",
-      "company": "谷歌",
-      "source": "36氪",
-      "publishedAt": "2026-02-21 09:13:35  +0800",
-      "summary": "美国股市三大指数集体收涨，纳斯达克指数上涨0.9%，本周累计涨幅为1.51%；标普500指数上涨0.69%，本周累计涨幅为1.07%；道琼斯工业指数上涨0.47%，本周累计涨幅为0.25%。大型科技股普遍上涨，其中谷歌涨幅超过4%，奈飞和亚马逊涨幅超过2%，苹果、英伟达和Meta涨幅超过1%，特斯拉小幅上涨，微软则小幅下跌。Global X网络安全ETF收盘下跌4.9%，创下2023年以来收盘新低，此前Anthropic公司发布了大模型安全功能。无人机概念股走低，Ondas下跌近12%，克瑞拓斯安全防卫下跌超过9%，AeroVironment下跌超过6%。",
-      "score": 39
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "百度以5亿红包与OpenClaw接入回应AI入口大战",
-      "company": "百度",
-      "source": "量子位",
-      "publishedAt": "Thu, 19 Feb 2026 10:15:41 +0000",
-      "summary": "春节期间，国内外AI圈有两件大事备受关注：一是OpenClaw在GitHub上Star数快速增长至18.9万，二是国内互联网大厂围绕春节营销展开激烈竞争，如元宝推出10亿现金红包活动、千问投入30亿请喝奶茶、豆包成为春晚独家AI云合作伙伴。百度同时切入这两场竞争核心，一方面正式上线OpenClaw极速简易部署方案，并于2月14日在百度App支持一键调用OpenClaw智能体，整合其原有能力并计划接入搜索、地图等生态产品；另一方面从1月底起推出5亿现金红包活动，用户使用文心助手即可参与。当前AI超级入口竞争激烈，文心、豆包和千问已成为国内三大亿级AI入口，呈现三足鼎立之势，春节正是抢夺这一入口的关键战场。",
+      "title": "16个Claude智能体无人工干预协作构建C语言编译器",
+      "company": "Anthropic",
+      "source": "InfoQ",
+      "publishedAt": "Sat, 21 Feb 2026 08:00:00 GMT",
+      "summary": "Anthropic研究员Nicholas Carlini使用十六个Claude Opus 4.6 AI智能体从零开始构建了一个基于Rust的C编译器，整个过程没有人工干预。这些智能体在共享仓库中并行协作，通过基于锁的方案同步协调代码修改，最终实现了能够编译Linux 6.9内核的编译器，并支持x86、ARM和RISC-V架构。该项目共进行了约2000次会话，产生了约20000美元的API费用，其深层意义在于探索为长期自主运行的智能体团队设计控制框架。",
       "score": 38
     },
     {
-      "section": "产品发布与更新",
-      "title": "字节豆包2.0系列发布，成本大幅降低，Seed团队解析视频Agent竞争关键",
-      "company": "字节",
-      "source": "InfoQ",
-      "publishedAt": "Fri, 20 Feb 2026 11:58:12 GMT",
-      "summary": "字节跳动于2月14日正式发布了豆包大模型2.0系列，该系列围绕大规模生产环境需求进行了系统性优化，重点提升了高效推理、多模态理解与复杂指令执行能力。新系列包含Pro、Lite、Mini三款通用Agent模型和一款Code模型，旨在不同性能、延迟与成本需求间形成分层体系，以支持大规模商业部署。官方强调，Seed2.0的核心优势之一是其成本结构，在保持接近前沿模型性能的前提下，其Token单价约低一个数量级，这为企业级MaaS部署提供了关键的经济可行性。目前，豆包2.0 Pro已在豆包App、电脑端和网页版上线，火山引擎也已面向企业和开发者上线了该系列模型的API服务。",
-      "score": 30
-    },
-    {
-      "section": "技术与研究",
-      "title": "太初元碁完成40余款大模型适配，推动国产算力高效落地",
-      "company": "太初元碁",
-      "source": "量子位",
-      "publishedAt": "Thu, 19 Feb 2026 06:11:38 +0000",
-      "summary": "国产AI芯片企业太初元碁宣布，已完成包括智谱GLM-5.0、阿里千问Qwen3.5-397B-A17B、DeepSeek、文心等在内的40多款AI大模型的深度适配，实现“即发即适配，上线即可用”。该公司针对不同开发者的技术能力，在SDAA软件栈中推出了阶梯式开发工具链，以降低CUDA生态迁移的技术门槛与成本。工具链包括SDAA Copilot、Teco-Triton、SDAA C、PCX虚拟指令集以及Teco-vLLM等，旨在帮助开发者快速构建高性能算子，并与主流AI生态实现无缝兼容。",
-      "score": 28
-    },
-    {
-      "section": "技术与研究",
-      "title": "ClawHub封杀风波催生全球首个AI进化网络EvoMap",
-      "company": "OpenClaw",
-      "source": "量子位",
-      "publishedAt": "Fri, 20 Feb 2026 07:44:38 +0000",
-      "summary": "OpenClaw旗下的ClawHub平台因无故下架热门插件Evolver并向开发者索要1000美元调查费，引发争议。随后平台又因技术问题误封大批中文开发者账号，Evolver作者也在其中。Evolver是一款能让AI自我识别短板并通过试错寻找更优解法的自进化引擎工具，上线后曾3天内获得超过36000次下载。面对平台的不当操作，开发团队选择放弃插件形式，转而创建了底层协议EvoMap，实现了AI经验像DNA一样在全球网络中代代相传。EvoMap是一个AI进化网络，允许Agent通过一行命令接入，直接获取其他Agent已验证的成功经验策略，即“基因胶囊”，这些胶囊包含方法、适用场景和审计记录，能帮助AI快速应用高效解决方案。",
-      "score": 26
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "印度Sarvam发布Indus AI聊天应用，市场竞争加剧",
-      "company": "Sarvam",
-      "source": "TechCrunch AI",
-      "publishedAt": "Sat, 21 Feb 2026 01:00:00 +0000",
-      "summary": "印度公司Sarvam推出了名为Indus的AI聊天应用。该应用目前处于测试阶段。",
-      "score": 30
-    },
-    {
-      "section": "技术与研究",
-      "title": "创作者经济的广告收入困境与印度的AI雄心",
-      "company": "无",
-      "source": "TechCrunch AI",
-      "publishedAt": "Fri, 20 Feb 2026 23:00:00 +0000",
-      "summary": "创作者经济正在快速发展，仅靠广告收入已不足以支撑。YouTuber们正在推出产品线、收购初创公司并建立商业帝国。例如，MrBeast的公司收购了金融科技初创公司Step，其巧克力业务的收入已超过其媒体部门。",
-      "score": 30
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "谷歌发布Gemini 3.1 Pro，称其更擅长解决复杂问题",
-      "company": "Google",
-      "source": "Ars Technica",
-      "publishedAt": "Thu, 19 Feb 2026 17:42:14 +0000",
-      "summary": "谷歌宣布推出Gemini 3.1 Pro模型，并声称该模型已准备好应对用户最困难的挑战。",
-      "score": 30
-    },
-    {
       "section": "投融资与并购",
-      "title": "InScope融资1450万美元以解决财务报告难题",
-      "company": "InScope",
-      "source": "TechCrunch AI",
-      "publishedAt": "Fri, 20 Feb 2026 19:24:57 +0000",
-      "summary": "初创公司InScope获得了1450万美元融资。该公司由曾在Flexport、Miro、Hopin和Thrive Global工作的会计师创立，旨在自动化处理财务报表编制的困难。",
+      "title": "OpenAI估值或超8500亿美元，刷新AI公司纪录",
+      "company": "OpenAI",
+      "source": "量子位",
+      "publishedAt": "Fri, 20 Feb 2026 09:49:58 +0000",
+      "summary": "据报道，OpenAI接近完成新一轮融资的第一阶段，预计募集超过1000亿美元，公司整体估值可能超过8500亿美元，成为AI领域估值最高的企业。主要战略投资者包括亚马逊、软银、英伟达和微软，其中亚马逊预计投资最多500亿美元，软银最多300亿美元。作为对比，其竞争对手Anthropic近期以3800亿美元估值完成融资，OpenAI的估值是后者的2.2倍以上。",
+      "score": 37
+    },
+    {
+      "section": "技术与研究",
+      "title": "北航开源Code2Bench：双扩展动态评测框架，推动代码大模型告别静态刷分",
+      "company": "北航",
+      "source": "机器之心",
+      "publishedAt": "Sat, 21 Feb 2026 21:56:23 +0800",
+      "summary": "<![CDATA[]]>",
+      "score": 35
+    },
+    {
+      "section": "技术与研究",
+      "title": "春节档票房超50%来自三四线城市",
+      "company": "",
+      "source": "36氪",
+      "publishedAt": "2026-02-21 17:33:37  +0800",
+      "summary": "根据网络平台数据，2026年春节档总票房（含预售）已突破40亿元。数据显示，三、四线城市已连续三年成为春节档票房的绝对主力，今年贡献了总票房的53.72%，这一比例较去年大幅增长，并创下历年春节档最高纪录。电影数据分析师陈晋指出，随着电影市场向纵深发展，下沉市场展现出强劲的消费潜力，而今年AI购票新方式的出现也让购票过程更加便捷。",
+      "score": 31
+    },
+    {
+      "section": "技术与研究",
+      "title": "24人初创公司Taalas推出HC1芯片，推理速度达每秒17000个token",
+      "company": "Taalas",
+      "source": "量子位",
+      "publishedAt": "Sat, 21 Feb 2026 06:31:56 +0000",
+      "summary": "一家名为Taalas的初创公司推出了首款芯片HC1，该芯片在搭载Llama 3.1 8B模型时，峰值推理速度高达每秒17000个token，远超当前其他主流芯片。其技术方案是将模型直接刻在硅片上，采用结构化ASIC理念，通过调整掩模层快速生产专用AI推理芯片，从而在降低成本与功耗的同时大幅提升速度。该芯片采用台积电N6工艺，典型功耗为250W，设计生产周期可缩短至两个月。",
+      "score": 29
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "阿里千问推出Qwen Coding Plan，支持更多模型与AI工具",
+      "company": "阿里千问",
+      "source": "36氪",
+      "publishedAt": "2026-02-21 19:39:49  +0800",
+      "summary": "2月21日，阿里千问宣布推出Qwen Coding Plan。该计划支持更多模型，并上新了Qwen3.5-Plus和Qwen3-Coder-Next两款模型。同时，该计划适配了包括QwenCode、ClaudeCode和Cline在内的多种AI工具。",
+      "score": 26
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "谷歌AI Plus、Pro和Ultra套餐包含哪些Gemini功能 [2026年2月]",
+      "company": "Google",
+      "source": "9to5Google",
+      "publishedAt": "4 hours ago",
+      "summary": "文章介绍了谷歌在2025年I/O大会上对其AI订阅服务的调整。Google One AI Premium（以及Gemini Advanced）更名为Google AI Pro，同时推出了价格更高的AI Ultra套餐。内容主要围绕不同套餐层级所提供的Gemini功能进行说明。",
       "score": 26
     },
     {
       "section": "技术与研究",
-      "title": "字节跳动Seedance 2.0 AI视频模型引发好莱坞震动",
-      "company": "ByteDance",
-      "source": "vocal.media",
-      "publishedAt": "11 hours ago",
-      "summary": "TikTok母公司字节跳动开发的一款新人工智能视频生成模型引发了广泛关注。该模型因其技术突破在好莱坞引起了震动。",
-      "score": 24
+      "title": "Sam Altman提醒：人类同样消耗大量能源",
+      "company": "Sam Altman",
+      "source": "TechCrunch AI",
+      "publishedAt": "Sat, 21 Feb 2026 21:38:01 +0000",
+      "summary": "Sam Altman指出，训练人类也需要消耗大量能源。他通过这一类比来回应关于人工智能能耗的讨论。",
+      "score": 21
     },
     {
-      "section": "技术与研究",
-      "title": "独家电子书：2025年AI炒作修正",
-      "company": "",
-      "source": "MIT Technology Review",
-      "publishedAt": "Fri, 20 Feb 2026 18:46:07 +0000",
-      "summary": "2025年是对AI行业进行清算的一年，顶级AI公司的负责人做出了无法兑现的承诺。这本仅供订阅者阅读的独家电子书探讨了为何我们需要重新调整对AI的期望。该报道属于“炒作修正”系列的一部分。",
+      "section": "政策与监管",
+      "title": "OpenAI曾考虑就加拿大枪击案嫌疑人聊天记录报警",
+      "company": "OpenAI",
+      "source": "TechCrunch AI",
+      "publishedAt": "Sat, 21 Feb 2026 15:25:44 +0000",
+      "summary": "Jesse Van Rootselaar在聊天中描述枪支暴力，被监测ChatGPT滥用的工具标记。OpenAI内部曾讨论是否就此向警方报告。",
+      "score": 21
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "GPT-4o和GPT-5的终结？OpenAI今日起将停用旧版GPT模型",
+      "company": "OpenAI",
+      "source": "Mint",
+      "publishedAt": "3 hours ago",
+      "summary": "OpenAI将从今日起在ChatGPT中停用GPT-4o及多个旧版模型。此举是为了将重心转向具有改进个性、创造力和其他特性的新版GPT-5系统。",
       "score": 18
     },
     {
-      "section": "技术与研究",
-      "title": "xAI好消息：Grok现在能很好地回答关于《博德之门》的问题",
-      "company": "xAI",
+      "section": "产品发布与更新",
+      "title": "微软新任游戏CEO承诺不会用‘无尽的AI垃圾’淹没生态系统",
+      "company": "Microsoft",
       "source": "TechCrunch AI",
-      "publishedAt": "Fri, 20 Feb 2026 18:26:54 +0000",
-      "summary": "一份新报告显示，xAI的高级工程师被从其他项目中抽调出来，以确保Grok能够回答关于电子游戏《博德之门》的详细问题。",
+      "publishedAt": "Sat, 21 Feb 2026 17:41:27 +0000",
+      "summary": "微软新任游戏首席执行官表示，不会让生态系统充斥低质量的AI生成内容。这一表态回应了外界对微软游戏部门是否过度依赖AI的疑问。",
       "score": 16
+    },
+    {
+      "section": "技术与研究",
+      "title": "谷歌副总裁警告两类AI初创公司可能难以生存",
+      "company": "Google",
+      "source": "TechCrunch AI",
+      "publishedAt": "Sat, 21 Feb 2026 16:00:00 +0000",
+      "summary": "随着生成式AI的发展，谷歌副总裁警告称，LLM包装器和AI聚合器面临越来越大的压力。利润空间缩小和差异化有限威胁着这些公司的长期生存能力。",
+      "score": 16
+    },
+    {
+      "section": "技术与研究",
+      "title": "微软的在线真实性核查与麻疹病例的令人担忧的增长",
+      "company": "微软",
+      "source": "MIT Technology Review",
+      "publishedAt": "Fri, 20 Feb 2026 13:10:00 +0000",
+      "summary": "这是《每日摘要》的今日版，该工作日通讯提供每日科技世界动态。微软有一项新计划，旨在证明在线内容的真实性并区分AI生成内容。AI驱动的欺骗现已渗透到我们的在线生活中。此外，麻疹病例也出现了令人担忧的增长。",
+      "score": 14
     }
   ]
 }

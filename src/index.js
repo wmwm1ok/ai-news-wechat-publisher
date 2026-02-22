@@ -112,18 +112,39 @@ async function main() {
   // 5. 标准化分类并分组
   const standardCategories = ['产品发布与更新', '技术与研究', '投融资与并购', '政策与监管'];
   
+  // 股市/行情关键词（用于二次检查分类）
+  const stockKeywords = ['股市', '股指', '指数', '大盘', '收涨', '收跌', '涨停', '跌停', 'A股', '港股', '美股', '三大指数', '集体收涨', '集体下跌', '行情', '股价', '市值'];
+  
   // 将非标准分类映射到标准分类
   for (const news of topNews) {
+    // 先检查是否是股市新闻（二次保险）
+    const isStockNews = stockKeywords.some(kw => news.title.includes(kw));
+    
+    if (isStockNews) {
+      // 股市新闻除非是AI公司相关，否则标记为需要过滤
+      const aiCompanyMentioned = ['英伟达', 'NVIDIA', '特斯拉', 'Tesla', '微软', 'Microsoft', '谷歌', 'Google', 'OpenAI', 'Meta', '苹果', 'Apple'].some(c => 
+        news.title.includes(c)
+      );
+      if (!aiCompanyMentioned) {
+        // 标记为低优先级，后续可以过滤
+        news.category = '其他';
+        continue;
+      }
+    }
+    
     if (!standardCategories.includes(news.category)) {
       // 根据关键词映射
       const t = news.title.toLowerCase();
-      if (t.includes('发布') || t.includes('上线') || t.includes('推出')) {
+      if (t.includes('发布') || t.includes('上线') || t.includes('推出') || t.includes('推出') || t.includes('更新')) {
         news.category = '产品发布与更新';
-      } else if (t.includes('融资') || t.includes('投资') || t.includes('收购')) {
+      } else if (t.includes('融资') || t.includes('投资') || t.includes('收购') || t.includes('并购')) {
         news.category = '投融资与并购';
-      } else if (t.includes('政策') || t.includes('监管') || t.includes('法规')) {
+      } else if (t.includes('政策') || t.includes('监管') || t.includes('法规') || t.includes('合规')) {
         news.category = '政策与监管';
+      } else if (t.includes('论文') || t.includes('研究') || t.includes('模型') || t.includes('算法') || t.includes('技术')) {
+        news.category = '技术与研究';
       } else {
+        // 默认分类，如果内容不够AI相关，也可以考虑过滤
         news.category = '技术与研究';
       }
     }

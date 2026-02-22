@@ -218,9 +218,9 @@ export class DeduplicationResult {
 export class DeduplicationEngine {
   constructor(options = {}) {
     this.thresholds = {
-      fingerprintSimilarity: options.fingerprintThreshold || 0.5,  // 指纹相似度阈值（降低以更好捕捉变体）
-      textSimilarity: options.textThreshold || 0.7,                // 文本相似度阈值（降低）
-      minConfidence: options.minConfidence || 0.7                  // 最小置信度
+      fingerprintSimilarity: options.fingerprintThreshold || 0.65,  // 指纹相似度阈值（提高以减少误判）
+      textSimilarity: options.textThreshold || 0.8,                 // 文本相似度阈值（提高）
+      minConfidence: options.minConfidence || 0.75                  // 最小置信度（提高）
     };
     this.history = []; // 去重历史日志
     this.fingerprints = new Map(); // title -> fingerprint 缓存

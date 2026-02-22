@@ -271,15 +271,8 @@
         
         // 渲染内容
         function renderContent(data) {
-            // 使用北京时间显示
-        const beijingDate = new Date().toLocaleString('zh-CN', { 
-            timeZone: 'Asia/Shanghai',
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric',
-            weekday: 'short'
-        });
-        document.getElementById('current-date').textContent = beijingDate.split(' ')[0];
+            // 使用数据中的日期（与后端一致）
+            document.getElementById('current-date').textContent = data.date;
             document.getElementById('article-count').textContent = `共 ${data.count} 条精选资讯`;
             
             const editor = document.getElementById('rich-editor');
@@ -298,14 +291,16 @@
                 '产品发布与更新',
                 '技术与研究',
                 '投融资与并购',
-                '政策与监管'
+                '政策与监管',
+                '其他'
             ];
             
             const SECTION_COLORS = {
                 '产品发布与更新': '#07c160',
                 '技术与研究': '#1989fa',
                 '投融资与并购': '#ff6b6b',
-                '政策与监管': '#ff9f43'
+                '政策与监管': '#ff9f43',
+                '其他': '#999999'
             };
             
             let html = `

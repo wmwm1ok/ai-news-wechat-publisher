@@ -126,7 +126,8 @@ export function checkSemanticDuplicate(news, existingNews) {
       const entityOverlap = commonEntities.length / Math.max(currentEntities.length, existingEntities.length);
       
       // 如果实体重叠度高且涉及相同公司/产品，认为是重复
-      if (entityOverlap >= 0.6 && commonEntities.length >= 2) {
+      // 提高阈值到 0.75 以减少误判
+      if (entityOverlap >= 0.75 && commonEntities.length >= 2) {
         return { 
           isDuplicate: true, 
           reason: '内容实体高度重叠', 
@@ -304,6 +305,20 @@ export function scoreNews(news, existingTitles) {
   for (const indicator of nonAIIndicators) {
     if (news.title.includes(indicator) && !news.title.includes('AI') && !news.title.includes('智能')) {
       return { score: 0, isDuplicate: true, reason: '非AI新闻' };
+    }
+  }
+  
+  // 股市/行情新闻过滤 - 这些不是AI新闻
+  const stockMarketIndicators = ['股市', '股指', '指数', '大盘', '收涨', '收跌', '涨停', '跌停', 'A股', '港股', '美股', '三大指数', '集体收涨', '集体下跌', '行情'];
+  for (const indicator of stockMarketIndicators) {
+    if (news.title.includes(indicator)) {
+      // 除非是明确提到AI公司的股市新闻
+      const aiCompanyMentioned = ['英伟达', 'NVIDIA', '特斯拉', 'Tesla', '微软', 'Microsoft', '谷歌', 'Google', 'OpenAI', 'Meta'].some(c => 
+        news.title.includes(c)
+      );
+      if (!aiCompanyMentioned) {
+        return { score: 0, isDuplicate: true, reason: '股市行情新闻' };
+      }
     }
   }
   

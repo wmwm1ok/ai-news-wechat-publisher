@@ -17,26 +17,17 @@
       "company": "OpenAI",
       "source": "量子位",
       "publishedAt": "Fri, 20 Feb 2026 09:49:58 +0000",
-      "summary": "据报道，OpenAI正接近完成新一轮融资的第一阶段，预计募集超过1000亿美元，超过其2025年初创下的400亿美元融资纪录。随着融资推进，公司整体估值可能超过8500亿美元，成为AI圈估值最高的企业，这一估值是其主要竞争对手Anthropic当前估值的2.2倍以上。本轮融资的主要战略投资者包括亚马逊、软银、英伟达和微软，其中亚马逊预计投资最多500亿美元，软银最多300亿美元，英伟达已讨论投入200亿美元。",
+      "summary": "据报道，OpenAI正接近完成新一轮融资的第一阶段，预计募集超过1000亿美元，超过其2025年初创下的400亿美元融资纪录。随着融资推进，公司整体估值可能超过8500亿美元，成为AI圈最高估值企业，这一数字是其主要竞争对手Anthropic当前估值的2.2倍以上。本轮融资的主要战略投资者包括亚马逊、软银、英伟达和微软，其中亚马逊预计投资最多500亿美元，软银最多300亿美元，英伟达已讨论投入200亿美元。不过，该交易尚未最终敲定，具体条款仍可能发生变化。",
       "score": 37
     },
     {
       "section": "技术与研究",
-      "title": "北航团队开源Code2Bench：提出双扩展动态评测框架，应对代码大模型基准挑战",
+      "title": "北航团队开源Code2Bench：双重扩展动态评测框架，应对代码大模型基准挑战",
       "company": "北航",
       "source": "机器之心",
       "publishedAt": "Sat, 21 Feb 2026 21:56:23 +0800",
-      "summary": "针对当前代码大模型在HumanEval等经典基准上成绩趋于饱和，可能面临数据污染和测试严谨性不足的问题，北京航空航天大学的研究团队提出了一种名为“双重扩展”的新基准构建哲学，并开发了端到端的自动化框架Code2Bench。该框架旨在通过动态扩展问题来源和测试深度，构建一个更严苛、更具诊断性的评测环境，以更真实地评估模型的泛化推理能力而非记忆力。相关论文已被ICLR 2026接收。",
-      "score": 35
-    },
-    {
-      "section": "技术与研究",
-      "title": "24人初创公司Taalas推出HC1芯片，推理速度达每秒17000个token",
-      "company": "Taalas",
-      "source": "量子位",
-      "publishedAt": "Sat, 21 Feb 2026 06:31:56 +0000",
-      "summary": "一家名为Taalas的初创公司推出了其首款芯片HC1，该芯片在搭载Llama 3.1 8B模型时，峰值推理速度可达每秒17000个token，远超当前其他主流芯片。HC1采用了将模型直接刻在硅片上的极端技术方案，通过结构化ASIC和掩模ROM等设计，在实现高性能的同时显著降低了成本和功耗。该芯片采用台积电N6工艺，单颗典型功耗仅为250W，且公司表示其生产周期可缩短至两个月。",
-      "score": 33
+      "summary": "针对当前代码大模型在HumanEval、MBPP等经典基准上成绩趋于饱和，面临数据污染和测试严谨性不足两大核心挑战的问题，北京航空航天大学研究团队提出了一种名为“双重扩展”的新基准构建哲学，并开发了端到端的自动化框架Code2Bench。该框架旨在通过动态扩展代码来源和测试深度，构建一个更动态、严苛且具诊断性的评测新范式，以评估模型在真实、复杂场景下的泛化推理能力，而非检验其对训练数据的记忆力。该研究成果已被ICLR 2026接收。",
+      "score": 36
     },
     {
       "section": "技术与研究",
@@ -44,49 +35,76 @@
       "company": "Anthropic",
       "source": "InfoQ",
       "publishedAt": "Fri, 20 Feb 2026 12:01:25 GMT",
-      "summary": "Anthropic公司宣布在G轮融资中筹集到300亿美元，估值达3800亿美元，资金将用于前沿研究、产品发展和基础设施扩建，目标是成为企业人工智能和编码市场的领导者。马斯克在相关帖子下批评Anthropic的AI有厌世、反人类倾向，并讽刺公司名Anthropic最终会变成Misanthropic（厌人类）。Anthropic CEO Dario Amodei在最新采访中暗讽马斯克关于AI未来发展的说法是“危言耸听”，认为AI发展的核心是实现人类巅峰水平智能的规模化，而不是去月球打造“机器之神”或创建机器人文明，强调人机关系应是“共生而非对立”。Amodei还改口表示，相比白领工作，软件更容易被AI“击穿”。",
-      "score": 31
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "Pika推出AI Selves功能，用户可培育数字分身",
-      "company": "Pika",
-      "source": "机器之心",
-      "publishedAt": "Sat, 21 Feb 2026 22:01:20 +0800",
-      "summary": "Pika公司推出了一项名为AI Selves的新功能，允许用户创建并培育自己的数字分身。该功能旨在让用户通过互动和训练，使数字分身逐渐成长并具备个性化特征。这一举措标志着Pika在人工智能应用领域的进一步探索，为用户提供了全新的数字身份体验。",
-      "score": 28
+      "summary": "Anthropic公司宣布在G轮融资中筹集到300亿美元，估值达3800亿美元，资金将用于前沿研究、产品发展和基础设施扩建，目标是成为企业人工智能和编码市场的领导者。马斯克对此批评其AI具有厌世、反人类倾向，而Anthropic CEO Dario Amodei则在最新采访中暗讽马斯克关于AI未来发展的观点是危言耸听，强调AI发展的核心是实现人类巅峰水平智能的规模化，并认为人机关系应是共生而非对立。Amodei还改口表示，相比白领工作，软件更容易被AI技术所影响。",
+      "score": 34
     },
     {
       "section": "技术与研究",
-      "title": "CVPR 2026论文录用结果公布，录用率25.42%",
-      "company": "",
+      "title": "BridgeV2W通过“动作剪影”打通视频生成与机器人世界模型",
+      "company": "中科第五纪",
       "source": "机器之心",
-      "publishedAt": "Sat, 21 Feb 2026 22:03:32 +0800",
-      "summary": "计算机视觉顶级会议CVPR 2026的论文录用结果已公布。本次会议共收到16092篇投稿进入审稿流程，最终有4090篇论文被推荐录用，录用率为25.42%。会议将于6月3日至7日在美国丹佛举行，官方将在OpenReview平台发布完整审稿意见，并后续通知录用论文的展示安排。",
-      "score": 27
+      "publishedAt": "Sat, 21 Feb 2026 21:37:11 +0800",
+      "summary": "中科第五纪与中科院自动化所团队联合推出了BridgeV2W，旨在解决机器人“预演未来”能力的关键障碍。该研究面临的核心挑战是机器人动作（坐标数值）与视频生成模型（像素画面）之间的“语言不通”，以及模型难以适应不同视角和机器人结构的问题。BridgeV2W的创新在于引入了“具身掩码”，即一种由机器人动作实时渲染出的二值“动作剪影”，它能将动作精准映射到像素空间，从而无缝连接预训练视频生成模型与世界模型，帮助机器人实现可靠的未来场景预测。",
+      "score": 30
+    },
+    {
+      "section": "技术与研究",
+      "title": "24人初创公司Taalas推出HC1芯片，推理速度达每秒17000个token",
+      "company": "Taalas",
+      "source": "量子位",
+      "publishedAt": "Sat, 21 Feb 2026 06:31:56 +0000",
+      "summary": "一家名为Taalas的初创公司推出了首款芯片HC1，该芯片在搭载Llama 3.1 8B模型时，峰值推理速度高达每秒17000个token，远超当前其他主流芯片。其技术方案是将模型直接刻在硅片上，采用结构化ASIC理念，通过调整掩模层快速生产专用AI推理芯片，从而在降低成本与功耗的同时大幅提升速度。该芯片采用台积电N6工艺，典型功耗为250W，并可通过多芯片方案支持更大模型。",
+      "score": 29
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "阿里千问推出Qwen Coding Plan，支持更多模型与AI工具",
+      "company": "阿里千问",
+      "source": "36氪",
+      "publishedAt": "2026-02-21 19:39:49  +0800",
+      "summary": "2月21日，阿里千问宣布推出Qwen Coding Plan。该计划支持更多模型，并上新了Qwen3.5-Plus和Qwen3-Coder-Next两款模型。同时，该计划还适配了包括QwenCode、ClaudeCode和Cline在内的多种AI工具。",
+      "score": 26
     },
     {
       "section": "产品发布与更新",
       "title": "谷歌AI Plus、Pro和Ultra套餐包含哪些Gemini功能 [2026年2月]",
       "company": "Google",
       "source": "9to5Google",
-      "publishedAt": "5 hours ago",
-      "summary": "在2025年的I/O大会上，Google One AI Premium（以及Gemini Advanced）更名为Google AI Pro。同时，谷歌还推出了一个更昂贵的AI Ultra套餐。",
-      "score": 26
+      "publishedAt": "6 hours ago",
+      "summary": "在2025年的I/O大会上，谷歌将Google One AI Premium（以及Gemini Advanced）更名为Google AI Pro。同时，谷歌还推出了一个更昂贵的AI Ultra套餐层级。",
+      "score": 23
     },
     {
       "section": "政策与监管",
-      "title": "OpenAI曾考虑就疑似加拿大枪手聊天记录报警",
+      "title": "OpenAI曾考虑就加拿大枪击案嫌疑人聊天记录报警",
       "company": "OpenAI",
       "source": "TechCrunch AI",
       "publishedAt": "Sat, 21 Feb 2026 15:25:44 +0000",
-      "summary": "Jesse Van Rootselaar对枪支暴力的描述被监测ChatGPT滥用的工具标记。OpenAI内部曾就是否就该用户的聊天记录报警进行过辩论。",
+      "summary": "OpenAI内部曾讨论是否就一名加拿大枪击案嫌疑人的聊天记录报警。该嫌疑人在ChatGPT中描述的枪支暴力内容被平台的滥用监控工具标记。",
       "score": 21
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "OpenAI智能音箱可通过面部识别让用户购买商品",
+      "company": "OpenAI",
+      "source": "Tech Times",
+      "publishedAt": "23 hours ago",
+      "summary": "OpenAI正与Jony Ive合作开发一款配备摄像头、无屏幕的人工智能音箱，目标是于2027年推出，作为苹果的主动式智能家居竞争对手。",
+      "score": 20
+    },
+    {
+      "section": "投融资与并购",
+      "title": "迪士尼与OpenAI达成10亿美元合作，用户可用AI生成迪士尼角色短片",
+      "company": "Disney, OpenAI",
+      "source": "AOL.com",
+      "publishedAt": "14 hours ago",
+      "summary": "迪士尼与OpenAI达成一项为期三年、价值10亿美元的合作协议。根据协议，消费者将能够使用OpenAI的Sora视频生成器，来制作包含米老鼠、R2-D2等迪士尼旗下角色的短视频内容。",
+      "score": 19
     },
     {
       "section": "技术与研究",
       "title": "Sam Altman提醒：人类训练同样消耗大量能源",
-      "company": "",
+      "company": "Sam Altman",
       "source": "TechCrunch AI",
       "publishedAt": "Sat, 21 Feb 2026 21:38:01 +0000",
       "summary": "Sam Altman指出，训练人类也需要消耗大量能源。这一观点旨在将人工智能的能源消耗置于更广泛的背景中进行讨论。",
@@ -94,39 +112,21 @@
     },
     {
       "section": "产品发布与更新",
-      "title": "GPT-4o和GPT-5的终结？OpenAI今日起将淘汰旧版GPT模型",
+      "title": "GPT-4o和GPT-5的终结？OpenAI今日将淘汰旧版GPT模型",
       "company": "OpenAI",
       "source": "Mint",
       "publishedAt": "4 hours ago",
-      "summary": "OpenAI今日起将淘汰GPT-4o及多个旧版模型，将重心转向具有改进个性、创造力和其他特性的新版GPT-5系统。",
+      "summary": "OpenAI今日将从ChatGPT中淘汰GPT-4o及多个旧模型，将重心转向具有改进个性、创造力的新版GPT-5系统。此举旨在推动用户采用更新的技术。",
       "score": 18
     },
     {
-      "section": "产品发布与更新",
-      "title": "微软新任游戏CEO承诺不会用‘无尽的AI垃圾’充斥生态系统",
-      "company": "Microsoft",
+      "section": "政策与监管",
+      "title": "Anthropic资助团体支持遭对手AI超级PAC攻击的候选人",
+      "company": "Anthropic",
       "source": "TechCrunch AI",
-      "publishedAt": "Sat, 21 Feb 2026 17:41:27 +0000",
-      "summary": "微软新任游戏首席执行官承诺，不会让“无尽的AI垃圾”充斥游戏生态系统。这引发了外界对微软游戏部门是否在AI领域加倍投入的疑问。",
-      "score": 16
-    },
-    {
-      "section": "技术与研究",
-      "title": "谷歌副总裁警告两类AI初创公司可能难以生存",
-      "company": "Google",
-      "source": "TechCrunch AI",
-      "publishedAt": "Sat, 21 Feb 2026 16:00:00 +0000",
-      "summary": "随着生成式AI的发展，一位谷歌副总裁发出警告，指出LLM包装器和AI聚合器面临越来越大的压力。利润空间缩小和差异化有限正在威胁这些公司的长期生存能力。",
-      "score": 16
-    },
-    {
-      "section": "技术与研究",
-      "title": "OpenAI与迪士尼达成协议，允许在Sora平台使用其角色",
-      "company": "OpenAI",
-      "source": "themercury.com",
-      "publishedAt": "2 hours ago",
-      "summary": "OpenAI与迪士尼于去年12月达成协议，允许在AI视频生成平台Sora上使用迪士尼的角色形象。这一合作将娱乐内容与人工智能视频技术相结合。",
-      "score": 13
+      "publishedAt": "Fri, 20 Feb 2026 20:52:48 +0000",
+      "summary": "两个支持AI的政治行动委员会围绕纽约国会候选人Alex Bores展开竞争。Bores提出的RAISE法案要求AI开发者披露安全协议并报告严重的系统滥用情况。",
+      "score": 17
     }
   ]
 }

@@ -1,132 +1,132 @@
 {
-  "date": "2026/2/22",
+  "date": "2026/2/23",
   "count": 14,
   "articles": [
     {
       "section": "技术与研究",
-      "title": "16个Claude智能体无人工干预协作构建C语言编译器",
+      "title": "中美AI同步加速：47天30次更新，中国AI主场何在？",
+      "company": "",
+      "source": "量子位",
+      "publishedAt": "Sun, 22 Feb 2026 10:33:32 +0000",
+      "summary": "2026年开年，中美AI领域同步进入高速竞争阶段。据不完全统计，从1月1日至除夕，中国国内公开宣发、具有行业影响力的AI模型技术迭代已超过30起，平均每1.5天就有一次新模型发布。同期，硅谷也保持高频更新，如Meta发布Llama4-Swarm，Google推出Gemini 3.1 Pro等，双方在多个全球权威榜单上各有胜负。这场竞争已从单向追随进入全赛道、全维度的双极竞速时代，中国模型在开发者社区与应用市场也开始获得越来越多海外用户的认可。",
+      "score": 44
+    },
+    {
+      "section": "技术与研究",
+      "title": "Claude Code创始人访谈：软件工程师头衔或将消失，多Agent将自主协作",
       "company": "Anthropic",
       "source": "InfoQ",
-      "publishedAt": "Sat, 21 Feb 2026 08:00:00 GMT",
-      "summary": "Anthropic研究员Nicholas Carlini使用十六个Claude Opus 4.6 AI智能体从零开始构建了一个基于Rust的C编译器，整个过程没有人工干预。这些智能体在共享仓库中并行协作，通过基于锁的方案同步协调代码修改，最终实现了能够编译Linux 6.9内核的编译器，并支持x86、ARM和RISC-V架构。该项目共进行了约2000次会话，产生了约20000美元的API费用，其深层意义在于探索为长期自主运行的智能体团队设计控制框架。",
-      "score": 38
-    },
-    {
-      "section": "投融资与并购",
-      "title": "OpenAI估值或超8500亿美元，刷新AI公司纪录",
-      "company": "OpenAI",
-      "source": "量子位",
-      "publishedAt": "Fri, 20 Feb 2026 09:49:58 +0000",
-      "summary": "据报道，OpenAI正接近完成新一轮融资的第一阶段，预计募集超过1000亿美元，超过其2025年初创下的400亿美元融资纪录。随着融资推进，公司整体估值可能超过8500亿美元，成为AI圈最高估值企业，这一数字是其主要竞争对手Anthropic当前估值的2.2倍以上。本轮融资的主要战略投资者包括亚马逊、软银、英伟达和微软，其中亚马逊预计投资最多500亿美元，软银最多300亿美元，英伟达已讨论投入200亿美元。不过，该交易尚未最终敲定，具体条款仍可能发生变化。",
-      "score": 37
-    },
-    {
-      "section": "技术与研究",
-      "title": "北航团队开源Code2Bench：双重扩展动态评测框架，应对代码大模型基准挑战",
-      "company": "北航",
-      "source": "机器之心",
-      "publishedAt": "Sat, 21 Feb 2026 21:56:23 +0800",
-      "summary": "针对当前代码大模型在HumanEval、MBPP等经典基准上成绩趋于饱和，面临数据污染和测试严谨性不足两大核心挑战的问题，北京航空航天大学研究团队提出了一种名为“双重扩展”的新基准构建哲学，并开发了端到端的自动化框架Code2Bench。该框架旨在通过动态扩展代码来源和测试深度，构建一个更动态、严苛且具诊断性的评测新范式，以评估模型在真实、复杂场景下的泛化推理能力，而非检验其对训练数据的记忆力。该研究成果已被ICLR 2026接收。",
-      "score": 36
-    },
-    {
-      "section": "技术与研究",
-      "title": "Anthropic CEO改口称软件比白领更易被AI影响，暗讽马斯克观点危言耸听",
-      "company": "Anthropic",
-      "source": "InfoQ",
-      "publishedAt": "Fri, 20 Feb 2026 12:01:25 GMT",
-      "summary": "Anthropic公司宣布在G轮融资中筹集到300亿美元，估值达3800亿美元，资金将用于前沿研究、产品发展和基础设施扩建，目标是成为企业人工智能和编码市场的领导者。马斯克对此批评其AI具有厌世、反人类倾向，而Anthropic CEO Dario Amodei则在最新采访中暗讽马斯克关于AI未来发展的观点是危言耸听，强调AI发展的核心是实现人类巅峰水平智能的规模化，并认为人机关系应是共生而非对立。Amodei还改口表示，相比白领工作，软件更容易被AI技术所影响。",
-      "score": 34
-    },
-    {
-      "section": "技术与研究",
-      "title": "BridgeV2W通过“动作剪影”打通视频生成与机器人世界模型",
-      "company": "中科第五纪",
-      "source": "机器之心",
-      "publishedAt": "Sat, 21 Feb 2026 21:37:11 +0800",
-      "summary": "中科第五纪与中科院自动化所团队联合推出了BridgeV2W，旨在解决机器人“预演未来”能力的关键障碍。该研究面临的核心挑战是机器人动作（坐标数值）与视频生成模型（像素画面）之间的“语言不通”，以及模型难以适应不同视角和机器人结构的问题。BridgeV2W的创新在于引入了“具身掩码”，即一种由机器人动作实时渲染出的二值“动作剪影”，它能将动作精准映射到像素空间，从而无缝连接预训练视频生成模型与世界模型，帮助机器人实现可靠的未来场景预测。",
-      "score": 30
-    },
-    {
-      "section": "技术与研究",
-      "title": "24人初创公司Taalas推出HC1芯片，推理速度达每秒17000个token",
-      "company": "Taalas",
-      "source": "量子位",
-      "publishedAt": "Sat, 21 Feb 2026 06:31:56 +0000",
-      "summary": "一家名为Taalas的初创公司推出了首款芯片HC1，该芯片在搭载Llama 3.1 8B模型时，峰值推理速度高达每秒17000个token，远超当前其他主流芯片。其技术方案是将模型直接刻在硅片上，采用结构化ASIC理念，通过调整掩模层快速生产专用AI推理芯片，从而在降低成本与功耗的同时大幅提升速度。该芯片采用台积电N6工艺，典型功耗为250W，并可通过多芯片方案支持更大模型。",
+      "publishedAt": "Mon, 23 Feb 2026 08:00:00 GMT",
+      "summary": "Claude Code创始人Boris Cherny在YC圆桌访谈中表示，软件工程师头衔可能逐渐消失或变为遗留符号，因为工作内容不再局限于写代码。他指出在Anthropic内部，Claude Code已将人均工程产出提升150%，许多人已70%-100%使用Claude编写代码。Boris认为编程正在被“解决”，模型能力将指数增长，代码保质期仅几个月，Claude Code六个月前的代码几乎全部重写。他还透露未来可能不再使用plan mode，多Agent将开始自主组队工作。",
       "score": 29
     },
     {
-      "section": "产品发布与更新",
-      "title": "阿里千问推出Qwen Coding Plan，支持更多模型与AI工具",
-      "company": "阿里千问",
-      "source": "36氪",
-      "publishedAt": "2026-02-21 19:39:49  +0800",
-      "summary": "2月21日，阿里千问宣布推出Qwen Coding Plan。该计划支持更多模型，并上新了Qwen3.5-Plus和Qwen3-Coder-Next两款模型。同时，该计划还适配了包括QwenCode、ClaudeCode和Cline在内的多种AI工具。",
-      "score": 26
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "谷歌AI Plus、Pro和Ultra套餐包含哪些Gemini功能 [2026年2月]",
-      "company": "Google",
-      "source": "9to5Google",
-      "publishedAt": "6 hours ago",
-      "summary": "在2025年的I/O大会上，谷歌将Google One AI Premium（以及Gemini Advanced）更名为Google AI Pro。同时，谷歌还推出了一个更昂贵的AI Ultra套餐层级。",
-      "score": 23
-    },
-    {
-      "section": "政策与监管",
-      "title": "OpenAI曾考虑就加拿大枪击案嫌疑人聊天记录报警",
-      "company": "OpenAI",
-      "source": "TechCrunch AI",
-      "publishedAt": "Sat, 21 Feb 2026 15:25:44 +0000",
-      "summary": "OpenAI内部曾讨论是否就一名加拿大枪击案嫌疑人的聊天记录报警。该嫌疑人在ChatGPT中描述的枪支暴力内容被平台的滥用监控工具标记。",
-      "score": 21
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "OpenAI智能音箱可通过面部识别让用户购买商品",
-      "company": "OpenAI",
-      "source": "Tech Times",
-      "publishedAt": "23 hours ago",
-      "summary": "OpenAI正与Jony Ive合作开发一款配备摄像头、无屏幕的人工智能音箱，目标是于2027年推出，作为苹果的主动式智能家居竞争对手。",
-      "score": 20
-    },
-    {
-      "section": "投融资与并购",
-      "title": "迪士尼与OpenAI达成10亿美元合作，用户可用AI生成迪士尼角色短片",
-      "company": "Disney, OpenAI",
-      "source": "AOL.com",
-      "publishedAt": "14 hours ago",
-      "summary": "迪士尼与OpenAI达成一项为期三年、价值10亿美元的合作协议。根据协议，消费者将能够使用OpenAI的Sora视频生成器，来制作包含米老鼠、R2-D2等迪士尼旗下角色的短视频内容。",
-      "score": 19
+      "section": "技术与研究",
+      "title": "LightRetriever：非对称LLM嵌入模型将查询侧算力负担降低千倍",
+      "company": "澜舟科技",
+      "source": "机器之心",
+      "publishedAt": "Sun, 22 Feb 2026 21:04:44 +0800",
+      "summary": "针对大模型文本检索中对称式双塔结构导致查询侧推理负担重、部署成本高的问题，LightRetriever提出了一种极致非对称的LLM嵌入模型架构。该架构在文档侧使用完整大语言模型进行建模，而查询侧最多仅需一层嵌入查找，从而将查询侧推理速度提升千倍以上，端到端QPS提升10倍，同时在BEIR、CMTEB Retrieval等测试集上维持约95%的中英文检索性能。这项由中科院信工所与澜舟科技共同完成的研究已被人工智能顶级会议ICLR 2026接收。",
+      "score": 28
     },
     {
       "section": "技术与研究",
-      "title": "Sam Altman提醒：人类训练同样消耗大量能源",
-      "company": "Sam Altman",
-      "source": "TechCrunch AI",
-      "publishedAt": "Sat, 21 Feb 2026 21:38:01 +0000",
-      "summary": "Sam Altman指出，训练人类也需要消耗大量能源。这一观点旨在将人工智能的能源消耗置于更广泛的背景中进行讨论。",
+      "title": "微软CTO邮件揭露：Ilya因嫉妒下属突破引发OpenAI宫斗，奥特曼遭罢免",
+      "company": "OpenAI",
+      "source": "36氪",
+      "publishedAt": "2026-02-22 12:00:29  +0800",
+      "summary": "根据2026年马斯克诉奥特曼案披露的法律文件，微软首席技术官Kevin Scott在2023年11月向CEO纳德拉汇报时指出，OpenAI首席科学家Ilya Sutskever因对下属Jakub Pachocki的“智力嫉妒”而推动了罢免CEO奥特曼的行动。Jakub Pachocki在晋升后取得了震撼性的研究突破，攻克了困扰Ilya多年的核心难题，同时公司内部还存在研究部门与应用部门之间关于GPU计算资源的争夺。2023年11月17日，OpenAI董事会宣布解除奥特曼的CEO职务并将其踢出董事会，此举导致包括Jakub Pachocki在内的多名技术骨干离职抗议，但奥特曼最终官复原职。",
+      "score": 24
+    },
+    {
+      "section": "技术与研究",
+      "title": "春节AI红包大战：巨头狂掷80亿，争夺AI时代入口",
+      "company": "",
+      "source": "36氪",
+      "publishedAt": "2026-02-22 14:00:59  +0800",
+      "summary": "2026年春节期间，中国互联网巨头投入超过80亿元，通过千问、元宝、文心助手、豆包、蚂蚁阿福等AI应用展开大规模营销活动。与以往不同，此次投入的核心逻辑不再是简单的用户拉新或绑卡，而是为了将AI深度融入真实生活场景，抢占AI时代的第一入口，并试图定义新的生活方式。例如，阿里千问通过30亿元“请客计划”串联起淘宝、飞猪、高德等业务，培养用户“有事找AI”的习惯；腾讯元宝则尝试让AI以“数字成员”身份融入微信社交场景；字节豆包借助央视春晚合作实现了大规模国民触达。",
+      "score": 22
+    },
+    {
+      "section": "技术与研究",
+      "title": "TMLR 2026收录首篇多模态长上下文Token压缩综述，浙大、西湖大学等解析MLLM效率瓶颈",
+      "company": "",
+      "source": "机器之心",
+      "publishedAt": "Sun, 22 Feb 2026 20:56:55 +0800",
+      "summary": "随着多模态大语言模型处理长上下文的需求激增，图像、视频和音频等模态产生的海量Token带来了巨大的计算负担和成本。为此，来自浙江大学、西湖大学等机构的研究者发表了首篇关于多模态长上下文Token压缩的系统性综述，该论文已被TMLR 2026接收。该综述提出了一个统一的分类体系，将现有工作按数据模态分为图像、视频和音频三大类，并进一步根据算法机制细分为基于变换、相似度、注意力和查询的四类方法。文章深入剖析了各模态的压缩机制，旨在为构建更高效的多模态大语言模型指明研究方向。",
+      "score": 21
+    },
+    {
+      "section": "投融资与并购",
+      "title": "谷歌加码AI竞争，计划发债筹资并获资本重仓",
+      "company": "谷歌",
+      "source": "36氪",
+      "publishedAt": "2026-02-22 10:30:27  +0800",
+      "summary": "文章指出，当前AI行业的竞争已进入白热化阶段，其核心竞争力体现在算力、算法与模型上，这使得创业型小公司难以与头部科技巨头匹敌。谷歌母公司Alphabet计划通过发行美元债券筹集200亿美元，并考虑在瑞士和英国首次发债，其中包括可能发行罕见的100年期债券。资本市场对此反应积极，伯克希尔公司在2025年三季度重仓谷歌，国内私募东方港湾也在四季度大幅加仓谷歌，使其成为第一大重仓股。头部科技公司如谷歌、Meta、微软和亚马逊今年在AI基础设施上的合计资本支出预计将高达6500亿美元。",
       "score": 18
     },
     {
       "section": "产品发布与更新",
-      "title": "GPT-4o和GPT-5的终结？OpenAI今日将淘汰旧版GPT模型",
-      "company": "OpenAI",
-      "source": "Mint",
-      "publishedAt": "4 hours ago",
-      "summary": "OpenAI今日将从ChatGPT中淘汰GPT-4o及多个旧模型，将重心转向具有改进个性、创造力的新版GPT-5系统。此举旨在推动用户采用更新的技术。",
-      "score": 18
+      "title": "谷歌通过意外发布Gemini 3.1 Pro使其AI推理能力翻倍",
+      "company": "Google",
+      "source": "MSN",
+      "publishedAt": "14 hours ago",
+      "summary": "谷歌正在预览Gemini 3.1 Pro模型，该模型专注于解决复杂的多步骤问题，这些问题通常难倒了大多数聊天机器人。该模型在ARC-AGI-2基准测试中获得了77.1%的分数。",
+      "score": 31
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "谷歌发布Gemini 3.1 Pro模型",
+      "company": "Google",
+      "source": "YugaTech",
+      "publishedAt": "19 hours ago",
+      "summary": "谷歌已正式推出Gemini 3.1 Pro模型。这是一个升级后的核心模型，旨在为更高级的推理任务提供支持。",
+      "score": 28
     },
     {
       "section": "政策与监管",
-      "title": "Anthropic资助团体支持遭对手AI超级PAC攻击的候选人",
-      "company": "Anthropic",
+      "title": "迪士尼如何选择AI版权诉讼对象：诉讼还是合作",
+      "company": "迪士尼",
+      "source": "AOL.com",
+      "publishedAt": "6 hours ago",
+      "summary": "迪士尼对字节跳动发送了停止使用其角色的警告函，因为后者在Seedance平台上使用了迪士尼的角色。然而当OpenAI的Sora做了类似事情时，迪士尼却选择了与其达成合作协议。这显示了迪士尼在处理AI版权问题时的不同策略。",
+      "score": 16
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "谷歌Gemini新增AI工具，可生成短音乐片段",
+      "company": "Google",
+      "source": "IT Brief Australia",
+      "publishedAt": "5 hours ago",
+      "summary": "谷歌的Gemini应用程序现在可以利用其新的Lyria 3模型，从文本或图像生成30秒的AI歌曲。这些生成的音乐带有内置的SynthID水印。",
+      "score": 16
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "苹果与谷歌Gemini为核心应用添加音乐生成AI功能",
+      "company": "Google, Apple",
+      "source": "The Seattle Times",
+      "publishedAt": "12 hours ago",
+      "summary": "谷歌和苹果正在为其核心消费者应用程序添加专注于音乐的生成式人工智能功能。谷歌的Gemini AI助手现已具备相关能力。",
+      "score": 13
+    },
+    {
+      "section": "技术与研究",
+      "title": "谷歌Gemini提示词指南：改善低质量人像照片",
+      "company": "Google",
+      "source": "The Times of India",
+      "publishedAt": "17 hours ago",
+      "summary": "模糊的自拍照或低质量的人像照片可能非常令人烦恼。用户希望获得清晰、自然的照片，但又不想花费数小时处理。文章提供了一份分步指南、提示词和快速技巧，以帮助用户利用谷歌Gemini改善此类照片。",
+      "score": 13
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "微软游戏新CEO承诺不滥用AI技术",
+      "company": "Microsoft",
       "source": "TechCrunch AI",
-      "publishedAt": "Fri, 20 Feb 2026 20:52:48 +0000",
-      "summary": "两个支持AI的政治行动委员会围绕纽约国会候选人Alex Bores展开竞争。Bores提出的RAISE法案要求AI开发者披露安全协议并报告严重的系统滥用情况。",
-      "score": 17
+      "publishedAt": "Sat, 21 Feb 2026 17:41:27 +0000",
+      "summary": "微软新任游戏部门负责人表示，不会让生态系统充斥低质量的AI生成内容。他承诺将负责任地推进AI在游戏领域的应用，避免损害用户体验。",
+      "score": 12
     }
   ]
 }

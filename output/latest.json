@@ -4,39 +4,39 @@
   "articles": [
     {
       "section": "技术与研究",
-      "title": "5000亿美元「星际之门」项目停滞与算力之争",
+      "title": "5000亿美元「星际之门」项目陷入停滞与算力争夺困境",
       "company": "",
       "source": "机器之心",
       "publishedAt": "Mon, 23 Feb 2026 20:28:28 +0800",
       "summary": "去年 1 月底，在一次白宫新闻发布会上，特朗普和 OpenAI CEO Sam Altman、软银 CEO 孙正义等人联合宣布了一个名为「星际之门」（Stargate Project）的人工智能项目。 该项目计划在未来四年内投资高达 5000 亿美元，为 OpenAI 在美国建设新的人工智能基础设施。当时承诺将立即投入 1000 亿美元，并打造 10 吉瓦（GW）的超级计算基础设施。 目标很远大：建设起来的基础设施将确保美国在人工智能领域的领导地位，创造数十万个美国就业岗位，并为全球带来巨大的经济效益。 然而，一年多时间过去了，项目进展究竟怎样了？ 近日，外媒 The Information 的一篇报道，揭露了这场野心勃勃的 AI 军备竞赛正在经历的阵痛。 据三位知情人士透露，在宣布成立后的数周内，Stargate 项目基本处于停滞状态。原因在于：OpenAI、Oracle 和软银三方在领导权归属、任务分工以及合伙架构上产生了严重分歧，导致协作机制形同虚设。 其中，急于获取算力的 Sam Altman 一度决定摒弃合作伙伴，尝试「单飞」。当时，OpenAI 计划直接租赁甚至自行建设大型数据中心园区，从而减少对云服务商的依赖，掌握绝对的算力控制权。 然而，由于 OpenAI 每年烧钱数十亿美元，且商业模式尚未得到充分验证，债权人对直接支持这样一家高风险公司承建百亿级项目持怀疑态度。 根据 The Information 披露的后续细节，在面临严峻的财务现实后，OpenAI 不得不重新回到谈判桌前，向软银和 Oracle 寻求合作。 但是，合作的形式发生了微妙的变化：所谓的「三方合伙」名存实亡，取而代之的是 OpenAI 与软银、OpenAI 与 Oracle 分别达成的双边协议。 在上个月的达沃斯世界经济论坛上，OpenAI CFO Sarah Friar 明确释放了转型信号，「我们正利用云合作伙伴来保持资产负债表的『轻量化』，目前我们还没到完全自建的阶段，并且我们拥有优秀的合作伙伴。」 与此同时，OpenAI 内部的基础设施部门也经历了一场人事洗牌。 去年 11 月，OpenAI 挖来了原英特尔首席技术官兼 AI 业务负责人 Sachin Katti，由其负责打造支撑 AGI 的计算基础设施。据知情人士透露，Katti 目前正在对计算部门内的多个小组进行大刀阔斧的重组。 The Information 进一步引述了 OpenAI 内部员工的消息，尽管自建数据中心已不再是短期内的重点，但公司仍希望通过 Stargate 这一名义，在基础设施协议中植入特殊条款，以确保其对数据中心设计的深度参与和特权。 也许正如星际之门项目刚公布时，马斯克所评价的那样，「他们根本就没钱」。 目前，OpenAI、Oracle、软银均未回应 The Information 的置评请求。 从狂想走向现实，OpenAI 的算力「阿喀琉斯之踵」 我们很难明确判断 Stargate 项目的推进受阻，是否直接拖慢了 OpenAI 模型能力的迭代节奏。 但从 OpenAI 最近一段时间的表现来看，其所承受的压力显然不小。 一方面，算力获取的不确定性与成本飙升持续挤压公司的利润空间。为了维持模型迭代速度，OpenAI 不得不在多个云平台之间进行算力调度。据知情人士透露，原本预计到 2030 年的 4500 亿美元算力投入，如今已上调至 6600 多亿美元，在生成式 AI 仍处于重投入、轻变现阶段的当下，这种现金流压力并不轻松。 另一方面，来自谷歌和 Anthropic 的压力进一步加大。Google 凭借自研 TPU 芯片与深厚的云计算基础设施，将模型训练与推理成本压到更具优势的位置；Anthropic 则在代码大模型领域打出自己的特色。相比之下，OpenAI 在算力布局上更多依赖外部合作，其对资源的掌控程度尚未形成类似 Google 那样的垂直整合算力体系，这也使其在战略推进上必须更加审慎。 在 Stargate 推进节奏不及预期的背景下，OpenAI 面临的压力明显上升。 自从 Stargate 计划公布后，OpenAI 内部迅速进入筹备状态。但合作架构一直不清晰，Oracle 与软银在其中扮演何种角色，职责如何划分，始终没有形成统一方案。 在内部讨论中，有高管提出另一种思路：将 Stargate 打造成一个相对独立的基础设施平台，由该平台负责数据中心建设，再通过租赁形式向 OpenAI 提供算力资源。按照这一设想，部分 OpenAI 团队成员甚至可能转入该实体，以强化项目执行能力。同时，也有人提出将 Stargate 作为融资工具，用于为芯片采购和基础设施建设筹集长期资本，使其不仅是工程项目载体，也成为资金运作的平台。 最初，OpenAI 确实认真考虑过全面自建数据中心的路径，并在全美范围内考察选址、测算成本，希望在算力资源上实现更强的自主掌控。但在完成融资测算后，公司意识到，如果由自身承担建设与融资责任，资金成本将显著偏高。相比之下，由信用评级更高的合作方出面签约、再向 OpenAI 提供算力资源的模式，整体财务压力更可控。 随后，OpenAI 与 Oracle 达成一项覆盖 4.5 吉瓦电力容量的重大合作协议。不同于逐个园区签约，这一结构允许在多个项目之间分摊风险，并通过风险共担机制降低不确定性。为此，OpenAI 一度暂停了自建推进计划，将部分原本考察的园区交由 Oracle 主导开发。 &nbsp; &nbsp; &nbsp; 图源：OpenAI 在德州一处 1 吉瓦规模的园区项目上，OpenAI 则与软银展开合作。双方在控制权与所有权问题上经历多轮谈判，最终达成折中方案：由软银旗下公司负责开发和持有资产，OpenAI 签署长期租约并掌握数据中心设计主导权。这意味着，公司短期内不再追求完全自建拥有，而是转向一种掌控架构但不承担全部资产风险的模式。 整体来看，OpenAI 的算力战略发生了明显转向，从最初的自建与拥有，调整为控制与协作。 Stargate 将如何发展，我们拭目以待。",
-      "score": 54
-    },
-    {
-      "section": "技术与研究",
-      "title": "智谱发布GLM-5技术报告，异步强化学习框架Slime成核心创新",
-      "company": "智谱",
-      "source": "机器之心",
-      "publishedAt": "Mon, 23 Feb 2026 20:18:55 +0800",
-      "summary": "智谱公司发布了新一代旗舰基座大模型GLM-5的完整技术报告，揭示了其背后的关键技术。GLM-5面向Agentic Engineering打造，在代码能力、长上下文处理和Agent工具调用方面表现突出，并在多个主流基准测试中取得了开源SOTA级表现。其核心创新点包括采用DSA注意力机制以平衡长文本推理与成本、通过异步强化学习框架Slime提升后训练效率，以及运用Agent强化学习算法从复杂交互中高效学习。技术报告发布后，智谱公司在港股市场也表现强劲，市值突破3200亿港元。",
       "score": 52
     },
     {
       "section": "技术与研究",
-      "title": "DeepMind运作模式曝光：员工20%时间用于创新，跨学科研究推动多领域同步发展",
+      "title": "DeepMind运作模式曝光：员工20%时间用于创新，跨学科研究推动多领域突破",
       "company": "DeepMind",
       "source": "InfoQ",
       "publishedAt": "Mon, 23 Feb 2026 15:36:16 GMT",
-      "summary": "Google DeepMind首席运营官Lila Ibrahim与谷歌研究高级副总裁James Manyika在播客中首次系统披露了公司的运作模式。其核心方法论包括只给方向不给答案的研究议程制定，以及生物伦理学家、神经科学家、计算机科学家等跨学科团队的广泛协作。公司通过合并Google Brain和DeepMind，围绕Gemini建立了中央AI引擎，使其每5到6个月完成一次重大迭代，并作为底层基础设施应用于搜索、Workspace等核心产品。此外，谷歌恢复了实验室文化，同时推进约30个项目，并沿用员工20%时间用于自主探索的创新机制，以孵化新产品。",
-      "score": 41
+      "summary": "Google DeepMind首席运营官Lila Ibrahim与谷歌研究高级副总裁James Manyika在播客中首次系统披露了公司的运作模式。DeepMind采用“只给方向，不给答案”的研究方法，并鼓励跨学科合作，生物伦理学家、神经科学家与计算机科学家常共同工作。公司保留了员工20%时间用于自主探索的创新机制，目前实验室同时推进约30个项目，涵盖量子计算、材料科学、气象预测等多个领域。Google Brain与DeepMind合并后，围绕Gemini建立了中央AI引擎，每5到6个月完成一次重大迭代，并快速集成到搜索、Workspace等核心产品中。",
+      "score": 50
     },
     {
       "section": "技术与研究",
-      "title": "MiniMax春节热度飙升，M2.5模型周调用量破3T登顶榜首",
+      "title": "智谱发布GLM-5技术报告，揭秘异步强化学习框架Slime等核心技术",
+      "company": "智谱",
+      "source": "机器之心",
+      "publishedAt": "Mon, 23 Feb 2026 20:18:55 +0800",
+      "summary": "智谱公司发布了新一代旗舰基座大模型GLM-5的完整技术报告，详细阐述了其核心技术亮点与创新。GLM-5面向Agentic Engineering打造，在代码能力、长上下文处理和Agent工具调用方面表现突出，并在SWE-bench等多个主流基准测试中取得了开源SOTA级表现。报告揭示了其性能背后的三大核心技术：采用DSA注意力机制以平衡长文本推理与成本、通过异步强化学习框架Slime提升后训练效率、以及运用Agent强化学习算法从复杂交互中高效学习。",
+      "score": 43
+    },
+    {
+      "section": "技术与研究",
+      "title": "MiniMax春节表现亮眼：M2.5模型周调用量破3T，登顶热度榜",
       "company": "MiniMax",
       "source": "机器之心",
       "publishedAt": "Mon, 23 Feb 2026 20:26:16 +0800",
-      "summary": "春节期间，MiniMax公司发布的新一代模型M2.5在市场上引发强烈反响。该模型在发布后12小时内登顶OpenRouter热度榜，一周内周调用量暴涨至3.07T tokens，超过Kimi K2.5、GLM-5与DeepSeek V3.2三家的总和，并带动了长文本区间的增量调用需求。M2.5模型已全面开源，支持本地部署，并获得了包括硅谷AI编程工具Kilo Code在内的国内外众多知名开源Agent应用和工具平台的第一时间接入。在SWE-Bench Verified等评测中，M2.5表现优异，达到了与Claude Opus系列相当的水平，并在执行效率上也有实质性提升。",
-      "score": 39
+      "summary": "春节期间，MiniMax公司发布的新一代模型M2.5在市场上引发强烈反响。该模型在发布后12小时内登顶OpenRouter热度榜，一周内周调用量达到3.07T tokens，超过Kimi K2.5、GLM-5与DeepSeek V3.2三家的总和，并带动了长文本区间的增量调用需求。M2.5模型已全面开源，支持本地部署，并获得了包括Kilo Code、OpenClaw在内的国内外多家知名开源Agent应用和工具平台的接入。在SWE-Bench Verified评测中，M2.5达到了与Claude Opus系列相当的水平，并在多语言任务中排名第一，同时在实际部署中展现出较高的执行效率。",
+      "score": 37
     },
     {
       "section": "产品发布与更新",
@@ -44,89 +44,89 @@
       "company": "阿里云",
       "source": "雷锋网",
       "publishedAt": "Sun, 22 Feb 2026 10:11:00 +0800",
-      "summary": "阿里云Coding Plan订阅服务于2月22日新增支持Qwen3.5-Plus、Qwen3-Coder-Next、GLM-4.7、Kimi-K2.5共四款编程模型，用户无需更改订阅即可自由切换。同时，该服务推出了针对新用户的优惠活动，首购可享2折优惠，其中Lite基础套餐首月提供18000次请求额度仅需7.9元，Pro高级套餐首月提供90000次请求额度仅需39.9元，旨在降低高频编码场景的成本。该订阅服务可在Qwen Code、Claude Code、Cline、OpenClaw等主流AI工具中使用。阿里云表示，此次上新进一步降低了模型使用成本，其百炼平台已上线超100款国内外主流模型，并为开发者提供了400多个领域的Agent模板与服务。",
+      "summary": "2月22日，阿里云Coding Plan订阅服务新增支持Qwen3.5-Plus、Qwen3-Coder-Next、GLM-4.7、Kimi-K2.5共四款编程模型，用户无需更改订阅即可自由切换。同时，该服务推出新用户首购优惠活动，首月18000次请求额度仅需7.9元，90000次请求仅需39.9元，包含Lite基础版和Pro高级版两个套餐。阿里云表示，此举旨在为高频次编码需求场景提供更具性价比的模型服务，降低使用成本，目前用户可在Qwen Code、Claude Code等主流AI工具中使用该订阅服务。阿里云百炼平台已上线超过100款国内外主流模型，并为开发者提供了400多个领域的Agent模板与服务。",
       "score": 37
     },
     {
       "section": "技术与研究",
-      "title": "MiniMax登顶Token调用榜首，模型厂商面临AgentOS现实挑战",
-      "company": "MiniMax",
-      "source": "InfoQ",
-      "publishedAt": "Mon, 23 Feb 2026 18:44:52 GMT",
-      "summary": "2026年1月下旬，OpenRouter平台的Token周调用量首次突破1.5T，出现明显跃升。2月13日发布的MiniMax M2.5模型在上线不到一周内迅速登顶OpenRouter Token调用榜首，在2月9日至15日期间贡献了1.44T Tokens，调用规模超过Kimi K2.5、GLM-5和DeepSeek V3.2的总和。OpenRouter数据显示，在100K至1M Token的长文本生成区间，MiniMax M2.5调用量处于领先位置，该区间正是Agent工作流的典型消耗范围。以OpenClaw为代表的AgentOS不仅放大了Token消耗，还迫使模型厂商将Agent与LLM的关系视为基础设施问题，使得此前因成本或效率问题难以落地的Agent场景开始具备现实可行性。",
+      "title": "华为发布CLI-Gym：首个面向Terminal-Bench环境交互任务的数据规模化方案，解决率提升超20%",
+      "company": "华为",
+      "source": "机器之心",
+      "publishedAt": "Mon, 23 Feb 2026 20:22:25 +0800",
+      "summary": "华为发布了首个面向Terminal-Bench环境交互类任务的公开数据规模化生产管线CLI-Gym，旨在解决此类任务数据构建困难、依赖人工的瓶颈。该方案通过将数据生产管线建模为Agentic Coding任务，利用Dockerfile结构化定义环境，驱动Code Agent执行环境反演，自动生成问题环境及单元测试。在29个基础镜像上构建了1655个CLI任务环境镜像，并产出291条高质量轨迹数据，使得其微调模型LiberCoder在Terminal-Bench上的解决率获得了超过20%的显著提升。论文、代码和镜像数据均已公开。",
+      "score": 35
+    },
+    {
+      "section": "技术与研究",
+      "title": "智谱GLM-5技术论文全公开，完全适配华为等国产芯片",
+      "company": "智谱",
+      "source": "量子位",
+      "publishedAt": "Mon, 23 Feb 2026 05:19:44 +0000",
+      "summary": "智谱公司公开了GLM-5大模型的技术论文，详细介绍了其核心技术。论文指出，GLM-5引入了类似DeepSeek的稀疏注意力机制以降低长上下文计算成本，并采用了异步强化学习基础设施提升训练效率。该模型已完成对华为昇腾、摩尔线程、海光、寒武纪、昆仑芯、沐曦及燧原等国产芯片的全栈适配。论文发布后，有观点认为其在成本效率方面表现突出，并引发了海外社区的关注与讨论。",
       "score": 32
     },
     {
       "section": "技术与研究",
-      "title": "华为CLI-Gym发布：首个面向Terminal-Bench环境交互任务的公开数据规模化方案，解决率提升20%",
-      "company": "华为",
-      "source": "机器之心",
-      "publishedAt": "Mon, 23 Feb 2026 20:22:25 +0800",
-      "summary": "华为发布了首个面向Terminal-Bench环境交互类任务的公开数据规模化生产管线CLI-Gym，旨在解决此类任务因缺乏高效数据生产方案而发展受限的问题。该方案通过将数据生产管线建模为Agentic Coding任务，利用Dockerfile对环境进行结构化定义，并驱动Code Agent执行环境反演操作，从而自动化生成问题环境及验证工具。基于29个基础镜像，CLI-Gym构建了1655个高可靠CLI任务环境镜像和291条高质量轨迹数据，使微调模型LiberCoder在Terminal-Bench上的解决率获得了超过20%的显著提升。",
-      "score": 31
-    },
-    {
-      "section": "技术与研究",
-      "title": "Guide Labs推出新型可解释性大语言模型",
+      "title": "Guide Labs推出新型可解释大语言模型",
       "company": "Guide Labs",
       "source": "TechCrunch AI",
       "publishedAt": "Mon, 23 Feb 2026 17:53:28 +0000",
-      "summary": "Guide Labs公司开源了一款拥有80亿参数的大语言模型Steerling-8B。该模型采用了一种新的架构进行训练，旨在使其行为易于解释和理解。",
+      "summary": "Guide Labs公司开源了一款名为Steerling-8B的80亿参数大语言模型。该模型采用了一种旨在使其行为易于解释的新架构进行训练。",
       "score": 48
     },
     {
-      "section": "政策与监管",
-      "title": "Anthropic指控中国AI实验室窃取其Claude模型能力",
-      "company": "Anthropic",
-      "source": "TechCrunch AI",
-      "publishedAt": "Mon, 23 Feb 2026 19:57:27 +0000",
-      "summary": "Anthropic公司指控中国AI实验室DeepSeek、Moonshot和MiniMax使用了约24000个虚假账户来提取其Claude模型的人工智能能力。这一指控出现之际，美国官员正在讨论旨在减缓中国AI进展的芯片出口管制措施。",
-      "score": 29
-    },
-    {
       "section": "投融资与并购",
-      "title": "AI时代投资者忠诚度几近消亡：多家OpenAI风投同时投资Anthropic",
+      "title": "AI时代投资者忠诚度几近消亡：至少十余家OpenAI风投同时投资Anthropic",
       "company": "OpenAI, Anthropic",
       "source": "TechCrunch AI",
       "publishedAt": "Mon, 23 Feb 2026 21:46:41 +0000",
-      "summary": "报道指出，至少十几家曾投资OpenAI的风险投资机构现在也同时投资了其竞争对手Anthropic。其中一些双重投资行为尚可理解，但另一些则令人震惊，这标志着长期以来关于利益冲突的伦理规则被忽视。",
+      "summary": "报道指出，在AI投资领域，投资者同时支持多家竞争公司的现象变得普遍。至少有十几家曾投资OpenAI的风险投资机构现在也投资了其竞争对手Anthropic。虽然部分双重投资可以理解，但另一些则令人震惊，这标志着长期以来关于利益冲突的伦理规则被忽视。",
+      "score": 27
+    },
+    {
+      "section": "政策与监管",
+      "title": "Anthropic指控中国AI实验室窃取Claude能力，正值美国辩论AI芯片出口管制",
+      "company": "Anthropic",
+      "source": "TechCrunch AI",
+      "publishedAt": "Mon, 23 Feb 2026 19:57:27 +0000",
+      "summary": "Anthropic公司指控中国的深度求索、月之暗面和MiniMax三家AI实验室，通过创建24000个虚假账户来提取其Claude模型的能力。这一指控提出的时机，正值美国官员辩论旨在减缓中国AI进步的出口管制措施，特别是关于AI芯片的出口控制。",
       "score": 27
     },
     {
       "section": "产品发布与更新",
-      "title": "Spotify向英国等市场推出AI驱动的“提示创建歌单”功能",
+      "title": "Spotify向英国等市场推出AI驱动的提示播放列表功能",
       "company": "Spotify",
       "source": "TechCrunch AI",
       "publishedAt": "Mon, 23 Feb 2026 16:50:36 +0000",
-      "summary": "Spotify正在继续测试其AI驱动的“提示创建歌单”功能。目前，该工具已向英国、爱尔兰、澳大利亚和瑞典的Premium订阅用户推出。这是Spotify在AI应用方面的又一次功能扩展。",
+      "summary": "Spotify正在继续测试其AI驱动的“提示播放列表”功能。目前，该工具正在向英国、爱尔兰、澳大利亚和瑞典的Premium订阅用户推出。",
       "score": 24
     },
     {
       "section": "技术与研究",
-      "title": "OpenAI的GPT-5表现下滑；为何智能体难以评估",
+      "title": "OpenAI的GPT-5热度下降，智能体评估面临挑战",
       "company": "OpenAI",
       "source": "The Information",
-      "publishedAt": "9 hours ago",
-      "summary": "文章讨论了OpenAI在8月发布GPT-5后，其表现出现下滑的现象。同时探讨了评估智能体（Agents）能力的困难之处。",
+      "publishedAt": "11 hours ago",
+      "summary": "文章提及自OpenAI八月发布GPT-5以来，其热度有所下降。同时，文章指出评估AI智能体（Agents）的难度是一个重要议题。",
       "score": 22
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "我注册了Google Gemini Pro：这5个功能让它物有所值",
+      "company": "Google",
+      "source": "PCMag",
+      "publishedAt": "5 hours ago",
+      "summary": "作者分享了注册Google Gemini Pro付费订阅服务的体验。文章指出付费版本在免费层基础上增加了多项功能升级。这些功能包括优先访问和视频生成等，提升了Gemini 3的使用体验。",
+      "score": 21
     },
     {
       "section": "技术与研究",
       "title": "今日摘要：芝加哥监控网络与更好的文胸设计",
-      "company": "",
+      "company": "The Download",
       "source": "MIT Technology Review",
       "publishedAt": "Mon, 23 Feb 2026 13:10:00 +0000",
-      "summary": "本期通讯提供了当日科技领域的要闻摘要。主要内容包括对芝加哥庞大监控网络的探讨，该市估计拥有高达4.5万个监控摄像头。此外，还涉及了改进文胸设计的相关内容。",
-      "score": 21
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "我注册了Google Gemini Pro。这5个功能让它物有所值",
-      "company": "Google",
-      "source": "PCMag",
-      "publishedAt": "3 hours ago",
-      "summary": "文章作者分享了注册Google Gemini Pro付费订阅服务的体验。作者列举了五个使其物有所值的功能，这些功能升级了Gemini 3的体验，包括优先访问和视频生成等。",
-      "score": 21
+      "summary": "这是 The Download 的今日版，该每日通讯提供技术世界的最新动态。本期内容涵盖了芝加哥庞大的监控网络，该市估计拥有高达4.5万个监控摄像头，数量位居世界前列。同时，通讯也提及了关于改进文胸设计的相关内容。",
+      "score": 19
     }
   ]
 }

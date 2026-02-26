@@ -1,0 +1,237 @@
+{
+  "产品发布与更新": [
+    {
+      "title": "MiniMax推出MaxClaw模式，实现OpenClaw一键部署并提供上万专家智能体",
+      "url": "https://www.qbitai.com/2026/02/382127.html",
+      "snippet": "聊着天就能构建自己的专属Expert",
+      "source": "量子位",
+      "publishedAt": "Wed, 25 Feb 2026 15:58:43 +0000",
+      "region": "国内",
+      "summary": "MiniMax在其Agent平台上推出了名为MaxClaw的新模式，旨在简化OpenClaw生态的接入流程，实现一键配置。该模式预置了多种工具和内置技能，如爆款猎手、多Agent投研团队、热点追踪以及生图、搜图、生成视频等，并可直接接入飞书和钉钉等工作平台。此外，MiniMax Agent平台的Expert社区已拥有超过10000个针对不同垂直领域的现成专家智能体，用户可直接调用或创建自己的专属智能体。整个部署过程简便快捷，从创建到Gateway启动不到20秒。",
+      "category": "产品发布与更新",
+      "company": "MiniMax",
+      "score": 32,
+      "breakdown": {
+        "substance": 15,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "Gemini现可在Android上自动化部分多步骤任务",
+      "url": "https://techcrunch.com/2026/02/25/gemini-can-now-automate-some-multi-step-tasks-on-android/",
+      "snippet": "Gemini on Android will be able to automate tasks involving rideshare requests, or grocery or food delivery, says Google.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 25 Feb 2026 18:00:00 +0000",
+      "region": "海外",
+      "summary": "谷歌表示，Android上的Gemini将能够自动化涉及叫车服务、杂货或食品配送等任务。",
+      "category": "产品发布与更新",
+      "company": "Google",
+      "score": 22,
+      "breakdown": {
+        "substance": 0,
+        "importance": 6,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "OpenAI首席运营官称ChatGPT广告推出将“迭代进行”",
+      "url": "https://searchengineland.com/openai-coo-says-chatgpt-ad-rollout-will-be-iterative-470231",
+      "snippet": "OpenAI's COO says ChatGPT ad rollout will be gradual and privacy-focused, as it tests monetization without compromising user trust.",
+      "source": "Search Engine Land",
+      "publishedAt": "6 hours ago",
+      "region": "海外",
+      "summary": "OpenAI首席运营官表示，ChatGPT的广告推出将是渐进式的，并以隐私保护为重点。公司正在测试变现方式，同时不损害用户信任。",
+      "category": "产品发布与更新",
+      "company": "OpenAI",
+      "score": 17,
+      "breakdown": {
+        "substance": 5,
+        "importance": 5,
+        "timeliness": 2,
+        "credibility": 5
+      },
+      "isDuplicate": false
+    }
+  ],
+  "技术与研究": [
+    {
+      "title": "阿里开源三款Qwen3.5新模型，消费级显卡即可运行",
+      "url": "https://www.jiqizhixin.com/articles/2026-02-25-7",
+      "snippet": "刚过完年，阿里又卷起来了。 2 月 25 日，继除夕开源 Qwen3.5-397B-A17B 之后，阿里继续开源千问 3.5 系列模型，而且是一口气开源三款中等规模的新模型，分别是 &nbsp;Qwen3.5-35B-A3B、Qwen3.5-122B-A10B、Qwen3.5-27B 。 此次开源的三款千问 3.5 模型，凭借架构创新和训练突破，均创下中等尺寸模型的性能新高，不仅超越了更大尺寸的上代旗舰模型 Qwen3-235B-A22B 和 Qwen3-VL，更在多榜单表现上均明显优于 GPT-5 mini。 千问 3.5 新模型甚至 可直接部署于消费级显卡 ，对开发者极为友好。目前，基于 Qwen3.5-35B-A3B 的托管模型 Qwen3.5-Flash 已上线阿里云百炼， 每百万 Token 输入低至 0.2 元。 更小的参数，更强的性能 千问 3.5 模型采用混合注意力机制，结合高稀疏的 MoE 架构创新，并基于更大规模的文本和视觉混合 Token 上训练，新模型以更小的总参数和激活参数量，实现了更大的性能提升。 Qwen3.5-122B-A10B 与 Qwen3.5-35B-A3B，就是这一新范式在中等规模下的最新模型成果，在指令遵循（IFBench）、博士级别推理（GPQA）、数学推理（HMMT 25）、多语言知识（MMMLU）、Agent 工具调用（BFCL v4）、Agentic Coding（SWE-bench Verified）等多个权威榜单上，新模型均超越了远大于其规模的 Qwen3-235B-A22B 模型及 Qwen3-VL，以及 GPT-5 mini、gpt-oss-120b 等模型。 更紧凑的模型，更好的性能，千问 3.5 家族中的 首个密集（Dense）模型 Qwen3.5-27B 此次惊艳亮相。 Qwen3.5-27B 同时拥有更强的 Agent 能力和原生多模态能力，在工具调用、搜索、编程等多个 Agent 评测中均超过了 GPT-5 mini，在视觉推理、文本识别和理解、视频推理等多项视觉理解能力榜单中超过了 Qwen3-VL 旗舰模型和 Claude Sonnet 4.5。 Qwen3.5-27B 可运行于单个 GPU ，对于本地部署极为友好。 阿里开源再次引爆AI社区 此前，基于 Qwen3.5-397B-A17B 的 Qwen3.5-Plus 模型已上线阿里云百炼，性能媲美 Gemini 3 但 API 价格仅为其 5%，适用于高性能的 AI 编程、Agent 等场景。 此次，百炼上线基于 Qwen3.5-35B-A3B 的 Qwen3.5-Flash， 支持 1M 的上下文长度 ，提供官方的内置工具调用，企业和开发者每百万 Token 输入成本低至 0.2 元。Qwen3.5-Flash 响应速度快、性价比高、门槛低，适合处理工作、生产、生活的日常 AI 任务。 此外，Qwen3.5-35B-A3B 的基座（Base）模型也一并开源。 千问 3.5 的系列开源引发全球 AI 开源社区热议，有开发者指出，这将加速机器人产业的 VLA 模型发展，或将衍生出一批基于 Qwen3.5 的多模态模型。 据了解，除夕开源的 Qwen3.5-397B-A17B 模型已登顶 Hugging Face 全球榜首，截至目前， 阿里已开源千问模型超 400 个，全球下载量突破 10 亿次，衍生模型数超 20 万，千问稳居全球第一开源模型。",
+      "source": "机器之心",
+      "publishedAt": "Wed, 25 Feb 2026 16:43:34 +0800",
+      "region": "国内",
+      "summary": "2月25日，阿里巴巴开源了千问3.5系列的三款中等规模新模型，分别是Qwen3.5-35B-A3B、Qwen3.5-122B-A10B和Qwen3.5-27B。这些模型凭借架构创新和训练突破，在多项权威评测中超越了更大尺寸的上代旗舰模型及GPT-5 mini等竞争对手，并且能够直接部署于消费级显卡，对开发者友好。其中，基于Qwen3.5-35B-A3B的托管模型Qwen3.5-Flash已在阿里云百炼上线，提供百万Token输入低至0.2元的服务。截至目前，阿里已开源千问模型超过400个，全球下载量突破10亿次。",
+      "category": "技术与研究",
+      "company": "阿里",
+      "score": 64,
+      "breakdown": {
+        "substance": 33,
+        "importance": 16,
+        "timeliness": 6,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "OpenClaw创始人受访吐槽Gemini：自信100%能跑，一试就崩",
+      "url": "https://www.infoq.cn/article/YTywvAOvAxu7kXeKP2y1?utm_source=rss&utm_medium=article",
+      "snippet": "点击查看原文>",
+      "source": "InfoQ",
+      "publishedAt": "Wed, 25 Feb 2026 15:44:25 GMT",
+      "region": "国内",
+      "summary": "OpenClaw创始人彼得·斯坦伯格在加入OpenAI后首次公开受访，谈及了OpenClaw的爆火细节。他透露自己仅用1小时就做出了OpenClaw，并分享了其工作流和与AI沟通的技巧。同时，近期因用户通过OpenClaw大量调用谷歌模型，导致一批账号被谷歌封禁，引发争议。谷歌方面表示这是为了防止模型被恶意使用，而斯坦伯格则回应考虑取消对谷歌服务的支持。",
+      "category": "技术与研究",
+      "company": "OpenAI",
+      "score": 33,
+      "breakdown": {
+        "substance": 6,
+        "importance": 11,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "ICLR 2026 | QVGen实现超低比特视频生成量化，4bit模型接近全精度效果",
+      "url": "https://www.jiqizhixin.com/articles/2026-02-25-9",
+      "snippet": "视频生成扩散模型越做越大：2B、5B、14B&hellip;&hellip; 效果提升很快，但训练与推理的成本也随之飙升。社区一直希望用量化把模型 &ldquo;压小&rdquo;，把显存和算力成本打下来，真正落到更多卡、更便宜的机器、更多真实应用中。可现实很残酷：一到 3/4 bit，视频生成的量化感知训练（QAT）往往比图像更难训、更不稳定，质量掉得更狠 &mdash;&mdash; 不是 &ldquo;略降一点&rdquo;，而是直接不可用。 图表 1 在 CogVideoX-2B 模型上 4-bit 逐通道权重量化与逐 token 激活量化的效果对比。（a）原始模型；（b）该论文所提出方案；（c-e）已有的量化感知训练方案；（f）已有的后训练量化方案。 香港科技大学 &amp; 北航 &amp; 商汤等提出了一个专门面向视频生成扩散模型的 QAT 范式 &mdash;&mdash;QVGen ，在 3-bit / 4-bit 都能把质量拉回来，并且让 4-bit 首次接近全精度表现成为现实。该论文现已被 ICLR 高分接收：rebuttal 前 88666（top 1.4%），rebuttal 后 88886 （top 0.5%）。 论文地址：https://arxiv.org/pdf/2505.11497&nbsp; 代码地址：https://github.com/ModelTC/QVGen 模型地址：https://huggingface.co/collections/Harahan/qvgen &nbsp; &nbsp; &nbsp; 图表 2 QVGen 论文框架图。 为什么视频扩散模型一量化就容易 &ldquo;崩&rdquo;？ QVGen 的切入点很直接：视频生成的 QAT 并不是把图像扩散的配方照搬过来就行。作者在论文里给了一个关键观察（见图表 3）：在相近规模、相似训练设置下，视频扩散模型的梯度范数明显更大，这会让优化过程更不稳定，最终导致低比特训练难以收敛、生成质量难以维持。 换句话说，如果不先解决 &ldquo;训练不稳&rdquo; 这个根因，只靠常见量化技巧做修补，视频生成很难真正落地。 图表 3 第一行为已有方案（蓝色）与论文方案（黄色）在量化感知训练中的梯度范数比较；第二行为损失比较。左右分别为 CogVideoX-2B 和 Wan 1.3B 模型上的可视化。 QVGen 做对了什么：先把训练救稳，再把推理成本 &ldquo;还回去&rdquo; QVGen 的核心思路是 &ldquo;训练期做增强、推理期不背包袱&rdquo;，它把一个看似矛盾的目标拆成了两步来解决 （见图表 2）。 第一步，训练阶段引入一个辅助模块 &Phi;。这个模块不是为了让推理更重，而是为了在低比特条件下降低梯度范数、提升训练稳定性，让 3/4-bit 的 QAT 先 &ldquo;训得动、训得好&rdquo;。此外，除了图表 3 中的实验论证，在论文中还提供了详细的理论证明。 第二步，训练过程中逐步移除 &Phi;，让最终推理阶段不再依赖这个模块。作者的观察是：随着训练推进，&Phi; 的参数里会逐渐出现越来越多 &ldquo;贡献很小&rdquo; 的成分。于是论文设计了 rank-decay：反复做分解，识别低影响的分量，并用基于秩的正则把这些分量逐步衰减到 0，直到 &Phi; 被完全消掉。最终效果是：推理阶段几乎不增加额外开销，但训练阶段又能获得稳定性红利。 结果有多硬：4-bit 接近全精度，3-bit 也把指标拉回 &ldquo;可用区间&rdquo; 在主实验中，QVGen 在 W4A4/W3A3 的设置下对比了多类量化方法。论文给出的结论很清晰：很多方法在 4-bit 下仍有明显退化，到了 3-bit 更加明显；QVGen 在 3-bit 能大幅恢复质量，在 4-bit 则可以做到接近全精度（见图表 4）。 更关键的是，它不只在小模型上有效。论文还展示了在更大的视频生成模型上（例如 5B、14B 级别，以及更高分辨率设置），4-bit 仍能保持接近全精度的总体水平（见图表 5-6）。 该论文同时给出了大量定性样例证明 &ldquo;不是只在指标上好看&rdquo; （见图表 7-8）。 图表 4 对于 Wan 1.3B 和 CogVideoX-2B 模型，QVGen 与已有方案在 VBench 上的性能比较。 &nbsp; &nbsp; &nbsp; &nbsp;图表 5 QVGen 在 Wan 14B 和 CogVideoX-5B 模型上的 VBench 结果。 &nbsp; &nbsp; &nbsp; 图表 6 QVGen 在 Wan 14B 和 CogVideoX-5B 模型上的 VBench-2.0 结果。 &nbsp; &nbsp; &nbsp; 图表 7 QVGen 与已有方案在 Wan 1.3B 上的可视化结果对比。 &nbsp; &nbsp; &nbsp; 图表 8 QVGen 在 Wan 14B 上的可视化结果。 不只是省显存：它能带来真实加速，还能和其他加速方法叠加 对部署来说，低比特的直接好处是显存下降。论文报告量化后能够带来大幅的内存节省（例如 4&times; 级别的压缩量级），从而让同样的模型更容易跑在更小的卡上，或者把 batch、分辨率等配置拉高。 更实际的一点是：QVGen 使用标准的均匀量化思路，意味着它可以更容易对接现有的 W4A4 推理内核。论文也强调它和其他视频生成加速方向是正交的：例如与某些 3D attention 加速方案叠加后，推理速度还能进一步提升（见图表 9）。 图表 9 （左）模型大小对比； （中）模型加速对比；（右）与 attention 加速方案结合后加速对比。其中蓝色代表 Wan 1.3B 模型，黄色代表 Wan 14B 模型。 训练成本会不会更高？论文给出的答案是 &ldquo;几乎不多花&rdquo; 很多读者会担心：训练期加了 &Phi;、还要做 rank-decay，会不会导致训练成本暴涨？论文做了训练效率分析，结论是：相对一些蒸馏式 QAT 基线，QVGen 的额外训练开销很小（例如 GPU-days、峰值显存几乎不变的量级），但在最终生成质量上仍能拉开明显差距（见图表 10）。 &nbsp; &nbsp; &nbsp; 图表 10 QVGen 与已有方法的训练时间和训练显存开销对比。 总结：视频扩散也能 4bit 接近满血，先稳训练再轻推理！ 当下视频生成扩散模型越来越大，但 3/4-bit 量化一落到视频上，常见问题是：QAT 训练不稳定、收敛困难、画质明显下滑。QVGen 的核心判断很直接：视频低比特量化的关键不只是 &ldquo;怎么量化&rdquo;，而是先把训练稳定性问题解决，否则再好的量化细节也很难落地。 在这一点上，QVGen 给出了一套完整范式，主要包括： 训练期引入辅助模块 &Phi;：用于降低梯度范数、提升低比特 QAT 的稳定性，让 3/4-bit 训练 &ldquo;跑得起来、训得下去&rdquo;； rank-decay 逐步移除 &Phi;：训练过程中识别并衰减低贡献成分，最终把 &Phi; 完全去掉，使推理阶段几乎不背额外负担； 面向部署的低比特设置：支持 W4A4/W3A3，并强调可对接现有推理实现；在显存上带来明显下降，同时还能与其他推理加速方法叠加。 总体来看，QVGen 在 CogVideoX、Wan 等视频扩散模型上实现了 4-bit 接近全精度、3-bit 也能把质量拉回可用区间的结果，并且训练额外开销很小。对希望把视频生成模型从 &ldquo;贵且难跑&rdquo; 推进到 &ldquo;更省、更快、更好用&rdquo; 的场景，这是一条很实用的路线。",
+      "source": "机器之心",
+      "publishedAt": "Wed, 25 Feb 2026 18:07:08 +0800",
+      "region": "国内",
+      "summary": "针对视频生成扩散模型量化至3/4比特时训练不稳定、质量严重下降的问题，香港科技大学、北航及商汤等机构的研究人员提出了名为QVGen的量化感知训练新范式。该方法通过在训练阶段引入并逐步移除一个辅助模块来稳定训练过程，降低梯度范数，使得低比特量化模型能够有效收敛。实验结果表明，QVGen成功让4比特量化模型的表现首次接近全精度模型，同时3比特模型的生成质量也得到显著提升，该论文已被ICLR 2026高分接收。",
+      "category": "技术与研究",
+      "company": "商汤",
+      "score": 28,
+      "breakdown": {
+        "substance": 13,
+        "importance": 0,
+        "timeliness": 6,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "圆桌讨论：为何2026年是钠离子电池之年",
+      "url": "https://www.technologyreview.com/2026/02/25/1132873/roundtables-why-2026-is-the-year-for-sodium-ion-batteries/",
+      "snippet": "Listen to the session or watch below Sodium-based batteries could be a cheaper, safer alternative to lithium-ion, and the technology is finally making its way into cars—and energy storage arrays on the grid. Sodium-ion batteries are one of MIT Technology Review’s 10 Breakthrough Technologies of 2026 list, and this subscriber-only discussion explains why. Watch a…",
+      "source": "MIT Technology Review",
+      "publishedAt": "Wed, 25 Feb 2026 21:15:27 +0000",
+      "region": "海外",
+      "summary": "钠离子电池有望成为比锂离子电池更便宜、更安全的替代品，该技术正开始应用于汽车和电网储能阵列。钠离子电池被《麻省理工科技评论》评为2026年十大突破性技术之一。",
+      "category": "技术与研究",
+      "company": "MIT Technology Review",
+      "score": 26,
+      "breakdown": {
+        "substance": 1,
+        "importance": 5,
+        "timeliness": 10,
+        "credibility": 10
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "《下载》栏目：犯罪专题介绍",
+      "url": "https://www.technologyreview.com/2026/02/25/1133653/the-download-introducing-the-crime-issue/",
+      "snippet": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. Introducing: the Crime issue Technology has long made crime and its prosecution a game of cat and mouse. But those same new technologies that have allowed crime to outpace law have also reenergized…",
+      "source": "MIT Technology Review",
+      "publishedAt": "Wed, 25 Feb 2026 13:10:00 +0000",
+      "region": "海外",
+      "summary": "这是《下载》栏目的今日版，该工作日通讯每日提供科技世界动态。本期推出犯罪专题，科技长期以来使犯罪与起诉成为猫鼠游戏，但同样的新技术既让犯罪活动得以发生，也提供了打击犯罪的手段。",
+      "category": "技术与研究",
+      "company": "",
+      "score": 26,
+      "breakdown": {
+        "substance": 8,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 10
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "英伟达再创季度营收纪录，资本支出也达新高",
+      "url": "https://techcrunch.com/2026/02/25/nvidia-earnings-record-capex-spend-ai/",
+      "snippet": "\"The demand for tokens in the world has gone completely exponential,\" Nvidia CEO Jensen Huang said about the company's earnings.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 25 Feb 2026 23:04:42 +0000",
+      "region": "海外",
+      "summary": "英伟达公布了创纪录的季度业绩。公司首席执行官黄仁勋在谈及财报时表示，全球对计算“令牌”的需求已呈指数级增长。与此同时，公司的资本支出也达到了创纪录的水平。",
+      "category": "技术与研究",
+      "company": "Nvidia",
+      "score": 18,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ],
+  "投融资与并购": [
+    {
+      "title": "新川电子获近亿元pre-IPO轮融资，AI与光伏驱动纳米金属粉材需求增长",
+      "url": "https://36kr.com/p/3698117482212997?f=rss",
+      "snippet": "文 | 张冰冰 编辑 | 阿至 36氪获悉，杭州新川电子材料股份有限公司（简称「新川电子」）近期宣布完成近亿元pre-IPO轮融资，由杭州城投，联想投资、富浙科技、浙江交投产业转型基金等机构联合参投，资金将主要用于MLCC60nm-80nm成品镍粉、光伏特种铜粉、贱金属催化剂等产品研发，生产线规模扩张及市场拓展。 「新川电子」是36氪长期关注的企业，专注于纳米级金属粉材的研发、生产，以MLCC（片式多层陶瓷电容）用镍粉和超细软磁粉为核心产品，其内电极用200nm及以下高端成品镍粉于2024年获评“国内首批次新材料”，解决了高端MLCC内电极材料的国产化难题，超细软磁合金粉已应用于全球主流头部电感厂商。 「新川电子」产品研发实验室 「新川电子」创始人谢上川总结近一年来的重要进展，最核心的三方面是：业绩保持高速增长；客户群体增加，进一步新增日韩海外客户；业务范围增加，MLCC镍粉、AI软磁粉、光伏铜粉均实现批量销售。 业绩增长方面，谢上川认为，AI产业的高速发展给整个行业都带来了很好的发展机遇。其中对初创公司来说，要抓住增长机遇，最重要的是一支坚持技术长期主义的团队，并且拥有高效的产品迭代升级能力。这背后是客户支持与技术能力的双重推动：“我们做材料行业，没有客户的配合，再厉害也做不出好的材料，这是决定性因素。在客户支持与信任下，能够快速匹配需求，这是我们技术能力的体现。这两个因素结合在一起，是我们产品能快速迭代的最重要原因。” 客户群体方面，「新川电子」超细软磁粉产品已被头部AI芯片厂商采用；光伏铜粉产品深度参与到行业客户的技术研发，逐步开始批量投产；MLCC镍粉产品，针对其核心产业链所在的日本和韩国市场开拓，实现了客户突破，未来两年将重点推进60-80nm成品镍粉的市场开拓。 业务范围上，目前「新川电子」产品线主要分为MLCC镍粉、超细软磁粉、光伏铜粉以及未来的制氢贱金属催化剂等。未来产品规划中，谢上川认为，三大产品线都是核心的关键基础材料，需要团队平衡好研发精力，服务多类型客户，而从发展趋势上看，光伏铜粉将是性价比革命的一个重要迭代产品。 「新川电子」丽水产线示意图 光伏产业链中国占比很大，而且本身市场容量比电子行业大得多，随着贵金属价格的剧烈波动，贱金属替代的时机已经来临。谢上川分析，金属材料替代是重大的产业革命升级，过去出于成本考量，光伏企业不会贸然进行技术切换，但随着银等有色金属价格抬升，经济账将推动行业进行技术迭代。同时，光伏铜粉产品性能的进步，也将促成技术路线跑通。 “目前来看，有头部几家公司在推进贱金属化，一旦走通，光伏行业就回到成本为王的时代了。”谢上川预估，2026年下半年，光伏铜粉有望大规模地落地，“随着整个产业发展，光伏铜粉或光伏类基础贱金属材料很可能成为我们最大的业务之一。” 组织规划上，「新川电子」已于2025年7月完成股改，计划2028年上市。 “我相信这会是一个比较成功的转变，帮助公司利用资本市场，在AI市场、绿色能源市场的扩张更顺利。保持以技术为中心的底色，未来大规模扩张时，管理会更规范，风险会更小。”谢上川总结，他关注的核心是让「新川电子」成为一家对行业、对全球科技发展起到促进作用的有价值的公司，实现“全球领先的电子信息和绿色能源的核心材料供应商”的愿景。 2026-2027年将是「新川电子」产能扩张的核心关键节点，预计2026年产能将扩大到4000吨，2027年达到6000吨规模。 36氪未来产业 「36氪未来产业」持续关注城市发展、产业转型和创新创业项目落地。寻求报道可邮箱联系wangfengzhi@36kr.com或扫码联系。 此外，今年36氪正式推出《36氪企业投资指南内参》，依托在经济圈产业群、区域重点推进规划与招商领域的深厚积累，36氪通过提供深入详细、更为及时、独家专有的全面信息服务，为政府部门提供高效、精准的产业项目内参；助力项目方匹配产业资金、链接关键人脉、快速融入新的产业生态。 本文来自微信公众号“36氪未来产业”，作者：张冰冰，阿至，36氪经授权发布。",
+      "source": "36氪",
+      "publishedAt": "2026-02-25 10:41:46  +0800",
+      "region": "国内",
+      "summary": "杭州新川电子材料股份有限公司近期完成了近亿元的pre-IPO轮融资，投资方包括杭州城投、联想投资等多家机构。该公司专注于纳米级金属粉材的研发与生产，核心产品包括MLCC用镍粉、超细软磁粉和光伏特种铜粉，其高端成品镍粉已实现国产化突破，软磁粉产品已被头部AI芯片厂商采用。本轮融资将主要用于产品研发、生产线扩张及市场拓展，公司业绩保持高速增长，并计划于2028年上市。",
+      "category": "投融资与并购",
+      "company": "新川电子",
+      "score": 32,
+      "breakdown": {
+        "substance": 6,
+        "importance": 13,
+        "timeliness": 6,
+        "credibility": 7
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "Anthropic收购计算机使用AI初创公司Vercept，此前Meta挖走其联合创始人",
+      "url": "https://techcrunch.com/2026/02/25/anthropic-acquires-vercept-ai-startup-agents-computer-use-founders-investors/",
+      "snippet": "Seattle-based Vercept developed complex agentic tools, including a computer-use agent that could complete tasks inside applications like a person with a laptop would.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 25 Feb 2026 23:49:19 +0000",
+      "region": "海外",
+      "summary": "Anthropic收购了位于西雅图的AI初创公司Vercept。Vercept开发了复杂的智能体工具，包括一个计算机使用智能体，该智能体能够像使用笔记本电脑的人一样在应用程序内完成任务。此次收购发生在Meta挖走Vercept的一位联合创始人之后。",
+      "category": "投融资与并购",
+      "company": "Anthropic, Vercept, Meta",
+      "score": 31,
+      "breakdown": {
+        "substance": 8,
+        "importance": 5,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "Alphabet旗下机器人软件公司Intrinsic并入谷歌",
+      "url": "https://techcrunch.com/2026/02/25/alphabet-owned-robotics-software-company-intrinsic-joins-google/",
+      "snippet": "Nearly five years after graduating into an independent Alphabet company, Intrinsic is moving under Google's domain.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 25 Feb 2026 20:00:00 +0000",
+      "region": "海外",
+      "summary": "Alphabet旗下的机器人软件公司Intrinsic将并入谷歌。Intrinsic在近五年前从谷歌内部孵化并成为Alphabet旗下的独立公司，如今它将重新回归谷歌的管辖范围。此次调整属于集团内部的组织架构变动。",
+      "category": "投融资与并购",
+      "company": "Alphabet, Intrinsic, Google",
+      "score": 18,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ],
+  "政策与监管": []
+}

@@ -2,7 +2,11 @@ name: AI Daily News
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天 UTC 0:00 (北京时间 8:00)
+    # 北京时间每天早上8点 (UTC 0:00)
+    # 注意：GitHub Actions 实际执行可能有 0-2 小时延迟
+    - cron: '0 0 * * *'
+    # 备用：北京时间每天下午2点 (UTC 6:00) - 确保每天至少有1次运行
+    - cron: '0 6 * * *'
   workflow_dispatch:  # 允许手动触发
 
 # 并发控制：防止同时运行多个实例导致冲突

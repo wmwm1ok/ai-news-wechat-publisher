@@ -1,132 +1,132 @@
 {
-  "date": "2026/2/26",
+  "date": "2026/2/27",
   "count": 14,
   "articles": [
     {
-      "section": "技术与研究",
-      "title": "阿里开源三款千问3.5新模型，消费级显卡即可运行",
-      "company": "阿里",
-      "source": "机器之心",
-      "publishedAt": "Wed, 25 Feb 2026 16:43:34 +0800",
-      "summary": "2月25日，阿里巴巴继除夕开源Qwen3.5-397B-A17B后，再次开源了千问3.5系列的三款中等规模新模型，分别是Qwen3.5-35B-A3B、Qwen3.5-122B-A10B和Qwen3.5-27B。这些模型凭借架构创新和训练突破，在多个权威榜单上的性能超越了更大尺寸的上代旗舰模型以及GPT-5 mini等，并且能够直接部署于消费级显卡，对开发者友好。其中，基于Qwen3.5-35B-A3B的托管模型Qwen3.5-Flash已在阿里云百炼上线，每百万Token输入成本低至0.2元，支持1M上下文长度和官方内置工具调用。阿里已开源千问模型超过400个，全球下载量突破10亿次。",
-      "score": 64
+      "section": "产品发布与更新",
+      "title": "Perplexity推出Perplexity Computer，整合19个模型，用户复刻平民版彭博终端机",
+      "company": "Perplexity",
+      "source": "量子位",
+      "publishedAt": "Thu, 26 Feb 2026 03:57:25 +0000",
+      "summary": "Perplexity公司宣布推出新产品Perplexity Computer，这是一个基于浏览器的全能型通用数字员工，能够执行推理、委派、搜索、构建、编码、部署项目、设计文件、研究课题和管理工作流程等多种任务。该产品由团队秘密研发两个月，其核心是Claude Opus 4.6模型，并能调度包括Gemini、Grok、ChatGPT 5.2在内的共19种模型，以处理不同专业任务。产品发布后，有网友迅速利用它创建了一个功能初具雏形的平民版彭博终端机，而使用Perplexity Computer仅需订阅Perplexity Max服务，其年费远低于专业彭博终端机的标准年费。",
+      "score": 39
     },
     {
       "section": "技术与研究",
-      "title": "仅需1100美元tokens，一周内重写Next.js",
-      "company": "",
-      "source": "机器之心",
-      "publishedAt": "Wed, 25 Feb 2026 16:48:32 +0800",
-      "summary": "编辑｜冷猫 今天，Web 开发社区爆发了一条令人咋舌的技术新闻。 Cloudflare 的一名工程师在一周之内，借助 AI 模型从头重建了 Next.js 。 该公司的首席技术官 Dane Knecht 发推庆祝这一史诗级的成就，称之为 「Next.js 的解放日」 ，Next.js 属于每个人。 Cloudflare 称，在这次重构中，保留了 Next.js 的出色开发体验，没有定制的工具，打造了一个基于 Vite 构建的，名为 vinext 的替代框架。 Vinext 是一个可以无缝替换 Next.js 的框架，只需一条命令即可部署到 Cloudflare Workers。 在早期的基准测试中，它构建生产应用的速度最高可达 4 倍，生成的客户端包大小最高可缩小 57%。而且目前已有一些客户在将其用于生产环境。 最夸张的是，整个过程大约 只花费了价值 1100 美元的 tokens 。 Cloudflare 发布了该工作的介绍博客，感兴趣的读者可以进行参阅。 博客链接：https://blog.cloudflare.com/vinext/ 从 Next.js 到 vinext 的实验性进化 Next.js 的影响力与困境 Next.js 是当前最大的 React 全栈框架之一 ，它定义了数百万 web 应用的开发方式，尤其在 SSR（服务器渲染）、RSC（React Server Components）、静态生成与渐进再生（ISR）等特性上的创新，使其成为现代 Web 的标配。 然而，这把双刃剑也带来复杂性：它的构建工具 Turbopack、专有构建输出，以及与平台无关的部署流程，一直是生态中反复被提及的痛点。&nbsp; 以 Next.js 的构建输出为基础进行二次构建，是一种困难且脆弱的方法。过去几年，社区尝试使用 OpenNext 等适配器解决 Next.js 在云平台（尤其是 Cloudflare Workers）上的部署问题，这些工具通过转换 Next.js 的构建输出，使其在 V8 沙箱等环境下运行。但这种「转译层」经常与 Next.js 的版本更新相互博弈 &mdash;&mdash; 就像打地鼠一样，不断修补边缘兼容问题。 Next.js 一直在开发一个一等公民级别的 adapters API，目前这仍处于早期阶段。但即便有了 adapters，本质上仍然是构建在定制化的 Turbopack 工具链之上。而且 adapters 只覆盖构建和部署阶段。 在开发阶段，next dev 仍然只能在 Node.js 中运行，没有办法接入其他运行时环境。如果你的应用使用了平台特定 API，比如 Durable Objects、KV 或 AI 绑定，那么在开发环境中就无法直接测试这些代码，只能通过各种变通方案来实现。 Vinext 的方案 针对这些麻烦事儿，Cloudflare 的工程师提出，如果我们不去适配 Next.js 的构建输出，而是直接在 Vite 之上重新实现 Next.js 的 API 接口，会怎么样？ Vite 是除 Next.js 之外，大多数前端生态所使用的构建工具，驱动着 Astro、SvelteKit、Nuxt 和 Remix 等框架。 Vite（法语意为「快」）是一款现代前端构建工具，它通过重新设计开发和构建流程，让 Web 开发的体验变得 极速、直观且高效。它最早由 Evan You（Vue.js 创始人）提出，并在 2020 年正式发布，迅速成为了整个前端生态的核心基础设施之一。&nbsp; 传统的前端构建工具（例如 Webpack 或 Parcel）会在启动开发服务器之前，把整个应用代码全部打包处理，这在大型项目中会带来明显的延迟。而 Vite 的理念则是借助现代浏览器和生态的新能力 &mdash;&mdash; 原生 ES 模块（ESM），彻底改变这一体验。 在安装 vinext 后，只需在脚本中将 next 替换为 vinext，其余一切保持不变，现有的 app/、pages/ 以及 next.config.js 都可以直接使用。 初期基准测试显示，vinext 在构建速度和客户端 bundle 大小上都有显著优势： 在某 33 路由应用上，利用 Vite 8（Rolldown）构建，vinext 构建时间比 Next.js 快 约 4.4 倍 ； 客户端 bundle gzipped 大小比 Next.js 小 约 56% 以上。&nbsp; 这一数字并非偶然。Vite 生态的原生 ESM 和轻量构建管线使得整体构建过程比 Next.js 传统的 Turbopack 更加敏捷，而 AI 成功编写可通过严格测试的实现代码，则是这一成果得以快速达成的关键。 不过官方也强调，这仍然是一个 实验性项目 。vinext 上线时间不足一周，尚未经过大规模流量考验，某些 Next.js 的静态预渲染方案（静态 build 预挂载生成）仍未完全覆盖，需要进一步打磨。 完全用 AI 完成重建 根据 Cloudflare 官方博客，整个项目由一名工程经理牵头，只用了大约 一周时间、约 800 多次与 AI 模型交互的 OpenCode 会话、以及合计约 1100 美金的 AI token 成本 ，就搭建出了一个 兼容 Next.js 16 API 的替代框架。&nbsp; 项目从 2 月 13 日第一条提交开始： 当天晚上，就实现了基础的 Pages Router 和 App Router 的 SSR 渲染、Middleware 支持、Server Actions 等。 第二天下午，App Router Playground 可渲染绝大多数路由。 到第三天，vinext deploy 已能将应用打包并发布到 Cloudflare Workers，并支持客户端水合和导航。 剩下几天则用于完善测试套件（包括 1700 多个 Vitest 单元测试和 380 多个 Playwright E2E 测试）和覆盖 Next.js API 94% 的测试验证。&nbsp; 该项目是 AI 在工程师设定架构规范、分配任务、执行反馈循环的协助下逐步逼近高质量实现的结果。 为什么一个如此夸张的项目能在一周内实现？ Cloudflare 的解释是「天时地利人和」，并不是所有项目都能用这种方式完成。这个项目之所以可以，是因为几个关键条件在同一时间点同时成立。 1. 目标 API 已有良好文档和测试覆盖 作为主流开源项目，Next.js 拥有详尽的文档、庞大的用户群体，以及多年积累的 Stack Overflow 问答和教程。它的 API 早已广泛存在于训练数据之中。如果让 Claude 实现 getServerSideProps，或者解释 useRouter 的工作原理，它不会产生幻觉。它真的「知道」 Next.js 是如何运作的。 Next.js 拥有一个非常完善的测试体系。Next.js 仓库中包含数千个端到端测试，覆盖几乎所有功能和边界情况。工程师直接移植了测试，提供了一份可以机械验证的说明书。 2. 基础工具生态成熟 Vite 作为现代构建工具，Vite 已经解决了前端工具链中最困难的部分：极速 HMR、原生 ESM、干净的插件 API，以及生产级打包能力。它既能处理模块化构建也能扩展 RSC 等高级特性，为实现提供了稳定基础。 3. AI 模型能力跃迁 即便在几个月前，这件事都不可能完成。早期模型无法在如此规模的代码库中保持长期一致性。新一代模型可以在上下文中容纳完整架构，推理模块之间的交互关系，并足够频繁地产出正确代码，从而维持项目推进的节奏。当前最先进的模型确实令人印象深刻，而且还在不断进步。 软件中的大多数抽象层，本质上是为了帮助人类管理复杂性。人类无法在脑中同时容纳整个系统，于是构建了分层结构来组织复杂度。每一层都让下一位开发者的工作更容易。 于是，我们有了「框架的框架」、包装库、成千上万行的胶水代码。 但 AI 并没有同样的限制。它可以在上下文中持有整个系统，然后直接写代码。它不需要一个中间框架来维持组织结构。它只需要一个规格说明和一个可靠的基础。 这一案例之所以受到社区热议，是因为它是一个清晰的拐点：AI 真正作为协作伙伴参与、主导大型系统级实现。并且，AI 抛弃了很多中间框架，让真正基础性的代码部分和便于人类认知代码结构的分界线逐渐显现。 正如 Cloudflare 博客文章最后所感叹的那样：「我们不确定哪些抽象是真正基础的，哪些只是为了适应人类认知构建的『拐杖』。AI 的出现正 促使这一边界重新被定义 。",
-      "score": 45
+      "title": "百度2025年四季度AI业务收入占比达43%超预期",
+      "company": "百度",
+      "source": "雷锋网",
+      "publishedAt": "Thu, 26 Feb 2026 17:15:00 +0800",
+      "summary": "百度发布2025年第四季度及全年财报，显示2025年总营收为1291亿元，其中AI业务营收达400亿元。在第四季度，百度总营收为327亿元，AI业务收入占其一般性业务收入的43%，超出市场预期。财报指出，AI云全年收入同比增长34%，四季度高性能计算设施订阅收入同比增长143%；AI原生营销服务全年收入同比增长301%；AI应用全年收入突破100亿元。此外，萝卜快跑四季度全球无人驾驶出行服务次数达340万，同比增长超200%。",
+      "score": 39
     },
     {
       "section": "产品发布与更新",
-      "title": "GitHub发布Agentic Workflows技术预览版，以AI智能体驱动代码库自动化",
-      "company": "GitHub",
-      "source": "InfoQ",
-      "publishedAt": "Thu, 26 Feb 2026 08:00:00 GMT",
-      "summary": "GitHub近日推出了名为Agentic Workflows（智能体工作流）的技术预览版，旨在通过可理解上下文与意图的编码智能体，自动化处理代码仓库中的复杂重复性任务。该方案允许开发者使用简洁的Markdown文件定义自动化目标，由智能体通过GitHub Actions执行，可应用于自动问题分类、文档更新、CI故障排查、测试优化及报告生成等工作流。系统强调安全性，默认以只读权限运行，写入操作需经安全输出流程审查，并利用隔离沙箱和防火墙保护，确保智能体仅能访问授权资源。GitHub表示，该技术旨在增强而非取代现有CI/CD流程，并保持人类在关键决策环节的参与。",
-      "score": 36
+      "title": "云知声发布Unisound U1-OCR大模型，开启OCR 3.0时代",
+      "company": "云知声",
+      "source": "量子位",
+      "publishedAt": "Thu, 26 Feb 2026 08:16:16 +0000",
+      "summary": "云知声正式发布了Unisound U1-OCR文档智能基础大模型，该模型被定位为首个工业级文档智能基座，标志着从OCR 2.0迈向了OCR 3.0时代。新模型的核心在于实现了从“字符感知”到“文档认知”的跨越，不仅能够识别文字和理解版面，还能洞察文档深层语义，完成自动分类与业务级信息抽取。它采用了ViT + LLM架构，并引入了“语义驱动+动态聚焦”策略、强化空间对齐模块、Multi-Token Prediction技术以及多任务协同强化训练方案等一系列创新，旨在解决传统模型在复杂文档处理中的瓶颈。凭借这些技术，该模型在多项权威评测中达到了国际顶尖水平（SOTA）。",
+      "score": 33
     },
     {
       "section": "技术与研究",
-      "title": "OpenClaw创始人受访吐槽Gemini：自信100%能跑，一试就崩",
-      "company": "OpenAI",
-      "source": "InfoQ",
-      "publishedAt": "Wed, 25 Feb 2026 15:44:25 GMT",
-      "summary": "OpenClaw创始人彼得·斯坦伯格在加入OpenAI后首次公开受访，谈及了OpenClaw的爆火细节。他透露自己仅用1小时就做出了OpenClaw，并分享了与AI沟通的技巧，如对模型提问“你有什么问题吗？”。访谈还涉及了OpenClaw的安全争议，探讨了工具本身是否不安全还是被用错了场景。同时，近期因用户通过OpenClaw调用谷歌模型，导致一批账号被谷歌封禁，引发了关于大厂是否开始对“套壳式调用”动真格的讨论。",
-      "score": 36
+      "title": "英伟达2026财年营收暴涨73%再破纪录，盘后股价重返200美元",
+      "company": "英伟达",
+      "source": "量子位",
+      "publishedAt": "Thu, 26 Feb 2026 02:49:04 +0000",
+      "summary": "英伟达2026财年第四季度营收达681亿美元，同比增长73%，全年营收2159亿美元，同比增长65%。其中数据中心业务是绝对核心，第四季度营收623亿美元，同比增长75%，全年营收1937亿美元，同比增长68%。公司第四季度净利润为429.6亿美元，同比增长94%，全年净利润达1200.67亿美元，相当于日入约22.6亿元人民币。财报发布后，英伟达盘后股价一度涨超3.7%。",
+      "score": 29
     },
     {
-      "section": "投融资与并购",
-      "title": "新川电子获近亿元pre-IPO轮融资，AI与光伏驱动纳米金属粉材需求增长",
-      "company": "新川电子",
+      "section": "技术与研究",
+      "title": "前腾讯员工开发AI驱动三国游戏《我的三国》",
+      "company": "腾讯",
       "source": "36氪",
-      "publishedAt": "2026-02-25 10:41:46  +0800",
-      "summary": "杭州新川电子材料股份有限公司近期完成近亿元pre-IPO轮融资，投资方包括杭州城投、联想投资等机构。该公司专注于纳米级金属粉材的研发与生产，核心产品包括MLCC用镍粉和超细软磁粉，其高端成品镍粉已实现国产化突破，软磁粉产品已被头部AI芯片厂商采用。公司业绩保持高速增长，业务范围已扩展至光伏特种铜粉等领域，并计划于2028年上市。",
-      "score": 35
+      "publishedAt": "2026-02-26 10:59:14  +0800",
+      "summary": "《我的三国》是一款由AI驱动的历史模拟游戏，玩家可以扮演三国人物通过指令触发事件并推进历史进程。该游戏由前腾讯员工胡景皓创立的工作室开发，其目标是利用生成式AI实现角色扮演、动态叙事和实时内容生成，以创造一款“前所未有”的游戏。目前游戏已发布实机演示并获得了较高关注，但尚未推出可玩版本，开发团队仍在探索解决AI记忆保留、成本与审核等挑战。",
+      "score": 27
     },
     {
       "section": "产品发布与更新",
-      "title": "MiniMax推出MaxClaw模式，一键部署OpenClaw并提供上万专家智能体",
-      "company": "MiniMax",
-      "source": "量子位",
-      "publishedAt": "Wed, 25 Feb 2026 15:58:43 +0000",
-      "summary": "MiniMax在其Agent平台上推出了名为MaxClaw的新模式，旨在简化OpenClaw生态的接入流程，实现一键配置。该模式预置了多种工具和内置技能，如爆款猎手、多Agent投研团队、热点追踪以及生图、搜图、生成视频等，并可直接接入飞书和钉钉等工作平台。此外，MiniMax Agent平台的Expert社区已拥有超过10000个针对不同垂直领域的现成专家智能体，用户可直接调用或创建自己的专属智能体。整个部署过程简便，从创建到启动仅需不到20秒。",
-      "score": 32
-    },
-    {
-      "section": "其他",
-      "title": "Anthropic博客引发IBM股价暴跌13%，创25年来最大单日跌幅",
-      "company": "IBM",
-      "source": "量子位",
-      "publishedAt": "Tue, 24 Feb 2026 08:36:24 +0000",
-      "summary": "Anthropic发布的一篇博客文章导致IBM股价在一天内下跌13.15%，创下自2000年以来的最大单日跌幅，市值蒸发约310亿美元。博客介绍了其Claude Code工具可用于对运行COBOL语言的遗留系统进行现代化改造，而COBOL相关业务是IBM的核心业务之一，其大型机业务收入与维护这些复杂、关键的旧系统紧密相关。市场认为，AI工具能显著简化COBOL代码的现代化工作，从而可能动摇IBM基于该系统维护服务建立的业务护城河。受此影响，IBM股价在2月份已下跌27%，可能创下自1968年以来的最大单月跌幅。",
-      "score": 30
-    },
-    {
-      "section": "投融资与并购",
-      "title": "Anthropic收购AI初创公司Vercept，此前其创始人之一被Meta挖走",
-      "company": "Anthropic",
-      "source": "TechCrunch AI",
-      "publishedAt": "Wed, 25 Feb 2026 23:49:19 +0000",
-      "summary": "Anthropic收购了位于西雅图的AI初创公司Vercept。Vercept开发了复杂的智能体工具，包括一个能像人操作笔记本电脑一样在应用程序内完成任务的计算机使用智能体。",
-      "score": 31
-    },
-    {
-      "section": "投融资与并购",
-      "title": "Gushwork获900万美元种子轮融资，押注AI搜索工具获取客户线索",
-      "company": "Gushwork",
-      "source": "TechCrunch AI",
-      "publishedAt": "Thu, 26 Feb 2026 00:00:00 +0000",
-      "summary": "Gushwork在由SIG和Lightspeed领投的种子轮中筹集了900万美元。这家初创公司已通过ChatGPT等AI搜索工具获得了早期客户。",
-      "score": 28
+      "title": "腾讯元宝重回苹果应用商店免费榜前十，春节AI营销战投入超百亿",
+      "company": "腾讯",
+      "source": "雷锋网",
+      "publishedAt": "Thu, 26 Feb 2026 15:53:00 +0800",
+      "summary": "春节假期结束后，腾讯元宝在苹果应用商店免费APP排行榜中的排名快速回升，重回前十。2026年春节期间，腾讯、阿里、字节等公司为争夺AI应用市场“超级入口”展开了大规模营销投入，其中腾讯元宝发起10亿现金红包活动，阿里千问投入超60亿，字节豆包则与央视春晚合作并送出价值超10亿的福利。据DataEye研究院预估，这三款AI产品的春节营销总花费预计超过100亿元，巨大的投入推动了用户普及，使元宝、豆包、千问及DeepSeek均跻身“AI原生应用亿级俱乐部”，形成了“BAT+DeepSeek”的市场格局。然而，营销热潮过后，如何实现用户留存和基于真实需求的持续增长，成为各大AI应用厂商面临的共同挑战。",
+      "score": 27
     },
     {
       "section": "技术与研究",
-      "title": "圆桌讨论：为何2026年是钠离子电池之年",
-      "company": "MIT Technology Review",
-      "source": "MIT Technology Review",
-      "publishedAt": "Wed, 25 Feb 2026 21:15:27 +0000",
-      "summary": "钠离子电池有望成为比锂离子电池更便宜、更安全的替代品，该技术正开始应用于汽车和电网储能阵列。钠离子电池被《麻省理工科技评论》评为2026年十大突破性技术之一。",
+      "title": "庞若鸣放弃Meta天价薪酬加盟OpenAI，半年内再度跳槽",
+      "company": "Meta, OpenAI",
+      "source": "量子位",
+      "publishedAt": "Thu, 26 Feb 2026 05:41:20 +0000",
+      "summary": "苹果前基础模型团队负责人庞若鸣在加入Meta仅半年后，已于上周离职并加入OpenAI，此消息已获OpenAI发言人证实。他此前加盟Meta时持有的薪酬方案总价值超过2亿美元，分多年兑现并与特定里程碑目标挂钩。庞若鸣的离职正值Meta人工智能团队持续出现人员变动之际，近期还有多位高管相继离开。",
       "score": 26
     },
     {
-      "section": "技术与研究",
-      "title": "《下载》栏目：犯罪专题介绍",
-      "company": "",
-      "source": "MIT Technology Review",
-      "publishedAt": "Wed, 25 Feb 2026 13:10:00 +0000",
-      "summary": "这是《下载》栏目的今日版，该工作日通讯每日提供科技世界动态。本期推出犯罪专题，科技长期以来使犯罪与起诉成为猫鼠游戏。但同样的新技术既让犯罪活动得以发生，也为打击犯罪提供了工具。",
-      "score": 24
-    },
-    {
-      "section": "技术与研究",
-      "title": "英伟达在创纪录的资本支出中再创季度业绩新高",
-      "company": "Nvidia",
-      "source": "TechCrunch AI",
-      "publishedAt": "Wed, 25 Feb 2026 23:04:42 +0000",
-      "summary": "英伟达首席执行官黄仁勋在谈及公司业绩时表示，全球对计算令牌的需求已呈指数级增长。该公司在资本支出创纪录的背景下实现了又一个创纪录的季度业绩。",
-      "score": 22
-    },
-    {
       "section": "产品发布与更新",
-      "title": "Gemini现可在Android上自动化执行部分多步骤任务",
+      "title": "谷歌推出Nano Banana 2模型以加速图像生成",
       "company": "Google",
       "source": "TechCrunch AI",
-      "publishedAt": "Wed, 25 Feb 2026 18:00:00 +0000",
-      "summary": "谷歌宣布，Gemini在Android设备上将能够自动化执行涉及多步骤的任务。这些任务包括叫车服务请求，以及杂货或食品配送。该功能旨在简化用户的操作流程。",
-      "score": 22
+      "publishedAt": "Thu, 26 Feb 2026 16:00:00 +0000",
+      "summary": "谷歌推出了Nano Banana 2模型，该模型能够实现更快的图像生成。谷歌将把Nano Banana 2设为Gemini应用和AI模式中的默认模型。",
+      "score": 34
     },
     {
       "section": "产品发布与更新",
-      "title": "OpenAI首席运营官表示ChatGPT广告推出将是“迭代式”的",
-      "company": "OpenAI",
-      "source": "Search Engine Land",
-      "publishedAt": "7 hours ago",
-      "summary": "OpenAI首席运营官表示ChatGPT的广告推出将是渐进且以隐私为中心的。该公司正在测试在不损害用户信任的前提下实现货币化的方式。",
-      "score": 21
+      "title": "扎克伯格现身普拉达时装周，引发Meta AI眼镜合作猜测",
+      "company": "Meta",
+      "source": "TechCrunch AI",
+      "publishedAt": "Thu, 26 Feb 2026 20:11:55 +0000",
+      "summary": "马克·扎克伯格出席了普拉达在米兰的时装周活动，这引发了人们对于Meta是否会推出普拉达品牌AI眼镜的猜测。",
+      "score": 31
+    },
+    {
+      "section": "技术与研究",
+      "title": "Mistral AI与全球咨询巨头埃森哲达成合作协议",
+      "company": "Mistral AI",
+      "source": "TechCrunch AI",
+      "publishedAt": "Thu, 26 Feb 2026 19:17:27 +0000",
+      "summary": "Mistral AI与埃森哲达成了合作伙伴关系。埃森哲近期也宣布了与OpenAI和Anthropic等竞争对手的合作。",
+      "score": 27
+    },
+    {
+      "section": "投融资与并购",
+      "title": "Sophia Space获1000万美元种子轮融资，将演示新型太空计算机",
+      "company": "Sophia Space",
+      "source": "TechCrunch AI",
+      "publishedAt": "Thu, 26 Feb 2026 19:55:20 +0000",
+      "summary": "Sophia Space公司筹集了1000万美元的种子轮资金，用于演示其新型太空计算机。该公司的模块化计算机单元为太空数据中心提供了新的愿景。",
+      "score": 25
+    },
+    {
+      "section": "技术与研究",
+      "title": "一家公司声称取得电池突破，现在需要证明它",
+      "company": "Donut Lab",
+      "source": "MIT Technology Review",
+      "publishedAt": "Thu, 26 Feb 2026 11:00:00 +0000",
+      "summary": "当一家公司声称创造了电池领域的“圣杯”时，必然会引发一些疑问。芬兰公司Donut Lab上个月宣布其拥有新的固态电池技术，并已准备好大规模生产，此后相关兴趣便持续发酵。",
+      "score": 25
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "Adobe推出Quick Cut AI工具以加速视频编辑",
+      "company": "Adobe",
+      "source": "Technobezz",
+      "publishedAt": "20 hours ago",
+      "summary": "Adobe发布了一款名为Quick Cut的AI视频编辑工具。该工具能够利用自然语言指令，从原始素材中快速生成粗剪版本。其主要目标是加速社交媒体和营销等内容创作流程。",
+      "score": 19
+    },
+    {
+      "section": "技术与研究",
+      "title": "在AI与工业5.0转型中寻找价值",
+      "company": "",
+      "source": "MIT Technology Review",
+      "publishedAt": "Thu, 26 Feb 2026 15:00:59 +0000",
+      "summary": "工业4.0转型的核心是人工智能、云计算、物联网、机器人和数字孪生等智能技术的融合。工业5.0则标志着一个关键转变，即从整合新兴技术转向大规模地协调运用这些技术。",
+      "score": 18
     }
   ]
 }

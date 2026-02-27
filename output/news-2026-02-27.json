@@ -1,18 +1,18 @@
 {
   "产品发布与更新": [
     {
-      "title": "Perplexity推出Perplexity Computer，整合19个模型，用户复刻平民版彭博终端机",
+      "title": "Perplexity推出AI系统Perplexity Computer，可调度19个模型并复刻彭博终端机功能",
       "url": "https://www.qbitai.com/2026/02/382647.html",
       "snippet": "比OpenClaw“更安全”",
       "source": "量子位",
       "publishedAt": "Thu, 26 Feb 2026 03:57:25 +0000",
       "region": "国内",
-      "summary": "Perplexity公司宣布推出新产品Perplexity Computer，这是一个基于浏览器的全能型通用数字员工，能够执行推理、委派、搜索、构建、编码、部署项目、设计文件、研究课题和管理工作流程等多种任务。该产品由团队秘密研发两个月，其核心是Claude Opus 4.6模型，并能调度包括Gemini、Grok、ChatGPT 5.2在内的共19种模型，以处理不同专业任务。产品发布后，有网友迅速利用它创建了一个功能初具雏形的平民版彭博终端机，而使用Perplexity Computer仅需订阅Perplexity Max服务，其年费远低于专业彭博终端机的标准年费。",
+      "summary": "Perplexity公司宣布推出新产品Perplexity Computer，这是一个基于浏览器的全能型通用数字员工，能够执行推理、委派、搜索、构建、编码、交付等多种任务，并支持部署项目、设计文件、研究课题和管理工作流程。该系统被定义为“能行动的AI系统”，用户只需描述期望结果，系统便会自动拆解任务，由多个子代理分工执行，整个过程可持续运行数小时甚至数月，仅在需要时才会要求真人介入。Perplexity Computer的核心是Claude Opus 4.6，并可调用包括Gemini、Grok、ChatGPT 5.2等在内的共19种模型，以处理推理、编码、网络搜索及图像视频相关工作。产品发布后，已有网友利用其复刻了功能简化但感觉类似的平民版彭博终端机，而使用Perplexity Computer仅需订阅Perplexity Max，其年费约为2000美元，远低于彭博终端机2.5万至3万美元的年费。",
       "category": "产品发布与更新",
       "company": "Perplexity",
-      "score": 39,
+      "score": 46,
       "breakdown": {
-        "substance": 18,
+        "substance": 25,
         "importance": 6,
         "timeliness": 6,
         "credibility": 9
@@ -26,13 +26,13 @@
       "source": "量子位",
       "publishedAt": "Thu, 26 Feb 2026 08:16:16 +0000",
       "region": "国内",
-      "summary": "云知声正式发布了Unisound U1-OCR文档智能基础大模型，该模型被定位为首个工业级文档智能基座，标志着从OCR 2.0迈向了OCR 3.0时代。新模型的核心在于实现了从“字符感知”到“文档认知”的跨越，不仅能够识别文字和理解版面，还能洞察文档深层语义，完成自动分类与业务级信息抽取。它采用了ViT + LLM架构，并引入了“语义驱动+动态聚焦”策略、强化空间对齐模块、Multi-Token Prediction技术以及多任务协同强化训练方案等一系列创新，旨在解决传统模型在复杂文档处理中的瓶颈。凭借这些技术，该模型在多项权威评测中达到了国际顶尖水平（SOTA）。",
+      "summary": "云知声正式发布了Unisound U1-OCR文档智能基础大模型，该模型被定位为首个工业级文档智能基座，标志着OCR技术进入3.0时代。模型采用ViT+LLM架构，参数规模为3B量级，具备“性能SOTA、可信可验、开箱即用、高效部署、强适配”五大核心优势，旨在突破传统文档处理边界。其核心创新在于实现了从“字符感知”到“文档认知”的跨越，能够理解文档深层语义，进行自动分类与业务级信息抽取，并采用了“语义驱动+动态聚焦”策略、强化空间对齐模块以及Multi-Token Prediction等技术来提升处理复杂文档的能力。模型在多项权威评测中取得了业界领先的表现。",
       "category": "产品发布与更新",
       "company": "云知声",
-      "score": 33,
+      "score": 35,
       "breakdown": {
-        "substance": 18,
-        "importance": 0,
+        "substance": 15,
+        "importance": 5,
         "timeliness": 6,
         "credibility": 9
       },
@@ -45,12 +45,12 @@
       "source": "雷锋网",
       "publishedAt": "Thu, 26 Feb 2026 15:53:00 +0800",
       "region": "国内",
-      "summary": "春节假期结束后，腾讯元宝在苹果应用商店免费APP排行榜中的排名快速回升，重回前十。2026年春节期间，腾讯、阿里、字节等公司为争夺AI应用市场“超级入口”展开了大规模营销投入，其中腾讯元宝发起10亿现金红包活动，阿里千问投入超60亿，字节豆包则与央视春晚合作并送出价值超10亿的福利。据DataEye研究院预估，这三款AI产品的春节营销总花费预计超过100亿元，巨大的投入推动了用户普及，使元宝、豆包、千问及DeepSeek均跻身“AI原生应用亿级俱乐部”，形成了“BAT+DeepSeek”的市场格局。然而，营销热潮过后，如何实现用户留存和基于真实需求的持续增长，成为各大AI应用厂商面临的共同挑战。",
+      "summary": "春节假期结束后，腾讯AI助手“元宝”在苹果应用商店免费APP排行榜中的排名快速回升，重回前十。春节期间，腾讯、阿里、字节跳动为争夺AI应用市场“超级入口”展开了大规模营销投入，其中腾讯元宝发起10亿现金红包活动，阿里千问投入超60亿推出“春节请客计划”，字节豆包则拿下央视春晚独家合作并送出价值超10亿的福利。据DataEye研究院预估，这三款AI产品的春节营销总花费预计超过100亿元，巨大的投入推动了用户普及，使元宝、豆包、千问及DeepSeek均跻身“AI原生应用亿级俱乐部”，形成了“BAT+DeepSeek”的市场格局。然而，营销热潮过后，如何实现用户留存和基于真实需求的持续增长，成为各大AI应用厂商面临的共同挑战。",
       "category": "产品发布与更新",
       "company": "腾讯",
-      "score": 27,
+      "score": 32,
       "breakdown": {
-        "substance": 11,
+        "substance": 16,
         "importance": 5,
         "timeliness": 6,
         "credibility": 5
@@ -58,32 +58,13 @@
       "isDuplicate": false
     },
     {
-      "title": "谷歌推出Nano Banana 2模型以加速图像生成",
-      "url": "https://techcrunch.com/2026/02/26/google-launches-nano-banana-2-model-with-faster-image-generation/",
-      "snippet": "Google is making Nano Banana 2 a default model in Gemini app and in AI mode.",
-      "source": "TechCrunch AI",
-      "publishedAt": "Thu, 26 Feb 2026 16:00:00 +0000",
-      "region": "海外",
-      "summary": "谷歌推出了Nano Banana 2模型，该模型能够实现更快的图像生成。谷歌将把Nano Banana 2设为Gemini应用和AI模式中的默认模型。",
-      "category": "产品发布与更新",
-      "company": "Google",
-      "score": 34,
-      "breakdown": {
-        "substance": 12,
-        "importance": 6,
-        "timeliness": 8,
-        "credibility": 8
-      },
-      "isDuplicate": false
-    },
-    {
-      "title": "扎克伯格现身普拉达时装周，引发Meta AI眼镜合作猜测",
+      "title": "扎克伯格现身Prada时装周，引发Meta AI眼镜合作猜测",
       "url": "https://techcrunch.com/2026/02/26/so-were-getting-prada-meta-ai-glasses-right/",
       "snippet": "Mark Zuckerberg was at Prada's fashion week event in Milan, leaving everyone to wonder if we're getting Meta AI glasses under the Prada brand.",
       "source": "TechCrunch AI",
       "publishedAt": "Thu, 26 Feb 2026 20:11:55 +0000",
       "region": "海外",
-      "summary": "马克·扎克伯格出席了普拉达在米兰的时装周活动，这引发了人们对于Meta是否会推出普拉达品牌AI眼镜的猜测。",
+      "summary": "马克·扎克伯格出席了在米兰举行的Prada时装周活动，这引发了人们对于Meta是否会推出Prada品牌AI眼镜的猜测。",
       "category": "产品发布与更新",
       "company": "Meta",
       "score": 31,
@@ -96,26 +77,64 @@
       "isDuplicate": false
     },
     {
-      "title": "Adobe推出Quick Cut AI工具以加速视频编辑",
-      "url": "https://www.technobezz.com/news/adobe-launches-quick-cut-ai-tool-for-rapid-video-editing",
-      "snippet": "Adobe's Quick Cut AI tool rapidly creates rough video edits from raw footage using natural language, speeding up content creation for social media and m.",
-      "source": "Technobezz",
-      "publishedAt": "20 hours ago",
+      "title": "谷歌推出Nano Banana 2模型，图像生成速度更快",
+      "url": "https://techcrunch.com/2026/02/26/google-launches-nano-banana-2-model-with-faster-image-generation/",
+      "snippet": "Google is making Nano Banana 2 a default model in Gemini app and in AI mode.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Thu, 26 Feb 2026 16:00:00 +0000",
       "region": "海外",
-      "summary": "Adobe发布了一款名为Quick Cut的AI视频编辑工具。该工具能够利用自然语言指令，从原始素材中快速生成粗剪版本。其主要目标是加速社交媒体和营销等内容创作流程。",
+      "summary": "谷歌推出了Nano Banana 2模型，该模型具有更快的图像生成能力。谷歌将把Nano Banana 2设为Gemini应用和AI模式中的默认模型。",
       "category": "产品发布与更新",
-      "company": "Adobe",
-      "score": 19,
+      "company": "Google",
+      "score": 30,
       "breakdown": {
-        "substance": 12,
+        "substance": 8,
+        "importance": 6,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "Read AI推出基于邮件的“数字分身”，协助处理日程与回答问题",
+      "url": "https://techcrunch.com/2026/02/26/read-ai-launches-an-email-based-digital-twin-to-help-you-with-schedules-and-answers/",
+      "snippet": "Read AI is launching Ada, which can reply with your availability and extract answers from the company knowledge base and the web.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Thu, 26 Feb 2026 17:00:00 +0000",
+      "region": "海外",
+      "summary": "Read AI公司推出了名为Ada的产品，它可以回复你的日程安排，并从公司知识库和网络中提取答案。",
+      "category": "产品发布与更新",
+      "company": "Read AI",
+      "score": 24,
+      "breakdown": {
+        "substance": 8,
         "importance": 0,
-        "timeliness": 2,
-        "credibility": 5
+        "timeliness": 8,
+        "credibility": 8
       },
       "isDuplicate": false
     }
   ],
   "技术与研究": [
+    {
+      "title": "Anthropic CEO指控中国模型蒸馏Claude引发舆论争议",
+      "url": "https://www.infoq.cn/article/kN0HD0jPivJBm8JZt8lw?utm_source=rss&utm_medium=article",
+      "snippet": "点击查看原文>",
+      "source": "InfoQ",
+      "publishedAt": "Thu, 26 Feb 2026 15:35:14 GMT",
+      "region": "国内",
+      "summary": "近期华尔街将市场波动归因于Anthropic的产品发布，其CEO Dario Amodei对此态度暧昧。Anthropic指控中国三家主要实验室DeepSeek、Moonshot和Minimax对Claude模型发起“蒸馏攻击”，使用超过2.4万个虚假账户进行1600多万次交互以复制模型能力，并将问题上升到国家安全层面。但该说法很快遭到质疑，有用户发现Claude Sonnet 4.6在回答“你是什么模型”时竟自称“DeepSeek”，且通过官方API复现成功。Amodei在访谈中回避开源闭源问题，直接指责中国模型为基准测试优化并从美国模型蒸馏，强调自身专注于开发最佳模型。",
+      "category": "技术与研究",
+      "company": "Anthropic",
+      "score": 43,
+      "breakdown": {
+        "substance": 17,
+        "importance": 10,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
     {
       "title": "百度2025年四季度AI业务收入占比达43%超预期",
       "url": "https://www.leiphone.com/category/industrynews/Ebw8wdpE2nrWY4rw.html",
@@ -123,7 +142,7 @@
       "source": "雷锋网",
       "publishedAt": "Thu, 26 Feb 2026 17:15:00 +0800",
       "region": "国内",
-      "summary": "百度发布2025年第四季度及全年财报，显示2025年总营收为1291亿元，其中AI业务营收达400亿元。在第四季度，百度总营收为327亿元，AI业务收入占其一般性业务收入的43%，超出市场预期。财报指出，AI云全年收入同比增长34%，四季度高性能计算设施订阅收入同比增长143%；AI原生营销服务全年收入同比增长301%；AI应用全年收入突破100亿元。此外，萝卜快跑四季度全球无人驾驶出行服务次数达340万，同比增长超200%。",
+      "summary": "百度发布2025年第四季度及全年财报，显示2025年总营收为1291亿元，其中AI业务营收达400亿元。在第四季度，AI业务收入占百度一般性业务收入的43%，超出市场预期。AI云全年收入同比增长34%，四季度高性能计算设施订阅收入同比增速达143%；AI原生营销服务全年收入同比增长301%；AI应用全年收入突破100亿元。同时，萝卜快跑四季度全球无人驾驶出行服务次数达340万，同比增长超200%。",
       "category": "技术与研究",
       "company": "百度",
       "score": 39,
@@ -142,12 +161,12 @@
       "source": "量子位",
       "publishedAt": "Thu, 26 Feb 2026 02:49:04 +0000",
       "region": "国内",
-      "summary": "英伟达2026财年第四季度营收达681亿美元，同比增长73%，全年营收2159亿美元，同比增长65%。其中数据中心业务是绝对核心，第四季度营收623亿美元，同比增长75%，全年营收1937亿美元，同比增长68%。公司第四季度净利润为429.6亿美元，同比增长94%，全年净利润达1200.67亿美元，相当于日入约22.6亿元人民币。财报发布后，英伟达盘后股价一度涨超3.7%。",
+      "summary": "英伟达2026财年第四季度营收达681亿美元，同比增长73%，环比增长20%，全年营收2159亿美元，同比增长65%。其中数据中心业务第四季度营收623亿美元，同比增长75%，全年营收1937亿美元，同比增长68%，主要受Blackwell架构放量和推理算力需求指数级增长推动。公司第四季度净利润为429.6亿美元，同比增长94%，全年净利润1200.67亿美元，同比增长65%。财报发布后，英伟达盘后股价一度涨超3.7%。",
       "category": "技术与研究",
       "company": "英伟达",
-      "score": 29,
+      "score": 32,
       "breakdown": {
-        "substance": 14,
+        "substance": 17,
         "importance": 0,
         "timeliness": 6,
         "credibility": 9
@@ -155,70 +174,13 @@
       "isDuplicate": false
     },
     {
-      "title": "前腾讯员工开发AI驱动三国游戏《我的三国》",
-      "url": "https://36kr.com/p/3698585488764553?f=rss",
-      "snippet": "文 | 贝果树 编辑 | 果脯 对于熟悉三国历史的玩家来说，《我的三国》的游玩体验，可能类似于主角拿到剧本的穿越文学。 公元264年，离陈寿写下《三国志》还有十余年，这时的陈寿，在官场上还资历尚浅。但你看重陈寿的才能，打算提拔他为官职太常。重臣董厥出来劝阻，说这恐难服众。不过，你知道自己不会看错人，便在对话框里自信地打下：“此子将来必能名留青史”。 此子将来必能写就《三国志》 这是《我的三国》在1月2日发布的实机演示中的内容。《我的三国》是一款由AI驱动的历史模拟游戏，玩家将作为三国故事中的人物，下达指令，触发事件，推进历史的进程。 游戏实机演示截图 有玩家在评论区说这是一款“AI美术，AI文案，AI配音”的“3A”大作。在游戏中，AI会根据玩家的选择推演剧情，有极大的自由度。而这部“3A”作品，最终在B站上收获了33万的播放量。 《我的三国》的诞生，源于制作人胡景皓“想用AI做一款前所未有的游戏”的初衷。 在腾讯工作时，胡景皓就觉得“如果只是在传统游戏上加上AI，不能完全体现出它的价值”。生成式AI有强大的内容创造能力，他相信如果仅比较内容丰富度，能用AI制作出超越GTA5或《博德之门3》那样体量的游戏。 AI的参与为游戏开发带来了一些不一样的地方。臭皮匠工作的成员除了胡景皓都是学生。有人还在读大二大三，他有意保持这种年轻的状态：有了AI带来的“技术平权”，“工作经验其实没那么重要”。 也有一些新的问题。在实机演示的评论区，不少玩家质疑AI“记忆如何保留”；交互与Token成本挂钩，如何选择营收方式？；AI生成内容怎么应对审核？ 现在《我的三国》还没有做出一个真正可玩的版本，他们也在探索。但胡景皓相信，“等大家真的能玩到的那天，就能感受到AI游戏的潜力”。 以下是我们和《我的三国》制作人胡景皓的对话内容，经整理后呈现。 用AI做出一款“前所未有”的游戏 为什么选择从腾讯自己出来做游戏？ 我在腾讯期间的工作分为两个阶段。在大模型出来之前，我们主要做的是NLP（自然语言处理）、CV多模态相关的事情。而大模型出来之后，我们就开始探索大模型在一些游戏当中的应用，比如给《和平精英》《英雄联盟手游》赋能，做一些锦上添花的功能。 《和平精英》的AI队友“花傲天” 但从我个人感觉来看，如果只是在一个传统的游戏里加上AI，可能没法最大化它在游戏中的价值。我更希望能利用AI重新开发一款前所未有，或者说以前技术上无法实现的游戏。 针对这点，在职期间我就自己做了很多头脑风暴，也尝试过开发一些小的AI游戏。反复检验过后，我觉得这件事情本身是可行的，而且很有意思，加上当时脑子里已经对《我的三国》有了一定的构思，所以去年9月份的时候才最终决定离职，出来做自己的一款游戏。 在你的设想中，这个“前所未有”具体体现在哪里？ 有三方面。 第一种是用AI进行角色扮演，这是之前的游戏做不到的。AI能让游戏角色给玩家一种真正的“人”的感觉。从《我的三国》来说，就是让张飞像张飞，关羽像关羽。 第二种是动态叙事。之前所有游戏里的剧情都是预先生成好的，而AI则能随着游戏进程，动态地生成剧情。 游戏实机演示截图 第三种是AIGC。现在很多游戏都用AI去生成游戏素材，但我们的目标是让这些素材和内容能够实时生成。或者即使是离线生成，我们也希望人参与的部分尽可能小，让 AI 生成尽可能多的AIGC资产。 听起来这些能力都和生成式AI有关。这一轮AI浪潮出现的也大多是生成式AI，和之前相比会有什么不同？ 上一轮AI能做的事情更多是工具性的。比方说NLP功能，更多被用来给玩家言论分类、过滤违规内容等。它被用于提升效率，而不是生成内容。 而在这一轮，AI变成了一个创作者。我们这款游戏的核心，就是让AI能够尽可能地释放它的创造能力。 游戏实机演示截图 有了AI的创造能力，你们现在能做出多大内容体量的游戏？ 如果抛开3A大作在引擎和渲染技术上的积累，仅就叙事内容的丰富度而言，我认为我们甚至可以做出超越GTA5或《博德之门3》这样内容体量的游戏。AI有强大的内容创造能力。而我们只需引导AI去生成相应的内容，就能构建出足够的自由度，让游戏呈现出近乎无穷无尽的内容生态。 不一样的三国游戏 为什么选择三国题材？ 关于这点，我们其实有好几个维度的思考。 首先，做AI游戏最难的点在于怎么让AI理解你这个游戏的世界观。如果它本身是一个架空的世界观，AI其实会不知道这里的人是什么，对于这个世界的运行规则也不了解，因此也没办法推测可能会发生哪些事件，最终导致很容易在生成内容时产生幻觉。 而如果是一个具体的历史题材，AI其实已经充分学习过里面的语料，包括了解里面的每一个人物、每一个事件，以及每一个设定和背景。在开发过程中，我们就不再需要给AI灌注太多额外的知识，只需要保证它能完成一套合理的叙事逻辑就行。 游戏实机演示截图 其次在中国，三国是一个非常大的IP。大家喜欢三国IP，核心还是喜欢三国的故事。但之前的三国游戏大多在剧情、谋略和人物的塑造上有所欠缺，更多是数值和机制的玩法。而我们希望在《我的三国》里，玩家能参与故事的进程，通过不同的谋略和选择改变历史。 游戏实机演示截图 最后，是考虑到目前AI在内容生成上，更偏向于图文或声音的模块，而在游戏引擎和动作上还不能做到那么实时。但我们观察到，一些历史游戏爱好者则对这种图文交互的玩法接受度很高，用AI则能升级这些体验。 但现在其实也有小部分三国游戏符合你的描述，比如《英雄立志传：三国志》。与他们相比，《我的三国》又会有哪些不同？ 《英雄立志传：三国志》综合了很多机制，做了一个很全面的三国游戏。但从体验角度，AI游戏跟传统游戏最大的核心点差异，在于自由度的呈现方式上。 在传统游戏里，交互被限制在已经暴露出来的玩法上。比方说通过互动增加属性值或触发事件。但它们没办法真正意义上去推演历史或进行宏大叙事。比如，杀掉曹操后世界会发生什么变化？这部分不借助AI很难做。如果能给传统游戏加上AI，可玩性会有很大提升，这也是我们想做的事。 游戏实机演示截图 这会产生Token成本。之前一些产品会用IAA模式维持营收，比如Token不够了就需要看广告。《我的三国》未来会采用什么样的营收模式？ 《我的三国》会是一款买断制游戏。在我们的游戏里，Token成本是可控的。我们实时生成的内容以文本为主，而现在文本模型的价格没那么高。 另外我们有缓存机制。当不同玩家玩到相同状态时，游戏就会加载之前生成的内容，而不是实时生成。所以成本会随着游戏进程慢慢降低。 之所以选择买断制，是因为我们更希望以游戏质量，而不是以成本导向定价。订阅制或IAA有点像买牛肉按斤算，在乎的是顾客花了多少成本。而买断制是以内容整体呈现定价。就像一道菜好不好吃，如果顾客觉得好吃，就可以有一些溢价。 如果我们觉得自己在做很好的游戏，那么买断制其实更合理。 但从玩家角度看，有些人在剧情上可能还是偏向做选择，而不是思考和输出。大家对需要手打输入的模式接受度高吗？ 游戏里会给玩家大量选择空间。比如你的手下会提供一些计策，可以选择采纳或修改这些意见。演示里绝大部分用输入，是为了展示游戏更好的自由度。但对于部分对创造要求不那么高的玩家，也可以通过预设选项来进行游戏。 玩家可以直接选择预设选项或对预设选项进行更改 还有很多玩家关心AI记忆能否保留，这个问题怎么解决？ 核心解决方案是把AI生成的剧本定期结算到游戏的系统状态里。比方说一场战役打完，我们只会记录谁获得了多少土地、谁的数值提高了、哪个将领死掉了，而把具体的剧情发展过程扔掉。 这是一种选择性记忆。我们会定义哪些内容是需要上下文记忆的，哪些不需要。结算就是把一个故事变成一个可以被记录的游戏状态。随着游戏时长增长，我们只会记录那些会影响后续游戏发展的重要内容，有点像副本结算的感觉。所以不会面临传统AI游戏的记忆系统问题。 之后除了Demo里已有的玩法，还会在哪些方面增加内容？ 未来会增加能够进行交互的地图系统，还会有一个很有意思的后宫系统。而对于已经放出的功能，我们也会进行重新设计，让界面更美观、交互方式更自然。我们对演示过的功能可能都会做一些重构和调整。 AI的参与改变了传统的开发过程 你们的工作室叫臭皮匠工作室，能简单介绍一下你们是怎样组建这个团队，以及如何分工的吗？ 我们最早是三个同学一起组建的工作室，但现在团队已经扩到了九人。 我们的分工没有那么明确。我自己负责产品和技术，但也会写代码、做调研；我们的设计同学、美术同学会做一些前端开发；程序同学也会参与游戏的讨论。所以我们的游戏其实是大家一起集思广益设计出来的。 现在团队扩建以后，这种分工方式也没有太大改变。每个人会有一块自己负责的技术，但也都会写代码去实现模块部分。所有的同学都会参与到游戏设计里面去。 我希望大家能聚在一起，核心还是对这个游戏本身感兴趣，而不仅仅是实现一个功能。我其实很喜欢这种人人都参与到游戏设计的感觉。 游戏实机演示截图 听起来，AI的应用改变了传统的团队结构和开发流程？ 是的，我们感觉下来，AI带来了“技术平权”。以前没有编程经验的同学可能不敢尝试实现功能，但现在给他一些AI工具，他们也能开始搭界面、做设计。每个人都能做很多之前不敢想的事，核心驱动力变成了大家的兴趣与热情，这是我最看重的一点。 你们从立项到出Demo似乎很快。 AI确实能在做游戏上带来非常高的提效。在传统模式里，按我们的想法做一款游戏其实非常难，有很多决策步骤。但当我们用AI去解决这些步骤后，效率跟之前比会有一个质的提升。 游戏实机演示截图 这段时间正好是AIGC应用落地的一个热点周期。有没有感受到大家都开始用AI做游戏？ 其实所有的小团队、大团队都会尝试用AI来提效。之前我在腾讯的时候，就有很多组都在往AI方向转型，用AI来做一些原本需要很多人力去做的事情。 而用做AI原生游戏，或者把AI作为核心玩法的也有不少。但我们感觉下来，大家的思路都不太一样，所以做出来的游戏也千差万别。可能大家都还处于一个探索的阶段。 用AI做游戏会不会遇到一些新的问题？ 许多任务看起来AI能够完成，但往往不如预期。例如，让AI生成一个《王者荣耀》的英雄，它实际做不好。因为AI并不真正理解这个游戏的具体玩法。 我们在开发中也经常遇到这类问题。我们会以为已经提供了足够的信息让AI生成内容，却因为某些上下文的缺失，导致生成的内容并没有那么好。这时，我们就必须从头思考，究竟缺了哪一方面的信息，才让结果跟我们想象中的有所偏差？这种思考是我们经常要做的。 这会不会对开发周期有一些影响？内部是否已经定了一个大概的上线日期？ 我们的目标是今年年底能把游戏上线。但我们也预留了一些空间用来探索。因为开发过程中一定会出现问题和需要重新迭代的部分。 所以，我们在做的过程中不担心可能会遇到的问题，因为我们从一开始就已经预留了时间。 《我的三国》里面有大量的AI生成内容。这在找发行或拿版号审核时，会不会遇到困难？ 我们可能打算自发行。传统发行商对AI游戏还没有很充足的经验，而我们也想自己积累发行经验。 关于审核，有很多AI游戏一开始立项是游戏，但做着做着就做成了一款应用。所以关于这块的政策或审批，我们目前还不是很清楚。但我觉得随着时间发展，应该会有更多案例让我们更清楚地看到审核制度。 目前我们肯定还是先把产品做好，再去观察目前的要求以及对AI生成内容的态度，然后再去申请版号。 市场如何看待这类AI游戏项目？大家会怎么估值？ 我感觉大家都非常感兴趣，但还是以一种观望的状态去看待。 投资机构觉得2026年是AI应用落地时期，未来会有爆发性的趋势。但之前出现了很多关于AI游戏的概念，而实际可玩性并没想象中高；AI游戏也没有太多先例，所以他们更多是处于观察期。 而我们聊完后，发现其实大家还是很认可我们在做的事情。在做出一个可玩的版本时，我们就会开启比较正式的融资。 我相信大家在玩过我们的游戏后，就能感受到AI游戏的潜力。 本文首发自“36氪游戏”。",
-      "source": "36氪",
-      "publishedAt": "2026-02-26 10:59:14  +0800",
-      "region": "国内",
-      "summary": "《我的三国》是一款由AI驱动的历史模拟游戏，玩家可以扮演三国人物通过指令触发事件并推进历史进程。该游戏由前腾讯员工胡景皓创立的工作室开发，其目标是利用生成式AI实现角色扮演、动态叙事和实时内容生成，以创造一款“前所未有”的游戏。目前游戏已发布实机演示并获得了较高关注，但尚未推出可玩版本，开发团队仍在探索解决AI记忆保留、成本与审核等挑战。",
-      "category": "技术与研究",
-      "company": "腾讯",
-      "score": 27,
-      "breakdown": {
-        "substance": 9,
-        "importance": 5,
-        "timeliness": 6,
-        "credibility": 7
-      },
-      "isDuplicate": false
-    },
-    {
-      "title": "庞若鸣放弃Meta天价薪酬加盟OpenAI，半年内再度跳槽",
-      "url": "https://www.qbitai.com/2026/02/382657.html",
-      "snippet": "任职仅半年",
-      "source": "量子位",
-      "publishedAt": "Thu, 26 Feb 2026 05:41:20 +0000",
-      "region": "国内",
-      "summary": "苹果前基础模型团队负责人庞若鸣在加入Meta仅半年后，已于上周离职并加入OpenAI，此消息已获OpenAI发言人证实。他此前加盟Meta时持有的薪酬方案总价值超过2亿美元，分多年兑现并与特定里程碑目标挂钩。庞若鸣的离职正值Meta人工智能团队持续出现人员变动之际，近期还有多位高管相继离开。",
-      "category": "技术与研究",
-      "company": "Meta, OpenAI",
-      "score": 26,
-      "breakdown": {
-        "substance": 6,
-        "importance": 5,
-        "timeliness": 6,
-        "credibility": 9
-      },
-      "isDuplicate": false
-    },
-    {
-      "title": "Mistral AI与全球咨询巨头埃森哲达成合作协议",
-      "url": "https://techcrunch.com/2026/02/26/mistral-ai-inks-a-deal-with-global-consulting-giant-accenture/",
-      "snippet": "Mistral AI lands a partnership with Accenture, the consultant that has also recently announced partnerships with rivals OpenAI and Anthropic.",
-      "source": "TechCrunch AI",
-      "publishedAt": "Thu, 26 Feb 2026 19:17:27 +0000",
-      "region": "海外",
-      "summary": "Mistral AI与埃森哲达成了合作伙伴关系。埃森哲近期也宣布了与OpenAI和Anthropic等竞争对手的合作。",
-      "category": "技术与研究",
-      "company": "Mistral AI",
-      "score": 27,
-      "breakdown": {
-        "substance": 4,
-        "importance": 5,
-        "timeliness": 10,
-        "credibility": 8
-      },
-      "isDuplicate": false
-    },
-    {
-      "title": "一家公司声称取得电池突破，现在需要证明它",
+      "title": "芬兰公司宣称电池突破，但需证明其真实性",
       "url": "https://www.technologyreview.com/2026/02/26/1133722/solid-state-batteries-donut-lab/",
       "snippet": "When a company claims to have created what’s essentially the holy grail of batteries, there are bound to be some questions. Interest has been swirling since Donut Lab, a Finnish company, announced last month that it had a new solid-state battery technology, one that was ready for large-scale production. The company said its batteries can…",
       "source": "MIT Technology Review",
       "publishedAt": "Thu, 26 Feb 2026 11:00:00 +0000",
       "region": "海外",
-      "summary": "当一家公司声称创造了电池领域的“圣杯”时，必然会引发一些疑问。芬兰公司Donut Lab上个月宣布其拥有新的固态电池技术，并已准备好大规模生产，此后相关兴趣便持续发酵。",
+      "summary": "当一家公司声称创造了电池领域的“圣杯”时，必然会引发一些疑问。芬兰公司Donut Lab上个月宣布拥有新的固态电池技术，并已准备好大规模生产，这引发了广泛关注。",
       "category": "技术与研究",
       "company": "Donut Lab",
       "score": 25,
@@ -231,20 +193,20 @@
       "isDuplicate": false
     },
     {
-      "title": "在AI与工业5.0转型中寻找价值",
-      "url": "https://www.technologyreview.com/2026/02/26/1133707/finding-value-with-ai-and-industry-5-0-transformation/",
-      "snippet": "For years, Industry 4.0 transformation has centered on the convergence of intelligent technologies like AI, cloud, the internet of things, robotics, and digital twins. Industry 5.0 marks a pivotal shift from integrating emerging technologies to orchestrating them at scale. With Industry 5.0, the purpose of this interconnected web of technologies is more nuanced: to augment…",
+      "title": "美国在寻找外星生命竞赛中失去领先地位",
+      "url": "https://www.technologyreview.com/2026/02/26/1133734/the-download-how-america-lost-its-lead-in-the-hunt-for-alien-life-and-ambitious-battery-claims/",
+      "snippet": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. America was winning the race to find Martian life. Then China jumped in. In July 2024, NASA’s Perseverance rover came across a peculiar rocky outcrop on Mars covered in strange spots. On Earth,…",
       "source": "MIT Technology Review",
-      "publishedAt": "Thu, 26 Feb 2026 15:00:59 +0000",
+      "publishedAt": "Thu, 26 Feb 2026 13:10:00 +0000",
       "region": "海外",
-      "summary": "工业4.0转型的核心是人工智能、云计算、物联网、机器人和数字孪生等智能技术的融合。工业5.0则标志着一个关键转变，即从整合新兴技术转向大规模地协调运用这些技术。",
+      "summary": "美国曾在寻找火星生命的竞赛中处于领先地位，但随后中国加入了竞争。2024年7月，NASA的毅力号火星车在火星上发现了一个奇特的岩石露头。",
       "category": "技术与研究",
       "company": "",
-      "score": 18,
+      "score": 16,
       "breakdown": {
         "substance": 0,
         "importance": 0,
-        "timeliness": 8,
+        "timeliness": 6,
         "credibility": 10
       },
       "isDuplicate": false
@@ -252,24 +214,63 @@
   ],
   "投融资与并购": [
     {
-      "title": "Sophia Space获1000万美元种子轮融资，将演示新型太空计算机",
-      "url": "https://techcrunch.com/2026/02/26/sophia-space-raises-10m-seed-to-demo-novel-space-computers/",
-      "snippet": "The company's modular computer tiles offer a new vision for space data centers.",
-      "source": "TechCrunch AI",
-      "publishedAt": "Thu, 26 Feb 2026 19:55:20 +0000",
-      "region": "海外",
-      "summary": "Sophia Space公司筹集了1000万美元的种子轮资金，用于演示其新型太空计算机。该公司的模块化计算机单元为太空数据中心提供了新的愿景。",
+      "title": "云耀深维完成数千万元天使轮及Pre-A轮融资，去年出货10万件并降低打印成本80%",
+      "url": "https://36kr.com/p/3700876701642374?f=rss",
+      "snippet": "作者丨欧雪 编辑丨袁斯来 硬氪获悉，高精度微米级金属3D打印企业——云耀深维（江苏）科技有限公司（以下简称“云耀深维”）完成了天使轮及Pre-A轮数千万元融资。 其天使轮投资方为红杉种子基金、深圳高新投及璞跃中国。Pre-A轮融资由博远资本领投，蓝郡资本跟投。资金主要用于核心技术的迭代研发、产能提升、团队扩充以及市场拓展等。 云耀深维成立于2021年，总部及产研基地位于江苏苏州太仓，是一家专注于金属3D打印的科技企业，提供覆盖金属3D打印全尺寸（常规及超高精度金属打印）的设备研发及产品打印的全套解决方案。 硬氪了解到，公司核心团队源自德国弗劳恩霍夫激光技术研究所（Fraunhofer ILT）——这里是金属3D打印主流技术激光粉末床熔融（LPBF/SLM）的发源地。公司创始人沈李耀威师从该技术的发明者Meiners博士，并在研究所从事相关研发工作近十年，负责过多款行业旗舰级常规金属打印设备的设计项目，在金属打印的设备、软件及工艺方面积累了丰富的经验。 当前，非金属3D打印已凭借多样化的技术和日益成熟的产业链，在消费电子、时尚美学、汽车内饰等领域遍地开花。然而，在更需要承载高强度、高可靠性需求的工业端，金属3D打印仍需进一步推广。 核心的瓶颈首先在于精度问题。目前技术虽然在不断进步，但在打印精细结构或大尺寸零件时，依然难以达到高精度装配所需的公差要求及优秀的表面质量要求，这直接导致了打印件难以直接作为最终功能部件使用。 “金属打印只是完成了坯件，真正的‘绣花’功夫主要在后面。”云耀深维创始人沈李耀威向硬氪透露。精度不足带来的连锁反应，是较长且较高成本的后处理流程，这被业界视为一个巨大的“隐形成本黑洞”。 由于表面粗糙、精度不足等问题，金属件打印完成后须经历一系列复杂后处理流程，其中成本主要集中在打磨、抛光等表面精加工流程。更值得关注的是，目前大量后处理环节仍依赖人工操作。这不仅意味着高昂的人力成本，还存在重复性劳动导致的人员疲劳、效率波动以及质量一致性难以保证等问题。 云耀深维创始团队认为，金属3D打印要实现真正的批量生产，必须提升原生打印的精度及表面质量，只有当精度足以逼近净成形、后处理不再是漫长的“手工作坊”式劳作时，金属增材制造才能在成本与效率上与传统精密加工展开正面对决，从而进一步叩开规模化工业应用的大门。 基于这一背景，云耀深维在成立之初便确立了差异化发展路径：聚焦微米级高精度金属3D打印，剑指全球最高精度的打印效果。相较于传统常规金属打印100–200微米的公差水平，公司可将打印典型精度提升至2–10微米，典型表面粗糙度（Ra值）优化至约0.8微米，并实现10度以上多种结构的无支撑成型，这意味着微米级金属打印的部件几乎不再需要CNC加工，进而实现成本的有效下降。 云耀深维微米级金属3D打印设备（图源/企业） 高精度往往意味着低效率—这是目前精密金属打印面临的行业共性难题。 “过去我们的高精度打印使用静态小光斑，效率较低。我们研发的动态聚焦技术可以实时智能调整激光光斑尺寸。”云耀深维联合创始人尹伊君进一步介绍，“在打印精细结构时用超小光斑（可至20微米以下）保证精度；在打印非精细区域时切换至更大光斑提升效率。” 据悉，这项技术可使部件的生产效率最高提升80%，为实现高精度零件的批量生产提供了可能。 当前，云耀深维的技术已成功应用于医疗、消费电子领域，服务了数百家客户，并进一步在具身机器人等新兴领域拓展，提供精密部件智能制造的全新解决方案。 如人形机器人的手指空间极其有限，却需要容纳驱动、传动、感知等多重功能。传统减材制造在面对如此微小的复杂部件时，往往面临“刀具下不去、结构做不出”的困境。高精度金属打印突破了这一物理限制，能在极小空间内集成复杂的内部传感结构与弹性体梁，将复杂的内部油路、电路通道与弹性体结构一体化成型，使显微级的力觉感知成为可能。 云耀深维打印的传动泵（图源/企业） 2025年，云耀深维完成了批量精密金属打印部件的成功出货，实现盈亏平衡，年增长率超50%，在医疗及消费电子行业完成了超100000件高精密零部件的出货，验证了其稳定批量生产的核心能力，并为向具身智能等方向的拓展打下了坚实的基础。 “我们希望三年后可以实现年出货量超百万件。”云耀深维副总经理尹伊君表示，“我们坚信高精度打印技术可以有效推动3D打印完成工业级的大批量生产。”",
+      "source": "36氪",
+      "publishedAt": "2026-02-27 09:37:02  +0800",
+      "region": "国内",
+      "summary": "高精度微米级金属3D打印企业云耀深维（江苏）科技有限公司近期完成了数千万元的天使轮及Pre-A轮融资。该公司成立于2021年，核心团队源自德国弗劳恩霍夫激光技术研究所，专注于提供覆盖全尺寸的金属3D打印设备研发及产品打印全套解决方案。公司去年已成功出货10万件精密金属打印部件，并将打印成本降低了80%，其发展目标是提升原生打印精度以逼近净成形，减少后处理依赖，从而推动金属增材制造的规模化工业应用。",
       "category": "投融资与并购",
-      "company": "Sophia Space",
-      "score": 25,
+      "company": "云耀深维",
+      "score": 32,
       "breakdown": {
-        "substance": 7,
+        "substance": 15,
         "importance": 0,
         "timeliness": 10,
+        "credibility": 7
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "Mistral AI与全球咨询巨头埃森哲达成合作协议",
+      "url": "https://techcrunch.com/2026/02/26/mistral-ai-inks-a-deal-with-global-consulting-giant-accenture/",
+      "snippet": "Mistral AI lands a partnership with Accenture, the consultant that has also recently announced partnerships with rivals OpenAI and Anthropic.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Thu, 26 Feb 2026 19:17:27 +0000",
+      "region": "海外",
+      "summary": "Mistral AI与埃森哲达成了一项合作伙伴关系。埃森哲最近也宣布了与其竞争对手OpenAI和Anthropic的合作。",
+      "category": "投融资与并购",
+      "company": "Mistral AI",
+      "score": 25,
+      "breakdown": {
+        "substance": 4,
+        "importance": 5,
+        "timeliness": 8,
         "credibility": 8
       },
       "isDuplicate": false
     }
   ],
-  "政策与监管": []
+  "政策与监管": [
+    {
+      "title": "诉讼还是十亿美元交易：迪士尼如何选择其AI版权战",
+      "url": "https://www.aol.com/articles/lawsuits-billion-dollar-deals-disney-183659024.html",
+      "snippet": "Disney sent ByteDance a cease-and-desist for using its characters on Seedance. When OpenAI's Sora did it, however, Disney struck a deal.",
+      "source": "AOL.com",
+      "publishedAt": "20 hours ago",
+      "region": "海外",
+      "summary": "迪士尼向字节跳动发出停止侵权函，要求其停止在Seedance上使用迪士尼角色。然而当OpenAI的Sora做了类似事情时，迪士尼却选择了达成协议。这显示了迪士尼在处理AI版权问题时的不同策略选择。",
+      "category": "政策与监管",
+      "company": "Disney",
+      "score": 16,
+      "breakdown": {
+        "substance": 4,
+        "importance": 5,
+        "timeliness": 2,
+        "credibility": 5
+      },
+      "isDuplicate": false
+    }
+  ]
 }

@@ -1,0 +1,276 @@
+{
+  "产品发布与更新": [
+    {
+      "title": "Claude Code上线自动记忆功能，减少项目背景重复解释",
+      "url": "https://www.infoq.cn/article/QTPQmPZ1DsSBjTTymgK3?utm_source=rss&utm_medium=article",
+      "snippet": "点击查看原文>",
+      "source": "InfoQ",
+      "publishedAt": "Fri, 27 Feb 2026 19:00:00 GMT",
+      "region": "国内",
+      "summary": "Anthropic公司为其命令行编码工具Claude Code推出了名为“自动记忆”的新功能，旨在增强AI在真实开发环境中的长期上下文理解能力。该功能允许Claude在日常工作中自动记录项目相关的重要信息，如构建命令、调试经验和代码风格偏好，并将这些信息存储在本地，供后续会话自动调用。通过默认开启的此功能，开发者可以减少重复输入背景信息的负担，使模型能随着使用时间的增长，逐步积累对项目的完整认知，从而提高开发效率。",
+      "category": "产品发布与更新",
+      "company": "Anthropic",
+      "score": 38,
+      "breakdown": {
+        "substance": 15,
+        "importance": 5,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "云知声发布U1-OCR大模型，开启OCR 3.0时代",
+      "url": "https://www.qbitai.com/2026/02/382682.html",
+      "snippet": "开启OCR 3.0时代",
+      "source": "量子位",
+      "publishedAt": "Thu, 26 Feb 2026 08:16:16 +0000",
+      "region": "国内",
+      "summary": "云知声正式发布了Unisound U1-OCR文档智能基础大模型，该模型被定位为首个工业级文档智能基座，标志着OCR技术进入3.0时代。模型采用ViT+LLM架构，参数规模为3B量级，具备性能领先、可信可验、开箱即用、高效部署和强适配五大核心优势。它突破了传统模型仅识别文字的局限，实现了从“字符感知”到“文档认知”的跨越，能够理解文档深层语义，进行自动分类与业务级信息抽取。模型在多项权威评测中达到了国际顶尖水平（SOTA）。",
+      "category": "产品发布与更新",
+      "company": "云知声",
+      "score": 31,
+      "breakdown": {
+        "substance": 15,
+        "importance": 5,
+        "timeliness": 2,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "AI音乐生成器Suno付费订阅用户达200万，年经常性收入3亿美元",
+      "url": "https://techcrunch.com/2026/02/27/ai-music-generator-suno-hits-2-million-paid-subscribers-and-300m-in-annual-recurring-revenue/",
+      "snippet": "Suno lets users create music using natural language prompts, making it possible for people with little experience to generate audio with little effort.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Fri, 27 Feb 2026 17:22:02 +0000",
+      "region": "海外",
+      "summary": "AI音乐生成器Suno已拥有200万付费订阅用户，并实现了3亿美元的年经常性收入。该工具允许用户使用自然语言提示创作音乐，使得经验不足的人也能轻松生成音频。",
+      "category": "产品发布与更新",
+      "company": "Suno",
+      "score": 30,
+      "breakdown": {
+        "substance": 14,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ],
+  "技术与研究": [
+    {
+      "title": "阶跃星辰跻身AI“新六小虎”第一梯队",
+      "url": "https://www.qbitai.com/2026/02/382747.html",
+      "snippet": "",
+      "source": "量子位",
+      "publishedAt": "Fri, 27 Feb 2026 07:01:54 +0000",
+      "region": "国内",
+      "summary": "春节后，国产大模型领域竞争加剧，巨头与独立公司纷纷发力。阶跃星辰近期动作频频，包括引入印奇加入核心决策层、完成超50亿元人民币B+轮融资，并开源了Agent基座模型Step 3.5 Flash。该模型以推理速度快和智能水平高为特点，发布后迅速登上多个榜单。凭借这些进展，阶跃星辰被认为已满足大模型“季后赛”的资金、商业化与用户入口门槛，强势进入国产大模型“新六小虎”的第一梯队。",
+      "category": "技术与研究",
+      "company": "阶跃星辰",
+      "score": 49,
+      "breakdown": {
+        "substance": 21,
+        "importance": 13,
+        "timeliness": 6,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "苹果推出端侧AI模型Ferret-UI Lite，用于查看和控制用户界面",
+      "url": "https://www.infoq.cn/article/qPdlP3JlryK6gcPmLhw5?utm_source=rss&utm_medium=article",
+      "snippet": "点击查看原文>",
+      "source": "InfoQ",
+      "publishedAt": "Sat, 28 Feb 2026 08:00:00 GMT",
+      "region": "国内",
+      "summary": "苹果公司推出了一款名为Ferret-UI Lite的端侧AI模型，该模型拥有30亿参数，专门针对移动和桌面屏幕进行优化。它能够解析屏幕图像，理解图标和文本等用户界面元素，并通过读取消息、查看健康数据等方式与应用程序进行交互。研究人员通过整合多样化的真实与合成GUI数据集、采用思维链推理与视觉工具，并结合强化学习方法，构建了这款轻量化智能体，旨在解决现有基于大型基础模型的GUI智能体所存在的计算成本高、延迟大、隐私性差等问题。在基准测试中，Ferret-UI Lite在GUI定位和导航任务上展现出了具有竞争力甚至更优的性能。",
+      "category": "技术与研究",
+      "company": "苹果",
+      "score": 38,
+      "breakdown": {
+        "substance": 20,
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "百度2025年四季度AI业务收入占比达43% 超市场预期",
+      "url": "https://www.leiphone.com/category/industrynews/Ebw8wdpE2nrWY4rw.html",
+      "snippet": "2月26日，百度发布2025年第四季度及全年财报，显示2025年总营收达1291亿元，AI业务营收达400亿元；四季度，百度总营收327亿元，AI业务收入占百度一般性业务收入的43%，超出市场预期。 “2025年是AI成为百度新核心的关键一年。AI云势头强劲，我们凭借差异化的全栈端到端AI能力赢得越来越多的企业认可。我们的AI应用组合持续扩展，满足了企业和个人的多样化需求。萝卜快跑进一步巩固了其全球领先地位，以行业领先的规模运营，同时加速向新市场的国际扩张。与此同时，AI原生营销服务持续增长，为长期发展开启了新的可能性。”百度创始人李彦宏表示，“随着我们以AI为先的战略清晰成型，我们对在AI时代创造持久价值的能力充满信心。” AI云持续增长，2025全年收入同比增长34%。其中，四季度AI高性能计算设施的订阅收入同比增长143%，较三季度的128%进一步加速。2025年，百度智能云全年大模型相关中标项目数和中标金额实现双第一，连续两年成为中标项目数和中标金额最多的云厂商。 AI原生营销服务方面，2025全年收入同比增长301%。2025年12月，百度App月活用户数达6.79亿，文心助手月活用户数达2.02亿。春节红包活动启动以来，文心助手月活跃用户同比增长4倍。2025年，慧播星数字人开播规模同比增长202%，收入同比增长228%，已赋能30多个行业。 AI应用2025全年收入突破100亿元。据IDC《中国无代码生成式应用开发平台实测报告》，无代码生成平台秒哒在平台功能和应用质量方面，表现出行业领先的性能。季度内，全球首个自我演化超级智能体百度伐谋已获得超2000家企业申请试用，并发布“同舟生态伙伴计划”。近期，百度文库、百度网盘整合成为个人超级智能事业群（PSIG），进一步加快AI应用创新。 同时，萝卜快跑四季度全球无人驾驶出行服务次数达340万，同比增长超200%，季度内每周出行次数峰值超30万。财报显示，萝卜快跑加速其向全球多个市场的扩张。截至2026年2月，萝卜快跑累计提供全球出行服务次数超2000万，足迹已覆盖全球26个城市。 目前，萝卜快跑自动驾驶总里程累计超3亿公里，全无人驾驶里程超1.9亿公里。 近期，文心5.0正式版上线。作为原生全模态大模型，该模型参数达2.4万亿，采用原生全模态统一建模技术，支持文本、图像、音频、视频等多种信息的输入与输出。此前，文心5.0多次登上LMArena文本榜、视觉理解榜国内第一，超过多款国内外主流模型。2026年1月‌，昆仑芯向香港联交所提交主板上市申请。 ESG方面，在《标准普尔全球可持续发展年鉴2026》全球版中，百度在ESG绩效方面取得了进一步提升。",
+      "source": "雷锋网",
+      "publishedAt": "Thu, 26 Feb 2026 17:15:00 +0800",
+      "region": "国内",
+      "summary": "百度发布2025年第四季度及全年财报，显示2025年总营收为1291亿元，其中AI业务营收达400亿元。在第四季度，百度总营收为327亿元，AI业务收入占其一般性业务收入的43%，这一比例超出了市场预期。百度创始人李彦宏表示，2025年是AI成为公司新核心的关键一年，AI云、AI原生营销服务及AI应用均取得显著增长，萝卜快跑也巩固了其全球领先地位。具体来看，2025年AI云收入同比增长34%，AI原生营销服务收入同比增长301%，AI应用全年收入突破100亿元，萝卜快跑第四季度全球无人驾驶出行服务次数达340万，同比增长超200%。",
+      "category": "技术与研究",
+      "company": "百度",
+      "score": 35,
+      "breakdown": {
+        "substance": 18,
+        "importance": 10,
+        "timeliness": 2,
+        "credibility": 5
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "千问AI春节DAU创历史新高，单日增幅达940%",
+      "url": "https://www.qbitai.com/2026/02/382739.html",
+      "snippet": "",
+      "source": "量子位",
+      "publishedAt": "Fri, 27 Feb 2026 03:48:30 +0000",
+      "region": "国内",
+      "summary": "根据QuestMobile发布的最新数据，2026年春节期间，千问AI应用的日活跃用户数（DAU）创下历史新高，峰值达到7352万，并以940%的惊人增幅成为同期增长最快的AI应用。春节首日，千问人均使用次数高达14.4次，显示出极强的用户粘性。随着“春节请客计划”活动的推进，活动首日吸引了1475万用户参与，次日参与人数逼近2000万，2月7日DAU攀升至峰值，较活动前一天的707万实现了近10倍的增长。春节期间，用户在千问平台上通过“一句话下单”功能完成的订单量接近2亿次，参与下单总人数超过1.3亿，活动结束后日活用户数仍稳定在4000万左右的高位。",
+      "category": "技术与研究",
+      "company": "千问",
+      "score": 34,
+      "breakdown": {
+        "substance": 19,
+        "importance": 0,
+        "timeliness": 6,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "爱奇艺2025年营收272.9亿元，海外会员收入同比激增超30%",
+      "url": "https://36kr.com/p/3701287910895495?f=rss",
+      "snippet": "2月26日，爱奇艺（NASDAQ:IQ）发布2025年第四季度及全年财报。受益于高品质多元化内容的持续供给，爱奇艺交出一份稳健的成绩单。数据显示，公司2025年全年实现总收入272.9亿元（人民币，下同），Non-GAAP运营利润6.4亿元，连续四年运营盈利。其中，第四季度总收入为67.9亿元，实现同环比双增长。 内容是爱奇艺发展的基石。2025年爱奇艺高品质内容接连涌现，云合年度剧集总有效播放市占率稳居第一，全年共有5部剧集的爱奇艺内容热度值破万，并在内容系列化开发方面实现突破，验证了其在爆款制造上的长效运营能力。 分业务看，2025年爱奇艺会员服务收入168.1亿元，在线广告服务收入51.9亿元，内容发行收入25.0亿元，其他收入27.9亿元。其中，第四季度会员服务收入41.1亿元，在线广告服务收入13.5亿元，内容发行收入7.9亿元，其他收入5.5亿元。 值得注意的是，海外业务作为“第二增长曲线”，2025年保持强劲增长。全年会员收入同比增长超过30%，第四季度同比增速提升至40%，其中巴西、墨西哥和印尼表现尤为亮眼，会员收入同比涨幅均超80%。 与此同时，爱奇艺正在通过体验业务构建多元娱乐生态，打造可创造长期价值的新引擎。爱奇艺代理首席财务官曾颖表示：“首家爱奇艺乐园近期正式开业，收获积极反馈，成为体验业务发展的重要里程碑。我们期待这些新兴业务为公司创造长期价值。” 面对人工智能浪潮，爱奇艺正通过AI全方位重构内容生产力。大模型技术显著降低了长视频的制作门槛与成本，缩短了开发周期，驱动内容产量与质量双爆发。龚宇在财报电话会上表示，视频大模型非常利好爱奇艺这样的长视频媒体平台。为此，爱奇艺集成全球顶尖基础大模型，基于专业影视开发制作经验优化产品功能，研发了专业影视制作智能体纳逗Pro，推动构建新的AIGC内容生态系统 。 展望2026年，爱奇艺创始人及CEO龚宇表示：“2026年爱奇艺将专注实现三大核心战略目标：通过提升内容品质、夯实会员与广告业务来实现国内主业发展；保持海外及体验业务强劲增长，打造长期发展引擎；利用AI打造充满活力的内容生态，并通过补充AIGC内容让生态更加丰富多元。”",
+      "source": "36氪",
+      "publishedAt": "2026-02-27 16:37:01  +0800",
+      "region": "国内",
+      "summary": "爱奇艺发布2025年第四季度及全年财报，全年总收入为272.9亿元人民币，Non-GAAP运营利润为6.4亿元，实现连续四年运营盈利。其中，会员服务收入为168.1亿元，在线广告服务收入为51.9亿元，内容发行收入为25.0亿元，其他收入为27.9亿元。海外业务作为第二增长曲线表现强劲，全年会员收入同比增长超过30%，第四季度同比增速提升至40%，巴西、墨西哥和印尼等市场表现尤为突出。公司正通过AI技术重构内容生产力，并发展体验业务以构建多元娱乐生态。",
+      "category": "技术与研究",
+      "company": "爱奇艺",
+      "score": 31,
+      "breakdown": {
+        "substance": 18,
+        "importance": 0,
+        "timeliness": 6,
+        "credibility": 7
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "《麻省理工科技评论》入围2026年美国杂志编辑协会报道类奖项",
+      "url": "https://www.technologyreview.com/2026/02/27/1133769/asme-finalist-reporting/",
+      "snippet": "The American Society of Magazine Editors has named MIT Technology Review as a finalist for a 2026 National Magazine Award in the reporting category. The shortlisted story—“We did the math on AI’s energy footprint. Here’s the story you haven’t heard”—is part of the publication’s Power Hungry package on AI’s energy burden. AI is often described…",
+      "source": "MIT Technology Review",
+      "publishedAt": "Fri, 27 Feb 2026 21:41:31 +0000",
+      "region": "海外",
+      "summary": "美国杂志编辑协会将《麻省理工科技评论》提名为2026年国家杂志奖报道类别的决赛入围者。入围作品《我们计算了AI的能源足迹，这是你未曾听闻的故事》是该出版物“能源饥渴”专题的一部分。",
+      "category": "技术与研究",
+      "company": "MIT Technology Review",
+      "score": 20,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 10
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "《每日下载》：AI如何颠覆围棋，以及一个网络安全谜团",
+      "url": "https://www.technologyreview.com/2026/02/27/1133754/the-download-how-ai-is-shaking-up-go-and-a-cybersecurity-mystery/",
+      "snippet": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. AI is rewiring how the world’s best Go players think Ten years ago AlphaGo, Google DeepMind’s AI program, stunned the world by defeating the South Korean Go player Lee Sedol. And in the…",
+      "source": "MIT Technology Review",
+      "publishedAt": "Fri, 27 Feb 2026 13:10:00 +0000",
+      "region": "海外",
+      "summary": "这是《每日下载》的今日版，这是一份工作日通讯，提供每日科技世界动态。本期内容探讨了AI如何重塑世界顶尖围棋棋手的思维方式。十年前，谷歌DeepMind的AI程序AlphaGo击败韩国围棋选手，震惊世界。",
+      "category": "技术与研究",
+      "company": "Google DeepMind",
+      "score": 18,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 10
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "AI正在重塑世界顶尖围棋棋手的思维方式",
+      "url": "https://www.technologyreview.com/2026/02/27/1133624/ai-is-rewiring-how-the-worlds-best-go-players-think/",
+      "snippet": "Burrowed in the alleys of Hongik-dong, a hushed residential neighborhood in eastern Seoul, is a faded stone-tiled building stamped “Korea Baduk Association,” the governing body for professional Go. The game is an ancient one, with sacred stature in South Korea. But inside the building, rooms once filled with the soft clatter of hands dipping into…",
+      "source": "MIT Technology Review",
+      "publishedAt": "Fri, 27 Feb 2026 10:00:00 +0000",
+      "region": "海外",
+      "summary": "文章描述了位于首尔东部弘益洞一条小巷中的韩国棋院，这是职业围棋的管理机构。围棋在韩国具有神圣的地位。文章指出，AI正在改变顶尖围棋棋手的思维方式。",
+      "category": "技术与研究",
+      "company": "Korea Baduk Association",
+      "score": 16,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 6,
+        "credibility": 10
+      },
+      "isDuplicate": false
+    }
+  ],
+  "投融资与并购": [
+    {
+      "title": "OpenAI以7300亿美元估值融资1100亿美元，创史上最大私募融资之一",
+      "url": "https://techcrunch.com/2026/02/27/openai-raises-110b-in-one-of-the-largest-private-funding-rounds-in-history/",
+      "snippet": "The new funding consists of a $50 billion investment from Amazon as well as $30 billion each from Nvidia and SoftBank, against a $730 billion valuation.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Fri, 27 Feb 2026 14:13:01 +0000",
+      "region": "海外",
+      "summary": "OpenAI完成了历史上规模最大的私募融资轮之一，筹集了1100亿美元资金。新融资包括亚马逊的500亿美元投资，以及英伟达和软银各300亿美元投资，公司估值达到7300亿美元。",
+      "category": "投融资与并购",
+      "company": "OpenAI",
+      "score": 51,
+      "breakdown": {
+        "substance": 22,
+        "importance": 13,
+        "timeliness": 8,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ],
+  "政策与监管": [
+    {
+      "title": "五角大楼拟将Anthropic列为供应链风险",
+      "url": "https://techcrunch.com/2026/02/27/pentagon-moves-to-designate-anthropic-as-a-supply-chain-risk/",
+      "snippet": "\"We don't need it, we don't want it, and will not do business with them again,\" the president wrote in the post.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Fri, 27 Feb 2026 21:53:14 +0000",
+      "region": "海外",
+      "summary": "五角大楼正考虑将人工智能公司Anthropic指定为供应链风险。一位总统在社交媒体上明确表示，他们不需要、也不希望与该公司继续合作，未来将不再与其进行业务往来。",
+      "category": "政策与监管",
+      "company": "Anthropic",
+      "score": 23,
+      "breakdown": {
+        "substance": 0,
+        "importance": 5,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "马斯克在证词中抨击OpenAI，称无人因Grok自杀",
+      "url": "https://techcrunch.com/2026/02/27/musk-bashes-openai-in-deposition-saying-nobody-committed-suicide-because-of-grok/",
+      "snippet": "In his lawsuit against OpenAI, Musk touted xAI safety compared with ChatGPT. A few months later, xAI's Grok flooded X with nonconsensual nude images.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Fri, 27 Feb 2026 19:42:00 +0000",
+      "region": "海外",
+      "summary": "马斯克在对OpenAI的诉讼中作证，批评了OpenAI并称赞自家xAI的安全性优于ChatGPT。然而，几个月后，xAI的聊天机器人Grok在X平台上传播了大量未经同意的裸体图像。",
+      "category": "政策与监管",
+      "company": "OpenAI",
+      "score": 23,
+      "breakdown": {
+        "substance": 0,
+        "importance": 5,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ]
+}

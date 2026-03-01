@@ -8,8 +8,8 @@
       "company": "谷歌",
       "source": "InfoQ",
       "publishedAt": "Sat, 28 Feb 2026 15:18:33 GMT",
-      "summary": "谷歌发布了Nano Banana 2文生图模型，该模型新增了“实时联网”能力，能够结合Gemini的搜索功能在生成图像时检索真实世界信息，从而生成细节更丰富、更贴合现实的图像。模型还展示了生成对比逻辑链等信息图的能力，并在权威测评中位列榜首，其图像编辑能力排名第三，而价格仅为第二名OpenAI模型的一半。生成的内容会叠加SynthID水印并采用C2PA内容凭证体系以进行溯源。",
-      "score": 38
+      "summary": "谷歌发布了Nano Banana 2模型，该模型具备实时联网能力，能够结合Gemini的搜索功能进行理解和检索，从而生成细节丰富且贴合真实世界信息的图像。新模型特别强调了信息图生成的新方向，并通过实例展示了其逻辑分析和绘图能力。在权威测评中，Nano Banana 2位列榜首，其图像编辑能力排名第三，而价格仅为竞争对手OpenAI同类产品的一半。",
+      "score": 36
     },
     {
       "section": "产品发布与更新",
@@ -17,26 +17,17 @@
       "company": "阿里",
       "source": "36氪",
       "publishedAt": "2026-02-28 15:09:00  +0800",
-      "summary": "据阿里内部人士透露，其个人AI助手“千问”计划进军AI硬件领域，预计在2026年推出包括AI眼镜、AI耳机和AI指环在内的多款可穿戴设备，并面向全球市场发售。其中，AI眼镜将在2026年世界移动通信大会上发布，并于3月2日开启预约。与此同时，全球其他科技巨头如Meta和OpenAI也在积极布局消费级AI硬件，Meta正构建以AI眼镜为核心的硬件生态，OpenAI则组建了超过2000人的硬件团队并计划推出多款产品。在国内，字节跳动也在筹备AI眼镜和AI耳机。为支持硬件战略，阿里已调整组织架构，成立了“千问C端事业群”以统一管理相关业务，并开源了适配端侧设备的新模型千问Qwen3.5-Plus，该模型在降低部署显存占用和API成本方面有显著优化。",
-      "score": 35
+      "summary": "据阿里内部人士透露，其个人AI助手“千问”计划在2026年进军AI硬件领域，产品形态包括AI眼镜、AI耳机和AI指环，并将面向全球市场发售。其中，AI眼镜预计在2026年世界移动通信大会上发布，并于3月2日开启预约，同时千问APP的部分功能将迁移至这些新终端。全球范围内，Meta、OpenAI以及国内的字节跳动等巨头也均在布局消费级AI硬件，如眼镜、耳机、腕带等产品。阿里已于2025年底调整组织架构，成立“千问C端事业群”以整合相关业务，并开源了适配端侧设备的新模型Qwen3.5-Plus，以降低部署成本和显存占用。",
+      "score": 31
     },
     {
       "section": "技术与研究",
-      "title": "原力灵机范浩强：评判机器人好坏只有一个核心指标",
-      "company": "原力灵机",
-      "source": "雷锋网",
-      "publishedAt": "Fri, 27 Feb 2026 14:44:00 +0800",
-      "summary": "原力灵机创始人范浩强在接受采访时表示，评判机器人好坏只有一个核心指标，即“能用即为合理”。他认为，技术发展规律往往是刚好够用就能被推广，不必过度追求完美通用。范浩强介绍了公司的DFOL（原力灵机具身原生量产工作流），强调具身智能应从真实场景和需求出发，逐步实现从百里挑一到无限泛化的落地过程。原力灵机是一家从旷视科技分拆出来的具身智能公司，成立不久已完成近10亿元的两轮融资。",
-      "score": 30
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "抖音上线长文功能并借助AI整合资讯，字节跳动系统性应用AI于内容生产",
-      "company": "抖音",
+      "title": "淘宝闪购开源食品安全治理AI大模型“白泽”",
+      "company": "淘宝闪购",
       "source": "36氪",
-      "publishedAt": "2026-02-27 11:48:42  +0800",
-      "summary": "抖音在2025年底正式上线长文功能，向创作者和媒体机构开放深度长文创作入口，并提供流量扶持，用户目前可通过网页端发布文章。与此同时，抖音借助AI搜索技术整合全网信息，在App内推出“AI智选资讯”功能，为用户提供由AI实时抓取和生成的热点新闻摘要。近两年，字节跳动在其多个内容产品中系统性地引入了AI技术，包括汽水音乐、红果短剧和番茄小说，用于辅助内容创作与分发。抖音和小红书等平台加码长图文内容，本质上是围绕优质创作者和用户停留时间展开的存量竞争。",
-      "score": 26
+      "publishedAt": "2026-02-28 18:01:39  +0800",
+      "summary": "淘宝闪购正式发布了一款专为餐饮服务与零售门店打造的风控治理垂直领域开源大模型，命名为“白泽”。该模型的技术能力将向全行业免费开放。借助“白泽”大模型，外卖平台、餐饮及零售企业等行业参与方能够在图像识别和后厨预警等方面，通过人工智能技术快速加强对不合规场景的识别和治理能力，从而大幅提高数字化治理效率。",
+      "score": 29
     },
     {
       "section": "技术与研究",
@@ -44,7 +35,7 @@
       "company": "DeepSeek",
       "source": "量子位",
       "publishedAt": "Fri, 27 Feb 2026 08:11:51 +0000",
-      "summary": "DeepSeek与北京大学、清华大学的研究人员在ArXiv上发布了一篇关于新型智能体推理框架DualPath的论文。该框架旨在解决智能体长文本推理场景下的I/O瓶颈问题，通过优化从外部存储加载KV-Cache的速度，避免计算资源被存储读取拖累。其核心创新在于改变了传统的单一路径加载模式，引入了“存储至解码引擎”的第二条路径，利用解码引擎闲置的存储网卡带宽读取缓存，并通过高速计算网络将其传输至预填充引擎，从而实现了集群存储带宽的全局池化与动态负载均衡。在660B规模生产级模型的实测中，该框架使离线推理吞吐量提高了1.87倍，在线服务吞吐量平均提升1.96倍，并在高负载下显著优化了首字延迟。",
+      "summary": "DeepSeek与北京大学、清华大学在ArXiv上发布了一篇关于智能体推理框架DualPath的论文。该框架旨在解决智能体长文本推理场景下的I/O瓶颈，通过优化从外部存储加载KV-Cache的速度，避免计算资源被存储读取拖累。其核心创新在于改变了传统的单路径加载模式，引入了“存储至解码引擎”的第二条路径，利用解码引擎闲置的存储网卡带宽读取缓存，并通过高速计算网络将其传输至预填充引擎，实现了集群存储带宽的全局池化与动态负载均衡。在660B规模的生产级模型实测中，该框架使离线推理吞吐量提高了1.87倍，在线服务吞吐量平均提升1.96倍，并优化了高负载下的首字延迟。",
       "score": 25
     },
     {
@@ -53,80 +44,89 @@
       "company": "ListenHub",
       "source": "雷锋网",
       "publishedAt": "Sat, 28 Feb 2026 18:00:00 +0800",
-      "summary": "ListenHub创始人冯雷分享了其从AI播客切入，致力于打造具有真人感的AI Agent的创业历程。公司专注于服务1%-3%的头部内容创作者，提供声音克隆、多模态编辑、一键生成解说视频等工具，旨在让AI表达更自然、更具人味。ListenHub在去年底实现了300万美元的年度经常性收入，并以5000万美元估值开启新一轮融资。冯雷认为，在AI时代，传统互联网的产品方法论已失效，更倾向于“less structure, more intelligence”的理念，并将产品核心交给工程师和AI本身。",
+      "summary": "ListenHub创始人冯雷分享了其从AI播客到真人感Agent的创业思考。该公司专注于服务1%-3%的创作者群体，提供声音克隆、多模态编辑、一键生成解说视频等工具，旨在打造具有真人感的AI产品，而非追求DAU。公司去年底实现了300万美元的年度经常性收入，并以5000万美元估值开启新一轮融资。冯雷指出，在AI时代传统产品方法论已失效，更倾向于将产品核心交给工程师和AI本身。",
       "score": 23
     },
     {
+      "section": "技术与研究",
+      "title": "谷歌云SRE团队运用Gemini CLI应对服务中断",
+      "company": "谷歌",
+      "source": "InfoQ",
+      "publishedAt": "Sat, 28 Feb 2026 12:00:00 GMT",
+      "summary": "谷歌云SRE团队在一篇博文中介绍了他们如何使用基于Gemini 3构建的AI驱动工具Gemini CLI来处理服务中断事件。该工具能在中断处理的各个阶段提供帮助，包括告警分类、初步缓解、根因分析以及自动生成事后分析文档，旨在缩短平均缓解时间并减少对用户的影响。团队通过一个虚构事件展示了该工具在终端驱动的完整事件生命周期中的应用，同时强调目前仍需人工验证缓解措施，并执行分层安全控制以确保操作安全。该方法虽然使用了谷歌内部的一些工具，但其模式被认为具有普适性。",
+      "score": 20
+    },
+    {
       "section": "政策与监管",
-      "title": "特朗普下令联邦机构停用Claude，Anthropic因安全限制与国防部产生分歧",
+      "title": "特朗普下令封杀Claude，Altman声援后OpenAI却以类似协议过关",
       "company": "Anthropic",
       "source": "InfoQ",
       "publishedAt": "Sat, 28 Feb 2026 15:01:12 GMT",
-      "summary": "特朗普在Truth Social发文，下令联邦机构停止使用Anthropic旗下包括Claude在内的所有产品，并给予六个月过渡期，同时表示Anthropic将不再被接纳为联邦承包商。美国国防部长Pete Hegseth指责Anthropic在获得一份价值高达2亿美元的国防合同后表现傲慢与背叛，并指示战争部将Anthropic列为国家安全供应链风险，禁止与美军有业务往来的合作方与Anthropic开展商业活动。双方争议的核心在于Anthropic拒绝让其AI模型用于大规模国内监控或全自动武器，公司首席执行官Dario Amodei认为Claude并非完美无缺，不足以驱动完全自主的武器，且强大的AI模型可能引发严重的隐私问题。",
+      "summary": "特朗普在Truth Social发文，下令联邦机构停止使用Anthropic公司的Claude等所有产品，并给予六个月过渡期，明确表示Anthropic将不再被接纳为联邦承包商。美国国防部长Pete Hegseth指责Anthropic在获得2亿美元合同后表现傲慢与背叛，并指示战争部将Anthropic列为国家安全供应链风险，禁止与美军有业务往来的各方与Anthropic开展商业活动。白宫与Anthropic的争端核心在于Anthropic拒绝让其AI模型用于大规模国内监控或全自动武器，而Anthropic首席执行官Dario Amodei认为设置安全防护措施是必要的，因为Claude并非完美无缺，且强大的AI模型可能引发严重隐私问题。",
+      "score": 19
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "Anthropic的Claude在五角大楼争议后升至App Store第二名",
+      "company": "Anthropic",
+      "source": "TechCrunch AI",
+      "publishedAt": "Sat, 28 Feb 2026 21:05:06 +0000",
+      "summary": "Anthropic的聊天机器人Claude似乎从该公司与五角大楼之间紧张谈判所引发的关注中获益。这一关注度帮助Claude在App Store的排名上升至第二位。",
       "score": 21
     },
     {
       "section": "投融资与并购",
-      "title": "推动AI繁荣的数十亿美元基础设施交易",
-      "company": "Meta",
+      "title": "推动AI热潮的数十亿美元基础设施交易",
+      "company": "Meta, Oracle, Microsoft, Google, OpenAI",
       "source": "TechCrunch AI",
       "publishedAt": "Sat, 28 Feb 2026 20:41:55 +0000",
-      "summary": "文章汇总了当前已知最大的AI基础设施项目信息。这些项目涉及Meta、Oracle、Microsoft、Google和OpenAI等公司的重大资金投入。这些基础设施投资是当前人工智能热潮背后的关键驱动力。",
-      "score": 27
-    },
-    {
-      "section": "政策与监管",
-      "title": "Anthropic为自己设下的陷阱",
-      "company": "Anthropic",
-      "source": "TechCrunch AI",
-      "publishedAt": "Sun, 01 Mar 2026 00:08:58 +0000",
-      "summary": "Anthropic、OpenAI、Google DeepMind等公司长期以来承诺会负责任地进行自我治理。然而，在缺乏明确规则的情况下，这些公司实际上缺乏足够的保护措施。这表明在没有外部监管框架时，仅靠自我承诺存在局限性。",
-      "score": 23
+      "summary": "文章汇总了关于最大规模AI基础设施项目的已知信息。这些项目涉及Meta、Oracle、Microsoft、Google和OpenAI等公司的大量资金投入。这些基础设施交易是当前AI繁荣的重要驱动力。",
+      "score": 21
     },
     {
       "section": "产品发布与更新",
-      "title": "五角大楼争议后Anthropic的Claude跃居App Store第二名",
-      "company": "Anthropic",
-      "source": "TechCrunch AI",
-      "publishedAt": "Sat, 28 Feb 2026 21:05:06 +0000",
-      "summary": "Anthropic的聊天机器人Claude在应用商店的排名上升至第二位。这一增长似乎得益于该公司与五角大楼紧张谈判所引发的公众关注。这表明外部争议事件有时会意外提升产品的市场曝光度。",
-      "score": 23
+      "title": "谷歌Gemini更新图像与视频媒体导入功能",
+      "company": "Google",
+      "source": "Ubergizmo",
+      "publishedAt": "19 hours ago",
+      "summary": "谷歌为其Gemini聊天机器人发布了一项重要更新，特别针对用户与多媒体文件的交互方式进行了改进。",
+      "score": 17
     },
     {
       "section": "投融资与并购",
-      "title": "迪士尼与OpenAI达成协议，将用Sora生成旗下角色AI视频",
+      "title": "迪士尼与OpenAI达成协议，允许Sora生成其角色的AI视频",
       "company": "OpenAI",
       "source": "AOL.com",
-      "publishedAt": "11 hours ago",
-      "summary": "华特迪士尼公司宣布与OpenAI达成一项为期三年的协议。根据协议，迪士尼将使用OpenAI的Sora模型来生成其旗下角色的AI视频。这一合作标志着迪士尼在内容创作中正式引入生成式AI技术。",
+      "publishedAt": "16 hours ago",
+      "summary": "华特迪士尼公司宣布与OpenAI达成一项为期三年的协议。根据协议，OpenAI的Sora模型将获准生成迪士尼角色的AI视频。迪士尼将此描述为'一个全新的世界'。",
       "score": 16
     },
     {
+      "section": "政策与监管",
+      "title": "字节跳动承诺加强AI模型保护措施",
+      "company": "ByteDance",
+      "source": "AOL.com",
+      "publishedAt": "10 hours ago",
+      "summary": "在好莱坞重量级人物指控其新AI视频模型侵权后，中国科技巨头字节跳动表示正在采取措施“加强现有保障措施”。",
+      "score": 15
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "Grok革命：xAI在2026年向视频、军事和监管领域扩张",
+      "company": "xAI",
+      "source": "Hounslow Herald",
+      "publishedAt": "17 hours ago",
+      "summary": "Grok AI在2026年的动态包括发布Grok 4.2视频生成模型、与特斯拉整合、面临英国ICO调查以及获得五角大楼合同。",
+      "score": 14
+    },
+    {
       "section": "技术与研究",
-      "title": "ChatGPT与谷歌Gemini的对比",
+      "title": "ChatGPT与谷歌Gemini对比",
       "company": "Google",
       "source": "vocal.media",
-      "publishedAt": "8 hours ago",
-      "summary": "文章作者在开始使用AI工具进行写作、研究和日常任务时，ChatGPT和谷歌Gemini是两个频繁出现的名字。",
+      "publishedAt": "13 hours ago",
+      "summary": "文章讨论了作者在开始使用AI工具进行写作、研究和日常任务时，ChatGPT和谷歌Gemini是两个频繁出现的名字。",
       "score": 13
-    },
-    {
-      "section": "技术与研究",
-      "title": "AI正在重塑世界顶尖围棋棋手的思维方式",
-      "company": "无",
-      "source": "MIT Technology Review",
-      "publishedAt": "Fri, 27 Feb 2026 10:00:00 +0000",
-      "summary": "在首尔东部弘益洞居民区的小巷深处，有一座标有“韩国棋院”的褪色石瓦建筑，这是职业围棋的管理机构。围棋是一项古老的游戏，在韩国具有神圣的地位。但在这座建筑内，曾经挤满棋手的房间如今已发生变化。",
-      "score": 12
-    },
-    {
-      "section": "政策与监管",
-      "title": "OpenAI最新举措后，“取消ChatGPT”运动声势壮大",
-      "company": "OpenAI",
-      "source": "Windows Central",
-      "publishedAt": "16 hours ago",
-      "summary": "在Anthropic断然拒绝将Claude AI应用于自主武器和美国公民大规模监控后，OpenAI却采取了相关行动。这引发了“取消ChatGPT”运动的进一步扩大。",
-      "score": 12
     }
   ]
 }

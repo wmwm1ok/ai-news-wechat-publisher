@@ -1,132 +1,132 @@
 {
-  "date": "2026/3/1",
+  "date": "2026/3/2",
   "count": 14,
   "articles": [
     {
-      "section": "产品发布与更新",
-      "title": "谷歌Nano Banana 2上线，补齐短板可生成信息图，价格仅为OpenAI一半",
-      "company": "谷歌",
-      "source": "InfoQ",
-      "publishedAt": "Sat, 28 Feb 2026 15:18:33 GMT",
-      "summary": "谷歌发布了Nano Banana 2模型，该模型具备实时联网能力，能够结合Gemini的搜索功能进行理解和检索，从而生成细节丰富且贴合真实世界信息的图像。新模型特别强调了信息图生成的新方向，并通过实例展示了其逻辑分析和绘图能力。在权威测评中，Nano Banana 2位列榜首，其图像编辑能力排名第三，而价格仅为竞争对手OpenAI同类产品的一半。",
-      "score": 36
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "阿里千问将发布AI眼镜耳机指环，巨头竞逐AI硬件新入口",
-      "company": "阿里",
+      "section": "投融资与并购",
+      "title": "机器人企业大额融资频现，产业化进程全面提速",
+      "company": "",
       "source": "36氪",
-      "publishedAt": "2026-02-28 15:09:00  +0800",
-      "summary": "据阿里内部人士透露，其个人AI助手“千问”计划在2026年进军AI硬件领域，产品形态包括AI眼镜、AI耳机和AI指环，并将面向全球市场发售。其中，AI眼镜预计在2026年世界移动通信大会上发布，并于3月2日开启预约，同时千问APP的部分功能将迁移至这些新终端。全球范围内，Meta、OpenAI以及国内的字节跳动等巨头也均在布局消费级AI硬件，如眼镜、耳机、腕带等产品。阿里已于2025年底调整组织架构，成立“千问C端事业群”以整合相关业务，并开源了适配端侧设备的新模型Qwen3.5-Plus，以降低部署成本和显存占用。",
-      "score": 31
+      "publishedAt": "2026-03-02 07:31:25  +0800",
+      "summary": "2026年央视春晚上，多家公司的人形机器人产品亮相，展示了中国在集群控制、硬件制造和量产能力方面的优势。随着人形机器人赛道升温，相关企业的资本化进程与投融资节奏均呈现加速态势。例如，智平方（深圳）科技有限公司于2月23日完成超10亿元B轮融资；千寻智能（杭州）科技有限公司于2月24日宣布连续两轮融资近20亿元，投资方包括云锋基金、混沌投资、红杉中国等一线机构；国内灵巧手标杆企业北京因时机器人科技有限公司也于2月24日宣布完成C1、C2两轮融资，合计金额数亿元。",
+      "score": 43
     },
     {
-      "section": "技术与研究",
-      "title": "淘宝闪购开源食品安全治理AI大模型“白泽”",
-      "company": "淘宝闪购",
+      "section": "投融资与并购",
+      "title": "望里科技获数千万元B+轮融资，生成式AI赋能数字化心理治疗",
+      "company": "望里科技",
       "source": "36氪",
-      "publishedAt": "2026-02-28 18:01:39  +0800",
-      "summary": "淘宝闪购正式发布了一款专为餐饮服务与零售门店打造的风控治理垂直领域开源大模型，命名为“白泽”。该模型的技术能力将向全行业免费开放。借助“白泽”大模型，外卖平台、餐饮及零售企业等行业参与方能够在图像识别和后厨预警等方面，通过人工智能技术快速加强对不合规场景的识别和治理能力，从而大幅提高数字化治理效率。",
-      "score": 29
+      "publishedAt": "2026-03-02 08:00:00  +0800",
+      "summary": "精神心理数字诊疗平台望里科技已完成数千万元B+轮融资，由远毅资本独家投资，资金将主要用于产品研发。该公司专注于精神心理领域，已积累30万真实世界患者数据，并打造了融合多维度心理疗法与认知训练范式的WonderLab大模型及治疗优化算法，能通过三级推荐引擎实现个性化精准干预。其抗抑郁产品“望里暖阳”已于2025年12月获批第三类医疗器械注册证，成为国内该领域首个取得三类证的数字医疗产品。",
+      "score": 38
     },
     {
-      "section": "技术与研究",
-      "title": "DeepSeek联合北大清华发布DualPath新框架，利用闲置网卡加速智能体推理",
-      "company": "DeepSeek",
-      "source": "量子位",
-      "publishedAt": "Fri, 27 Feb 2026 08:11:51 +0000",
-      "summary": "DeepSeek与北京大学、清华大学在ArXiv上发布了一篇关于智能体推理框架DualPath的论文。该框架旨在解决智能体长文本推理场景下的I/O瓶颈，通过优化从外部存储加载KV-Cache的速度，避免计算资源被存储读取拖累。其核心创新在于改变了传统的单路径加载模式，引入了“存储至解码引擎”的第二条路径，利用解码引擎闲置的存储网卡带宽读取缓存，并通过高速计算网络将其传输至预填充引擎，实现了集群存储带宽的全局池化与动态负载均衡。在660B规模的生产级模型实测中，该框架使离线推理吞吐量提高了1.87倍，在线服务吞吐量平均提升1.96倍，并优化了高负载下的首字延迟。",
-      "score": 25
-    },
-    {
-      "section": "技术与研究",
-      "title": "对话冯雷：从AI播客到真人感Agent的创业路径",
-      "company": "ListenHub",
-      "source": "雷锋网",
-      "publishedAt": "Sat, 28 Feb 2026 18:00:00 +0800",
-      "summary": "ListenHub创始人冯雷分享了其从AI播客到真人感Agent的创业思考。该公司专注于服务1%-3%的创作者群体，提供声音克隆、多模态编辑、一键生成解说视频等工具，旨在打造具有真人感的AI产品，而非追求DAU。公司去年底实现了300万美元的年度经常性收入，并以5000万美元估值开启新一轮融资。冯雷指出，在AI时代传统产品方法论已失效，更倾向于将产品核心交给工程师和AI本身。",
-      "score": 23
-    },
-    {
-      "section": "技术与研究",
-      "title": "谷歌云SRE团队运用Gemini CLI应对服务中断",
-      "company": "谷歌",
-      "source": "InfoQ",
-      "publishedAt": "Sat, 28 Feb 2026 12:00:00 GMT",
-      "summary": "谷歌云SRE团队在一篇博文中介绍了他们如何使用基于Gemini 3构建的AI驱动工具Gemini CLI来处理服务中断事件。该工具能在中断处理的各个阶段提供帮助，包括告警分类、初步缓解、根因分析以及自动生成事后分析文档，旨在缩短平均缓解时间并减少对用户的影响。团队通过一个虚构事件展示了该工具在终端驱动的完整事件生命周期中的应用，同时强调目前仍需人工验证缓解措施，并执行分层安全控制以确保操作安全。该方法虽然使用了谷歌内部的一些工具，但其模式被认为具有普适性。",
-      "score": 20
+      "section": "投融资与并购",
+      "title": "领克就语音误关大灯致车祸道歉；OpenAI获1100亿美元融资；米哈游回应员工意外离世",
+      "company": "领克, OpenAI, 米哈游",
+      "source": "36氪",
+      "publishedAt": "2026-02-28 09:09:10  +0800",
+      "summary": "领克汽车就车主夜间在高速上因语音操作误关大灯导致撞上护栏一事致歉，并表示已通过云端推送更新，优化了语音控制方案，后续在行驶状态下只能手动关闭大灯。OpenAI宣布获得1100亿美元新融资，其中软银、英伟达和亚马逊为主要投资方，投前估值为7300亿美元，并与亚马逊和英伟达分别签署了战略合作协议。米哈游内部通报一名员工意外离世，澄清该员工不存在超负荷加班情况，网传的“赔付3万元抚慰金”为不实信息，公司正在与家属积极沟通。",
+      "score": 37
     },
     {
       "section": "政策与监管",
-      "title": "特朗普下令封杀Claude，Altman声援后OpenAI却以类似协议过关",
-      "company": "Anthropic",
-      "source": "InfoQ",
-      "publishedAt": "Sat, 28 Feb 2026 15:01:12 GMT",
-      "summary": "特朗普在Truth Social发文，下令联邦机构停止使用Anthropic公司的Claude等所有产品，并给予六个月过渡期，明确表示Anthropic将不再被接纳为联邦承包商。美国国防部长Pete Hegseth指责Anthropic在获得2亿美元合同后表现傲慢与背叛，并指示战争部将Anthropic列为国家安全供应链风险，禁止与美军有业务往来的各方与Anthropic开展商业活动。白宫与Anthropic的争端核心在于Anthropic拒绝让其AI模型用于大规模国内监控或全自动武器，而Anthropic首席执行官Dario Amodei认为设置安全防护措施是必要的，因为Claude并非完美无缺，且强大的AI模型可能引发严重隐私问题。",
-      "score": 19
+      "title": "阿联酋承担滞留旅客费用；娃哈哈解散机器人业务；五粮液回应董事长被查",
+      "company": "娃哈哈,五粮液",
+      "source": "36氪",
+      "publishedAt": "2026-03-02 07:59:49  +0800",
+      "summary": "阿联酋民航总局宣布，因迪拜国际机场受战火波及导致航班取消，该国将承担所有受影响滞留旅客的住宿和接待费用，并已处理了约20200名旅客。娃哈哈集团旗下负责机器人研发与智能装备制造的杭州娃哈哈精密机械有限公司发布解散公示并进入清算程序，员工劳动合同终止，此举被接近公司的人士解读为实际控制人宗馥莉意在剥离非核心业务以聚焦食品饮料主业。五粮液发布公告称，公司董事长曾从钦已被立案调查并被采取留置措施，但公司其他高管正常履职，生产经营情况正常，该事项不会对公司生产经营产生重大影响。",
+      "score": 18
     },
     {
-      "section": "产品发布与更新",
-      "title": "Anthropic的Claude在五角大楼争议后升至App Store第二名",
-      "company": "Anthropic",
-      "source": "TechCrunch AI",
-      "publishedAt": "Sat, 28 Feb 2026 21:05:06 +0000",
-      "summary": "Anthropic的聊天机器人Claude似乎从该公司与五角大楼之间紧张谈判所引发的关注中获益。这一关注度帮助Claude在App Store的排名上升至第二位。",
-      "score": 21
-    },
-    {
-      "section": "投融资与并购",
-      "title": "推动AI热潮的数十亿美元基础设施交易",
-      "company": "Meta, Oracle, Microsoft, Google, OpenAI",
-      "source": "TechCrunch AI",
-      "publishedAt": "Sat, 28 Feb 2026 20:41:55 +0000",
-      "summary": "文章汇总了关于最大规模AI基础设施项目的已知信息。这些项目涉及Meta、Oracle、Microsoft、Google和OpenAI等公司的大量资金投入。这些基础设施交易是当前AI繁荣的重要驱动力。",
-      "score": 21
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "谷歌Gemini更新图像与视频媒体导入功能",
-      "company": "Google",
-      "source": "Ubergizmo",
-      "publishedAt": "19 hours ago",
-      "summary": "谷歌为其Gemini聊天机器人发布了一项重要更新，特别针对用户与多媒体文件的交互方式进行了改进。",
-      "score": 17
-    },
-    {
-      "section": "投融资与并购",
-      "title": "迪士尼与OpenAI达成协议，允许Sora生成其角色的AI视频",
-      "company": "OpenAI",
-      "source": "AOL.com",
-      "publishedAt": "16 hours ago",
-      "summary": "华特迪士尼公司宣布与OpenAI达成一项为期三年的协议。根据协议，OpenAI的Sora模型将获准生成迪士尼角色的AI视频。迪士尼将此描述为'一个全新的世界'。",
+      "section": "技术与研究",
+      "title": "长城汽车智驾自研策略：外部供应商与千人团队并行发展",
+      "company": "长城汽车",
+      "source": "雷锋网",
+      "publishedAt": "Sun, 01 Mar 2026 22:19:00 +0800",
+      "summary": "长城汽车在自动驾驶技术快速演进的背景下，采取多元化供应体系与自研团队建设并行的策略。公司已成立上千人的自研团队，整合座舱与智驾板块，并规划了三大算力平台以覆盖10万至40万元价格区间的车型。在ADC 2.0平台中，长城引入了卓驭和Momenta等供应商，其中Momenta的方案将应用于部分新车型，提供L2+级辅助驾驶功能。",
       "score": 16
     },
     {
-      "section": "政策与监管",
-      "title": "字节跳动承诺加强AI模型保护措施",
-      "company": "ByteDance",
-      "source": "AOL.com",
-      "publishedAt": "10 hours ago",
-      "summary": "在好莱坞重量级人物指控其新AI视频模型侵权后，中国科技巨头字节跳动表示正在采取措施“加强现有保障措施”。",
+      "section": "技术与研究",
+      "title": "云厂商动态：宇宙云销售岗受追捧，A云电销团队调整，B云效仿友商送车",
+      "company": "宇宙云，A云，B云",
+      "source": "雷锋网",
+      "publishedAt": "Sat, 28 Feb 2026 15:44:00 +0800",
+      "summary": "A云近期将电销团队并入公共云团队，该团队负责人需向公共云事业部负责人汇报。宇宙云为2026年设定了激进的MaaS营收目标，要求至少翻5倍以上，并因内部销售恶性竞争出台了处罚规定。同时，宇宙云的销售岗位因AI加持变得极为抢手，吸引了包括演员在内的各类人才，选人标准更倾向于有资源并能承诺业绩的销售。A云为冲刺年报业绩，推出了针对撬动友商客户的额外佣金政策。",
       "score": 15
     },
     {
-      "section": "产品发布与更新",
-      "title": "Grok革命：xAI在2026年向视频、军事和监管领域扩张",
-      "company": "xAI",
-      "source": "Hounslow Herald",
-      "publishedAt": "17 hours ago",
-      "summary": "Grok AI在2026年的动态包括发布Grok 4.2视频生成模型、与特斯拉整合、面临英国ICO调查以及获得五角大楼合同。",
+      "section": "技术与研究",
+      "title": "Snowflake平台增强能力助力企业实现AI就绪数据",
+      "company": "Snowflake",
+      "source": "InfoQ",
+      "publishedAt": "Sat, 28 Feb 2026 11:23:59 GMT",
+      "summary": "Snowflake致力于通过其平台增强能力，确保客户拥有AI就绪的企业数据，以支持生产级AI部署和智能应用。平台最新功能覆盖事务处理、分析、自动化优化、互操作性和数据治理等方面，旨在使所有企业数据（包括事务性和实时数据）实现AI就绪，并借助内置性能优化保持AI系统快速响应。Snowflake还通过SnowConvert AI提供AI驱动的代码转换能力，加速传统平台现代化进程，并支持从Sybase存储过程、UDF等到Snowflake的迁移，同时为Teradata提供托管Apache Iceberg表转换选项。",
       "score": 14
     },
     {
       "section": "技术与研究",
-      "title": "ChatGPT与谷歌Gemini对比",
+      "title": "官方确认：GPT-5在严苛测试中击败人类评估者，OpenAI突破重新引发未来工作辩论",
+      "company": "OpenAI",
+      "source": "El Adelantado",
+      "publishedAt": "5 hours ago",
+      "summary": "研究人员发现GPT-5在某些情况下比大多数人类法官更能遵循法律。这一突破性表现重新引发了关于人工智能对未来工作影响的讨论。测试结果表明AI在特定法律应用场景中超越了人类专业人士。",
+      "score": 27
+    },
+    {
+      "section": "技术与研究",
+      "title": "谷歌与Airtel合作在印度加强RCS反垃圾信息防护",
       "company": "Google",
-      "source": "vocal.media",
+      "source": "TechCrunch AI",
+      "publishedAt": "Sun, 01 Mar 2026 17:30:00 +0000",
+      "summary": "谷歌正在印度通过与电信运营商Airtel的合作，将运营商级别的过滤功能整合到RCS（富通信服务）中。此举旨在加强对垃圾信息的防护能力。该合作旨在解决印度市场长期存在的RCS垃圾信息问题。",
+      "score": 16
+    },
+    {
+      "section": "政策与监管",
+      "title": "OpenAI与五角大楼协议揭示自主武器与监控关键保障措施",
+      "company": "OpenAI",
+      "source": "CryptoRank",
+      "publishedAt": "4 hours ago",
+      "summary": "OpenAI与五角大楼达成协议，其中包含了针对自主武器和监控的关键保障措施。这一进展在人工智能领域具有重要意义。",
+      "score": 16
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "什么是NotebookLM？谷歌AI研究与笔记工具功能详解",
+      "company": "Google",
+      "source": "Tom's Guide",
       "publishedAt": "13 hours ago",
-      "summary": "文章讨论了作者在开始使用AI工具进行写作、研究和日常任务时，ChatGPT和谷歌Gemini是两个频繁出现的名字。",
+      "summary": "文章对谷歌推出的AI驱动的研究与笔记伴侣工具NotebookLM进行了入门介绍。它概述了用户需要了解的关于该工具的一切信息。",
+      "score": 15
+    },
+    {
+      "section": "技术与研究",
+      "title": "使用ChatGPT写论文会损害你的大脑吗？",
+      "company": "无",
+      "source": "AOL.com",
+      "publishedAt": "15 hours ago",
+      "summary": "麻省理工学院媒体实验室的研究人员开展了一项研究，旨在探究ChatGPT等大型语言模型是否会侵蚀人类的批判性思维能力。该研究关注人工智能工具对用户思考过程的潜在影响。",
       "score": 13
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "谷歌将于3月23日举办Gemini模型在营销平台上的展示会",
+      "company": "Google",
+      "source": "PPC Land",
+      "publishedAt": "8 hours ago",
+      "summary": "谷歌将利用其2026年NewFront时段详细介绍Gemini模型如何在其营销平台上部署，包括Display & Video 360和CTV。",
+      "score": 13
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "OpenAI在ChatGPT中测试广告引发“用隐私付费”担忧",
+      "company": "OpenAI",
+      "source": "Australian Broadcasting Corporation",
+      "publishedAt": "4 hours ago",
+      "summary": "OpenAI正在美国测试在ChatGPT答案底部插入广告。数字权利活动人士对此举表示担忧，警告这可能涉及隐私问题，并形容为“用隐私付费”。",
+      "score": 12
     }
   ]
 }

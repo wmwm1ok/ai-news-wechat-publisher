@@ -3,67 +3,76 @@
   "count": 14,
   "articles": [
     {
-      "section": "产品发布与更新",
+      "section": "技术与研究",
+      "title": "阿里开源4款Qwen3.5小尺寸模型，马斯克称赞其智能水平",
+      "company": "阿里",
+      "source": "雷锋网",
+      "publishedAt": "Tue, 03 Mar 2026 09:58:00 +0800",
+      "summary": "阿里巴巴于3月2日夜间开源了4款Qwen3.5小尺寸模型，具体型号为Qwen3.5-0.8B、2B、4B和9B。这一系列模型继承了Qwen3.5家族的技术能力，采用了原生多模态训练和最新的模型架构，旨在满足从极端资源受限到高性能轻量级应用的不同需求。模型发布后，马斯克在社交平台X上点赞并评论称其具有“惊人的智能水平”。",
+      "score": 45
+    },
+    {
+      "section": "投融资与并购",
+      "title": "PureblueAI清蓝完成数千万元天使轮融资，发布AI口碑营销数字员工Mark",
+      "company": "PureblueAI清蓝",
+      "source": "36氪",
+      "publishedAt": "2026-03-03 09:00:26  +0800",
+      "summary": "国内AI营销技术服务公司PureblueAI清蓝宣布完成数千万元人民币天使轮融资，本轮融资由祥峰中国领投，老股东英诺基金及一村淞灵、36氪跟投。公司同时发布了AI营销数字员工平台mkter.ai及行业首款AI口碑营销数字员工“Mark”，该产品基于自研GEO模型算法与多智能体架构打造，旨在为企业提供一站式、全链路的AI口碑营销服务。PureblueAI清蓝成立于2025年，创始团队来自清华大学、中科院等高校，并曾任职于字节跳动、阿里巴巴等企业，此前已于2025年8月获得超千万元种子轮融资。目前公司已服务汽车、金融、互联网科技等多个行业的头部企业。",
+      "score": 41
+    },
+    {
+      "section": "技术与研究",
       "title": "FlagOS镜像登陆腾讯云HAI社区，助力快速部署OpenClaw智能体",
       "company": "众智",
       "source": "量子位",
       "publishedAt": "Mon, 02 Mar 2026 10:25:09 +0000",
-      "summary": "众智FlagOS是一款完全开源的AI系统软件栈，支持多款异构AI芯片，可让AI模型与智能体轻松实现快速部署。本次FlagOS联合腾讯云HAI（面向AI和科学计算的容器镜像中心），将Qwen3-4B-hygon-flagos模型镜像正式上线腾讯云HAI社区，开发者可直接拉取使用。基于该镜像，可快速在加速卡上运行FlagOS与OpenClaw，实现小模型驱动智能体执行，为企业和开发者从公有云API转向自建本地AI服务提供了可落地的实践方案。",
+      "summary": "众智FlagOS是一款完全开源的AI系统软件栈，支持多款异构AI芯片，可帮助AI模型与智能体实现快速部署。此次FlagOS联合腾讯云HAI，将Qwen3-4B-hygon-flagos模型镜像正式上线腾讯云HAI社区，开发者可直接拉取使用。基于该镜像，用户可快速在加速卡上运行FlagOS与OpenClaw，实现小模型驱动智能体执行，为企业从公有云API转向自建本地AI服务提供了实践方案。",
       "score": 40
     },
     {
       "section": "产品发布与更新",
-      "title": "Notion引入MiniMax M2.5作为Custom Agents唯一开源模型",
-      "company": "Notion",
+      "title": "MWC成中国AI主场，小米展示AI赋能人车家全生态",
+      "company": "小米",
       "source": "量子位",
-      "publishedAt": "Mon, 02 Mar 2026 08:56:57 +0000",
-      "summary": "Notion联合创始人Akshay Kothari宣布，Notion Custom Agents正式引入首个开源权重模型MiniMax M2.5，该功能已作为实验性功能向用户开放。MiniMax M2.5以“开源权重模型”身份独立列于模型选择列表，与Claude Sonnet 4.6、Opus 4.6、Haiku 4.5及GPT-5.2、GPT-5.3 Codex等闭源模型并列，对于简单任务，其使用成本远低于其他闭源模型。此次更新意味着MiniMax M2.5正式进入国际主流生产力工具的核心场景，与Claude、GPT系列同台竞技，进一步验证了其在实际商业应用中的落地能力与市场认可度。Notion是一款集文档、笔记、数据库与项目管理于一体的全能工作台，目前全球用户超过1亿，广泛应用于个人效率管理与企业团队协作场景。",
-      "score": 39
-    },
-    {
-      "section": "投融资与并购",
-      "title": "GEO服务商PureblueAI清蓝获数千万元天使轮融资，发布AI营销数字员工平台",
-      "company": "PureblueAI清蓝",
-      "source": "36氪",
-      "publishedAt": "2026-03-03 09:00:26  +0800",
-      "summary": "北京清蓝智汇科技有限公司（PureblueAI清蓝）宣布完成数千万元人民币天使轮融资，本轮由祥峰中国领投，老股东英诺基金及一村淞灵、36氪跟投。融资资金将用于产品开发与技术迭代、生态拓展及业务布局，旨在打造AI口碑营销领域的标杆解决方案。公司同步发布了新产品AI营销数字员工平台mkter.ai及AI口碑营销数字员工“Mark”，该产品基于自研GEO模型算法与多智能体架构，可为企业提供一站式、全链路、智能化、可量化的AI口碑营销服务，覆盖从用户意图挖掘到效果监控优化的全流程。",
-      "score": 35
+      "publishedAt": "Tue, 03 Mar 2026 04:33:51 +0000",
+      "summary": "在今年的MWC展会上，中国AI企业展现出强大的应用落地能力，其中小米首次在海外展示了其AI赋能的“人车家全生态”。小米凭借全球开源大模型第一梯队的AI能力和10亿级终端生态规模，将AI从屏幕内延伸至现实世界，实现了智能设备在真实环境中的协同运转。展会现场，小米展示了搭载HyperAI系统的智能手机、配备小爱语音助手的智能汽车，以及由自研大模型驱动的全屋智能系统Miloco，该系统具备画面理解、全屋视觉问答和规则驱动的智能触发能力。",
+      "score": 38
     },
     {
       "section": "技术与研究",
-      "title": "国产安全AI以13比3超越Claude，发现更多0day漏洞",
-      "company": "安恒信息",
+      "title": "MiniMax发布全球首份大模型公司年报，预判2026年三大超级PMF",
+      "company": "MiniMax",
       "source": "量子位",
-      "publishedAt": "Mon, 02 Mar 2026 04:29:06 +0000",
-      "summary": "国产安全智能体在漏洞挖掘能力上实现了对Claude的超越。Anthropic官方披露其Claude Code Security在实际项目中成功定位了3个0day漏洞，而杭州安恒信息旗下的恒脑安全智能体不仅100%复现了这3个漏洞，还在同一模块的测试中额外挖掘出10个Claude未能发现的全新0day漏洞。恒脑安全智能体的核心优势在于将通用AI能力与安恒信息积累的安全私有数据和实战经验深度融合，使其能够进行深度代码推理和逻辑分析，发现更深层次的漏洞。",
-      "score": 34
+      "publishedAt": "Tue, 03 Mar 2026 03:12:07 +0000",
+      "summary": "MiniMax发布了全球首份大模型公司年报，披露了2025年的财务表现。公司2025年总营收达到7904万美元，同比增长158.9%，其中超过70%的收入来自国际市场。营收主要来源于面向C端的AI原生产品（如MiniMax、海螺AI等应用的订阅收入）和面向B端的开放平台及企业服务，两者分别贡献了总营收的67.2%和32.8%。公司毛利同比猛涨437%至2008万美元，毛利率提升至25.4%，净亏损率显著收窄。截至2025年末，其产品累计服务超过2.36亿用户，拥有超过21.4万企业客户及开发者。",
+      "score": 36
     },
     {
       "section": "产品发布与更新",
-      "title": "Databricks推出面向AI工作负载的PostgreSQL数据库Lakebase",
-      "company": "Databricks",
+      "title": "腾讯云发布TDSQL Boundless多模态数据库，探讨如何释放数据深层价值",
+      "company": "腾讯云",
       "source": "InfoQ",
-      "publishedAt": "Tue, 03 Mar 2026 09:41:47 GMT",
-      "summary": "Databricks正式发布了名为Lakebase的无服务器OLTP数据库，该数据库基于PostgreSQL构建，能够独立扩展计算和存储。Lakebase旨在与Databricks平台集成，提供一种综合事务与分析能力的混合解决方案，以简化实时应用和AI工作负载。它提供了即时数据分支、特定点时间恢复和统一访问控制等功能，支持单实例高达8TB的容量和最新的Postgres 17版本，包括用于AI驱动搜索的pgvector扩展。该服务基于从PostgreSQL公司Neon收购的技术构建，自2025年6月以来一直在开发中。",
+      "publishedAt": "Tue, 03 Mar 2026 11:26:33 GMT",
+      "summary": "AI大模型的快速发展正在改变数据产业的底层逻辑，非结构化数据的指数级增长使得多模态数据库成为企业数智化转型的关键基础设施。与传统数据库相比，多模态数据库能够通过统一架构原生支持关系、向量、地信、全文检索等多种数据模型，实现多模态数据的统一存储、管理与关联查询，从而解决数据孤岛问题并借助AI能力挖掘数据价值。腾讯云TDSQL Boundless正是基于这一趋势推出的新一代产品，它基于自研数据库引擎并高度兼容MySQL，集成了成本优化、弹性伸缩和企业级高可用等特性。腾讯云将于2026年3月11日举办DBTalk直播，由三位技术专家解读TDSQL Boundless在多模态数据库架构、HBase兼容模式以及实时分析引擎等方面的技术内容。",
+      "score": 35
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "Rivet发布Sandbox Agent SDK，旨在解决Agent API碎片化问题",
+      "company": "Rivet",
+      "source": "InfoQ",
+      "publishedAt": "Tue, 03 Mar 2026 12:00:00 GMT",
+      "summary": "Rivet公司推出了Sandbox Agent SDK，该工具旨在为开发者提供一个统一的API，用于构建编程代理。该SDK允许开发者在不同的代理运行时（如Claude Code、Codex、OpenCode和Amp）之间进行切换，而无需为每个运行时重写集成代码，从而解决了因API碎片化、会话管理差异以及流式数据格式不统一所带来的集成复杂性和维护难题。Rivet联合创始人兼CTO Nathan Flurry指出，构建自主代理系统面临的主要挑战包括API碎片化、临时状态问题以及不同服务提供商之间的部署差异。",
       "score": 33
     },
     {
-      "section": "政策与监管",
-      "title": "椰树集团因低俗广告被约谈；杭州影院试行20分钟内退票40%；中欧航线票价暴涨",
-      "company": "椰树集团",
-      "source": "36氪",
-      "publishedAt": "2026-03-03 08:11:42  +0800",
-      "summary": "3月2日，海口市监局就椰树集团工厂内悬挂涉嫌低俗内容的宣传广告约谈企业，要求整改。杭州西田城时代联合影城推出观影体验保障服务，观众在影片开场20分钟内认为体验不佳，可退还实际支付金额的40%。此外，受中东地区航线运营变化影响，中欧直飞航线需求大增，票价出现大幅上涨，例如上海至巴黎的直飞经济舱票价已涨至万元以上。",
-      "score": 32
-    },
-    {
       "section": "技术与研究",
-      "title": "奇点摄动自研3D二次元AI伴侣《星夜颂歌》开启内测",
-      "company": "奇点摄动",
-      "source": "雷锋网",
-      "publishedAt": "Mon, 02 Mar 2026 12:08:00 +0800",
-      "summary": "AI技术公司奇点摄动自主研发的3D二次元AI伴侣应用《星夜颂歌》于春节期间开启封闭技术内测，产品预计2026年全球上线。该应用的主角蕾伊是一位来自公元7000年的未来少女，拥有冷峻但脱线的独特性格，其底层技术未采用现有通用大模型，而是通过修改Transformers库、深度改造通用大语言模型架构，并结合大量定向数据训练及自研记忆系统“CelesMem”来实现角色性格内化与动态好感度交互。创始团队背景资深，CEO陆弘毅为帝国理工计算机系毕业生并拥有多项专利，公司于2025年底完成了九合创投的千万级人民币天使轮+融资。",
-      "score": 29
+      "title": "阿里通义千问Qwen3.5-9B模型性能超越更大参数对手",
+      "company": "Alibaba",
+      "source": "VentureBeat",
+      "publishedAt": "11 hours ago",
+      "summary": "阿里巴巴的Qwen3.5系列模型正在有效推动“智能体”技术的普及。其开源的Qwen3.5-9B模型在性能上超越了OpenAI的gpt-oss-120B模型，并且可以在标准笔记本电脑上运行。该系列还包括能在智能手机上运行的0.8B模型和为编码终端提供支持的9B模型。",
+      "score": 27
     },
     {
       "section": "政策与监管",
@@ -71,17 +80,8 @@
       "company": "OpenAI",
       "source": "MIT Technology Review",
       "publishedAt": "Mon, 02 Mar 2026 17:29:42 +0000",
-      "summary": "OpenAI于2月28日宣布与美国军方达成协议，允许其在机密环境中使用其技术。公司CEO萨姆·阿尔特曼表示，此次谈判是在五角大楼公开谴责Anthropic后才开始进行的，过程“绝对仓促”。",
-      "score": 27
-    },
-    {
-      "section": "技术与研究",
-      "title": "阿里开源小模型Qwen3.5-9B性能超越OpenAI大模型，可在普通笔记本运行",
-      "company": "Alibaba",
-      "source": "VentureBeat",
-      "publishedAt": "6 hours ago",
-      "summary": "阿里巴巴的Qwen3.5系列开源模型展现出强大性能，其中9B参数模型在编码终端等场景表现优异，甚至超越了OpenAI的gpt-oss-120B大模型。该系列模型包括可在智能手机上运行的0.8B模型，有效推动了“智能体”技术的普及化。这些模型能够在标准笔记本电脑上运行，降低了AI技术的使用门槛。",
-      "score": 27
+      "summary": "OpenAI于2月28日宣布，已与美国军方达成一项协议，允许其在机密环境中使用OpenAI的技术。公司首席执行官萨姆·阿尔特曼表示，此次谈判是在五角大楼公开谴责Anthropic之后才开始的，过程“绝对仓促”。",
+      "score": 25
     },
     {
       "section": "政策与监管",
@@ -89,43 +89,43 @@
       "company": "ChatGPT",
       "source": "TechCrunch AI",
       "publishedAt": "Tue, 03 Mar 2026 00:03:37 +0000",
-      "summary": "在ChatGPT与美国国防部合作的消息公布后，其应用程序卸载量激增了295%。与此同时，竞争对手Claude的下载量则有所增长。这一数据反映了部分消费者对ChatGPT与军方合作的反应。",
-      "score": 24
+      "summary": "在ChatGPT与美国国防部合作的消息公开后，许多消费者卸载了其应用程序，卸载量激增了295%。与此同时，竞争对手Claude的下载量则出现了增长。这一现象反映了部分用户对AI公司与政府机构合作的负面反应。",
+      "score": 22
     },
     {
-      "section": "政策与监管",
-      "title": "科技工作者敦促国防部撤销对Anthropic的供应链风险认定",
-      "company": "Anthropic",
+      "section": "技术与研究",
+      "title": "14.ai公司用AI替代初创企业的客服团队",
+      "company": "14.ai",
       "source": "TechCrunch AI",
-      "publishedAt": "Mon, 02 Mar 2026 17:18:34 +0000",
-      "summary": "科技工作者签署了一封公开信，敦促美国国防部撤销将Anthropic公司认定为“供应链风险”的决定。他们建议通过私下方式解决此事，而非公开贴上风险标签。这体现了行业对政府监管方式的关切。",
-      "score": 21
+      "publishedAt": "Mon, 02 Mar 2026 15:14:36 +0000",
+      "summary": "由一对已婚创始人创办的公司14.ai，正在用其AI技术替代初创企业的客户支持团队。该公司还推出了一个消费品牌，以测试AI能够处理多少客户支持任务。这表明AI在自动化客户服务领域的应用正在深入。",
+      "score": 22
     },
     {
       "section": "政策与监管",
-      "title": "我亲历了一场大规模反AI抗议活动",
+      "title": "我亲历了一场大规模的反AI抗议活动",
       "company": "OpenAI, Meta, Google DeepMind",
       "source": "MIT Technology Review",
       "publishedAt": "Mon, 02 Mar 2026 12:55:20 +0000",
-      "summary": "2月28日星期六，数百名反AI抗议者在伦敦国王十字科技中心游行数小时，该地是OpenAI、Meta和Google DeepMind的英国总部所在地。抗议者高呼口号并挥舞标语，表达对AI发展的反对。",
+      "summary": "2月28日星期六，作者在伦敦国王十字科技中心目睹了一场数百人参加的反AI抗议活动。抗议者高呼口号，挥舞标语，在OpenAI、Meta和Google DeepMind的英国总部所在地游行。",
       "score": 21
     },
     {
       "section": "产品发布与更新",
-      "title": "谷歌推出Gemini 3.1 Pro，扩展至云和企业平台",
-      "company": "Google",
-      "source": "PYMNTS.com",
-      "publishedAt": "7 hours ago",
-      "summary": "谷歌于2月19日推出了Gemini AI系列的新版本Gemini 3.1 Pro，旨在处理复杂的企业级推理任务。该版本已扩展至谷歌云和企业平台。",
-      "score": 21
+      "title": "PixVerse V5.6突破：AI视频实现多语言语音与自然韵律",
+      "company": "PixVerse",
+      "source": "blockchain.news",
+      "publishedAt": "20 hours ago",
+      "summary": "PixVerse在X平台上宣布，其V5.6版本在AI生成视频方面取得了重大进展。该版本主要在多语言支持和自然语音方面实现了突破。这些进展旨在使AI生成的视频语音听起来更自然。",
+      "score": 20
     },
     {
-      "section": "技术与研究",
-      "title": "Anthropic旗下Claude遭遇大规模服务中断",
+      "section": "政策与监管",
+      "title": "科技工作者敦促国防部撤销对Anthropic的供应链风险标签",
       "company": "Anthropic",
       "source": "TechCrunch AI",
-      "publishedAt": "Mon, 02 Mar 2026 13:31:49 +0000",
-      "summary": "Anthropic的人工智能聊天机器人Claude在周一上午遭遇了大规模服务中断。数以千计的用户报告了无法访问该机器人的问题。此次中断影响了广泛的服务可用性。",
+      "publishedAt": "Mon, 02 Mar 2026 17:18:34 +0000",
+      "summary": "科技工作者签署了一封公开信，敦促美国国防部撤销将Anthropic指定为“供应链风险”的决定。他们建议国防部以更低调的方式解决此事。这体现了科技行业对政府监管措施可能带来的商业影响的担忧。",
       "score": 19
     }
   ]

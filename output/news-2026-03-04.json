@@ -1,0 +1,276 @@
+{
+  "产品发布与更新": [
+    {
+      "title": "阿里云百炼专属版正式登陆国际市场，助力全球企业构建专属AI引擎",
+      "url": "https://www.leiphone.com/category/industrynews/hSJAaoRMruFtIEHE.html",
+      "snippet": "3月3日， 阿里云在 2026 年世界移动通信大会上宣布，面向国际市场正式推出企业级Agentic AI开发平台——百炼专属版。该平台专为金融、医疗、公共服务及电信运营商等高合规行业设计，提供从数据处理、模型微调、评估部署到Agent上线系统的全生命周期管理，帮助中国出海公司及国际企业构建专属业务Agent，加速AI应用落地。 百炼专属版为全球客户提供了便捷调用阿里千问等前沿开源模型的能力。自 2023 年以来，阿里千问已开源超 400 个模型，覆盖全尺寸、全模态并支持 201 种语言，全球下载量突破 10 亿次，衍生模型超 20 万个，已成为全球领先的开源模型生态。通过该平台，企业可以利用私有数据对千问模型进行深度调优，在确保数据不出机房的前提下，使 AI 深度学习行业知识并精准适配当地的语言习惯、文化风俗及监管合规要求。 在交付模式上，百炼专属版展现了极高的灵活性与安全性。该平台支持与阿里云飞天企业版深度集成，可实现 100% 物理隔离部署。这种“开箱即用”的方案，确保了企业核心业务数据在本地实现自我进化的同时，完全符合当地法律合规与隐私诉求。 目前，阿里云这一全栈 AI 解决方案已在东南亚、中东及非洲等全球主要经济增长区广泛落地，并正积极拓展欧洲等市场。在生物制药领域，全球医药巨头阿斯利康采用千问构建药物不良反应报告工具，将相关流程效率提升了 300%。此外，多家海外领先的电信运营商也正通过该方案建设本地化“AI 服务枢纽”，加速相关业务场景的智能化转型。 雷峰网",
+      "source": "雷锋网",
+      "publishedAt": "Tue, 03 Mar 2026 14:15:00 +0800",
+      "region": "国内",
+      "summary": "2026年3月3日，阿里云在世界移动通信大会上宣布，面向国际市场正式推出企业级Agentic AI开发平台——百炼专属版。该平台专为金融、医疗、公共服务及电信运营商等高合规行业设计，提供从数据处理、模型微调、评估部署到Agent上线的全生命周期管理，旨在帮助中国出海公司及国际企业构建专属业务Agent，加速AI应用落地。百炼专属版支持与阿里云飞天企业版深度集成，实现100%物理隔离部署，确保企业核心数据在本地处理，符合当地法律合规与隐私要求。目前，该解决方案已在东南亚、中东及非洲等地区落地，并正积极拓展欧洲市场，已有阿斯利康等企业及多家海外电信运营商采用该方案提升效率或建设本地化AI服务枢纽。",
+      "category": "产品发布与更新",
+      "company": "阿里云",
+      "score": 31,
+      "breakdown": {
+        "substance": 15,
+        "importance": 5,
+        "timeliness": 6,
+        "credibility": 5
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "模力工场033周AI应用榜：AI功能正融入现有产品，从评论互动到生活服务",
+      "url": "https://www.infoq.cn/article/3AV33wXig2vBy4s5hkIP?utm_source=rss&utm_medium=article",
+      "snippet": "点击查看原文>",
+      "source": "InfoQ",
+      "publishedAt": "Tue, 03 Mar 2026 20:00:00 GMT",
+      "region": "国内",
+      "summary": "模力工场发布了第33周AI应用榜单，指出当前AI发展的趋势不再是大量推出独立新应用，而是更注重将AI能力融入用户已有的产品和使用路径中，以提高效率。榜单精选了10款讨论度高的应用，例如小红书内嵌的评论区助手“点点AI”，它基于DeepSeek-R1模型，能理解UGC内容并回答用户问题；以及美团推出的“小美-AI生活秘书”，这是一个连接其本地生活服务网络的AI Agent，可根据用户自然语言需求提供建议并串联服务。这些案例体现了AI功能正通过“融入与整合”的方式，在用户熟悉的场景中悄然升级。",
+      "category": "产品发布与更新",
+      "company": "模力工场",
+      "score": 30,
+      "breakdown": {
+        "substance": 12,
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "阿里巴巴开源CoPaw框架：用于构建个人AI系统和助手",
+      "url": "https://www.technetbooks.com/2026/03/alibaba-copaw-open-source-framework-for.html",
+      "snippet": "Alibaba CoPaw is an open source framework for personal AI systems using AgentScope to integrate Discord iMessage and local LLMs like Qwen series model.",
+      "source": "Technetbook",
+      "publishedAt": "7 hours ago",
+      "region": "海外",
+      "summary": "阿里巴巴推出了开源的CoPaw框架，该框架专为构建个人AI系统而设计。CoPaw利用AgentScope技术，能够集成Discord、iMessage等通讯平台，并支持本地大型语言模型如Qwen系列。这一框架为开发者创建个性化AI助手提供了开源工具和基础设施。",
+      "category": "产品发布与更新",
+      "company": "阿里巴巴",
+      "score": 35,
+      "breakdown": {
+        "substance": 18,
+        "importance": 10,
+        "timeliness": 2,
+        "credibility": 5
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "Claude Code推出语音模式功能",
+      "url": "https://techcrunch.com/2026/03/03/claude-code-rolls-out-a-voice-mode-capability/",
+      "snippet": "Anthropic is stepping up its game in the AI coding space with the rollout of Voice Mode in Claude Code.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Tue, 03 Mar 2026 20:02:10 +0000",
+      "region": "海外",
+      "summary": "Anthropic公司通过为Claude Code推出语音模式功能，加强了其在AI编程领域的竞争力。",
+      "category": "产品发布与更新",
+      "company": "Anthropic",
+      "score": 31,
+      "breakdown": {
+        "substance": 8,
+        "importance": 5,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "ChatGPT新模型GPT-5.3 Instant将不再要求用户“冷静”",
+      "url": "https://techcrunch.com/2026/03/03/chatgpts-new-gpt-5-3-instant-model-will-stop-telling-you-to-calm-down/",
+      "snippet": "The company says the new model will reduce the \"cringe\" that's been annoying its users for months.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Tue, 03 Mar 2026 20:20:56 +0000",
+      "region": "海外",
+      "summary": "OpenAI表示，新的GPT-5.3 Instant模型将减少过去几个月来困扰用户的“尴尬”回应。该公司称此举旨在改善用户体验。",
+      "category": "产品发布与更新",
+      "company": "ChatGPT",
+      "score": 29,
+      "breakdown": {
+        "substance": 0,
+        "importance": 11,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "Gemini 3.1 Flash-Lite：为规模化智能而构建",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite/",
+      "snippet": "Gemini 3.1 Flash-Lite is our fastest and most cost-efficient Gemini 3 series model yet.",
+      "source": "blog.google",
+      "publishedAt": "7 hours ago",
+      "region": "海外",
+      "summary": "Gemini 3.1 Flash-Lite是Gemini 3系列中迄今为止速度最快、成本效益最高的模型。",
+      "category": "产品发布与更新",
+      "company": "Gemini",
+      "score": 16,
+      "breakdown": {
+        "substance": 3,
+        "importance": 6,
+        "timeliness": 2,
+        "credibility": 5
+      },
+      "isDuplicate": false
+    }
+  ],
+  "技术与研究": [
+    {
+      "title": "AI Agent一周独立完成菲尔兹奖成果形式化，20万行代码公开",
+      "url": "https://www.qbitai.com/2026/03/383368.html",
+      "snippet": "历史上最大规模的单一目的Lean形式化项目",
+      "source": "量子位",
+      "publishedAt": "Tue, 03 Mar 2026 10:28:48 +0000",
+      "region": "国内",
+      "summary": "Math公司的AI Agent Gauss在5天内完成了8维最优球体堆积定理的形式化验证，新增约5万行Lean代码，远超人类团队两年编写2万行代码的速度。随后又用一周时间，通过研究原论文和20多篇参考文献，生成45万行代码，完成了24维情形的形式化证明，并自主检测并纠正了原论文中的错误。这是本世纪以来首次有菲尔兹奖成果被完全形式化，也是历史上最大规模的单一目的Lean形式化项目。",
+      "category": "技术与研究",
+      "company": "Math",
+      "score": 35,
+      "breakdown": {
+        "substance": 20,
+        "importance": 0,
+        "timeliness": 6,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "GPT-5.4意外泄露，OpenAI新模型或具备两大能力",
+      "url": "https://www.qbitai.com/2026/03/383592.html",
+      "snippet": "并不是第一次发现GPT-5.4的踪迹了",
+      "source": "量子位",
+      "publishedAt": "Tue, 03 Mar 2026 10:55:37 +0000",
+      "region": "国内",
+      "summary": "近期，OpenAI疑似在代码拉取请求中意外泄露了GPT-5.4模型的相关信息。泄露内容显示，该模型可能新增一项功能开关，可绕过传统图像压缩机制，直接保留全分辨率的原始图像字节数据，这预示着其可能具备像素级精准的视觉分析能力。此外，有传闻称GPT-5.4将搭载200万Tokens的上下文窗口，以实现对超长篇内容的持久记忆，但这也带来了模型推理时缓存数据量急剧膨胀的技术挑战。有网友指出，模型在长上下文窗口内的准确率（召回率）是核心关注点，并提及了DeepSeek V4的发布动态。",
+      "category": "技术与研究",
+      "company": "OpenAI",
+      "score": 34,
+      "breakdown": {
+        "substance": 8,
+        "importance": 11,
+        "timeliness": 6,
+        "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "千问月活达2.03亿增速552%，跃居全球第三大AI应用",
+      "url": "https://www.leiphone.com/category/industrynews/FUngaML4kxA0cuFL.html",
+      "snippet": "3月3日，AI产品榜发布全球AI应用最新数据。榜单显示，MAU（月活用户数）排名前三的AI应用分别为ChatGPT、豆包和千问，其中，千问以2.03亿MAU成为全球第三大AI应用，并以552%的增速居全球第一。从榜单看，国内AI应用已呈现豆包、千问双雄并立的格局。 今年春节，千问发起“请客活动”，上线买奶茶、点外卖、订票等“办事”功能，吸引1.3亿用户在千问“一句话下单”累计超2亿次，相当于全国平均每10人就有1人在千问下单。 “请客活动”推动千问一跃成为国民级AI助手。数日前，QuestMobile数据披露，该活动前两日即吸引超3000万用户参与，将千问DAU从707万推高至7352万，增速高达940%。春节结束后，千问与豆包DAU差距大幅缩小，稳定至4000万上下。 雷峰网",
+      "source": "雷锋网",
+      "publishedAt": "Tue, 03 Mar 2026 11:03:00 +0800",
+      "region": "国内",
+      "summary": "根据AI产品榜发布的最新数据，千问以2.03亿的月活跃用户数成为全球第三大AI应用，其用户增速高达552%，位列全球第一。榜单显示，目前全球月活前三的AI应用依次为ChatGPT、豆包和千问，国内AI应用市场呈现出豆包与千问双雄并立的格局。今年春节期间，千问通过发起“请客活动”，上线了买奶茶、点外卖等办事功能，吸引了1.3亿用户累计下单超过2亿次，活动期间其日活跃用户数从707万大幅增长至7352万。",
+      "category": "技术与研究",
+      "company": "",
+      "score": 29,
+      "breakdown": {
+        "substance": 18,
+        "importance": 0,
+        "timeliness": 6,
+        "credibility": 5
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "初创公司声称能阻止闪电并预防灾难性野火",
+      "url": "https://www.technologyreview.com/2026/03/03/1133900/the-download-the-startup-that-says-it-can-stop-lightning-and-inside-openais-pentagon-deal/",
+      "snippet": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. This startup claims it can stop lightning and prevent catastrophic wildfires Startup Skyward Wildfire says it can prevent catastrophic fires by stopping the lightning strikes that ignite them. So far, it hasn’t publicly…",
+      "source": "MIT Technology Review",
+      "publishedAt": "Tue, 03 Mar 2026 13:30:00 +0000",
+      "region": "海外",
+      "summary": "初创公司Skyward Wildfire声称其技术能够阻止闪电，从而预防灾难性野火。该公司的技术旨在通过干预闪电来防止火灾的发生。",
+      "category": "技术与研究",
+      "company": "Skyward Wildfire",
+      "score": 18,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 10
+      },
+      "isDuplicate": false
+    }
+  ],
+  "投融资与并购": [
+    {
+      "title": "莱芒生物完成近2亿元融资，加速代谢增强型免疫细胞疗法临床转化",
+      "url": "https://36kr.com/p/3707151883382917?f=rss",
+      "snippet": "文｜胡香赟 编辑｜海若镜 36氪获悉，莱芒生物近期已完成近2亿元新增融资。本轮融资由粤财控股旗下机构粤财中垠联合晶泰科技领投，矿世之星、Mony Valley、泰珑投资、中山创投、以及个人财务投资者跟投，老股东富汇创投持续加注。募集资金将重点用于推进极低剂量代谢增强型CAR-T细胞药物的注册I期临床研究，并加速推进自动化生产工艺研发与验证，以及启动代谢增强型实体瘤细胞治疗药物的临床转化。 莱芒生物是晶泰科技（HK:02228）孵化并投资的创新药企，公司自研META 10、META 10-AI两大AI+代谢重编程技术平台，有望通过精准调控耗竭T细胞的代谢功能，开发“疗效和安全性更好、剂量更小，制备成本更低”的细胞治疗产品。 当前，莱芒生物已布局多条针对血液肿瘤、实体肿瘤和自身免疫性疾病的核心产品管线。其中代谢增强型CD19 CAR-T疗法，已针对多项血液肿瘤、自免性疾病开展IIT临床（研究者发起临床研究），并已经提交复发/难治性弥漫大B细胞淋巴瘤适应症的IND（注册临床）申报，预计于今年上半年取得批件。另外，针对宫颈癌、肝癌、胆管癌等实体瘤适应症的代谢增强型细胞疗法也已进入IIT临床阶段。 莱芒生物研发管线(图源：莱芒生物商业计划书) 莱芒生物执行总监仝督读认为，当前，国内虽已有多款CAR-T疗法获批，但疗效（如完全缓解率（CR）等指标）上仍有较大提升空间，并且价格昂贵不利于商业化推进。“企业通过各类技术路径，继续提高产品疗效并且降低生产成本是普遍趋势。” 基于对IL-10免疫代谢因子抵抗T细胞耗竭的底层机制研究，莱芒生物团队已证实，其能通过增强终末耗竭T细胞的氧化磷酸化代谢，实现对耗竭T细胞的代谢重编程，进而提高肿瘤免疫治疗的疗效。 简单理解，传统CAR-T细胞进入人体后，在肿瘤微环境中受到持续肿瘤抗原刺激，会出现能量代谢失衡、快速走向终末耗竭状态，导致增殖和杀伤功能下降，所以要通过较高给药剂量来实现治疗效果。 而莱芒生物的代谢增强型CAR-T通过自分泌IL-10改善处于耗竭状态的CAR-T细胞的能量代谢、逆转终末耗竭状态，让少量输注的CAR-T细胞在体内持续增殖，并提高了单位细胞的“杀伤力”，从而实现高效杀伤肿瘤细胞。这也为公司的“低剂量给药方案”奠定基础。 以自免性疾病治疗为例。据介绍，2025年，公司重点推进了系统性红斑狼疮适应症的IIT临床，在用药剂量仅为常规CAR-T治疗剂量千分之一的情况下，多位中重度患者实现100%停药状态下的DORIS完全缓解；安全性方面，患者治疗过程中的“CRS（细胞因子释放综合征，一种评估免疫治疗不良反应的临床分级）基本为一级，表现为轻微发热”。 “我们入组了10余位患者，从第二位开始，便未再进行清淋预处理。清淋预处理相当于一场小型化疗，不仅会产生较大毒副作用，还会增加住院治疗成本。若我们的免清淋方案最终可行，有望实现CAR-T治疗的‘门诊式给药’，患者回输后，只需在出现副反应时到医院监测、确保症状不加剧即可。”仝督读解释。 仝督读表示，目前，免清淋治疗方案先在自免性疾病治疗中进行了评估，未来针对肿瘤适应症，代谢增强型CAR-T也有望实现免清淋治疗方案。 此外，在血液肿瘤治疗中，代谢增强型CD19 CAR-T也披露相关临床进展。去年10月，莱芒生物发表于《柳叶刀-血液病学》的临床结果显示，针对复发/难治性急性B淋巴细胞白血病适应症，12位入组患者治疗1个月后的总体反应率为100%、3个月时均达到100%CR；6个月时的无复发生存率和总生存率分别达到91%和100%。“这表明产品在CR率和疗效持久性上都具备一定优势。”仝督读解释。 另据了解，莱芒生物已布局体内CAR-T管线。2025年，受多起跨国药企并购案影响，体内CAR-T成为国内CGT领域备受关注的细分方向之一。 谈及在代谢增强型CD19 CAR-T已铺开多项临床，为何仍投入资源进行体内CAR-T研究时，仝督读表示，这也是“对公司技术平台通用性的验证”。“如果我们的免疫代谢重编程技术能在体内CAR-T这一热门领域解决疗效不足和安全性等相关问题，更能证明技术平台的实力。” 当前，莱芒生物的慢病毒路径体内CAR-T管线“动物实验结果良好，且重现了血液肿瘤适应症中的低剂量、高效扩增现象”，预计在今年上半年启动IIT临床申报。 对外授权方面，莱芒生物已与多家跨国药企、国内制药企业洽谈，并取得TS。 仝督读分享称，在血液肿瘤领域，由于不少跨国药企已储备相关产品，因此对数据的要求会更高。“比如，他们倾向于引进至少进入临床二期，或在IND阶段展现出‘降维打击’式优势的产品。”在实体瘤领域，跨国药企虽保持较高关注度，但“亮眼的IIT临床数据是基础”，否则难以推进实质性合作。 相较于管线合作，技术平台授权成为国内CGT企业更易落地的合作选择。“不少跨国药企自己有在研的靶点或适应症，且往往已经看到初步成果，只是疗效未达预期。这时，他们会希望引入先进的技术平台，协助其解决一个或多个管线在开发中的问题。这也是我们的免疫代谢重编程技术平台比较受跨国药企关注的方向。”仝督读表示。 参考： 1、《柳叶刀-血液病学》发表莱芒生物代谢增强型 CD19 CAR-T治疗复发/难治性B-ALL患者临床研究结果 https://mp.weixin.qq.com/s/y7fTVdspMYEigru0FQV9ww 2、晶泰科技赋能莱芒生物取得细胞疗法重大成果，以1‰剂量CAR-T实现多位系统性红斑狼疮完全缓解出院 https://mp.weixin.qq.com/s/w7UN7EDomY-IVb17CxSjgA",
+      "source": "36氪",
+      "publishedAt": "2026-03-04 08:00:00  +0800",
+      "region": "国内",
+      "summary": "莱芒生物近期完成近2亿元新增融资，由粤财中垠联合晶泰科技领投，多家机构及个人投资者跟投。融资将主要用于推进代谢增强型CAR-T细胞药物的注册I期临床研究、自动化生产工艺研发与验证，以及启动实体瘤细胞治疗药物的临床转化。公司基于自研的AI+代谢重编程技术平台，旨在开发疗效更好、剂量更小、成本更低的细胞治疗产品，其代谢增强型CD19 CAR-T疗法已针对多项适应症开展研究者发起的临床研究，并已提交复发/难治性弥漫大B细胞淋巴瘤适应症的注册临床申报。",
+      "category": "投融资与并购",
+      "company": "莱芒生物",
+      "score": 40,
+      "breakdown": {
+        "substance": 15,
+        "importance": 8,
+        "timeliness": 10,
+        "credibility": 7
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "亚马逊4.27亿美元购校区建AI设施，小雨智造获数亿元B轮融资，小鹏VLA获大摩看好",
+      "url": "https://36kr.com/p/3707029227499651?f=rss",
+      "snippet": "大公司： 亚马逊花逾4亿美元购美知名高校校区用于AI建设 美国乔治·华盛顿大学2日说，美国亚马逊公司斥资4.27亿美元，收购该校弗吉尼亚科学与技术校区，以加快人工智能（AI）基础设施建设。 红果短剧已为多款小说相关软件登记著作权 36氪获悉，3月3日，爱企查App显示，红果短剧关联公司北京笔墨留香科技有限公司成已为“小说快应用”“笔墨留香”“红果官网”网站进行备案。值得一提的是，该公司已为“最看小说”“茶间小说”“翠果小说”等多款小说相关软件登记著作权。 扎克伯格夫妇据报1.7亿美元于迈阿密置业，以规避加州富人税 3月3日，据报道，Meta Platforms公司创始人马克·扎克伯格及其妻子以1.7亿美元购得迈阿密“亿万富豪避难所”——比斯坎湾私人岛屿上的一座豪宅。这栋房产创下了美国佛罗里达州迈阿密-戴德县最昂贵住宅交易纪录。此前有消息称，美国加州正推动一项公投，提议向拥有10亿美元以上的富豪征收一次性的5%“亿万富豪税”，这项征税提案将针对约200名身价10亿美元以上的加州居民。目前佛罗里达州则未有相关税收。 亚马逊云服务称仍在努力恢复阿联酋网络服务 当地时间3月2日，亚马逊云服务（AWS）公告称，正持续推进ME-CENTRAL-1区域内两个受损可用区的恢复工作，目前AWS管理控制台已部分恢复访问功能，但部分页面仍将无法正常加载，直至核心服务与电力供应完全恢复。在电力恢复与系统重建的同时，AWS正全力恢复工具及实用程序的访问权限，以便客户进行数据备份与迁移。目前暂无恢复时间的最新指引，预计至少需要一天才能完全恢复供电和网络连接。 新产品： 地平线HSD上车iCAR V27 36氪获悉，3月3日，iCAR联合地平线举办智驾技术发布会，首次全面展示了地平线HSD（Horizon SuperDrive™️，全场景辅助驾驶系统）全新量产车型iCAR V27的辅助驾驶能力。iCAR V27搭载了地平线征程6P芯片，单颗算力560TOPS，搭配27颗高精度传感器。 腾讯应用宝推出跨端开放平台 36氪获悉，3月3日，为应对开发者面临的体验一致性差、开发成本高等核心挑战，应用宝推出跨端开放平台，提供原生引擎及商业化解决方案。目前，微软应用商店中国区已上线应用宝专区，引入超4万款移动应用；应用宝的跨端能力也已延伸至车载及XR场景，累计搭载量分别突破300万与100万台。 投融资： “小雨智造”完成数亿元B轮融资 36氪获悉，3月3日，通用具身智能科技公司“小雨智造”宣布完成数亿元B轮融资。本轮融资由华业天成领投，招银国际、茅台基金、贵州省科创天使基金共同跟投，老股东滴滴和小米联合创始人黎万强追加投资。小雨智造创始人乔忠良表示，本轮融资将用于加大具身大模型投入，持续布局工业场景，与供应链企业展开战略合作加速量产。 今日观点： 大摩称特斯拉FSD将面临小鹏直接竞争 3月2日，小鹏汽车举办了小鹏第二代VLA媒体体验日，宣布本月将正式开启第二代VLA推送。对于小鹏第二代VLA的惊艳表现，摩根士丹利、美国银行、汇丰银行在内的多家全球头部券商给出“买入”评级。摩根士丹利称“小鹏第二代VLA是一次大胆的飞跃”“特斯拉未来将面临更多像小鹏这样，有能力在全球市场与其自动驾驶技术较量的中国企业的竞争”。此前，摩根大通持有的小鹏汽车多头头寸从6.38%增至7.04%。很快，小鹏第二代VLA将会开启全球路测，并计划于2027年开启全球交付。 其他值得关注的新闻： 北京累计已完成217款生成式人工智能服务备案 36氪获悉，据“网信北京”公众号消息，根据《生成式人工智能服务管理暂行办法》，截至2026年3月3日，北京市新增1款已完成备案的生成式人工智能服务，累计已完成217款生成式人工智能服务备案。 2026年全国消费促进月启动 36氪获悉，据商务部消息，3月2日，2026年全国消费促进月暨京津冀消费季在天津市启动。商务部认真贯彻落实党中央、国务��决策部署，坚持扩大内需这个战略基点，坚持“政策+活动”双轮驱动，深入实施提振消费专项行动，持续打造“购在中国”品牌，推进建设强大国内市场。2026年全国消费促进月暨京津冀消费季作为“购在中国”重点专题活动，将进一步优化消费品以旧换新政策实施，深化消费新业态新模式新场景、国际化消费环境建设、有奖发票等试点工作，强化京津冀三地区域消费协同，扩大优质商品和服务供给，促进首发经济、健康消费、绿色消费、智能消费，推动商旅文体健多场景融合，更好满足多样化、品质化消费需求。 全国首个跨境电商出口“前置监管仓”投用 3月2日，全国首个嵌入电商平台生产作业环节的跨境电商零售出口“前置监管仓”在山东威海正式落地运行。3月2日上午，在山东威海临港区某电商平台物流仓库内，工作人员正在对跨境电商出口包裹进行打包分拣，这些包装好的包裹也顺势进入到海关跨境电商零售出口“前置监管仓”办理通关手续。只需几秒钟的时间，货物便可完成申报放行，然后就地装箱，当晚便可搭乘国际班轮发往国外。",
+      "source": "36氪",
+      "publishedAt": "2026-03-03 17:57:08  +0800",
+      "region": "国内",
+      "summary": "亚马逊斥资4.27亿美元收购乔治·华盛顿大学弗吉尼亚科学与技术校区，以加速人工智能基础设施建设。通用具身智能科技公司“小雨智造”完成数亿元B轮融资，由华业天成领投，资金将用于加大具身大模型投入及工业场景布局。摩根士丹利等机构对小鹏汽车第二代VLA给予积极评价，认为其是“一次大胆的飞跃”，并指出特斯拉FSD未来将面临来自小鹏等中国企业的直接竞争。",
+      "category": "投融资与并购",
+      "company": "亚马逊",
+      "score": 39,
+      "breakdown": {
+        "substance": 18,
+        "importance": 8,
+        "timeliness": 6,
+        "credibility": 7
+      },
+      "isDuplicate": false
+    }
+  ],
+  "政策与监管": [
+    {
+      "title": "科技巨头斥资数百万阻挠前高管竞选国会议员",
+      "url": "https://techcrunch.com/2026/03/03/ai-companies-are-spending-millions-to-thwart-this-former-tech-execs-congressional-bid/",
+      "snippet": "A tech billionaire-backed super PAC is spending $125 million to undercut candidates pushing for AI regulation. New York's Alex Bores, a former tech executive himself, is one of them.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Tue, 03 Mar 2026 21:44:09 +0000",
+      "region": "海外",
+      "summary": "一个由科技亿万富翁支持的超级政治行动委员会计划投入1.25亿美元，以削弱那些推动人工智能监管的候选人。纽约州的前科技高管亚历克斯·博尔斯是目标之一。",
+      "category": "政策与监管",
+      "company": "AI companies",
+      "score": 18,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "X平台将对未标注AI生成的“武装冲突”内容创作者实施收益分享计划停权",
+      "url": "https://techcrunch.com/2026/03/03/x-says-it-will-suspend-creators-from-revenue-sharing-program-for-unlabeled-ai-posts-of-armed-conflict/",
+      "snippet": "Creators who break the rules will get a three-month suspension, and if they continue to violate the policy, they'll be permanently banned.",
+      "source": "TechCrunch AI",
+      "publishedAt": "Tue, 03 Mar 2026 18:27:47 +0000",
+      "region": "海外",
+      "summary": "X平台宣布，将对发布未标注AI生成的“武装冲突”相关内容的创作者实施收益分享计划停权。首次违规将停权三个月，持续违规将导致永久封禁。",
+      "category": "政策与监管",
+      "company": "X",
+      "score": 18,
+      "breakdown": {
+        "substance": 0,
+        "importance": 0,
+        "timeliness": 10,
+        "credibility": 8
+      },
+      "isDuplicate": false
+    }
+  ]
+}

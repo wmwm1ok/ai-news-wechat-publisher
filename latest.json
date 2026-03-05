@@ -1,132 +1,132 @@
 {
-  "date": "2026/3/4",
+  "date": "2026/3/5",
   "count": 14,
   "articles": [
     {
       "section": "技术与研究",
-      "title": "AReaL v1.0稳定版发布：支持智能体“边用边训”，OpenClaw可零改造接入强化学习",
-      "company": "蚂蚁集团",
+      "title": "GPT-5核心推手闪电跳槽至Anthropic，OpenAI人才流失引关注",
+      "company": "OpenAI, Anthropic",
       "source": "InfoQ",
-      "publishedAt": "Wed, 04 Mar 2026 10:52:41 GMT",
-      "summary": "蚂蚁集团联合清华大学于3月4日发布了开源强化学习训练框架AReaL v1.0稳定版。该版本主打“Agent一键接入RL训练”，无需修改代码即可兼容各类智能体框架，通过引入Proxy Worker中转层，开发者仅需修改请求地址即可让智能体接入训练。以OpenClaw为例，开发者只需在配置文件中将请求指向AReaL网关，智能体在执行任务时，用户可周期性为其表现打分，系统则自动完成数据采集与模型更新，实现智能体在持续使用中进化。此外，AReaL v1.0推出了基于PyTorch的原生训练引擎Archon，支持完整的5D并行，并集成了一套AI辅助开发体系，显著降低了复杂分布式系统的开发与维护门槛。",
+      "publishedAt": "Wed, 04 Mar 2026 19:05:47 GMT",
+      "summary": "OpenAI后训练负责人、GPT-5系列核心推手Max Schwarzer宣布离职，加入竞争对手Anthropic并回归一线研究员身份。此次离职并非孤例，OpenAI多位技术领袖，如联合创始人John Schulman、超级对齐团队负责人Jan Leike等，也已陆续离开并汇聚至更强调AI安全研究的Anthropic。Max Schwarzer在Anthropic的新研究方向是强化学习，旨在突破模型的逻辑推理能力边界，这与OpenAI当前转向商业落地、优化用户体验的产品策略形成反差。OpenAI近期的一系列动作，包括接下五角大楼订单、向开发者工具生态扩张等，都显示出其正全速驶向商业化的未来。",
       "score": 44
     },
     {
-      "section": "投融资与并购",
-      "title": "莱芒生物完成近2亿元融资，加速代谢增强型免疫细胞疗法临床转化",
-      "company": "莱芒生物",
+      "section": "技术与研究",
+      "title": "美团AI浏览器被指抄袭开源代码，双方已和解并完成开源处理",
+      "company": "美团",
+      "source": "InfoQ",
+      "publishedAt": "Wed, 04 Mar 2026 16:55:15 GMT",
+      "summary": "美团旗下光年之外团队推出的Tabbit AI浏览器公测后，被独立开发者公开指控抄袭其开源项目“陪读蛙”的代码。开发者指出Tabbit的界面布局、图标文件名与其项目高度相似，并强调其代码采用GPL协议，要求使用方开源衍生作品。Tabbit官方回应称开发翻译功能时fork了该项目，但当时仓库未包含开源协议声明，后续未及时关注到作者添加的GPLv3协议变更。目前双方已达成和解，相关代码已完成开源处理。",
+      "score": 39
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "红魔11 AIR游戏手机实测：207克轻薄机身与旗舰性能双向突破",
+      "company": "红魔",
       "source": "36氪",
-      "publishedAt": "2026-03-04 08:00:00  +0800",
-      "summary": "莱芒生物近期完成了近2亿元人民币的新增融资，本轮融资由粤财中垠和晶泰科技领投，多家机构及个人投资者跟投，老股东持续加注。融资资金将主要用于推进其代谢增强型CAR-T细胞药物的注册I期临床研究、自动化生产工艺研发与验证，以及启动针对实体瘤的细胞治疗药物临床转化。公司基于自研的AI+代谢重编程技术平台，旨在开发疗效更好、剂量更小、成本更低的细胞治疗产品，其核心产品管线已覆盖血液肿瘤、实体瘤和自身免疫性疾病。其中，代谢增强型CD19 CAR-T疗法已针对复发/难治性弥漫大B细胞淋巴瘤提交IND申报，并针对多项其他适应症开展研究者发起的临床研究。",
-      "score": 38
-    },
-    {
-      "section": "技术与研究",
-      "title": "阿里千问大模型负责人林俊旸宣布离职",
-      "company": "阿里",
-      "source": "量子位",
-      "publishedAt": "Wed, 04 Mar 2026 01:44:32 +0000",
-      "summary": "阿里巴巴高级算法专家、通义千问大模型负责人林俊旸在X平台发文，宣布离开千问团队。随后，Qwen3.5/VL/Coder核心贡献者Kaixin Li以及通义实验室科学家Binyuan Hui也相继发文告别。林俊旸于2019年加入阿里，早期专注于搜索推荐与多模态建模，2020年起投身大规模预训练模型研究，深度参与了M6、OFA等里程碑模型的构建，并在Qwen项目成立后担任技术负责人。目前，几位离职人员的去向尚未明确。",
-      "score": 33
-    },
-    {
-      "section": "技术与研究",
-      "title": "GPT-5.4意外泄露，OpenAI新模型或瞄准两大能力",
-      "company": "OpenAI",
-      "source": "量子位",
-      "publishedAt": "Tue, 03 Mar 2026 10:55:37 +0000",
-      "summary": "近期，在OpenAI编码助手Codex的代码拉取请求中意外出现了GPT-5.4字样，这并非首次发现其踪迹。此前，OpenAI开发人员在GitHub提交的代码变更说明中也曾泄露，在为view_image接口添加原始分辨率支持的功能开关说明里，提到了“当目标模型为gpt-5.4或更新版本时”。有传闻称GPT-5.4可能搭载200万Tokens的上下文窗口，以实现对超长篇内容的持久记忆。同时，泄露的代码还暗示新模型可能具备绕过传统图像压缩机制、直接处理全分辨率原始图像数据的能力，从而提升视觉分析的精准度。",
-      "score": 33
-    },
-    {
-      "section": "技术与研究",
-      "title": "Claude服务10小时连崩4次，需求激增致宕机",
-      "company": "Anthropic",
-      "source": "InfoQ",
-      "publishedAt": "Wed, 04 Mar 2026 14:52:42 GMT",
-      "summary": "3月2日，Anthropic旗下聊天机器人Claude及其编程平台Claude Code出现服务中断，10小时内连续发生四次全球性技术故障。故障监测平台Downdetector数据显示，高峰期有近2000名用户报告服务异常，主要影响claude.ai官网、开发者控制台及Claude Code等面向消费者的服务端口。Anthropic表示，过去一周Claude遭遇了前所未有的需求高峰，公司正全力恢复服务，而将Claude AI模型集成至自有系统的企业客户未受影响。",
-      "score": 32
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "高通发布骁龙可穿戴平台至尊版，推动个人AI生态发展",
-      "company": "高通",
-      "source": "量子位",
-      "publishedAt": "Wed, 04 Mar 2026 03:11:45 +0000",
-      "summary": "在MWC巴塞罗那展会上，高通正式发布了全新的骁龙可穿戴平台至尊版，旨在将AI运算能力延伸至智能手表等微型可穿戴设备。高通CEO安蒙预测，AI可穿戴产品未来市场规模有望突破一亿甚至达到十亿量级。高通认为，AI必须进驻更微型化的载体成为“AI穿戴”，才能实现自适应、即时响应且高度个性化的个人AI体验，并构建以用户为中心的生态。目前，高通已将端侧AI处理能力扩展至手机等多种硬件，例如第五代骁龙8至尊版平台已具备强大的多模态AI算力，并应用于荣耀的机器人手机等产品。",
-      "score": 30
-    },
-    {
-      "section": "技术与研究",
-      "title": "AI“氛围编程”威胁开源生态，维护者面临贡献质量危机",
-      "company": "",
-      "source": "InfoQ",
-      "publishedAt": "Wed, 04 Mar 2026 10:10:31 GMT",
-      "summary": "开源维护者正面临AI生成代码带来的挑战，多个知名项目已采取措施应对外部贡献质量下降问题。cURL关闭了缺陷赏金项目，Ghostty禁止AI生成代码，tldraw自动关闭外部拉取请求，这些行动是对AI生成低质量贡献激增的回应。研究显示“氛围编码”模式导致开发者减少文档阅读和缺陷报告，形成负反馈循环，可能降低软件可用性和质量。Stack Overflow活动减少、Tailwind CSS文档流量和收入下降等案例表明，AI在提升生产效率的同时，对开源社区的可持续发展构成了结构性威胁。",
-      "score": 30
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "阿里巴巴开源CoPaw框架，用于构建个人AI系统与助手",
-      "company": "Alibaba",
-      "source": "Technetbook",
-      "publishedAt": "14 hours ago",
-      "summary": "阿里巴巴推出了名为CoPaw的开源框架，旨在帮助用户构建个人AI系统。该框架利用AgentScope来集成Discord、iMessage等应用以及本地大语言模型，例如通义千问系列模型。",
+      "publishedAt": "2026-03-05 00:00:55  +0800",
+      "summary": "红魔11 AIR作为2026年推出的新生代性能旗舰，旨在打破游戏手机性能与厚重机身绑定的行业困局。该机采用全系透明设计，机身重量控制在207克，搭载骁龙8至尊版处理器和红芯R4自研电竞芯片，安兔兔跑分超过334万分。其6.85英寸悟空屏实现无挖孔全面屏设计，背部融合赛车跑道等美学元素，并内置支持RGB灯效的散热风扇，在开启后性能释放显著提升。",
       "score": 35
     },
     {
+      "section": "技术与研究",
+      "title": "Quesma发布OTelBench基准测试套件，评估OpenTelemetry与AI性能",
+      "company": "Quesma",
+      "source": "InfoQ",
+      "publishedAt": "Wed, 04 Mar 2026 16:00:00 GMT",
+      "summary": "Quesma公司推出了名为OTelBench的开源基准测试套件，旨在评估OpenTelemetry管道的性能以及AI代理在可观测性配置任务中的有效性。该工具能够模拟多种流量模式，测量处理器和导出器的吞吐量、延迟及资源消耗等关键指标，帮助团队在生产部署前验证硬件需求和配置。同时，该套件还能评估AI代理在平衡数据解析精度与系统开销方面的表现，并提供一个可复现的环境来测试自动化SRE解决方案的准确性。该工具可与传统测试方法并存，并保持供应商中立，支持测试如Prometheus和Jaeger等多种开源后端。",
+      "score": 33
+    },
+    {
       "section": "产品发布与更新",
-      "title": "谷歌将Gemini 3.1 Pro扩展至云和企业平台",
-      "company": "Google",
-      "source": "PYMNTS.com",
-      "publishedAt": "11 hours ago",
-      "summary": "谷歌于2月19日推出了Gemini 3.1 Pro，这是其Gemini AI系列的一个更新版本，旨在处理复杂的企业级推理任务。谷歌正在将其扩展到云和企业平台。",
-      "score": 18
+      "title": "苹果春季新品发布：MacBook Pro/Air搭载M5芯片，AI性能最高提升8倍，起售价8499元",
+      "company": "苹果",
+      "source": "量子位",
+      "publishedAt": "Wed, 04 Mar 2026 07:50:33 +0000",
+      "summary": "苹果在春季新品更新中，同步发布了搭载M5 Pro和M5 Max芯片的MacBook Pro以及MacBook Air笔记本，起售价为8499元。新款MacBook Pro搭载的M5系列芯片在AI性能上提升显著，其中图像生成速度相比M1 Pro/M1 Max提升最高达8倍，提示词处理速度相比M4 Pro/M4 Max快4倍。此外，芯片在多线程性能、图形性能以及视频处理能力方面也有相应提升，并同时更新了Studio Display和Studio Display XDR显示器。",
+      "score": 29
     },
     {
-      "section": "政策与监管",
-      "title": "AI公司与政府合作模式缺乏有效规划",
-      "company": "OpenAI",
-      "source": "TechCrunch AI",
-      "publishedAt": "Mon, 02 Mar 2026 22:59:10 +0000",
-      "summary": "文章指出，目前尚无关于AI公司应如何与政府合作的良好规划。以OpenAI为例，该公司正从一个极其成功的消费级初创公司转变为国家安全基础设施的一部分。然而，该公司似乎并未准备好应对其新的职责。",
-      "score": 17
-    },
-    {
-      "section": "投融资与并购",
-      "title": "AI初创公司为何以两种价格出售相同股权",
-      "company": "AI startups",
-      "source": "TechCrunch AI",
-      "publishedAt": "Wed, 04 Mar 2026 00:31:25 +0000",
-      "summary": "部分AI创始人正在采用一种新颖的估值机制来人为制造独角兽地位。这种做法涉及为相同的股权设定两种不同的出售价格。",
-      "score": 16
-    },
-    {
-      "section": "政策与监管",
-      "title": "AI公司斥资数百万阻挠前科技高管竞选国会议员",
-      "company": "AI companies",
-      "source": "TechCrunch AI",
-      "publishedAt": "Tue, 03 Mar 2026 21:44:09 +0000",
-      "summary": "一个由科技亿万富翁支持的超级政治行动委员会计划投入1.25亿美元资金，以削弱那些推动AI监管的候选人。纽约州的前科技高管亚历克斯·博尔斯正是目标之一。",
-      "score": 16
+      "section": "产品发布与更新",
+      "title": "阿里云Coding Plan需求火爆，优惠活动将限时限量供应",
+      "company": "阿里云",
+      "source": "雷锋网",
+      "publishedAt": "Wed, 04 Mar 2026 17:11:00 +0800",
+      "summary": "阿里云于3月4日发布公告，宣布将对Coding Plan的首购优惠活动进行阶段性调整。调整原因是该计划订阅过于火爆，导致模型API调用量暴涨，为保障用户体验，阿里云决定将首购优惠额度改为每日两个时间段限量供应，具体为每日9:30-11:30和14:30-16:30，售完即止。此次优惠活动于2月22日上线，新用户首购可享2折优惠，提供Lite版和Pro版两种套餐，分别包含每月18000次和90000次请求额度。阿里云Coding Plan目前已上线包括Qwen3.5、GLM-5等在内的8款编程模型，并强调将持续扩大资源供应以保障订阅用户的使用体验。",
+      "score": 27
     },
     {
       "section": "技术与研究",
-      "title": "初创公司声称能阻止闪电并预防灾难性野火",
-      "company": "Skyward Wildfire",
-      "source": "MIT Technology Review",
-      "publishedAt": "Tue, 03 Mar 2026 13:30:00 +0000",
-      "summary": "Skyward Wildfire公司声称其技术能够阻止闪电，从而预防灾难性野火。该技术旨在应对由闪电引发的火灾，例如2023年6月魁北克热浪期间，数千次闪电引发了超过120场野火的情况。",
-      "score": 16
+      "title": "马年春节消费观察：零食乳品品牌营销策略与市场格局分析",
+      "company": "世研指数",
+      "source": "36氪",
+      "publishedAt": "2026-03-04 16:43:27  +0800",
+      "summary": "根据世研消费指数监测，在近期监测周期内，茅台、五粮液和伊利位列综合热度指数前三。食品生鲜行业迎来春节消费旺季，呈现礼盒领跑、品质升级、场景细分和营销破圈的特征。零食赛道方面，百草味、三只松鼠和卫龙形成三足鼎立格局，通过IP联名、健康创新和线上线下活动推动销售，消费趋势呈现健康化、场景化和社交化。乳品赛道竞争聚焦高端化与礼盒化，伊利、蒙牛、安慕希、金典和认养一头牛等品牌通过代言人官宣、IP联名、工艺创新及资质突破等方式展开竞争，有机、高钙等健康卖点成为核心竞争力，学生奶等细分赛道增长显著。",
+      "score": 26
     },
     {
-      "section": "政策与监管",
-      "title": "大量用户卸载ChatGPT，反OpenAI情绪高涨",
-      "company": "OpenAI",
-      "source": "Futurism",
-      "publishedAt": "11 hours ago",
-      "summary": "新数据显示，在OpenAI首席执行官Sam Altman宣布与五角大楼达成新协议后，ChatGPT的卸载量激增。这反映了公众对该公司与军方合作的反感情绪正在上升。用户卸载行为与反OpenAI情绪的激增直接相关。",
-      "score": 16
+      "section": "投融资与并购",
+      "title": "Decagon以45亿美元估值完成首次要约收购",
+      "company": "Decagon",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 04 Mar 2026 18:32:53 +0000",
+      "summary": "AI驱动的客户支持初创公司Decagon以45亿美元的估值完成了首次要约收购。该公司是又一个快速增长、为员工提供流动性的年轻公司案例。",
+      "score": 32
+    },
+    {
+      "section": "技术与研究",
+      "title": "初创公司CollectivIQ通过众包聊天机器人提供更可靠AI答案",
+      "company": "CollectivIQ",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 04 Mar 2026 14:00:00 +0000",
+      "summary": "初创公司CollectivIQ旨在通过同时展示来自ChatGPT、Gemini、Claude、Grok等多达14个模型的回答，为用户提供更准确的AI查询答案。该方法通过聚合多个AI模型的响应来提升信息的可靠性。",
+      "score": 28
+    },
+    {
+      "section": "技术与研究",
+      "title": "美军仍在继续使用Claude模型",
+      "company": "Anthropic",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 04 Mar 2026 17:20:01 +0000",
+      "summary": "据报道，尽管国防科技客户正在流失，但美军仍在继续使用Anthropic的Claude模型。在美国持续对伊朗进行空袭的背景下，该模型被用于许多目标决策。",
+      "score": 24
+    },
+    {
+      "section": "技术与研究",
+      "title": "弥合AI应用与运营之间的差距",
+      "company": "",
+      "source": "MIT Technology Review",
+      "publishedAt": "Wed, 04 Mar 2026 14:00:00 +0000",
+      "summary": "人工智能的变革潜力已得到广泛认可。企业应用案例正不断涌现，各组织正从试点项目转向生产环境中的AI部署。公司不再仅仅停留在讨论AI，而是正在调整预算和资源以推动其实现。",
+      "score": 22
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "苹果音乐将添加AI音乐透明度标签",
+      "company": "Apple",
+      "source": "TechCrunch AI",
+      "publishedAt": "Wed, 04 Mar 2026 21:43:58 +0000",
+      "summary": "据报道，苹果音乐将引入透明度标签，以区分AI生成的音乐。该标签需要唱片公司或发行商主动选择为其音乐打上AI标签。目前尚不清楚这一干预措施的实际效果如何。",
+      "score": 18
+    },
+    {
+      "section": "技术与研究",
+      "title": "《每日下载》：地球的轰鸣与用于打击伊朗的AI",
+      "company": "",
+      "source": "MIT Technology Review",
+      "publishedAt": "Wed, 04 Mar 2026 13:12:00 +0000",
+      "summary": "这是《每日下载》的今日版，这是一份工作日通讯，提供每日科技世界动态。本期内容包括聆听地球轰鸣的秘密配乐，例如冰川崩裂的巨响、野火噼啪的隆隆声以及风暴前锋的咆哮。",
+      "score": 18
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "AI提示词需要工作空间？VibeFarm Studio终身版限时特惠99.99美元",
+      "company": "VibeFarm",
+      "source": "AOL.com",
+      "publishedAt": "14 hours ago",
+      "summary": "VibeFarm Studio的Studio计划提供了超过10,000个高级提示词，可用于快速启动项目。用户还可以使用调色板和真实感堆栈等功能来快速应用风格。目前该产品正以99.99美元的价格提供终身访问权限。",
+      "score": 13
     }
   ]
 }

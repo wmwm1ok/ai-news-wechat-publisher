@@ -3,130 +3,130 @@
   "count": 14,
   "articles": [
     {
-      "section": "投融资与并购",
-      "title": "华为投资的极佳视界完成近10亿元Pre-B轮融资",
-      "company": "极佳视界",
+      "section": "技术与研究",
+      "title": "原力灵机DM0模型获NVIDIA与Pi认可，重塑具身智能新范式",
+      "company": "原力灵机",
       "source": "量子位",
-      "publishedAt": "Thu, 05 Mar 2026 12:27:57 +0000",
-      "summary": "具身基模和通用机器人企业极佳视界近日完成近10亿元Pre-B轮融资，投资方包括中芯聚源、上海半导体产投基金等芯片和汽车产业资本，以及中金资本、苏创投等国资平台和财务机构。该公司在具身智能领域进行全栈深耕，其开源模型GigaBrain-0.1曾在权威大规模真机评测中获得全球第一，并布局了世界模型。此外，其全栈自研的Maker H01机器人已开启交付，并计划在今年实现千台交付量，应用场景覆盖汽车制造、3C电子、仓储物流等多个领域。",
-      "score": 49
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "GPT-5.4发布：OpenAI首个大一统模型，原生支持计算机使用",
-      "company": "OpenAI",
-      "source": "量子位",
-      "publishedAt": "Fri, 06 Mar 2026 00:50:44 +0000",
-      "summary": "OpenAI发布了GPT-5.4模型，这是其首个将推理、编程、计算机原生交互、深度网页搜索以及百万级Token上下文能力整合在单一模型中的“大一统”成果。该模型在多项关键基准测试中保持领先，并且效率显著提升，相比GPT-5.2在推理过程中使用的Token数量减少，从而实现了更快的响应速度和更低的总体成本。GPT-5.4已同步上线ChatGPT、API以及Codex，并推出了面向复杂任务的Pro版本（在ChatGPT中称为GPT-5.4 Thinking），同时GPT-5.2和GPT-5.1系列将分别在三个月后和3月11日从ChatGPT中退役。",
-      "score": 43
+      "publishedAt": "Fri, 06 Mar 2026 12:04:59 +0000",
+      "summary": "原力灵机的MemoryVLA与Real-time VLA两大核心技术近期分别获得机器人领域知名企业Physical Intelligence（Pi）与NVIDIA的引用采纳。MemoryVLA技术通过感知-认知记忆库为机器人赋予类人记忆机制，在150余个仿真与真实世界任务中表现优异，被Pi用于实现15分钟长程任务。Real-time VLA技术通过优化计算逻辑，在RTX 4090上将30亿参数VLA模型的推理延迟从100+ms压缩至27ms，达到30FPS实时水准，并被NVIDIA的VLA-Perf性能分析工具采纳。集两大技术于一体的DM0模型，兼具长时程任务处理能力与毫秒级实时响应速度，能稳定高效地完成工业装配与服务等复杂场景任务。",
+      "score": 36
     },
     {
       "section": "技术与研究",
-      "title": "国产万亿参数多模态大模型Yuan3.0 Ultra开源发布，专为企业级应用优化",
-      "company": "YuanLab.ai",
+      "title": "Transformer作者用Rust重构安全版IronClaw，解决OpenClaw隐私泄露风险",
+      "company": "",
       "source": "量子位",
-      "publishedAt": "Thu, 05 Mar 2026 13:04:02 +0000",
-      "summary": "YuanLab.ai团队正式开源发布了源Yuan3.0 Ultra多模态基础大模型，这是一个拥有万亿参数规模的旗舰模型，也是当前业界仅有的三个万亿级开源多模态大模型之一。该模型采用统一多模态架构，通过引入MoE架构和LAEP方法，将预训练算力效率提升了49%，并在企业级任务如多模态文档理解、检索增强生成、表格数据分析等方面表现突出。模型特别针对企业复杂业务场景进行了深度优化，能够高质量处理图文混排文档、多级结构表格等复杂信息形态，为基于OpenClaw等智能体框架构建企业Agent AI提供核心能力支撑。目前模型参数和代码已可在GitHub上免费下载使用。",
-      "score": 43
-    },
-    {
-      "section": "产品发布与更新",
-      "title": "360推出纳米漫剧流水线，AI影视工业化实现成本与周期突破",
-      "company": "360",
-      "source": "量子位",
-      "publishedAt": "Fri, 06 Mar 2026 02:41:19 +0000",
-      "summary": "360集团推出的“纳米漫剧流水线”是国内首个工业级AI漫剧智能体生产平台，其通过自研技术将分镜通过率提升至90%以上，解决了传统AI漫剧制作中“抽卡困境”导致的低效率问题。该平台已成功支撑了电影级AI短片《霍去病》的制作，该作品仅用48小时和3000元成本便完成，并引发广泛关注。平台在成本、周期和回报率上实现行业领先，例如单分镜生成成本降至1.55元，120集剧集制作周期压缩至7天，并推出了“省钱模式”进一步降低制作门槛。360集团以此平台切入漫剧市场，定位为技术中台，已与多家头部影视公司达成合作。",
-      "score": 40
+      "publishedAt": "Fri, 06 Mar 2026 09:56:11 +0000",
+      "summary": "Transformer架构作者之一Illia Polosukhin因OpenClaw存在严重安全漏洞，使用Rust语言从零重构了名为IronClaw的安全版本。IronClaw通过Rust内存安全、WASM沙箱隔离、加密凭证保险库和可信执行环境四层防御机制，确保大模型无法直接接触用户原始凭证，从根本上解决了隐私泄露问题。该项目已在GitHub开源，支持多平台本地部署和云端托管，目前处于快速迭代阶段。",
+      "score": 36
     },
     {
       "section": "技术与研究",
-      "title": "Gemini账户48小时被盗刷57万元，三人创业团队濒临破产",
-      "company": "Gemini",
-      "source": "InfoQ",
-      "publishedAt": "Thu, 05 Mar 2026 18:00:00 GMT",
-      "summary": "一家位于墨西哥的三人初创团队在Reddit发帖称，其Google Cloud API密钥被盗用，导致48小时内产生82,314美元（约合人民币57万元）的异常费用，主要来自Gemini 3 Pro图像与文本服务。该团队月均云支出仅约180美元，此次费用是其457倍，远超承受能力，若谷歌强制收取将导致公司破产。团队质疑谷歌云平台缺乏针对异常使用的风控机制，如消费上限、强制停止等措施，并指出谷歌依据“共享责任模式”要求用户承担该笔未授权费用。",
-      "score": 32
-    },
-    {
-      "section": "技术与研究",
-      "title": "阶跃星辰Step 3.5 Flash开源后热度飙升，在OpenClaw调用量全球第一",
-      "company": "阶跃星辰",
+      "title": "对话VAST创始人宋亚宸：从3D生成到世界模型，构建可交互世界底座",
+      "company": "VAST",
       "source": "雷锋网",
-      "publishedAt": "Thu, 05 Mar 2026 15:24:00 +0800",
-      "summary": "阶跃星辰新一代基座模型Step 3.5 Flash在全面开源后，其全球热度持续攀升，模型在开源项目OpenClaw上的调用量已迅速升至全球首位。紧随其后进入前五的模型中，来自中国大模型创业公司的基座模型占据了过半席位。海外开发者认为其开源力度在当前市场中“十分罕见”，因为公司不仅开源了成品模型，还开源了该Agent基座模型的预训练权重、中训练权重以及配套的Steptron训练框架，这为开发者提供了更灵活的二次开发选项和更多元的选择。阶跃星辰已在GitHub上提供了OpenClaw的接入教程。",
-      "score": 32
+      "publishedAt": "Fri, 06 Mar 2026 14:31:00 +0800",
+      "summary": "VAST是一家成立于2023年的人工智能公司，专注于通用3D大模型的研发与落地产品建设。其核心产品Tripo Studio是一站式AI 3D工作台，包含H3.1和P1.0两项核心突破，分别专注于高保真3D资产生成和具备可用拓扑结构的快速生成。公司创始人宋亚宸认为，3D生成尚未普及的真正原因在于缺乏真正的3D UGC平台，因此VAST选择从工具和模型入手推动内容生产方式变革。在商业落地上，VAST已与阿里巴巴、腾讯、字节跳动等头部企业及超过9万名开发者建立生态合作，Tripo Studio平台已聚集超过650万创作。",
+      "score": 34
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "高德发布全球首个大模型驱动视觉认知步行导航系统",
+      "company": "高德",
+      "source": "量子位",
+      "publishedAt": "Fri, 06 Mar 2026 11:10:03 +0000",
+      "summary": "高德地图正式推出全球首个由大模型驱动的视觉认知步行导引系统“地标AI领航”。该系统深度融合千问大模型、亿级POI与千万级街景图像，使导航具备视觉认知与人类语言理解能力，能通过用户眼前真实世界的地标进行引导，实现“所见即所导”，解决了步行导航中方向模糊、距离感知不直观、终点确认难等痛点。它采用“双重筛选”机制，在关键决策点优先选择醒目参照物进行口语化播报，实测显示能帮助用户更快确认路径并减少看手机频次。",
+      "score": 30
+    },
+    {
+      "section": "产品发布与更新",
+      "title": "无问智科发布业界首个物理AI数据基座平台“无垠”",
+      "company": "无问智科",
+      "source": "量子位",
+      "publishedAt": "Fri, 06 Mar 2026 06:58:34 +0000",
+      "summary": "2026年3月5日，无问智科在德清国际会议中心举办了“无垠拓界・基筑未来”发布会，正式推出业界首个物理AI数据基座平台“无垠”。该平台旨在解决具身智能领域数据获取成本高、质量不足、长尾场景覆盖难及数据孤岛等行业痛点，通过构建“采集-处理-训练-评测-落地”全链路体系，为具身智能商业化应用提供数据基础设施。发布会汇聚了领域专家、产业伙伴及政府代表，并展示了长三角（德清）具身智能数据采集训练场作为平台的物理支撑。",
+      "score": 30
     },
     {
       "section": "技术与研究",
-      "title": "风投教父预言软件采购转向智能体主导，Cursor面临淘汰，英伟达遇挑战",
-      "company": "英伟达",
+      "title": "手机行业涨价潮中华为多款机型稳价，Mate X7成折叠屏市场首选",
+      "company": "华为",
+      "source": "雷锋网",
+      "publishedAt": "Fri, 06 Mar 2026 15:15:00 +0800",
+      "summary": "近期存储芯片供需失衡导致手机行业迎来全面涨价，OPPO、小米、荣耀等品牌已上调新老机型价格。与此相反，华为Mate 80系列、Pura 80系列、nova 15系列及Mate X7等机型均未涨价，部分仍延续春节优惠，被网友称为值得入手的机型。华为手机销量因此走高，春节假期Mate 80系列销量同比提升近30%，折叠屏市场占有率突破70%。文章建议在行业涨价前入手华为手机，并重点介绍了华为Mate X7在轻薄设计、可靠架构、影像能力及鸿蒙系统智慧体验等方面的特点。",
+      "score": 29
+    },
+    {
+      "section": "技术与研究",
+      "title": "海尔智家发布制造业首个AI+细分岗位能力模型，引领人才标准演进",
+      "company": "海尔智家",
       "source": "InfoQ",
-      "publishedAt": "Fri, 06 Mar 2026 09:35:50 GMT",
-      "summary": "资深风险投资人Jerry Murdock在播客中分享了对AI浪潮的观察。他指出，软件采购决策正从人类主导转向自主智能体主导，未来企业可能由智能体系统自动评估和选择软件，不适应此变化的企业竞争力将受影响。Murdock还认为，开源社区和ASIC专用芯片将在AI下一阶段发挥重要作用，可能冲击英伟达等行业巨头，同时AI可能替代大量白领岗位，引发就业结构讨论。他强调在快速变化时代，把握时机和适应能力比预测能力更重要。",
-      "score": 28
+      "publishedAt": "Fri, 06 Mar 2026 16:18:43 GMT",
+      "summary": "海尔智家于3月4日发布了制造行业首个AI产品经理与AI技术开发工程师岗位能力模型。该模型基于公司“四个重构实现四个价值”的方法论，通过访谈建模法对33位人才样本进行深度访谈后构建，涵盖6大核心能力维度和24项细分能力指标。此举旨在以系统性人才战略响应制造业数智化转型需求，破解AI复合型人才短缺难题，为行业高质量发展树立新标杆。",
+      "score": 27
+    },
+    {
+      "section": "政策与监管",
+      "title": "Anthropic的国防部合同对追逐联邦合同的初创公司是警示",
+      "company": "Anthropic, Pentagon",
+      "source": "TechCrunch AI",
+      "publishedAt": "Fri, 06 Mar 2026 18:09:11 +0000",
+      "summary": "五角大楼已正式将Anthropic指定为供应链风险，原因是双方未能就军方对其AI模型的控制程度达成一致。控制范围包括AI在自主武器和大规模国内监控中的使用。随着Anthropic价值2亿美元的合同破裂，国防部转向了其他方案。",
+      "score": 30
     },
     {
       "section": "技术与研究",
-      "title": "在线骚扰正进入AI时代",
+      "title": "网络骚扰正进入AI时代",
       "company": "",
       "source": "MIT Technology Review",
       "publishedAt": "Thu, 05 Mar 2026 10:00:00 +0000",
-      "summary": "Scott Shambaugh在拒绝一个AI代理为matplotlib软件库贡献代码的请求时没有犹豫。像许多开源项目一样，matplotlib已经被大量的AI代码贡献所淹没，因此Shambaugh和他的维护者同事们已经制定了相关政策。",
-      "score": 31
+      "summary": "Scott Shambaugh在拒绝一个AI代理向matplotlib软件库贡献代码的请求时，毫不犹豫。与许多开源项目一样，matplotlib已被大量AI代码贡献所淹没，因此Shambaugh和其他维护者制定了政策来应对这种情况。这标志着网络骚扰正进入一个由AI驱动的新时代。",
+      "score": 27
     },
     {
       "section": "产品发布与更新",
-      "title": "AWS推出专为医疗保健设计的AI智能体平台",
-      "company": "AWS",
-      "source": "TechCrunch AI",
-      "publishedAt": "Thu, 05 Mar 2026 21:54:37 +0000",
-      "summary": "AWS推出了名为Amazon Connect Health的AI智能体平台。该平台旨在协助处理患者预约排程、文档记录以及患者身份验证等医疗保健相关任务。",
+      "title": "OpenAI发布新版ChatGPT模型，支持在Excel和Google Sheets中工作",
+      "company": "OpenAI",
+      "source": "Axios",
+      "publishedAt": "9 hours ago",
+      "summary": "OpenAI于周四发布了驱动ChatChat的更新模型，并推出了新的工具集。这些新工具使得ChatGPT聊天机器人能够直接在Excel和Google Sheets电子表格软件中进行操作和工作。",
+      "score": 27
+    },
+    {
+      "section": "技术与研究",
+      "title": "Balyasny资产管理公司如何构建用于投资的人工智能研究引擎",
+      "company": "Balyasny Asset Management",
+      "source": "OpenAI",
+      "publishedAt": "8 hours ago",
+      "summary": "Balyasny资产管理公司构建了一套人工智能研究系统，该系统采用了GPT-5.4模型、严格的模型评估流程以及智能体工作流。该系统的目标是实现大规模投资分析的转型，提升研究效率与深度。",
       "score": 24
     },
     {
-      "section": "政策与监管",
-      "title": "Anthropic计划就国防部供应链风险标签提起诉讼",
-      "company": "Anthropic",
+      "section": "产品发布与更新",
+      "title": "继欧洲之后，WhatsApp将在巴西允许竞争对手AI公司提供聊天机器人",
+      "company": "WhatsApp",
       "source": "TechCrunch AI",
-      "publishedAt": "Fri, 06 Mar 2026 01:28:54 +0000",
-      "summary": "Anthropic首席执行官Dario Amodei表示，他计划就美国国防部将该AI公司指定为供应链风险提出法律挑战。他声称，该标签对Anthropic的大多数客户没有影响。",
-      "score": 23
+      "publishedAt": "Fri, 06 Mar 2026 13:20:43 +0000",
+      "summary": "Meta公司宣布，将允许竞争对手的AI公司在WhatsApp上向巴西用户提供其聊天机器人服务，并收取费用。就在前一天，该公司确认了针对欧洲用户的类似决定。",
+      "score": 21
     },
     {
       "section": "产品发布与更新",
-      "title": "Cursor推出新型自动化智能编码工具",
-      "company": "Cursor",
+      "title": "AWS推出专为医疗保健设计的全新AI智能体平台",
+      "company": "AWS",
       "source": "TechCrunch AI",
-      "publishedAt": "Thu, 05 Mar 2026 17:00:00 +0000",
-      "summary": "Cursor推出了名为“自动化”的新系统，允许用户在编码环境中自动启动智能体。该系统可由代码库的新增内容、Slack消息或简单计时器触发。",
-      "score": 22
-    },
-    {
-      "section": "政策与监管",
-      "title": "Meta因AI智能眼镜隐私问题遭起诉",
-      "company": "Meta",
-      "source": "TechCrunch AI",
-      "publishedAt": "Thu, 05 Mar 2026 16:50:20 +0000",
-      "summary": "Meta因其AI智能眼镜的隐私问题被起诉。律师指出其营销材料承诺了隐私和用户对分享内容的控制权，但调查发现分包商正在审查来自客户眼镜的录像。",
-      "score": 19
-    },
-    {
-      "section": "政策与监管",
-      "title": "OpenAI禁止马丁·路德·金深度伪造视频，此前用户利用新技术制作种族主义内容",
-      "company": "OpenAI",
-      "source": "AOL.com",
-      "publishedAt": "16 hours ago",
-      "summary": "OpenAI宣布禁止使用其模型制作马丁·路德·金的深度伪造视频。此前有用户利用其新发布的技术制作了种族主义视频。该公司已采取行动限制此类内容的生成。",
-      "score": 19
+      "publishedAt": "Thu, 05 Mar 2026 21:54:37 +0000",
+      "summary": "AWS推出了名为Amazon Connect Health的AI智能体平台。该平台旨在帮助处理患者预约排程、文档记录以及患者身份验证等医疗保健相关任务。",
+      "score": 20
     },
     {
       "section": "产品发布与更新",
-      "title": "我们二月份发布的最新AI新闻",
-      "company": "Gemini",
-      "source": "blog.google",
-      "publishedAt": "15 hours ago",
-      "summary": "文章回顾了二月份最重要的AI更新。其中包括印度AI影响峰会的亮点。还涵盖了Gemini 3.1 Pro和Nano的发布。",
-      "score": 17
+      "title": "Luma推出用于创意项目的AI智能体，覆盖音频、视频和印刷",
+      "company": "Luma",
+      "source": "heise online",
+      "publishedAt": "4 hours ago",
+      "summary": "网络应用Luma利用AI智能体创建音频、图像和视频项目。该平台能够协助用户完成从头脑风暴、规划到最终交付的整个创意流程。",
+      "score": 19
     }
   ]
 }

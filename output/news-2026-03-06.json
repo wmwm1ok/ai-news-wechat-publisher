@@ -1,21 +1,40 @@
 {
   "产品发布与更新": [
     {
-      "title": "GPT-5.3 Instant正式上线，ChatGPT沟通更自然流畅",
-      "url": "https://www.qbitai.com/2026/03/383974.html",
-      "snippet": "",
+      "title": "GPT-5.4发布：OpenAI首个大一统模型，原生支持计算机使用",
+      "url": "https://www.qbitai.com/2026/03/384345.html",
+      "snippet": "Agent任务成本骤降47%",
       "source": "量子位",
-      "publishedAt": "Thu, 05 Mar 2026 07:10:17 +0000",
+      "publishedAt": "Fri, 06 Mar 2026 00:50:44 +0000",
       "region": "国内",
-      "summary": "OpenAI于3月4日发布了GPT-5.3 Instant模型，该模型是速度优化版本，适合快速日常查询、草稿写作等轻量任务。新模型针对用户反馈进行了重点优化，显著减少了机械回复、冗余免责声明等“AI腔”，使沟通更自然流畅，回答更直接精准，同时增强了联网搜索和写作能力。具体改进包括减少不必要的拒答行为、削减回答开头的过度免责声明，并能更好地结合上下文语境理解用户意图，例如能理解玩笑或运动场景的提问。该模型已在ChatGPT中正式上线，开发者也可通过API使用，其前代模型GPT-5.2 Instant将在付费用户的旧版模型区保留至6月3日。",
+      "summary": "OpenAI发布了GPT-5.4模型，这是其首个将推理、编程、计算机原生交互、深度网页搜索以及百万级Token上下文能力整合在单一模型中的“大一统”成果。该模型在多项关键基准测试中保持领先，并且效率显著提升，相比GPT-5.2在推理过程中使用的Token数量减少，从而实现了更快的响应速度和更低的总体成本。GPT-5.4已同步上线ChatGPT、API以及Codex，并推出了面向复杂任务的Pro版本（在ChatGPT中称为GPT-5.4 Thinking），同时GPT-5.2和GPT-5.1系列将分别在三个月后和3月11日从ChatGPT中退役。",
       "category": "产品发布与更新",
       "company": "OpenAI",
-      "score": 31,
+      "score": 45,
       "breakdown": {
-        "substance": 5,
+        "substance": 15,
         "importance": 11,
-        "timeliness": 6,
+        "timeliness": 10,
         "credibility": 9
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "海信发布世界杯AI家电新品，覆盖电视空调洗衣机全品类",
+      "url": "https://36kr.com/p/3710171805806976?f=rss",
+      "snippet": "距2026美加墨世界杯开幕不足100天，作为官方赞助商，海信于3月5日在青岛一口气推出覆盖电视、空调、洗衣机等家电的全品类AI新品。 在电视上，海信把AI做成“观赛搭子”。RGB-Mini LED旗舰电视UX2026款除了强调画质提升，更突出“AI观赛”体验：支持赛中AI查询阵容及识别场上球员，并提供三场比赛同屏观看模式，赛后还能生成战术总结与复盘。 AI在空调上，承担的是“实时调度体感”。 国内首款滑盖空调——海信智慧风E5系列，主打人感与语音智控结合，通过人感识别实现风随人动、风避人吹、人近柔风、无人节能等模式。智慧风E5系列支持双人双风感与180度广角送风，在多人观赛场景中也能照顾到不同家庭成员的体感需求。 海信此次推出的650U8冰箱包括AI智控系统，还可识别 800 余种食材，自动匹配保鲜参数。 对于喜爱运动的球迷，海信新推出的四筒洗衣机，将洗鞋机集成进机身——相当于一台设备同时拥有12kg大容量洗衣机、8kg热泵烘干机、1kg婴儿/宠物洗烘一体机、1kg内衣洗烘一体机、3kg洗鞋机和护鞋机。该洗衣机还具有AI面料及脏污识别功能，可在洗鞋时实现单次洗涤超3000次拍打刷洗。 突出“AI观赛”功能的海信UX2026电视，图片：企业授权 此外，海信还为年轻人推出“大薄荷2.0套系”，在电器“更大更薄更有核”基础上，增加了全屋AI智控：当用户推开房门，AI空气管家就能调到适合的温度；打开电视，AI已选好喜欢的电视节目、适宜的亮度；AI洗护管家面对材质混杂的衣服，自动识别洗净。 在AI浪潮中，家电的边界正在被重塑——从被动执行指令到主动理解用户，产品的定义和体验也在悄然进化。",
+      "source": "36氪",
+      "publishedAt": "2026-03-05 23:23:30  +0800",
+      "region": "国内",
+      "summary": "海信作为2026美加墨世界杯官方赞助商，于3月5日在青岛集中发布了多款具备AI功能的家电新品。其中，UX2026款电视主打AI观赛体验，支持球员识别、多场比赛同屏观看及赛后战术复盘；智慧风E5系列空调通过人感识别实现风随人动等智能送风模式；四筒洗衣机集成了洗鞋功能并具备AI面料识别能力，而650U8冰箱则能自动识别食材并匹配保鲜参数。此外，海信还推出了具备全屋AI智控功能的“大薄荷2.0套系”，可实现回家自动调温、电视节目智能推荐等场景化服务。",
+      "category": "产品发布与更新",
+      "company": "海信",
+      "score": 27,
+      "breakdown": {
+        "substance": 12,
+        "importance": 0,
+        "timeliness": 8,
+        "credibility": 7
       },
       "isDuplicate": false
     },
@@ -26,7 +45,7 @@
       "source": "TechCrunch AI",
       "publishedAt": "Thu, 05 Mar 2026 21:54:37 +0000",
       "region": "海外",
-      "summary": "AWS推出了名为Amazon Connect Health的AI代理平台。该平台旨在协助处理患者预约、文档记录和患者身份验证等工作。",
+      "summary": "AWS推出了名为Amazon Connect Health的AI代理平台。该平台旨在帮助处理患者预约排程、文档记录以及患者身份验证等任务。",
       "category": "产品发布与更新",
       "company": "AWS",
       "score": 26,
@@ -66,45 +85,45 @@
       "source": "量子位",
       "publishedAt": "Thu, 05 Mar 2026 13:04:02 +0000",
       "region": "国内",
-      "summary": "YuanLab.ai团队正式开源发布了源Yuan3.0 Ultra多模态基础大模型，这是当前业界仅有的三个万亿级开源多模态大模型之一。该模型采用统一多模态模型架构，通过引入MoE架构和LAEP方法优化，预训练算力效率提升了49%，并在多模态文档理解、检索增强生成等企业级任务中表现突出。模型在DocMatix、MMTab等多模态文档理解评测中领先于Claude Opus 4.6、Gemini 3.1 Pro等前沿模型，能够高质量处理企业环境中的图文混排文档、复杂表格等信息形态。",
+      "summary": "YuanLab.ai团队正式开源发布了源Yuan3.0 Ultra多模态基础大模型，这是当前业界仅有的三个万亿级开源多模态大模型之一。该模型采用统一多模态模型架构，通过引入MoE架构和LAEP方法，将预训练算力效率提升了49%，并在多模态文档理解、检索增强生成等企业级任务中表现突出。模型已全面开源，参数和代码均可免费下载使用。",
       "category": "技术与研究",
       "company": "YuanLab.ai",
-      "score": 49,
+      "score": 43,
       "breakdown": {
         "substance": 23,
-        "importance": 11,
+        "importance": 5,
         "timeliness": 6,
         "credibility": 9
       },
       "isDuplicate": false
     },
     {
-      "title": "万亿级多模态大模型Yuan3.0 Ultra正式开源",
-      "url": "https://www.infoq.cn/article/Lqh9XKP0zo6RqlMMkLhu?utm_source=rss&utm_medium=article",
+      "title": "Gemini账户48小时被盗刷57万元，三人创业团队濒临破产",
+      "url": "https://www.infoq.cn/article/Gki16Stu5jqbooE6pgvs?utm_source=rss&utm_medium=article",
       "snippet": "点击查看原文>",
       "source": "InfoQ",
-      "publishedAt": "Thu, 05 Mar 2026 17:11:04 GMT",
+      "publishedAt": "Thu, 05 Mar 2026 18:00:00 GMT",
       "region": "国内",
-      "summary": "YuanLab.ai团队正式开源发布了万亿参数规模的多模态基础大模型Yuan3.0 Ultra，该模型是业界仅有的三个万亿级开源多模态大模型之一。Yuan3.0 Ultra在模型结构设计中引入了MoE大模型的训练效率优化，并针对企业应用及智能体工具调用进行了深度优化，在多模态文档理解、检索增强生成、表格数据分析、内容摘要与工具调用等企业级任务中表现突出。模型采用统一多模态架构，由视觉编码器、语言主干网络与多模态对齐模块组成，其语言主干网络基于混合专家架构构建，通过LAEP方法将参数从1515B优化至1010B，预训练算力效率提升49%，并引入了Localized Filtering Attention机制以强化语义关系建模能力。",
+      "summary": "一家位于墨西哥的三人初创团队在Reddit发帖称，其Google Cloud API密钥被盗用，导致48小时内产生82,314美元（约合人民币57万元）的异常费用，主要来自Gemini 3 Pro图像与文本服务。该团队每月正常云支出约180美元，此次费用是其457倍，远超承受能力，若谷歌强制收取将导致公司破产。团队质疑谷歌云平台缺乏针对异常使用的风控机制，如消费上限、强制停止等措施，并指出谷歌依据“共享责任模式”要求用户承担该笔未经授权的API费用。",
       "category": "技术与研究",
-      "company": "YuanLab.ai",
-      "score": 41,
+      "company": "Gemini",
+      "score": 34,
       "breakdown": {
-        "substance": 20,
-        "importance": 5,
+        "substance": 7,
+        "importance": 11,
         "timeliness": 8,
         "credibility": 8
       },
       "isDuplicate": false
     },
     {
-      "title": "阶跃星辰Step 3.5 Flash开源后全球热度攀升，在OpenClaw调用量居首",
+      "title": "阶跃星辰Step 3.5 Flash开源后热度飙升，在OpenClaw调用量全球第一",
       "url": "https://www.leiphone.com/category/industrynews/GJoPqXF7Ss2429cj.html",
       "snippet": "昨日全面开源后，阶跃星辰新一代基座模型 Step 3.5 Flash 的全球热度进一步攀升，模型调用量在 OpenClaw （被网友称为“小龙虾”的全球知名开源项目）上已迅速攀升至全球第一。前五名中，紧随其后的是 MiniMax M2.5、Trinity Large Preview（free）、Kimi K2.5，以及 Claude Sonnet 4.6——来自中国大模型创业公司的基座模型占据了过半席位。 有海外开发者认为，这款模型的开源力度在现阶段大模型市场中“十分罕见”，因为模型公司的惯常做法是开源成品模型（这样开发者能够做直接部署，但自由度不高）。而阶跃星辰算法团队不仅开源了 Step 3.5 Flash 模型，还开源了这款 Agent 基座模型的预训练权重（Base）、中训练权重（Midtrain）以及配套的 Steptron 训练框架。大模型训练过程中，预训练阶段主要解决模型的常识问题，让模型建立起对世界的基础认知；中训练阶段进一步强化模型高级专项能力，比如推理、代码、工具调用等，目前市场上 Agent 的能力差异也主要取决于中训练阶段的处理方式。阶跃星辰同时开源这两部分权重，意味着不仅支持开发者更灵活二次开发，更考虑到开发社区实际需求，为其提供更多元选项。结合开源的官方同款训练框架以及此前公开的技术报告，开发者能够以 Step 3.5 Flash 为基座，进行更极致创新与探索。 目前，阶跃星辰已在 GitHub 提供 OpenClaw 接入教程，详情请见 https://github.com/stepfun-ai/Step-3.5-Flash/tree/main/cookbooks/openclaw。",
       "source": "雷锋网",
       "publishedAt": "Thu, 05 Mar 2026 15:24:00 +0800",
       "region": "国内",
-      "summary": "阶跃星辰新一代基座模型Step 3.5 Flash在全面开源后，其全球热度持续上升，模型调用量在开源项目OpenClaw上已迅速攀升至全球第一。在OpenClaw调用量前五的模型中，来自中国大模型创业公司的基座模型占据了过半席位，包括MiniMax M2.5和Kimi K2.5等。海外开发者认为其开源力度在当前市场中“十分罕见”，因为阶跃星辰不仅开源了成品模型，还开源了该Agent基座模型的预训练权重、中训练权重以及配套的Steptron训练框架，这为开发者提供了更灵活的二次开发选项和更多元的选择。目前，阶跃星辰已在GitHub上提供了OpenClaw的接入教程。",
+      "summary": "阶跃星辰新一代基座模型Step 3.5 Flash在全面开源后，其全球热度持续攀升，模型调用量在开源项目OpenClaw上已迅速升至全球第一。在OpenClaw调用量前五名中，来自中国大模型创业公司的基座模型占据了过半席位。海外开发者认为其开源力度在当前市场中“十分罕见”，因为阶跃星辰不仅开源了成品模型，还开源了该Agent基座模型的预训练权重、中训练权重以及配套的Steptron训练框架，这为开发者提供了更灵活的二次开发选项和更多元的选择。目前，阶跃星辰已在GitHub上提供了OpenClaw的接入教程。",
       "category": "技术与研究",
       "company": "阶跃星辰",
       "score": 32,
@@ -117,20 +136,20 @@
       "isDuplicate": false
     },
     {
-      "title": "Gemini账户48小时被盗刷57万，三人创业团队濒临破产",
-      "url": "https://www.infoq.cn/article/Gki16Stu5jqbooE6pgvs?utm_source=rss&utm_medium=article",
+      "title": "风投教父预言软件采购转向智能体主导，Cursor面临淘汰，英伟达遇挑战",
+      "url": "https://www.infoq.cn/article/oy5f04ZRYI2YRgD7p8y6?utm_source=rss&utm_medium=article",
       "snippet": "点击查看原文>",
       "source": "InfoQ",
-      "publishedAt": "Thu, 05 Mar 2026 18:00:00 GMT",
+      "publishedAt": "Fri, 06 Mar 2026 09:35:50 GMT",
       "region": "国内",
-      "summary": "一家位于墨西哥的三人初创团队在Reddit发帖称，其Google Cloud API密钥被盗用，导致48小时内产生82,314美元（约合人民币57万元）的异常费用，主要来自Gemini 3 Pro图像与文本服务。该团队月均云支出仅180美元，此次账单金额是其457倍，远超承受能力，若谷歌强制收取费用将导致公司破产。团队已采取删除密钥、启用双因素认证等安全措施，但质疑谷歌云平台缺乏针对异常使用的风控机制，如消费上限或强制停止功能，且根据“共享责任模式”，费用仍需用户承担。",
+      "summary": "资深风险投资人Jerry Murdock在播客中分享了对AI浪潮的观察。他指出，软件采购决策正从人类主导转向自主智能体主导，未来企业可能由智能体系统自动评估和选择软件，不适应这一变化的企业竞争力将受影响。Murdock还认为，开源社区和ASIC专用芯片将在AI下一阶段发挥重要作用，可能对英伟达等行业巨头带来冲击。同时，AI可能在未来几年替代大量白领岗位，引发就业结构变化的讨论。",
       "category": "技术与研究",
-      "company": "Gemini",
-      "score": 31,
+      "company": "英伟达",
+      "score": 28,
       "breakdown": {
-        "substance": 4,
-        "importance": 11,
-        "timeliness": 8,
+        "substance": 5,
+        "importance": 5,
+        "timeliness": 10,
         "credibility": 8
       },
       "isDuplicate": false
@@ -142,7 +161,7 @@
       "source": "MIT Technology Review",
       "publishedAt": "Thu, 05 Mar 2026 10:00:00 +0000",
       "region": "海外",
-      "summary": "Scott Shambaugh在拒绝一个AI代理为matplotlib软件库贡献代码的请求时毫不犹豫。像许多开源项目一样，matplotlib已被大量AI代码贡献淹没，因此Shambaugh和其他维护者已经制定了相关政策。",
+      "summary": "文章以Scott Shambaugh拒绝一个AI代理为matplotlib软件库贡献代码的请求为例，说明在线骚扰的新趋势。像许多开源项目一样，matplotlib已被大量AI代码贡献淹没，因此维护者们制定了新政策来应对。",
       "category": "技术与研究",
       "company": "无",
       "score": 31,
@@ -172,25 +191,6 @@
         "credibility": 10
       },
       "isDuplicate": false
-    },
-    {
-      "title": "多少野火预防措施才算过度？",
-      "url": "https://www.technologyreview.com/2026/03/05/1133960/wildfire-prevention-limits/",
-      "snippet": "The race to prevent the worst wildfires has been an increasingly high-tech one. Companies are proposing AI fire detection systems and drones that can stamp out early blazes. And now, one Canadian startup says it’s going after lightning. Lightning-sparked fires can be a big deal: The Canadian wildfires of 2023 generated nearly 500 million metric…",
-      "source": "MIT Technology Review",
-      "publishedAt": "Thu, 05 Mar 2026 11:00:00 +0000",
-      "region": "海外",
-      "summary": "文章探讨了预防严重野火的竞赛正日益高科技化。公司们提出了AI火灾探测系统和能扑灭早期火情的无人机。一家加拿大初创公司表示正在研究应对闪电，因为闪电引发的火灾可能造成严重后果。",
-      "category": "技术与研究",
-      "company": "加拿大初创公司",
-      "score": 16,
-      "breakdown": {
-        "substance": 0,
-        "importance": 0,
-        "timeliness": 6,
-        "credibility": 10
-      },
-      "isDuplicate": false
     }
   ],
   "投融资与并购": [
@@ -201,32 +201,13 @@
       "source": "量子位",
       "publishedAt": "Thu, 05 Mar 2026 12:27:57 +0000",
       "region": "国内",
-      "summary": "具身基模和通用机器人企业极佳视界近日完成了近10亿元人民币的Pre-B轮融资。本轮投资方包括中芯聚源、上海半导体产投基金等芯片和汽车产业资本，以及中金资本、苏创投等国资平台和财务机构，其中部分老股东持续加持。该公司在具身智能领域进行全栈深耕，其开源模型GigaBrain-0.1曾在权威大规模真机评测中获得全球第一，并布局了世界模型。其全栈自研的机器人产品Maker H01已开启交付，并计划在今年实现千台交付量，应用场景覆盖汽车制造、3C电子等多个领域。",
+      "summary": "具身基模和通用机器人企业极佳视界近日完成了近10亿元人民币的Pre-B轮融资。本轮投资方包括中芯聚源、上海半导体产投基金等芯片和汽车产业资本，以及中金资本、苏创投等国资平台和财务机构。该公司在具身智能领域拥有全栈布局，其开源模型GigaBrain-0.1曾在权威大规模真机评测中获得全球第一，并率先布局了世界模型。此外，其全栈自研的机器人Maker H01已开启交付，并计划在今年内实现千台交付量。",
       "category": "投融资与并购",
       "company": "极佳视界",
       "score": 49,
       "breakdown": {
         "substance": 21,
         "importance": 13,
-        "timeliness": 6,
-        "credibility": 9
-      },
-      "isDuplicate": false
-    },
-    {
-      "title": "AI原生社区捏Ta完成超千万美金Pre A+轮融资，九坤领投",
-      "url": "https://www.qbitai.com/2026/03/383998.html",
-      "snippet": "定义AI时代世界创作的基础设施",
-      "source": "量子位",
-      "publishedAt": "Thu, 05 Mar 2026 07:02:01 +0000",
-      "region": "国内",
-      "summary": "AI原生社区捏Ta近日宣布完成超千万美金的Pre A+轮融资，本轮融资由九坤创投领投，BV百度风投跟投，源码资本、奇绩创坛等老股东超额跟进。融资资金将主要用于招募全球顶尖人才、技术研发投入以及新产品线拓展。捏Ta平台上线于2024年3月，最初专注于AI角色创作，现已积累超1200万用户，用户日均互动时长超过110分钟，平台已创建584万个虚拟角色和400多个虚拟世界与社团空间。平台正从“创作角色”向“构建世界”升级，并构建了一套“世界表达协议层”以定义虚拟世界的资产标准和互动规则。",
-      "category": "投融资与并购",
-      "company": "捏Ta",
-      "score": 35,
-      "breakdown": {
-        "substance": 15,
-        "importance": 5,
         "timeliness": 6,
         "credibility": 9
       },
@@ -260,7 +241,7 @@
       "source": "TechCrunch AI",
       "publishedAt": "Thu, 05 Mar 2026 20:24:25 +0000",
       "region": "海外",
-      "summary": "美国国防部已正式将Anthropic列为供应链风险，使其成为首家获得此标签的美国公司。与此同时，国防部仍在伊朗使用Anthropic的AI技术。",
+      "summary": "美国国防部已正式将人工智能公司Anthropic列为供应链风险，使其成为首个获得此标签的美国公司。与此同时，国防部在伊朗的行动中仍继续使用Anthropic的人工智能技术。",
       "category": "政策与监管",
       "company": "Anthropic",
       "score": 23,
@@ -269,6 +250,25 @@
         "importance": 5,
         "timeliness": 10,
         "credibility": 8
+      },
+      "isDuplicate": false
+    },
+    {
+      "title": "OpenAI禁止马丁·路德·金深度伪造视频",
+      "url": "https://www.aol.com/articles/openai-bans-martin-luther-king-193650981.html",
+      "snippet": "Reverend Dr. Martin Luther King, Jr., left, has been the subject of deepfake video created by OpenAI models. NEED TO KNOW. OpenAI has announced it has...",
+      "source": "AOL.com",
+      "publishedAt": "11 hours ago",
+      "region": "海外",
+      "summary": "OpenAI宣布禁止使用其模型制作马丁·路德·金的深度伪造视频。此前有用户利用新发布的技术制作了涉及这位民权领袖的种族主义视频。OpenAI对此采取了明确的禁止措施。",
+      "category": "政策与监管",
+      "company": "OpenAI",
+      "score": 19,
+      "breakdown": {
+        "substance": 7,
+        "importance": 5,
+        "timeliness": 2,
+        "credibility": 5
       },
       "isDuplicate": false
     }
